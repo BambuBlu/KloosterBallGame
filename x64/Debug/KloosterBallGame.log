@@ -1,0 +1,79 @@
+﻿  Bolas.cpp
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(21,9): error C3646: 'mapa_de_juego': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(21,22): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(22,9): error C3646: 'bola': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(22,13): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(23,14): error C3646: 'obstaculo': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(23,23): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(24,12): error C3646: 'flippers': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(24,20): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(25,12): error C3646: 'piston': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(25,18): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+  Enemigos.cpp
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(21,9): error C3646: 'mapa_de_juego': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(21,22): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(22,9): error C3646: 'bola': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(22,13): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(23,14): error C3646: 'obstaculo': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(23,23): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(24,12): error C3646: 'flippers': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(24,20): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(25,12): error C3646: 'piston': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(25,18): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Bolas.h(23,25): error C2061: error de sintaxis: identificador 'Enemigos'
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Bolas.h(24,20): error C2061: error de sintaxis: identificador 'Enemigos'
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Mapas.h(14,12): error C3646: 'mob': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Mapas.h(14,15): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Mapas.h(19,20): error C2061: error de sintaxis: identificador 'Enemigos'
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Mapas.h(20,19): error C2061: error de sintaxis: identificador 'Enemigos'
+  Flippers.cpp
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(21,9): error C3646: 'mapa_de_juego': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(21,22): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(22,9): error C3646: 'bola': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(22,13): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(23,14): error C3646: 'obstaculo': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(23,23): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(24,12): error C3646: 'flippers': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(24,20): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(25,12): error C3646: 'piston': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(25,18): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+  Juego.cpp
+  Mapas.cpp
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(21,9): error C3646: 'mapa_de_juego': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(21,22): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(22,9): error C3646: 'bola': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(22,13): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(23,14): error C3646: 'obstaculo': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(23,23): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(24,12): error C3646: 'flippers': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(24,20): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(25,12): error C3646: 'piston': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(25,18): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+  Obstaculos.cpp
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(21,9): error C3646: 'mapa_de_juego': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(21,22): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(22,9): error C3646: 'bola': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(22,13): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(23,14): error C3646: 'obstaculo': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(23,23): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(24,12): error C3646: 'flippers': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(24,20): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(25,12): error C3646: 'piston': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(25,18): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Bolas.h(22,31): error C2061: error de sintaxis: identificador 'Obstaculos'
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Mapas.h(13,14): error C3646: 'obstaculo': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Mapas.h(13,23): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Mapas.h(17,26): error C2061: error de sintaxis: identificador 'Obstaculos'
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Mapas.h(18,25): error C2061: error de sintaxis: identificador 'Obstaculos'
+  Pistones.cpp
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(21,9): error C3646: 'mapa_de_juego': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(21,22): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(22,9): error C3646: 'bola': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(22,13): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(23,14): error C3646: 'obstaculo': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(23,23): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(24,12): error C3646: 'flippers': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(24,20): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(25,12): error C3646: 'piston': especificador de invalidación desconocido
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(25,18): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+  Generando código...
