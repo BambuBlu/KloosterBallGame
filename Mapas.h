@@ -1,11 +1,7 @@
 #pragma once
-#include "Bolas.h"
-#include "Enemigos.h"
-#include "Obstaculos.h"
-#include "Bolas.h"
-#include "Flippers.h"
-#include "Pistones.h"
 #include "Juego.h"
+#include "Obstaculos.h"
+#include "Enemigos.h"
 
 class Mapas
 {
@@ -14,8 +10,8 @@ class Mapas
 		Enemigos mob;
 		//Item objeto;
 	public:
-		void Agregar_Obstaculo(Obstaculos obstaculo);
-		void Quitar_Obstaculo(Obstaculos obstaculo);
+		void Agregar_Obstaculo(Obstaculos);
+		void Quitar_Obstaculo(Obstaculos);
 		void Agregar_Mob(Enemigos mob);
 		void Quitar_Mob(Enemigos mob);
 

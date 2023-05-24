@@ -1,11 +1,7 @@
 #pragma once
-#include "Mapas.h"
-#include "Enemigos.h"
-#include "Obstaculos.h"
-#include "Bolas.h"
-#include "Flippers.h"
-#include "Pistones.h"
 #include "Juego.h"
+#include "Obstaculos.h"
+#include "Enemigos.h"
 
 class Bolas
 {

@@ -8,9 +8,7 @@
 
 #include "Mapas.h"
 #include "Bolas.h"
-#include "Enemigos.h"
 #include "Obstaculos.h"
-#include "Bolas.h"
 #include "Flippers.h"
 #include "Pistones.h"
 

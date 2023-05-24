@@ -1,9 +1,6 @@
 #include "Bolas.h"
 
 //Inicializar BOLA
-
-///Facu trolo.
-
 void Bolas::Init_Bola()
 {
 	this->posicion = 0;

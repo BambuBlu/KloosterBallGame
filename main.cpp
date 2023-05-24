@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Juego.h"
 using namespace std;
 
