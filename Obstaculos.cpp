@@ -1,7 +1,6 @@
 #include "Obstaculos.h"
 
 //Inicializar OBSTACULOS.
-
 void Obstaculos::Init_Obstaculo()
 {
 	this->tamaño = 0;
@@ -9,6 +8,14 @@ void Obstaculos::Init_Obstaculo()
 	this->esta_vivo = true;
 }
 
+Obstaculos::Obstaculos()
+{
+	this->Init_Obstaculo();
+}
+
+Obstaculos::~Obstaculos()
+{
+}
 //Funciones Publicas de OBSTACULOS
 
 void Obstaculos::Actualizar()

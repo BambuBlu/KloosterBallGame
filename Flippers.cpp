@@ -1,7 +1,22 @@
 #include "Flippers.h"
 
-//Funciones Publicas de FLIPPER
+void Flippers::Init_Flippers()
+{
+	this->posicion = 0;
+	this->orientacion = 0;
+}
 
+Flippers::Flippers()
+{
+	this->Init_Flippers();
+}
+
+Flippers::~Flippers()
+{
+
+}
+
+//Funciones Publicas de FLIPPER
 void Flippers::Mover()
 {
 

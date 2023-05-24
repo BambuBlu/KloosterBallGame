@@ -1,14 +1,17 @@
 #pragma once
 
-#include "Juego.h"
-
 class Flippers
 {
 	private:
 		float posicion;
 		float orientacion;
 
+		void Init_Flippers();
+
 	public:
+		Flippers();
+		virtual ~Flippers();
+
 		void Mover();
 		void Actualizar();
 		void Dibujar();

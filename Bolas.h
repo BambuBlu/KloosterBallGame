@@ -1,5 +1,5 @@
 #pragma once
-#include "Juego.h"
+
 #include "Obstaculos.h"
 #include "Enemigos.h"
 
@@ -14,7 +14,11 @@ class Bolas
 		bool esta_vivo;
 
 		void Init_Bola();
+
 	public:
+		Bolas();
+		virtual ~Bolas();
+
 		void Colision_Con_Obstaculo(Obstaculos);
 		void Colision_Con_Mob(Enemigos);
 		void Quitar_Vida(Enemigos);

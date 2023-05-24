@@ -1,7 +1,16 @@
 #include "Mapas.h"
 
-//Funciones Publicas del MAPA
+//Cons - Destr
+Mapas::Mapas()
+{
 
+}
+Mapas::~Mapas()
+{
+
+}
+
+//Funciones Publicas del MAPA
 void Mapas::Agregar_Obstaculo(Obstaculos obstaculo)
 {
 

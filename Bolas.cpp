@@ -11,8 +11,17 @@ void Bolas::Init_Bola()
 	this->esta_vivo = 0;
 }
 
-//Funciones Publicas de BOLA
+//Cons - Dest
+Bolas::Bolas()
+{
+	this->Init_Bola();
+}
+Bolas::~Bolas()
+{
 
+}
+
+//Funciones Publicas de BOLA
 void Bolas::Colision_Con_Obstaculo(Obstaculos obstaculo)
 {
 

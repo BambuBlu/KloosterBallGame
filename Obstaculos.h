@@ -1,5 +1,4 @@
 #pragma once
-#include "Juego.h"
 
 class Obstaculos
 {
@@ -7,8 +6,11 @@ class Obstaculos
 		float posicion;
 		float tamaño;
 		bool esta_vivo;
+
 		void Init_Obstaculo();
 	public:
+		Obstaculos();
+		virtual ~Obstaculos();
 		void Actualizar();
 		void Dibujar();
 };

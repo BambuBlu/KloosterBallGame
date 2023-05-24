@@ -1,7 +1,5 @@
 #pragma once
 
-#include "Juego.h"
-
 class Enemigos
 {
 	private:
@@ -9,9 +7,12 @@ class Enemigos
 		float tamaño;
 		int vida;
 		bool esta_vivo;
-		void Init_Mob();
+		void Init_Enemigo();
 
 	public:
+		Enemigos();
+		virtual ~Enemigos();
+
 		void Golpear_Bola();
 		void Bajar_Vida();
 		void actualizar();

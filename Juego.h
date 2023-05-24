@@ -16,15 +16,26 @@ class Juego
 {
 	private:
 		int puntaje;
+		sf::RenderWindow* ventana;
+		sf::VideoMode video_mode;
+		sf::Event evento;
+
 		Mapas mapa_de_juego;
 		Bolas bola;
 		Obstaculos obstaculo;
 		Flippers flippers;
 		Pistones piston;
 		//Item inventario;
+		
 		void Init_Variables();
-
+		void Init_Window();
 	public:
+		//
+		Juego();
+		virtual ~Juego();
+		//
+		const bool get_Ventana_Esta_Abierta() const;
+		//
 		void Iniciar_Juego();
 		void Terminar_Juego();
 		void Lanzar_Bola();
@@ -36,4 +47,7 @@ class Juego
 		void Agregar_Al_Inventario(Item);
 		void Quitar_Del_Inventario(Item);
 		*/
+		void Actualizar_Eventos();
+		void Actualizar();
+		void Renderizar();
 };
