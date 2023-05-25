@@ -1,16 +1,17 @@
 #include <iostream>
 #include "Juego.h"
+#include "MainMenu.h"
 using namespace std;
 
 int main()
 {
-	Juego juego;
+	Manager menu;
 
-	while (juego.get_Ventana_Esta_Abierta())
+	while (menu.get_Ventana_Esta_Abierta())
 	{
-		juego.Actualizar();
+		menu.Actualizar_Eventos();
 
-		juego.Renderizar();
+		menu.Renderizar();
 	}
 
 	return 0;

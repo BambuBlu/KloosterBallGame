@@ -141,6 +141,7 @@
     <ClCompile Include="Flippers.cpp" />
     <ClCompile Include="Juego.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Mapas.cpp" />
     <ClCompile Include="Obstaculos.cpp" />
     <ClCompile Include="Pistones.cpp" />
@@ -150,6 +151,7 @@
     <ClInclude Include="Enemigos.h" />
     <ClInclude Include="Flippers.h" />
     <ClInclude Include="Juego.h" />
+    <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Mapas.h" />
     <ClInclude Include="Obstaculos.h" />
     <ClInclude Include="Pistones.h" />
