@@ -6,7 +6,7 @@
 #include <SFML/System.hpp>
 #include <SFML/Network.hpp>
 
-#include "MainMenu.h"
+#include "Manager.h"
 
 #include "Mapas.h"
 #include "Bolas.h"

@@ -2,6 +2,7 @@
 
 #include "Obstaculos.h"
 #include "Enemigos.h"
+#include "Juego.h"
 
 class Bolas
 {
@@ -12,6 +13,8 @@ class Bolas
 		int vidas;
 		int daño;
 		bool esta_vivo;
+		Texture * text_bola;
+		Sprite * sprite_bola;
 
 		void Init_Bola();
 

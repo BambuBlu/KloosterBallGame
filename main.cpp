@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Juego.h"
-#include "MainMenu.h"
+#include "Manager.h"
 using namespace std;
 
 int main()

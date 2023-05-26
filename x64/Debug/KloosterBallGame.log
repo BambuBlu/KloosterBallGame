@@ -1,2 +1,7 @@
-﻿  MainMenu.cpp
-  KloosterBallGame.vcxproj -> C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\KloosterBallGame.exe
+﻿  Bolas.cpp
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Juego.h(23,9): error C3646: 'bola': especificador de invalidación desconocido
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Juego.h(23,13): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+  Juego.cpp
+  main.cpp
+  Manager.cpp
+  Generando código...

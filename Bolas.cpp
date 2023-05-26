@@ -15,6 +15,11 @@ void Bolas::Init_Bola()
 Bolas::Bolas()
 {
 	this->Init_Bola();
+	text_bola = new Texture;
+	sprite_bola = new Sprite;
+	text_bola->loadFromFile("bola.png");
+	sprite_bola->setTexture(*text_bola);
+
 }
 Bolas::~Bolas()
 {
