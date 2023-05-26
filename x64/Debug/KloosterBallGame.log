@@ -1,7 +1,32 @@
 ﻿  Bolas.cpp
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Manager.h(18,9): error C3646: 'juego': especificador de invalidación desconocido
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Manager.h(18,14): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
 C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Juego.h(23,9): error C3646: 'bola': especificador de invalidación desconocido
 C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Juego.h(23,13): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
   Juego.cpp
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Manager.h(18,9): error C3646: 'juego': especificador de invalidación desconocido
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Manager.h(18,14): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
   main.cpp
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Manager.h(18,9): error C3646: 'juego': especificador de invalidación desconocido
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Manager.h(18,14): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
   Manager.cpp
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Bolas.h(16,11): error C2143: error de sintaxis: falta ';' delante de '*'
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Bolas.h(16,11): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Bolas.h(16,22): error C2238: símbolos (token) inesperados delante de ';'
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Bolas.h(17,10): error C2143: error de sintaxis: falta ';' delante de '*'
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Bolas.h(17,10): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Bolas.h(17,23): error C2238: símbolos (token) inesperados delante de ';'
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Juego.h(18,1): error C2504: 'Manager': clase base sin definir
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Manager.cpp(105,34): error C2440: 'inicializando': no se puede realizar la conversión de 'initializer list' a 'sf::RenderWindow *'
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Manager.cpp(105,34): message : El inicializador contiene demasiados elementos
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Manager.cpp(106,37): error C2440: 'inicializando': no se puede realizar la conversión de 'initializer list' a 'sf::RenderWindow *'
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Manager.cpp(106,37): message : El inicializador contiene demasiados elementos
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Manager.cpp(107,27): error C2440: 'inicializando': no se puede realizar la conversión de 'initializer list' a 'sf::RenderWindow *'
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Manager.cpp(107,27): message : El inicializador contiene demasiados elementos
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Manager.cpp(110,34): error C2597: referencia no válida a miembro no static 'Juego::bola'
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Juego.h(23,9): message : vea la declaración de 'Juego::bola'
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Manager.cpp(113,29): error C3867: 'sf::Window::close': sintaxis no estándar; utilice '&' para crear un puntero al miembro
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Manager.cpp(117,29): error C3867: 'sf::Window::close': sintaxis no estándar; utilice '&' para crear un puntero al miembro
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Manager.cpp(121,29): error C3867: 'sf::Window::close': sintaxis no estándar; utilice '&' para crear un puntero al miembro
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Manager.cpp(122,19): error C3867: 'sf::Window::close': sintaxis no estándar; utilice '&' para crear un puntero al miembro
   Generando código...

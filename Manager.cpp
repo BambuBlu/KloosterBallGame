@@ -99,10 +99,30 @@ void Manager::Actualizar_Eventos()
 			else if (this->evento.key.code == sf::Keyboard::Return)
 			{
 				int x = this->MainMenuPressed();
+				RenderWindow* Iniciar_Juego(this->video_mode, "Jugar", sf::Style::Default);
+				RenderWindow* Maximos_Puntajes(this->video_mode, "Puntajes", sf::Style::Default);
+				RenderWindow* Logros(this->video_mode, "Logros", sf::Style::Default);
+				Event aevento;
 				//JUGAR
 				if (x == 0)
-				{
-
+				{	
+					while (Iniciar_Juego->isOpen()) {
+						Iniciar_Juego->draw(Juego::bola);
+						while (Iniciar_Juego->pollEvent(aevento)) {
+							if (aevento.type == Event::Closed) {
+								Iniciar_Juego->close;
+							}
+							if (aevento.type == Event::KeyPressed) {
+								if (aevento.key.code == Keyboard::Escape)
+								Iniciar_Juego->close;
+							}
+						}
+					}
+					Maximos_Puntajes->close;
+					Logros->close;
+					Iniciar_Juego->clear();
+					Iniciar_Juego->display();
+					
 				}
 				//MAYORES PUNTAJES
 				if (x == 1)
@@ -122,9 +142,9 @@ void Manager::Actualizar_Eventos()
 				}
 			}
 		}
-		this->ventana->clear();
-		Draw(this->ventana);
-		this->ventana->display();
+		ventana->clear();
+		Draw(ventana);
+		ventana->display();
 	}
 }
 

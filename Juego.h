@@ -14,7 +14,7 @@
 #include "Flippers.h"
 #include "Pistones.h"
 
-class Juego : private Manager
+class Juego : public Manager
 {
 	private:
 		int puntaje;

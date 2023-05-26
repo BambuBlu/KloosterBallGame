@@ -2,18 +2,20 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "Juego.h"
 using namespace std;
 using namespace sf;
 
 #define max_main_menu 4
 
-class Manager
+class Manager 
 {
 	private:
 		int main_menu_selected;
 		Font font;
 		Text main_menu[max_main_menu];
 
+		Juego juego;
 		RenderWindow* ventana;
 		VideoMode video_mode;
 		Event evento;

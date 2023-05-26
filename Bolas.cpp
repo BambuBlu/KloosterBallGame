@@ -19,6 +19,7 @@ Bolas::Bolas()
 	sprite_bola = new Sprite;
 	text_bola->loadFromFile("bola.png");
 	sprite_bola->setTexture(*text_bola);
+	sprite_bola->setPosition(480, 460);
 
 }
 Bolas::~Bolas()
@@ -26,7 +27,7 @@ Bolas::~Bolas()
 
 }
 
-//Funciones Publicas de BOLA
+//Funciones Publicas de  BOLA
 void Bolas::Colision_Con_Obstaculo(Obstaculos obstaculo)
 {
 
@@ -49,5 +50,6 @@ void Bolas::Actualizar()
 
 void Bolas::Dibujar()
 {
+	
 
 }
