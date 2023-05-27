@@ -1,8 +1,7 @@
 #pragma once
-
+#include <SFML/Graphics.hpp>
 #include "Obstaculos.h"
 #include "Enemigos.h"
-#include "Juego.h"
 
 class Bolas
 {
@@ -13,8 +12,9 @@ class Bolas
 		int vidas;
 		int daño;
 		bool esta_vivo;
-		Texture * text_bola;
-		Sprite * sprite_bola;
+
+		sf::Texture* text_bola;
+		sf::Sprite* sprite_bola;
 
 		void Init_Bola();
 
@@ -25,7 +25,5 @@ class Bolas
 		void Colision_Con_Obstaculo(Obstaculos);
 		void Colision_Con_Mob(Enemigos);
 		void Quitar_Vida(Enemigos);
-		void Actualizar();
-		void Dibujar();
 };
 

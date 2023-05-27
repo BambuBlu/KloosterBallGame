@@ -1,13 +1,14 @@
 #include "Manager.h"
+#include "Juego.h"
 //
 void Manager::Init_Window()
 {
 	this->ventana = nullptr;
 
-	this->video_mode.height = 960;
-	this->video_mode.width = 920;
+	this->video_mode.height = 720;
+	this->video_mode.width = 1280;
 
-	this->ventana = new sf::RenderWindow(this->video_mode, "KloosterBall", sf::Style::Default);
+	this->ventana = new sf::RenderWindow(this->video_mode, "KloosterBallMENU", sf::Style::Default);
 
 	if (!font.loadFromFile("Fonts/SourceCodePro-VariableFont_wght.ttf"))
 	{
@@ -16,33 +17,32 @@ void Manager::Init_Window()
 
 	//Opcion Jugar
 	this->main_menu[0].setFont(font);
-	this->main_menu[0].setFillColor(Color::White);
+	this->main_menu[0].setFillColor(Color::Cyan);
 	this->main_menu[0].setString("Jugar");
 	this->main_menu[0].setCharacterSize(40);
-	this->main_menu[0].setPosition(310, 200);
+	this->main_menu[0].setPosition(580, 200);
 	//Otras Opciones
 	this->main_menu[1].setFont(font);
 	this->main_menu[1].setFillColor(Color::White);
 	this->main_menu[1].setString("Maximos Puntajes");
 	this->main_menu[1].setCharacterSize(40);
-	this->main_menu[1].setPosition(310, 300);
+	this->main_menu[1].setPosition(580, 300);
 
 	this->main_menu[2].setFont(font);
 	this->main_menu[2].setFillColor(Color::White);
 	this->main_menu[2].setString("Logros");
 	this->main_menu[2].setCharacterSize(40);
-	this->main_menu[2].setPosition(310, 400);
+	this->main_menu[2].setPosition(580, 400);
 
 	this->main_menu[3].setFont(font);
 	this->main_menu[3].setFillColor(Color::White);
 	this->main_menu[3].setString("Salir");
 	this->main_menu[3].setCharacterSize(40);
-	this->main_menu[3].setPosition(310, 600);
+	this->main_menu[3].setPosition(580, 600);
 
 	main_menu_selected = 0;
 }
 
-//
 Manager::Manager()
 {
 	this->Init_Window();
@@ -53,14 +53,12 @@ Manager::~Manager()
 	delete this->ventana;
 }
 
-//
-const bool Manager::get_Ventana_Esta_Abierta() const
+const bool Manager::Ventana_Esta_Abierta() const
 {
 	return this->ventana->isOpen();
 }
 
-//
-void Manager::Actualizar_Eventos()
+void Manager::Actualizar()
 {
 	//Siempre que haya un evento se mantiene el While
 	while (this->ventana->pollEvent(this->evento))
@@ -99,30 +97,10 @@ void Manager::Actualizar_Eventos()
 			else if (this->evento.key.code == sf::Keyboard::Return)
 			{
 				int x = this->MainMenuPressed();
-				RenderWindow* Iniciar_Juego(this->video_mode, "Jugar", sf::Style::Default);
-				RenderWindow* Maximos_Puntajes(this->video_mode, "Puntajes", sf::Style::Default);
-				RenderWindow* Logros(this->video_mode, "Logros", sf::Style::Default);
-				Event aevento;
 				//JUGAR
 				if (x == 0)
 				{	
-					while (Iniciar_Juego->isOpen()) {
-						Iniciar_Juego->draw(Juego::bola);
-						while (Iniciar_Juego->pollEvent(aevento)) {
-							if (aevento.type == Event::Closed) {
-								Iniciar_Juego->close;
-							}
-							if (aevento.type == Event::KeyPressed) {
-								if (aevento.key.code == Keyboard::Escape)
-								Iniciar_Juego->close;
-							}
-						}
-					}
-					Maximos_Puntajes->close;
-					Logros->close;
-					Iniciar_Juego->clear();
-					Iniciar_Juego->display();
-					
+					this->Iniciar_Juego();
 				}
 				//MAYORES PUNTAJES
 				if (x == 1)
@@ -142,20 +120,13 @@ void Manager::Actualizar_Eventos()
 				}
 			}
 		}
-		ventana->clear();
-		Draw(ventana);
-		ventana->display();
+		this->ventana->clear();
+		this->Dibujar_Menu(ventana);
+		this->ventana->display();
 	}
 }
 
-
-void Manager::Renderizar()
-{
-	this->Actualizar_Eventos();
-}
-
-
-void Manager::Draw(RenderWindow* &window)
+void Manager::Dibujar_Menu(RenderWindow* &window)
 {
 
 	for (int i = 0; i < max_main_menu; i++)
@@ -166,7 +137,7 @@ void Manager::Draw(RenderWindow* &window)
 
 void Manager::MoveUp()
 {
-	if (main_menu_selected - 1 >= 0)
+	if (main_menu_selected >= 0)
 	{
 		main_menu[main_menu_selected].setFillColor(Color::White);
 		main_menu_selected--;
@@ -195,4 +166,16 @@ void Manager::MoveDown()
 int Manager::MainMenuPressed()
 {
 	return main_menu_selected;
+}
+
+void Manager::Iniciar_Juego()
+{
+
+	this->ventana->setVisible(false);
+
+	Juego JUEGO;
+
+	JUEGO.Iniciar();
+
+	JUEGO.Terminar();
 }

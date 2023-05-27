@@ -21,14 +21,3 @@ void Flippers::Mover()
 {
 
 }
-
-void Flippers::Actualizar()
-{
-
-}
-
-void Flippers::Dibujar()
-{
-
-}
-

@@ -7,11 +7,9 @@ int main()
 {
 	Manager menu;
 
-	while (menu.get_Ventana_Esta_Abierta())
+	while (menu.Ventana_Esta_Abierta())
 	{
-		menu.Actualizar_Eventos();
-
-		menu.Renderizar();
+		menu.Actualizar();
 	}
 
 	return 0;

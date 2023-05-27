@@ -2,20 +2,19 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include "Juego.h"
+
 using namespace std;
 using namespace sf;
 
 #define max_main_menu 4
 
-class Manager 
+class Manager
 {
 	private:
 		int main_menu_selected;
 		Font font;
 		Text main_menu[max_main_menu];
 
-		Juego juego;
 		RenderWindow* ventana;
 		VideoMode video_mode;
 		Event evento;
@@ -27,11 +26,9 @@ class Manager
 
 		virtual ~Manager();
 
-		const bool get_Ventana_Esta_Abierta() const;
+		const bool Ventana_Esta_Abierta() const;
 
-		void Actualizar_Eventos();
-
-		void Renderizar();
+		void Actualizar();
 
 		void MoveUp();
 
@@ -39,6 +36,8 @@ class Manager
 
 		int MainMenuPressed();
 
-		void Draw(RenderWindow*& window);
+		void Dibujar_Menu(RenderWindow*& window);
+
+		void Iniciar_Juego();
 };
 

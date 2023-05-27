@@ -13,7 +13,5 @@ class Flippers
 		virtual ~Flippers();
 
 		void Mover();
-		void Actualizar();
-		void Dibujar();
 };
 

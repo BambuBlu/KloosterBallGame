@@ -15,7 +15,5 @@ class Enemigos
 
 		void Golpear_Bola();
 		void Bajar_Vida();
-		void actualizar();
-		void dibujar();
 };
 

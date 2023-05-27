@@ -6,19 +6,23 @@
 #include <SFML/System.hpp>
 #include <SFML/Network.hpp>
 
-#include "Manager.h"
-
 #include "Mapas.h"
 #include "Bolas.h"
 #include "Obstaculos.h"
 #include "Flippers.h"
 #include "Pistones.h"
 
-class Juego : public Manager
+class Juego
 {
 	private:
-		int puntaje;
+		//VENTANA DEL JUEGO
+		sf::RenderWindow* ventana;
+		sf::VideoMode video_mode;
+		sf::Event evento;
+		const bool Ventana_Esta_Abierta() const;
 
+		//VARIABLES Y OBJETOS DEL JUEGO
+		int puntaje;
 		Mapas mapa_de_juego;
 		Bolas bola;
 		Obstaculos obstaculo;
@@ -26,6 +30,7 @@ class Juego : public Manager
 		Pistones piston;
 		//Item inventario;
 		
+		void Init_Window();
 		void Init_Variables();
 
 	public:
@@ -33,10 +38,10 @@ class Juego : public Manager
 		Juego();
 		virtual ~Juego();
 		//
-		void Iniciar_Juego();
+		void Iniciar();
 
-		void Terminar_Juego();
-
+		void Terminar();
+		//
 		void Lanzar_Bola();
 
 		void Mover_Flippers(/*direccion*/);
@@ -46,7 +51,20 @@ class Juego : public Manager
 		void Reiniciar_Puntaje();
 
 		/*
+		Todo lo que tenga que ver con Items y/o inventario lo dejamos para el final :P
 		void Agregar_Al_Inventario(Item);
 		void Quitar_Del_Inventario(Item);
 		*/
+
+		/*La funcion dibujar va a estar fragmentada, de esta forma, siempre que queramos dibujar un objeto por pantalla,
+		podemos usar dibujar() y enviarle su respectivo objeto. Yo imagino que en el codigo quedaria algo como:
+			bola.mover();
+			Dibujar(bola);
+		*/
+
+		void Dibujar(Mapas);
+		void Dibujar(Bolas);
+		void Dibujar(Obstaculos);
+		void Dibujar(Flippers);
+		void Dibujar(Pistones);
 };

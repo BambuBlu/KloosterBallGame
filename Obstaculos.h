@@ -11,7 +11,5 @@ class Obstaculos
 	public:
 		Obstaculos();
 		virtual ~Obstaculos();
-		void Actualizar();
-		void Dibujar();
 };
 

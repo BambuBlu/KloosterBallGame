@@ -16,14 +16,3 @@ Obstaculos::Obstaculos()
 Obstaculos::~Obstaculos()
 {
 }
-//Funciones Publicas de OBSTACULOS
-
-void Obstaculos::Actualizar()
-{
-
-}
-
-void Obstaculos::Dibujar()
-{
-
-}

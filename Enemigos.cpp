@@ -31,13 +31,3 @@ void Enemigos::Bajar_Vida()
 {
 
 }
-
-void Enemigos::actualizar()
-{
-
-}
-
-void Enemigos::dibujar()
-{
-
-}
