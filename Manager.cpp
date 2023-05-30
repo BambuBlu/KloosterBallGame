@@ -90,13 +90,10 @@ void Manager::Actualizar()
 				this->MoveDown();
 				break;
 			}
-			/*
-	
-			*/ 
-			
 			else if (this->evento.key.code == sf::Keyboard::Return)
 			{
 				int x = this->MainMenuPressed();
+
 				//JUGAR
 				if (x == 0)
 				{	

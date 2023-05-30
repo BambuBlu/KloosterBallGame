@@ -9,17 +9,16 @@ void Juego::Init_Variables()
 //VENTANA DEL JUEGO
 void Juego::Init_Window()
 {
-	this->ventana = nullptr;
-
 	this->video_mode.height = 720;
 	this->video_mode.width = 1280;
 
-	this->ventana = new sf::RenderWindow(this->video_mode, "KloosterBallGAME", sf::Style::Default);
+	this->ventana.create(this->video_mode, "KloosterBallGAME", sf::Style::Default);
 }
+
 
 const bool Juego::Ventana_Esta_Abierta() const
 {
-	return this->ventana->isOpen();
+	return this->ventana.isOpen();
 }
 
 
@@ -31,7 +30,7 @@ Juego::Juego()
 
 Juego::~Juego()
 {
-	delete this->ventana;
+	 this->ventana.close();
 }
 
 
@@ -39,22 +38,35 @@ Juego::~Juego()
 void Juego::Iniciar() 
 {
 
-	while (this->Ventana_Esta_Abierta())
+
+	while (this->ventana.isOpen())
 	{
 
-		while (this->ventana->pollEvent(this->evento))
+		this->ventana.clear(sf::Color(255,0,0));
+
+		while (this->ventana.pollEvent(this->evento))
 		{
+		
+			switch (this->evento.type)
+			{
+				//La "X" de la ventana es para cerrar
+			case sf::Event::Closed:
+				this->ventana.close();
+				break;
 
-			this->ventana->clear();
+				//"Escape" es para cerrar
+			case sf::Event::KeyPressed:
+				if (this->evento.key.code == sf::Keyboard::Escape)
+				{
+					this->ventana.close();
+					break;
+				}
+			}
 
-			//Aca se dibuja lo que queramos
-
-			this->ventana->display();
+			this->ventana.display();
 
 		}
-
 	}
-
 }
 
 void Juego::Terminar()

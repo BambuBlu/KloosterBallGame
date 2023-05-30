@@ -1,5 +1,7 @@
 #pragma once
 
+#include <iostream> 
+
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <SFML/Window.hpp>
@@ -16,9 +18,10 @@ class Juego
 {
 	private:
 		//VENTANA DEL JUEGO
-		sf::RenderWindow* ventana;
+		sf::RenderWindow ventana;
 		sf::VideoMode video_mode;
 		sf::Event evento;
+
 		const bool Ventana_Esta_Abierta() const;
 
 		//VARIABLES Y OBJETOS DEL JUEGO
