@@ -136,7 +136,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Bolas.cpp" />
+    <ClCompile Include="Bola.cpp" />
     <ClCompile Include="Enemigos.cpp" />
     <ClCompile Include="Flippers.cpp" />
     <ClCompile Include="Juego.cpp" />
@@ -147,7 +147,8 @@
     <ClCompile Include="Pistones.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Bolas.h" />
+    <ClInclude Include="Bola.h" />
+    <ClInclude Include="ElementoDeJuego.h" />
     <ClInclude Include="Enemigos.h" />
     <ClInclude Include="Flippers.h" />
     <ClInclude Include="Juego.h" />

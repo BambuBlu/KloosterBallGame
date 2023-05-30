@@ -8,11 +8,14 @@
 #include <SFML/System.hpp>
 #include <SFML/Network.hpp>
 
-#include "Mapas.h"
-#include "Bolas.h"
-#include "Obstaculos.h"
-#include "Flippers.h"
-#include "Pistones.h"
+#include "ElementoDeJuego.h"
+
+enum Tipo_De_Evento 
+{
+	bola_destruida,
+
+};
+
 
 class Juego
 {
@@ -24,11 +27,12 @@ class Juego
 
 		//VARIABLES Y OBJETOS DEL JUEGO
 		int puntaje;
-		Mapas mapa_de_juego;
-		Bolas bola;
-		Obstaculos obstaculo;
-		Flippers flippers;
-		Pistones piston;
+		//Mapas mapa_de_juego;
+
+		//Colocar array dinamico con ElementoDeJuego
+		// Ejemplo:
+		//	ElementoDeJuego[] elementos_de_juego;
+
 		//Item inventario;
 		
 		void Init_Window();
@@ -47,6 +51,10 @@ class Juego
 
 		void Reiniciar_Puntaje();
 
+		bool Update(float);
+
+		void Notificar_Evento(Tipo_De_Evento);
+
 		/*
 		Todo lo que tenga que ver con Items y/o inventario lo dejamos para el final :P
 		void Agregar_Al_Inventario(Item);
@@ -58,10 +66,4 @@ class Juego
 			bola.mover();
 			Dibujar(bola);
 		*/
-
-		void Dibujar(Mapas);
-		void Dibujar(Bolas);
-		void Dibujar(Obstaculos);
-		void Dibujar(Flippers);
-		void Dibujar(Pistones);
 };

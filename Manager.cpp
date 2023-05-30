@@ -63,7 +63,6 @@ void Manager::Actualizar()
 	//Siempre que haya un evento se mantiene el While
 	while (this->ventana->pollEvent(this->evento))
 	{
-		std::cout << "entro al while Actualizar()" << endl;
 		//Checkea el tipo de evento
 		switch (this->evento.type)
 		{
@@ -100,7 +99,6 @@ void Manager::Actualizar()
 				{	
 					std::cout << "Entro a if(x == 0)" << endl;
 					this->Iniciar_Juego();
-					system("pause");
 				}
 				//MAYORES PUNTAJES
 				if (x == 1)
@@ -124,8 +122,6 @@ void Manager::Actualizar()
 		this->Dibujar_Menu(ventana);
 		this->ventana->display();
 	}
-
-	std::cout << "Se va del while Actualizar() :C" << endl;
 }
 
 void Manager::Dibujar_Menu(RenderWindow* &window)
@@ -174,31 +170,57 @@ void Manager::Iniciar_Juego()
 {
 	std::cout << "entro a Iniciar_Juego()" << endl;
 
-	while (this->Ventana_Esta_Abierta())
+	bool loop_juego = true;
+	Juego instancia_juego;
+
+	sf::Clock clock;
+
+
+	while (loop_juego)
 	{
-		std::cout << "entro al while de la funcion Iniciar_Juego()" << endl;
-		while (this->ventana->pollEvent(this->evento))
+		//Este if maneja el cierre del juego
+		loop_juego = this->Se_Pide_Cerrar();
+
+		sf::Time tInterval = clock.getElapsedTime();
+
+		if (tInterval.asMilliseconds() >= 16)
 		{
-			std::cout << "entro a While (this->ventana->pollevent(this->evento))" << endl;
-			
-			switch (this->evento.type)
-			{
-				case sf::Event::Closed:
-					{
-						this->ventana->close();
-					}
-				case sf::Event::KeyPressed:
-					{
-						if(sf::Keyboard::Escape)
-						{
-							this->ventana->close();
-						}
-					}
-			}
+			const float deltaTime = tInterval.asSeconds();
+
+			std::cout << "Entro al if(tInterval...). Valor deltaTime: " << deltaTime << endl;
+
+			loop_juego = instancia_juego.Update(deltaTime);
+
+			clock.restart();
 		}
+		
 		this->ventana->clear();
 		this->ventana->display();
-		std::cout << "Llego al final del recorrido del while Iniciar_Juego()" << endl;
 	}
 	std::cout << "Paso el While y se va de la funcion" << endl;
+}
+
+bool Manager::Se_Pide_Cerrar()
+{
+	if (this->ventana->pollEvent(evento))
+	{
+		switch (this->evento.type)
+		{
+		case sf::Event::Closed:
+		{
+			this->ventana->close();
+			return false;
+		}
+		case sf::Event::KeyPressed:
+		{
+			if (this->evento.key.code == sf::Keyboard::Escape)
+			{
+				std::cout << "Entro al switch(this->evento.type)" << endl;
+				return false;
+			}
+		}
+		}
+	}
+
+	return true;
 }

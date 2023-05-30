@@ -50,28 +50,21 @@ void Juego::Reiniciar_Puntaje()
 	this->puntaje = 0;
 }
 
-//Dibujar()
-void Juego::Dibujar(Mapas)
+/*
+	Funcion principal para la actualizacion de la logica del juego
+
+	La variable "float deltaTime" indica cuantos segundos pasan desde el ultimo llamado
+	Y es utilizado para el calculo de fisicas
+*/
+bool Juego::Update(float deltaTime)
 {
 
+
+
+	return true;
 }
 
-void Juego::Dibujar(Bolas)
-{
-
-}
-
-void Juego::Dibujar(Obstaculos)
-{
-
-}
-
-void Juego::Dibujar(Flippers)
-{
-
-}
-
-void Juego::Dibujar(Pistones)
+void Juego::Notificar_Evento(Tipo_De_Evento evento)
 {
 
 }

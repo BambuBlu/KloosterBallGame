@@ -21,6 +21,8 @@ class Manager
 
 		void Init_Window();
 
+		bool Se_Pide_Cerrar();
+
 	public:
 		Manager();
 
