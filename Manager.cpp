@@ -63,6 +63,7 @@ void Manager::Actualizar()
 	//Siempre que haya un evento se mantiene el While
 	while (this->ventana->pollEvent(this->evento))
 	{
+		std::cout << "entro al while Actualizar()" << endl;
 		//Checkea el tipo de evento
 		switch (this->evento.type)
 		{
@@ -97,7 +98,9 @@ void Manager::Actualizar()
 				//JUGAR
 				if (x == 0)
 				{	
+					std::cout << "Entro a if(x == 0)" << endl;
 					this->Iniciar_Juego();
+					system("pause");
 				}
 				//MAYORES PUNTAJES
 				if (x == 1)
@@ -121,6 +124,8 @@ void Manager::Actualizar()
 		this->Dibujar_Menu(ventana);
 		this->ventana->display();
 	}
+
+	std::cout << "Se va del while Actualizar() :C" << endl;
 }
 
 void Manager::Dibujar_Menu(RenderWindow* &window)
@@ -167,12 +172,33 @@ int Manager::MainMenuPressed()
 
 void Manager::Iniciar_Juego()
 {
+	std::cout << "entro a Iniciar_Juego()" << endl;
 
-	this->ventana->setVisible(false);
-
-	Juego JUEGO;
-
-	JUEGO.Iniciar();
-
-	JUEGO.Terminar();
+	while (this->Ventana_Esta_Abierta())
+	{
+		std::cout << "entro al while de la funcion Iniciar_Juego()" << endl;
+		while (this->ventana->pollEvent(this->evento))
+		{
+			std::cout << "entro a While (this->ventana->pollevent(this->evento))" << endl;
+			
+			switch (this->evento.type)
+			{
+				case sf::Event::Closed:
+					{
+						this->ventana->close();
+					}
+				case sf::Event::KeyPressed:
+					{
+						if(sf::Keyboard::Escape)
+						{
+							this->ventana->close();
+						}
+					}
+			}
+		}
+		this->ventana->clear();
+		this->ventana->display();
+		std::cout << "Llego al final del recorrido del while Iniciar_Juego()" << endl;
+	}
+	std::cout << "Paso el While y se va de la funcion" << endl;
 }

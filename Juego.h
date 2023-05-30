@@ -22,8 +22,6 @@ class Juego
 		sf::VideoMode video_mode;
 		sf::Event evento;
 
-		const bool Ventana_Esta_Abierta() const;
-
 		//VARIABLES Y OBJETOS DEL JUEGO
 		int puntaje;
 		Mapas mapa_de_juego;
@@ -40,10 +38,6 @@ class Juego
 		//
 		Juego();
 		virtual ~Juego();
-		//
-		void Iniciar();
-
-		void Terminar();
 		//
 		void Lanzar_Bola();
 

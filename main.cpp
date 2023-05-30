@@ -9,7 +9,9 @@ int main()
 
 	while (menu.Ventana_Esta_Abierta())
 	{
+		std::cout << "Inicio del programa" << endl;
 		menu.Actualizar();
+		std::cout << "Fin del programa" << endl;
 	}
 
 	return 0;

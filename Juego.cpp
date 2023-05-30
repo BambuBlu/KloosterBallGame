@@ -16,11 +16,6 @@ void Juego::Init_Window()
 }
 
 
-const bool Juego::Ventana_Esta_Abierta() const
-{
-	return this->ventana.isOpen();
-}
-
 
 //Constructor & Destructor
 Juego::Juego()
@@ -34,45 +29,6 @@ Juego::~Juego()
 }
 
 
-//Funciones de Game Logic
-void Juego::Iniciar() 
-{
-
-
-	while (this->ventana.isOpen())
-	{
-
-		this->ventana.clear(sf::Color(255,0,0));
-
-		while (this->ventana.pollEvent(this->evento))
-		{
-		
-			switch (this->evento.type)
-			{
-				//La "X" de la ventana es para cerrar
-			case sf::Event::Closed:
-				this->ventana.close();
-				break;
-
-				//"Escape" es para cerrar
-			case sf::Event::KeyPressed:
-				if (this->evento.key.code == sf::Keyboard::Escape)
-				{
-					this->ventana.close();
-					break;
-				}
-			}
-
-			this->ventana.display();
-
-		}
-	}
-}
-
-void Juego::Terminar()
-{
-	this->~Juego();
-}
 
 void Juego::Lanzar_Bola()
 {
