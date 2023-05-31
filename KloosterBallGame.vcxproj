@@ -145,6 +145,7 @@
     <ClCompile Include="Mapas.cpp" />
     <ClCompile Include="Obstaculos.cpp" />
     <ClCompile Include="Pistones.cpp" />
+    <ClCompile Include="TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bola.h" />
@@ -156,6 +157,7 @@
     <ClInclude Include="Mapas.h" />
     <ClInclude Include="Obstaculos.h" />
     <ClInclude Include="Pistones.h" />
+    <ClInclude Include="TextureManager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

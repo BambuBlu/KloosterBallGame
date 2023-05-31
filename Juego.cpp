@@ -1,18 +1,11 @@
 #include "Juego.h"
+#include "TextureManager.h"
+
 
 //Inicializar variables en JUEGO
 void Juego::Init_Variables()
 {
 	this->puntaje = 0;
-}
-
-//VENTANA DEL JUEGO
-void Juego::Init_Window()
-{
-	this->video_mode.height = 720;
-	this->video_mode.width = 1280;
-
-	this->ventana.create(this->video_mode, "KloosterBallGAME", sf::Style::Default);
 }
 
 
@@ -58,8 +51,6 @@ void Juego::Reiniciar_Puntaje()
 */
 bool Juego::Update(float deltaTime)
 {
-
-
 
 	return true;
 }

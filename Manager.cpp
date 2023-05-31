@@ -1,12 +1,14 @@
 #include "Manager.h"
 #include "Juego.h"
+#include "TextureManager.h"
+
 //
 void Manager::Init_Window()
 {
 	this->ventana = nullptr;
 
-	this->video_mode.height = 720;
-	this->video_mode.width = 1280;
+	this->video_mode.height = 854;
+	this->video_mode.width = 480;
 
 	this->ventana = new sf::RenderWindow(this->video_mode, "KloosterBallMENU", sf::Style::Default);
 
@@ -20,27 +22,29 @@ void Manager::Init_Window()
 	this->main_menu[0].setFillColor(Color::Cyan);
 	this->main_menu[0].setString("Jugar");
 	this->main_menu[0].setCharacterSize(40);
-	this->main_menu[0].setPosition(580, 200);
+	this->main_menu[0].setPosition(50, 200);
 	//Otras Opciones
 	this->main_menu[1].setFont(font);
 	this->main_menu[1].setFillColor(Color::White);
 	this->main_menu[1].setString("Maximos Puntajes");
-	this->main_menu[1].setCharacterSize(40);
-	this->main_menu[1].setPosition(580, 300);
+	this->main_menu[1].setCharacterSize(30);
+	this->main_menu[1].setPosition(50, 300);
 
 	this->main_menu[2].setFont(font);
 	this->main_menu[2].setFillColor(Color::White);
 	this->main_menu[2].setString("Logros");
-	this->main_menu[2].setCharacterSize(40);
-	this->main_menu[2].setPosition(580, 400);
+	this->main_menu[2].setCharacterSize(30);
+	this->main_menu[2].setPosition(50, 400);
 
 	this->main_menu[3].setFont(font);
 	this->main_menu[3].setFillColor(Color::White);
 	this->main_menu[3].setString("Salir");
-	this->main_menu[3].setCharacterSize(40);
-	this->main_menu[3].setPosition(580, 600);
+	this->main_menu[3].setCharacterSize(20);
+	this->main_menu[3].setPosition(50, 600);
 
 	main_menu_selected = 0;
+
+
 }
 
 Manager::Manager()
@@ -175,7 +179,6 @@ void Manager::Iniciar_Juego()
 
 	sf::Clock clock;
 
-
 	while (loop_juego)
 	{
 		//Este if maneja el cierre del juego
@@ -193,7 +196,7 @@ void Manager::Iniciar_Juego()
 
 			clock.restart();
 		}
-		
+
 		this->ventana->clear();
 		this->ventana->display();
 	}
@@ -206,19 +209,19 @@ bool Manager::Se_Pide_Cerrar()
 	{
 		switch (this->evento.type)
 		{
-		case sf::Event::Closed:
-		{
-			this->ventana->close();
-			return false;
-		}
-		case sf::Event::KeyPressed:
-		{
-			if (this->evento.key.code == sf::Keyboard::Escape)
+			case sf::Event::Closed:
 			{
-				std::cout << "Entro al switch(this->evento.type)" << endl;
+				this->ventana->close();
 				return false;
 			}
-		}
+			case sf::Event::KeyPressed:
+			{
+				if (this->evento.key.code == sf::Keyboard::Escape)
+				{
+					std::cout << "Entro al switch(this->evento.type)" << endl;
+					return false;
+				}
+			}
 		}
 	}
 

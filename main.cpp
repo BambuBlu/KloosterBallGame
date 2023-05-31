@@ -9,6 +9,7 @@ int main()
 
 	while (menu.Ventana_Esta_Abierta())
 	{
+
 		menu.Actualizar();
 	}
 

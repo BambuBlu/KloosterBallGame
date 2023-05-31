@@ -13,7 +13,6 @@
 enum Tipo_De_Evento 
 {
 	bola_destruida,
-
 };
 
 
@@ -30,12 +29,10 @@ class Juego
 		//Mapas mapa_de_juego;
 
 		//Colocar array dinamico con ElementoDeJuego
-		// Ejemplo:
-		//	ElementoDeJuego[] elementos_de_juego;
+		//Ejemplo:
+		//ElementoDeJuego[] elementos_de_juego;
 
 		//Item inventario;
-		
-		void Init_Window();
 		void Init_Variables();
 
 	public:
@@ -54,16 +51,4 @@ class Juego
 		bool Update(float);
 
 		void Notificar_Evento(Tipo_De_Evento);
-
-		/*
-		Todo lo que tenga que ver con Items y/o inventario lo dejamos para el final :P
-		void Agregar_Al_Inventario(Item);
-		void Quitar_Del_Inventario(Item);
-		*/
-
-		/*La funcion dibujar va a estar fragmentada, de esta forma, siempre que queramos dibujar un objeto por pantalla,
-		podemos usar dibujar() y enviarle su respectivo objeto. Yo imagino que en el codigo quedaria algo como:
-			bola.mover();
-			Dibujar(bola);
-		*/
 };
