@@ -49,6 +49,7 @@ void Juego::Reiniciar_Puntaje()
 	La variable "float deltaTime" indica cuantos segundos pasan desde el ultimo llamado
 	Y es utilizado para el calculo de fisicas
 */
+
 bool Juego::Update(float deltaTime)
 {
 
