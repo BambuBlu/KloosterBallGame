@@ -1,47 +1,5 @@
 #include "Bola.h"
 
-//PRIMER BOLA QUE PLANTEAMOS
-/* 
-//Cons - Dest
-Bola::Bola(Juego _instancia_juego)
-{
-	this->velocidad = 0;
-	this->vidas = 0;
-	this->daño = 0;
-	this->esta_vivo = 0;
-	this->text_bola = new sf::Texture;
-	this->sprite_bola = new sf::Sprite;
-	this->text_bola->loadFromFile("bola.png");
-	this->sprite_bola->setTexture(*text_bola);
-	this->sprite_bola->setPosition(480, 460);
-
-	//Error de puntero, hay que arreglarlo.
-	//this->instancia_juego = _instancia_juego;
-}
-
-Bola::~Bola()
-{
-
-}
-
-//Funciones Publicas de  BOLA
-void Bola::Colision_Con_Obstaculo(Obstaculos obstaculo)
-{
-
-}
-
-void Bola::Colision_Con_Mob(Enemigos mob)
-{
-
-}
-
-void Bola::Quitar_Vida(Enemigos mob)
-{
-
-}
-*/
-
-
 //SEGUNDA BOLA (Usando SFML como ayuda)
 void Bola::InitBola()
 {
@@ -56,25 +14,125 @@ Bola::Bola()
 	InitBola();
 }
 
-void Bola::mover(float deltaTime) 
+void Bola::Mover(float deltaTime) 
 {
 	this->bola.move(velocidad * deltaTime);
 }
 
-void Bola::dibujar(sf::RenderWindow*& ventana) 
+void Bola::Dibujar(sf::RenderWindow*& ventana) 
 {
 	ventana->draw(bola);
 }
 
-void Bola::comprobarColision(const sf::FloatRect& objeto)
+void Bola::ComprobarColision(Bola& objeto_a_colisionar, int tipo_de_colision = 1)
 {
-	if (this->bola.getGlobalBounds().intersects(objeto)) 
-	{
-		//Aca se intersecta con el objeto y podemos 
-		//agregar la logica que queramos cuando esto ocurre,
-		//en este caso solo revierto la posición, por lo que la bola 
-		//solo choca en direccion contraria (va palla --> *Colisiona* ahora va palla<-- )
-		this->velocidad.x = -velocidad.x;
-		this->velocidad.y = -velocidad.y;
-    }
+    /*
+    Esta funcion comprueba colisiones entre dos bolas,
+    por lo que "objeto_a_colisionar" debe ser de tipo BOLA
+    Incluye funciones para:
+        Detectar distancia entre los circulos
+        Colisionar y reposicionar objetos para que no se superpongan
+        Provocar el rebote de la bola (En caso de que el objeto_a_colisionar no se deba mover) [1]
+        Provocar el rebote de ambas bolas [2]
+        "tipo_de_colision" podrá tomar el valor ["1"] o ["2"]
+    */
+
+        ///Detectar colision
+
+        float distancia_entre_circulos =
+            (objeto_a_colisionar.bola.getPosition().x - this->bola.getPosition().x) * (objeto_a_colisionar.bola.getPosition().x - this->bola.getPosition().x) +
+            (objeto_a_colisionar.bola.getPosition().y - this->bola.getPosition().y) * (objeto_a_colisionar.bola.getPosition().y - this->bola.getPosition().y);
+
+        if (distancia_entre_circulos > ((this->bola.getRadius() + objeto_a_colisionar.bola.getRadius()) * (this->bola.getRadius() + objeto_a_colisionar.bola.getRadius())))
+        {
+            ///LOS OBJETOS COLISIONARON, ahora toca reposicionar uno de ellos para que no se superponga.
+                //Calcular el angulo 
+            double angulo = 
+                atan2(objeto_a_colisionar.bola.getPosition().y - this->bola.getPosition().y,  //y
+                objeto_a_colisionar.bola.getPosition().x - this->bola.getPosition().x); //x
+
+                //Suma de radios para obtener distancia entre los centros de ambos cuadrados
+            float suma_de_radios = this->bola.getRadius() + objeto_a_colisionar.bola.getRadius();
+
+             //La distancia a mover para acomodar los objetos una vez colisionan.
+            float distancia_a_mover = suma_de_radios - distancia_entre_circulos;
+
+            
+              //Ya teniendo angulos y distancias definidas, podemos reposicionar una bola
+                //Asi se reposicionaria SOLO el circulo 1
+            float posicion_x = this->bola.getPosition().x;
+            float posicion_y = this->bola.getPosition().y;
+
+            float nueva_posicion_x = posicion_x += (float)(cos(angulo) * distancia_a_mover);
+            float nueva_posicion_y = posicion_y += (float)(sin(angulo) * distancia_a_mover);
+
+            this->bola.setPosition(nueva_posicion_x, nueva_posicion_y);
+
+            /*
+                Podemos tambien reposicionar SOLO el circulo 2 (lo cual es util si queremos hacer que nuestra pelota 
+                empuje a un objeto, ya que es mas logico que se reposicione el objeto que choca, 
+                antes que se reposicione nuestra bola)  
+            */
+            
+            ///UNA VEZ QUE LOS OBJETOS COLISIONAN Y SE REPOSICIONAN, DEBEN REBOTAR
+
+                //Creamos la tangente del punto de impacto en base a los circulos que tenemos
+                //Y le damos un valor perpendicular al que ya tiene
+            sf::Vector2f vector_tangente;
+                //El vector perpendicular a (x, y) == (-y, x)
+            vector_tangente.x = objeto_a_colisionar.bola.getPosition().y - this->bola.getPosition().y;
+            vector_tangente.y = -(objeto_a_colisionar.bola.getPosition().x - this->bola.getPosition().x);
+
+                //Se normaliza el vector tangente (Dandole una longitud de 1)
+            sf::Vector2f Normalize(vector_tangente);
+
+                //Ahora necesitamos la LONGITUD del componente de velocidad paralelo a la tangente
+                //Para eso, sacamos la velocidad relativa
+            sf::Vector2f velocidad_relativa(
+                objeto_a_colisionar.velocidad.x - this->velocidad.x, //Velocidad en x
+                objeto_a_colisionar.velocidad.y - this->velocidad.y // Velocidad en y
+            ); 
+
+                //La LONGITUD del componente de velocidad paralelo a la tangente se obtiene 
+                //haciendo la multiplicacion escalar de la velocidad relativa y la tangente
+            float longitud = (velocidad_relativa.x * vector_tangente.x) + (velocidad_relativa.y * vector_tangente.y);
+
+                //Ahora multiplicamos la tangente ya normalizada por la longitud, 
+                //para así obtener el componente de velocidad de la tangente
+            sf::Vector2f componente_velocidad_en_tangente;
+            componente_velocidad_en_tangente.x = vector_tangente.x * longitud;
+            componente_velocidad_en_tangente.y = vector_tangente.y * longitud;
+
+                //Finalmente sacamos esto que es re importante, mira que importante que es.
+            sf::Vector2f componente_velocidad_perpendicular_a_tangente = velocidad_relativa - componente_velocidad_en_tangente;
+
+            /*
+                La colision está lista, ahora decidimos si queremos que nuestra bola (La que llamó a la funcion)
+                debe rebotar y  mover al objeto con el que chocó (ej: choca contra otra bola), 
+                o solo va a rebotar contra el (ej: pared, bumper, flipper)
+            */
+            switch (tipo_de_colision)
+            {
+                case 1:
+                {
+                    //Hace que rebote solo nuestra bola
+                    this->velocidad.x -= 2 * componente_velocidad_perpendicular_a_tangente.x;
+                    this->velocidad.y -= 2 * componente_velocidad_perpendicular_a_tangente.y;
+
+                    break;
+                }
+                case 2:
+                {
+                    //Hace que reboten ambos objetos entre si
+                    this->velocidad.x -= componente_velocidad_perpendicular_a_tangente.x;
+                    this->velocidad.y -= componente_velocidad_perpendicular_a_tangente.y;
+
+                    objeto_a_colisionar.velocidad.x += componente_velocidad_perpendicular_a_tangente.x;
+                    objeto_a_colisionar.velocidad.y += componente_velocidad_perpendicular_a_tangente.y;
+
+                    break;
+                }
+            }
+
+        }
 }

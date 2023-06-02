@@ -1,9 +1,7 @@
 #include "Manager.h"
 #include "Juego.h"
 #include "TextureManager.h"
-#include "Bola.h"
 
-//
 void Manager::Init_Window()
 {
 	this->ventana = nullptr;
@@ -178,9 +176,6 @@ void Manager::Iniciar_Juego()
 	bool loop_juego = true;
 	Juego instancia_juego;
 
-	//CREA UNA BOLA
-	Bola bola;
-
 	sf::Clock clock;
 	
 	while (loop_juego)
@@ -199,23 +194,9 @@ void Manager::Iniciar_Juego()
 			loop_juego = instancia_juego.Update(deltaTime);
 
 			clock.restart();
-
-			//MUEVE LA BOLA
-			bola.mover(deltaTime);
-
 		}
 
-		// Comprobar colisión con otro objeto (ejemplo: una paleta)
-		sf::RectangleShape paleta(sf::Vector2f(100.f, 20.f));
-		paleta.setFillColor(sf::Color::Green);
-		paleta.setPosition(150.f, 250.f);
-		bola.comprobarColision(paleta.getGlobalBounds());
-		
-
 		this->ventana->clear();
-
-		bola.dibujar(this->ventana);
-		this->ventana->draw(paleta);
 
 		this->ventana->display();
 	}
