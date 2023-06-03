@@ -1,14 +1,15 @@
-#include "Flippers.h"
+ #include "Flippers.h"
 
 void Flippers::Init_Flippers()
 {
-	this->flipper.setSize(sf::Vector2f(200, 30));
+	_texture.loadFromFile("flipper.png");
+	_sprite.setTexture(_texture);
+	_sprite.setPosition(50, 426);
 
-	this->flipper.setPosition(100, 600);
-
-	this->flipper.setFillColor(sf::Color::Green);
-
-	this->velocidad = 5.f;
+	_texture2.loadFromFile("flipper2.png");
+	_sprite2.setTexture(_texture2);
+	_sprite2.setPosition(450, 426);
+	
 }
 
 Flippers::Flippers()
@@ -18,22 +19,36 @@ Flippers::Flippers()
 
 void Flippers::Mover_Izquierda() 
 {
-    flipper.move(-velocidad, 0.f);
+	
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {
+		_sprite.setOrigin(_sprite.getTexture()->getSize().x/20,_sprite.getTexture()->getSize().y/100);
+		_sprite.setRotation(-45);
+	}
+	else {
+		_sprite.setRotation(0);
+	}
 }
 
-void Flippers::Mover_Derecha() 
+void Flippers::Mover_Derecha()
 {
-    flipper.move(velocidad, -5.f);
+	
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::X)) {
+		_sprite2.setOrigin(_sprite2.getTexture()->getSize().x, _sprite2.getTexture()->getSize().y/100);
+		_sprite2.setRotation(45);
+	}
+	else {
+		_sprite2.setRotation(0);
+	}
+
 }
-
-
 
 void Flippers::Dibujar(sf::RenderWindow*& ventana) 
 {
-    ventana->draw(flipper);
+    ventana->draw(_sprite);
 }
 
-sf::FloatRect Flippers::Get_Bounds() const 
-{
-    return flipper.getGlobalBounds();
+void Flippers::Dibujar2(sf::RenderWindow*& ventana)
+{	
+	ventana->draw(_sprite2);
 }
+

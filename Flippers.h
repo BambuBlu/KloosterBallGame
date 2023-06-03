@@ -5,8 +5,13 @@ class Flippers
 {
 
     private:
-        sf::RectangleShape flipper;
-        float velocidad;
+           
+        sf::Sprite _sprite;
+        sf::Texture _texture;
+
+        sf::Sprite _sprite2;
+        sf::Texture _texture2;
+        
 
         void Init_Flippers();
 
@@ -17,9 +22,11 @@ class Flippers
 
         void Mover_Derecha();
 
-        void Mover_Flipper();
+        //void Mover_Flipper();
 
         void Dibujar(sf::RenderWindow*&);
+        void Dibujar2(sf::RenderWindow*& ventana);
+        
 
-        sf::FloatRect Get_Bounds() const;
+        
 };

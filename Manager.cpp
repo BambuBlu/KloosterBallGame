@@ -182,6 +182,7 @@ void Manager::Iniciar_Juego()
 	sf::Clock clock;
 	
 	Bola bola_de_prueba;
+	Flippers fliper_1,fliper_2;
 
 
 	while (loop_juego)
@@ -204,14 +205,20 @@ void Manager::Iniciar_Juego()
 			bola_de_prueba.Aplicar_Gravedad(deltaTime);
 
 			bola_de_prueba.Mover(deltaTime);
+			
+			fliper_1.Mover_Izquierda();
 
+			fliper_2.Mover_Derecha();
+			
 			bola_de_prueba.comprobarLimites();
-
 
 		}
 
-
 		this->ventana->clear();
+
+		fliper_1.Dibujar(this->ventana);
+
+		fliper_2.Dibujar2(this->ventana);
 
 		bola_de_prueba.Dibujar(this->ventana);
 
