@@ -4,28 +4,40 @@
 #include "Enemigos.h"
 #include "ElementoDeJuego.h"
 #include "Juego.h"
+#include "Flippers.h"
 
 /*
-* Conceptos proximamente aplicables a la bola
-		int vidas;
-		int daño;
-		bool esta_vivo;
-		void Quitar_Vida(Enemigos);
+	Conceptos proximamente aplicables a la bola
+		-int vidas;
+		-int daño;
+		-bool esta_vivo;
+		-void Quitar_Vida(Enemigos);
 */
 
-class Bola 
+class Bola
 {
-    private:
-		sf::CircleShape bola;
+private:
+	sf::CircleShape bola;
 
-		sf::Vector2f velocidad;
+	sf::Vector2f velocidad;
 
+	float gravedad;
 
-		void InitBola();
+	void InitBola();
 
-    public:
-		Bola();
-		void Mover(float deltaTime);
-		void Dibujar(sf::RenderWindow*& ventana);
-		void ComprobarColision(Bola&, int);
+public:
+	Bola();
+
+	void Mover(float deltaTime);
+
+	void Dibujar(sf::RenderWindow*& ventana);
+
+	void Aplicar_Gravedad(float deltaTime);
+
+	void Comprobar_Colision_Bolas(Bola&, int);
+
+	void Comprobar_Colision(const Flippers objeto);
+
+	void comprobarLimites();
+
 };

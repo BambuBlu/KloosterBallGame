@@ -1,7 +1,7 @@
 #include "Juego.h"
 #include "TextureManager.h"
-
-
+#include "Bola.h"
+#include "Flippers.h"
 //Inicializar variables en JUEGO
 void Juego::Init_Variables()
 {
@@ -52,6 +52,7 @@ void Juego::Reiniciar_Puntaje()
 
 bool Juego::Update(float deltaTime)
 {
+
 
 	return true;
 }

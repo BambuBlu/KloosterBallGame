@@ -1,12 +1,16 @@
 #include "Bola.h"
+#include "Flippers.h"
 
-//SEGUNDA BOLA (Usando SFML como ayuda)
 void Bola::InitBola()
 {
-	this->bola.setRadius(10);
-	this->bola.setPosition(100, 150);
-	this->velocidad.x = 5;
-	this->velocidad.y = 5;
+    this->bola.setRadius(10);
+    this->bola.setPosition(50, 15);
+    this->bola.setFillColor(sf::Color::White);
+
+    this->velocidad.x = 200;
+	this->velocidad.y = 300;
+
+    this->gravedad = 10.f;
 }
 
 Bola::Bola() 
@@ -24,7 +28,7 @@ void Bola::Dibujar(sf::RenderWindow*& ventana)
 	ventana->draw(bola);
 }
 
-void Bola::ComprobarColision(Bola& objeto_a_colisionar, int tipo_de_colision = 1)
+void Bola::Comprobar_Colision_Bolas(Bola& objeto_a_colisionar, int tipo_de_colision = 1)
 {
     /*
     Esta funcion comprueba colisiones entre dos bolas,
@@ -135,4 +139,33 @@ void Bola::ComprobarColision(Bola& objeto_a_colisionar, int tipo_de_colision = 1
             }
 
         }
+}
+
+void Bola::Aplicar_Gravedad(float deltaTime) 
+{
+    this->velocidad.y += this->gravedad * deltaTime;
+}
+
+void Bola::comprobarLimites() 
+{
+     float factorRebote = 0.8f;
+
+        if (this->bola.getGlobalBounds().left < 0 || this->bola.getGlobalBounds().left + this->bola.getGlobalBounds().width > 480) 
+        {
+            this->velocidad.x = -(this->velocidad.x);  // Invertir la dirección horizontal
+
+            this->velocidad.x *= factorRebote;  // Disminuir la velocidad por el factor de rebote
+        }
+
+        if (this->bola.getGlobalBounds().top < 0 || this->bola.getGlobalBounds().top + this->bola.getGlobalBounds().height > 854) 
+        {
+            this->velocidad.y = -(this->velocidad.y);  // Invertir la dirección vertical
+
+            this->velocidad.y *= factorRebote;  // Disminuir la velocidad por el factor de rebote
+        }
+}
+
+void Bola::Comprobar_Colision(const Flippers objeto)
+{
+
 }

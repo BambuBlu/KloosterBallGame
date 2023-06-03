@@ -1,6 +1,9 @@
 #include "Manager.h"
 #include "Juego.h"
 #include "TextureManager.h"
+#include "Bola.h"
+#include "Flippers.h"
+
 
 void Manager::Init_Window()
 {
@@ -178,6 +181,9 @@ void Manager::Iniciar_Juego()
 
 	sf::Clock clock;
 	
+	Bola bola_de_prueba;
+
+
 	while (loop_juego)
 	{
 		//Este if maneja el cierre del juego
@@ -194,9 +200,20 @@ void Manager::Iniciar_Juego()
 			loop_juego = instancia_juego.Update(deltaTime);
 
 			clock.restart();
+
+			bola_de_prueba.Aplicar_Gravedad(deltaTime);
+
+			bola_de_prueba.Mover(deltaTime);
+
+			bola_de_prueba.comprobarLimites();
+
+
 		}
 
+
 		this->ventana->clear();
+
+		bola_de_prueba.Dibujar(this->ventana);
 
 		this->ventana->display();
 	}

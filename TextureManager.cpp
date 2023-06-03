@@ -1,5 +1,4 @@
 
-
 #include "TextureManager.h"
 #include <SFML/Graphics.hpp>
 #include <string>

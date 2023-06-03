@@ -1,6 +1,2 @@
 ﻿  Bola.cpp
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Bola.cpp(49,32): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Bola.cpp(56,43): error C3892: 'circle2': no se puede asignar a una variable constante
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Bola.cpp(57,43): error C3892: 'circle2': no se puede asignar a una variable constante
-  Manager.cpp
-  Generando código...
+  KloosterBallGame.vcxproj -> C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\KloosterBallGame.exe

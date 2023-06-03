@@ -1,17 +1,25 @@
 #pragma once
+#include <SFML/Graphics.hpp>
 
-class Flippers
+class Flippers 
 {
-	private:
-		float posicion;
-		float orientacion;
 
-		void Init_Flippers();
+    private:
+        sf::RectangleShape flipper;
+        float velocidad;
 
-	public:
-		Flippers();
-		virtual ~Flippers();
+        void Init_Flippers();
 
-		void Mover();
+    public:
+        Flippers();
+
+        void Mover_Izquierda();
+
+        void Mover_Derecha();
+
+        void Mover_Flipper();
+
+        void Dibujar(sf::RenderWindow*&);
+
+        sf::FloatRect Get_Bounds() const;
 };
-

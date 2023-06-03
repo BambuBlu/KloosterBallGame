@@ -2,8 +2,13 @@
 
 void Flippers::Init_Flippers()
 {
-	this->posicion = 0;
-	this->orientacion = 0;
+	this->flipper.setSize(sf::Vector2f(200, 30));
+
+	this->flipper.setPosition(100, 600);
+
+	this->flipper.setFillColor(sf::Color::Green);
+
+	this->velocidad = 5.f;
 }
 
 Flippers::Flippers()
@@ -11,13 +16,24 @@ Flippers::Flippers()
 	this->Init_Flippers();
 }
 
-Flippers::~Flippers()
+void Flippers::Mover_Izquierda() 
 {
-
+    flipper.move(-velocidad, 0.f);
 }
 
-//Funciones Publicas de FLIPPER
-void Flippers::Mover()
+void Flippers::Mover_Derecha() 
 {
+    flipper.move(velocidad, -5.f);
+}
 
+
+
+void Flippers::Dibujar(sf::RenderWindow*& ventana) 
+{
+    ventana->draw(flipper);
+}
+
+sf::FloatRect Flippers::Get_Bounds() const 
+{
+    return flipper.getGlobalBounds();
 }
