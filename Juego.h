@@ -11,6 +11,7 @@
 #include "ElementoDeJuego.h"
 #include "Bola.h"
 #include "Flippers.h"
+#include <list>
 
 
 class Juego
@@ -33,10 +34,8 @@ class Juego
 		virtual ~Juego();
 		//
 
-		void Actualizar_Puntaje(int);
+		bool Update(float, std::list<Bola>, std::list<Bola>::iterator);
 
-		void Reiniciar_Puntaje();
-
-		bool Update(float);
+		void Dibujar(RenderWindow*, std::list<Bola>, std::list<Bola>::iterator, Flippers, Flippers);
 
 };

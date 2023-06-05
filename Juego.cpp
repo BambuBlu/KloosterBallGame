@@ -21,25 +21,24 @@ Juego::~Juego()
 	 this->ventana.close();
 }
 
-void Juego::Actualizar_Puntaje(int _puntos)
+bool Juego::Update(float deltaTime, std::list<Bola> bolas, std::list<Bola>::iterator bolasIterador)
 {
-	this->puntaje += _puntos;
-}
-
-void Juego::Reiniciar_Puntaje()
-{
-	this->puntaje = 0;
-}
-
-/*
-	Funcion principal para la actualizacion de la logica del juego
-
-	La variable "float deltaTime" indica cuantos segundos pasan desde el ultimo llamado
-	Y es utilizado para el calculo de fisicas
-*/
-
-bool Juego::Update(float deltaTime)
-{
+	for (bolasIterador = bolas.begin(); bolasIterador != bolas.end(); bolasIterador++)
+	{
+		bolasIterador->cuerpo.update(deltaTime);
+	}
 
 	return true;
+}
+
+void Juego::Dibujar(RenderWindow* ventana, std::list<Bola> bolas, std::list<Bola>::iterator bolasIterador, Flippers fliper_1, Flippers fliper_2)
+{
+	for (bolasIterador = bolas.begin(); bolasIterador != bolas.end(); bolasIterador++)
+	{
+		ventana->draw(*bolasIterador);
+	}
+
+	fliper_1.Dibujar(ventana);
+
+	fliper_2.Dibujar2(ventana);
 }

@@ -3,7 +3,11 @@
 #include "TextureManager.h"
 #include "Bola.h"
 #include "Flippers.h"
+#include <list>
 
+
+std::list<Bola> bolas;
+std::list<Bola>::iterator bolasIterador;
 
 void Manager::Init_Window()
 {
@@ -181,17 +185,12 @@ void Manager::Iniciar_Juego()
 
 	sf::Clock clock;
 
-	sf::Vector2f posicion; posicion.x = 34; posicion.y = 55;
-	sf::Vector2f velocidad; velocidad.x = 0; velocidad.y = -60;
-	sf::Vector2f aceleracion; aceleracion.x = 0; aceleracion.y = 20;
-	Bola bola = Bola(posicion, velocidad, aceleracion, 0.9f);
-
 	Flippers fliper_1,fliper_2;
 
 
 	while (loop_juego)
 	{
-		loop_juego = this->EventosTeclas(bola, fliper_1, fliper_2);
+		loop_juego = this->EventosTeclas(fliper_1, fliper_2);
 
 		this->ventana->clear();
 
@@ -203,22 +202,19 @@ void Manager::Iniciar_Juego()
 
 			std::cout << "Entro al if(tInterval...). Valor deltaTime: " << deltaTime << endl;
 
-			loop_juego = instancia_juego.Update(deltaTime);
+			loop_juego = instancia_juego.Update(deltaTime, bolas, bolasIterador);
 
 			clock.restart();
-
 		}
 
-		fliper_1.Dibujar(this->ventana);
-
-		fliper_2.Dibujar2(this->ventana);
+		instancia_juego.Dibujar(ventana, bolas, bolasIterador, fliper_1, fliper_2);
 
 		this->ventana->display();
 	}
 	std::cout << "Paso el While y se va de la funcion" << endl;
 }
 
-bool Manager::EventosTeclas(Bola bola, Flippers fliper_1, Flippers fliper_2)
+bool Manager::EventosTeclas(Flippers fliper_1, Flippers fliper_2)
 {
 	while (this->ventana->pollEvent(evento))
 	{
@@ -249,7 +245,12 @@ bool Manager::EventosTeclas(Bola bola, Flippers fliper_1, Flippers fliper_2)
 		}
 		else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Space)
 		{
-
+			sf::Vector2f posicion; posicion.x = 50; posicion.y = 15;
+			sf::Vector2f velocidad; velocidad.x = 0; velocidad.y = -60;
+			sf::Vector2f aceleracion; aceleracion.x = 0; aceleracion.y = 20;
+			Bola bola = Bola(posicion, velocidad, aceleracion, 0.9f);
+			bola.setColor(sf::Color::White);
+			bolas.push_back(bola);
 		}
 	}
 

@@ -27,7 +27,7 @@ class Manager
 	public:
 		Manager();
 
-		bool EventosTeclas(Bola, Flippers, Flippers);
+		bool EventosTeclas(Flippers, Flippers);
 
 		virtual ~Manager();
 

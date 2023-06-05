@@ -67,8 +67,6 @@ void Cuerpo::setMasa(const float _masa)
     else {
         masaInversa = 1.0f / masaInversa;
     }
-
-    std::cout << "Masa Inversa: " << masaInversa;
 }
 
 void Cuerpo::setRadioAngulo(const float _angulo)

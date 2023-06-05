@@ -44,7 +44,15 @@ void Flippers::Mover_Derecha()
 
 void Flippers::Mover(std::string evento)
 {
-
+	if (evento == "arriba") 
+	{
+		_sprite.setOrigin(_sprite.getTexture()->getSize().x / 20, _sprite.getTexture()->getSize().y / 100);
+		_sprite.setRotation(-45);
+	}
+	else if(evento == "abajo")
+	{
+		_sprite.setRotation(0);
+	}
 }
 
 void Flippers::Dibujar(sf::RenderWindow*& ventana)
