@@ -21,18 +21,6 @@ Juego::~Juego()
 	 this->ventana.close();
 }
 
-
-
-void Juego::Lanzar_Bola()
-{
-
-}
-
-void Juego::Mover_Flippers(/*direccion*/)
-{
-
-}
-
 void Juego::Actualizar_Puntaje(int _puntos)
 {
 	this->puntaje += _puntos;
@@ -53,11 +41,5 @@ void Juego::Reiniciar_Puntaje()
 bool Juego::Update(float deltaTime)
 {
 
-
 	return true;
-}
-
-void Juego::Notificar_Evento(Tipo_De_Evento evento)
-{
-
 }

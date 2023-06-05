@@ -18,9 +18,11 @@ class Flippers
     public:
         Flippers();
 
-        void Mover_Izquierda();
+        /*void Mover_Izquierda();
 
-        void Mover_Derecha();
+        void Mover_Derecha();*/
+
+        void Mover(std::string);
 
         //void Mover_Flipper();
 

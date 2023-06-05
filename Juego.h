@@ -9,11 +9,8 @@
 #include <SFML/Network.hpp>
 
 #include "ElementoDeJuego.h"
-
-enum Tipo_De_Evento 
-{
-	bola_destruida,
-};
+#include "Bola.h"
+#include "Flippers.h"
 
 
 class Juego
@@ -26,11 +23,6 @@ class Juego
 
 		//VARIABLES Y OBJETOS DEL JUEGO
 		int puntaje;
-		//Mapas mapa_de_juego;
-
-		//Colocar array dinamico con ElementoDeJuego
-		//Ejemplo:
-		//ElementoDeJuego[] elementos_de_juego;
 
 		//Item inventario;
 		void Init_Variables();
@@ -40,9 +32,6 @@ class Juego
 		Juego();
 		virtual ~Juego();
 		//
-		void Lanzar_Bola();
-
-		void Mover_Flippers(/*direccion*/);
 
 		void Actualizar_Puntaje(int);
 
@@ -50,5 +39,4 @@ class Juego
 
 		bool Update(float);
 
-		void Notificar_Evento(Tipo_De_Evento);
 };

@@ -2,6 +2,8 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "Flippers.h"
+#include "Bola.h"
 
 using namespace std;
 using namespace sf;
@@ -21,10 +23,11 @@ class Manager
 
 		void Init_Window();
 
-		bool Se_Pide_Cerrar();
 
 	public:
 		Manager();
+
+		bool EventosTeclas(Bola, Flippers, Flippers);
 
 		virtual ~Manager();
 

@@ -180,15 +180,20 @@ void Manager::Iniciar_Juego()
 	Juego instancia_juego;
 
 	sf::Clock clock;
-	
-	Bola bola_de_prueba;
+
+	sf::Vector2f posicion; posicion.x = 34; posicion.y = 55;
+	sf::Vector2f velocidad; velocidad.x = 0; velocidad.y = -60;
+	sf::Vector2f aceleracion; aceleracion.x = 0; aceleracion.y = 20;
+	Bola bola = Bola(posicion, velocidad, aceleracion, 0.9f);
+
 	Flippers fliper_1,fliper_2;
 
 
 	while (loop_juego)
 	{
-		//Este if maneja el cierre del juego
-		loop_juego = this->Se_Pide_Cerrar();
+		loop_juego = this->EventosTeclas(bola, fliper_1, fliper_2);
+
+		this->ventana->clear();
 
 		sf::Time tInterval = clock.getElapsedTime();
 
@@ -202,50 +207,49 @@ void Manager::Iniciar_Juego()
 
 			clock.restart();
 
-			bola_de_prueba.Aplicar_Gravedad(deltaTime);
-
-			bola_de_prueba.Mover(deltaTime);
-			
-			fliper_1.Mover_Izquierda();
-
-			fliper_2.Mover_Derecha();
-			
-			bola_de_prueba.comprobarLimites();
-
 		}
-
-		this->ventana->clear();
 
 		fliper_1.Dibujar(this->ventana);
 
 		fliper_2.Dibujar2(this->ventana);
-
-		bola_de_prueba.Dibujar(this->ventana);
 
 		this->ventana->display();
 	}
 	std::cout << "Paso el While y se va de la funcion" << endl;
 }
 
-bool Manager::Se_Pide_Cerrar()
+bool Manager::EventosTeclas(Bola bola, Flippers fliper_1, Flippers fliper_2)
 {
-	if (this->ventana->pollEvent(evento))
+	while (this->ventana->pollEvent(evento))
 	{
-		switch (this->evento.type)
+		if (this->evento.type == sf::Event::Closed)
 		{
-			case sf::Event::Closed:
-			{
-				this->ventana->close();
+			this->ventana->close();
+			return false;
+		}
+		else if(this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Escape)
+		{
 				return false;
-			}
-			case sf::Event::KeyPressed:
-			{
-				if (this->evento.key.code == sf::Keyboard::Escape)
-				{
-					std::cout << "Entro al switch(this->evento.type)" << endl;
-					return false;
-				}
-			}
+		}
+		else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Z)
+		{
+			fliper_1.Mover("arriba");
+		}
+		else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::X)
+		{
+			fliper_2.Mover("arriba");
+		}
+		else if (this->evento.type == sf::Event::KeyReleased && evento.key.code == sf::Keyboard::Z)
+		{
+			fliper_1.Mover("abajo");
+		}
+		else if (this->evento.type == sf::Event::KeyReleased && evento.key.code == sf::Keyboard::X)
+		{
+			fliper_2.Mover("abajo");
+		}
+		else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Space)
+		{
+
 		}
 	}
 

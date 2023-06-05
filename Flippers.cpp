@@ -4,11 +4,11 @@ void Flippers::Init_Flippers()
 {
 	_texture.loadFromFile("flipper.png");
 	_sprite.setTexture(_texture);
-	_sprite.setPosition(50, 426);
+	_sprite.setPosition(50, 800);
 
 	_texture2.loadFromFile("flipper2.png");
 	_sprite2.setTexture(_texture2);
-	_sprite2.setPosition(450, 426);
+	_sprite2.setPosition(450, 800);
 	
 }
 
@@ -17,7 +17,7 @@ Flippers::Flippers()
 	this->Init_Flippers();
 }
 
-void Flippers::Mover_Izquierda() 
+/*void Flippers::Mover_Izquierda()
 {
 	
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {
@@ -40,9 +40,14 @@ void Flippers::Mover_Derecha()
 		_sprite2.setRotation(0);
 	}
 
+}*/
+
+void Flippers::Mover(std::string evento)
+{
+
 }
 
-void Flippers::Dibujar(sf::RenderWindow*& ventana) 
+void Flippers::Dibujar(sf::RenderWindow*& ventana)
 {
     ventana->draw(_sprite);
 }

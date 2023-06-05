@@ -1,43 +1,30 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "Obstaculos.h"
-#include "Enemigos.h"
-#include "ElementoDeJuego.h"
-#include "Juego.h"
-#include "Flippers.h"
 
-/*
-	Conceptos proximamente aplicables a la bola
-		-int vidas;
-		-int daño;
-		-bool esta_vivo;
-		-void Quitar_Vida(Enemigos);
-*/
+#include "FisicasCirculo.h"
+#include "ParametrosCuerpos.h"
 
-class Bola
+
+class Bola : public sf::Drawable
 {
 private:
-	sf::CircleShape bola;
-
-	sf::Vector2f velocidad;
-
-	float gravedad;
-
-	void InitBola();
-
+	FisicasCirculo circulo;
+	sf::Color color;
 public:
+	Cuerpo cuerpo;
 	Bola();
-
-	void Mover(float deltaTime);
-
+	Bola(const sf::Vector2f, const sf::Vector2f, const sf::Vector2f, const float);
+	virtual void draw(sf::RenderTarget&, sf::RenderStates) const;
+	sf::Color getColor() const;
+	void setColor(const sf::Color& );
+	
+	
+	/*void Mover(float deltaTime);
 	void Dibujar(sf::RenderWindow*& ventana);
-
-	void Aplicar_Gravedad(float deltaTime);
-
 	void Comprobar_Colision_Bolas(Bola&, int);
-
 	void Comprobar_Colision(const Flippers objeto);
+	void impulso_prueba();
+	void comprobarLimites();*/
 
-	void comprobarLimites();
-
+	Bola(const FisicasCirculo& circulo, const sf::Color& color, const Cuerpo& cuerpo);
 };
