@@ -1,19 +1,25 @@
 #pragma once
 
+enum TipoEnemigo 
+{
+    redondo,
+    rectangular
+};
+
 class Enemigos
 {
-	private:
-		float posicion;
-		float tamaño;
-		int vida;
-		bool esta_vivo;
-		void Init_Enemigo();
+protected:
+    TipoEnemigo tipo;
+    int puntos;
 
-	public:
-		Enemigos();
-		virtual ~Enemigos();
+public:
+    Enemigos();
+    Enemigos(TipoEnemigo _tipo, int _puntos);
 
-		void Golpear_Bola();
-		void Bajar_Vida();
+    void set_tipo(TipoEnemigo _tipo);
+    void set_puntos(int _puntos); 
+
+    TipoEnemigo get_tipo(); 
+    int get_puntos();
 };
 

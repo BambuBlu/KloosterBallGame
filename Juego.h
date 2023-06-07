@@ -1,18 +1,21 @@
 #pragma once
 
-#include <iostream> 
-
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
 #include <SFML/Network.hpp>
+
+#include "TextureManager.h"
 #include "ElementoDeJuego.h"
+#include <list>
+
+#include "Jugadores.h"
 #include "Bola.h"
 #include "Flippers.h"
-#include <list>
-#include "Jugadores.h"
 
+std::list<Bola> bolas;  
+std::list<Bola>::iterator bolasIterador;
 
 class Juego
 {
@@ -21,17 +24,23 @@ class Juego
 		sf::RenderWindow ventana;
 		sf::VideoMode video_mode;
 		sf::Event evento;
-		Jugadores jugador;
-		void Init_Variables();
+
+        ///Game Logic
+
+        bool bool_En_Juego = false;
+        bool bool_Fin_Juego = false;
+        int puntaje_total = 0;
+        int bolas_restantes = 3;
+        int puntaje_mas_alto = 0;
 
 	public:
-		Juego();
-		virtual ~Juego();
-	
-		bool Update(float deltaTime, std::list<Bola> bolas, std::list<Bola>::iterator bolasIterador, Flippers flipper_1, Flippers flipper_2);
-
-		void Dibujar(sf::RenderWindow*, std::list<Bola>, std::list<Bola>::iterator, Flippers, Flippers);
-
-		//bool Sumar_Puntaje(Jugadores);
-		//bool Guardar_Puntaje(Jugadores);
+        Juego();
+        void restar_vida();
 };
+
+
+
+
+
+
+

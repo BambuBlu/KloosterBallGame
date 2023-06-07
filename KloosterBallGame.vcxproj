@@ -145,6 +145,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="Mapas.cpp" />
+    <ClCompile Include="Multiple.cpp" />
     <ClCompile Include="Obstaculos.cpp" />
     <ClCompile Include="ParametrosCuerpos.cpp" />
     <ClCompile Include="Pistones.cpp" />
@@ -152,7 +153,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bola.h" />
-    <ClInclude Include="ElementoDeJuego.h" />
     <ClInclude Include="Enemigos.h" />
     <ClInclude Include="FisicasCirculo.h" />
     <ClInclude Include="FisicasPorTipo.h" />
@@ -161,6 +161,7 @@
     <ClInclude Include="Jugadores.h" />
     <ClInclude Include="Manager.h" />
     <ClInclude Include="Mapas.h" />
+    <ClInclude Include="Multiple.h" />
     <ClInclude Include="Obstaculos.h" />
     <ClInclude Include="ParametrosCuerpos.h" />
     <ClInclude Include="Pistones.h" />

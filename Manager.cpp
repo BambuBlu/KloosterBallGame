@@ -6,9 +6,6 @@
 #include <list>
 
 
-std::list<Bola> bolas;
-std::list<Bola>::iterator bolasIterador;
-
 void Manager::Init_Window()
 {
 	this->ventana = nullptr;
@@ -185,21 +182,6 @@ void Manager::Iniciar_Juego()
 
 	sf::Clock clock;
 
-	sf::Vector2f posicion(30.f, 500.f);
-
-	sf::Vector2f posicion2(260.f, 500.f);
-
-	sf::Vector2f aceleracion(1.f, 1.f);
-
-	sf::Vector2f velocidad(1.f, 1.f);
-
-	float angulo = 0.5;
-
-	Flippers flipper_1(posicion, aceleracion, velocidad,angulo,false);
-
-	Flippers flipper_2(posicion2, aceleracion, velocidad,angulo, true);
-
-
 	while (loop_juego)
 	{
 		loop_juego = this->EventosTeclas(flipper_1, flipper_2);
@@ -219,8 +201,6 @@ void Manager::Iniciar_Juego()
 		}
 
 		this->ventana->clear();
-
-		instancia_juego.Dibujar(this->ventana, bolas, bolasIterador, flipper_1, flipper_2);
 
 		this->ventana->display();
 

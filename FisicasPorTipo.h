@@ -2,18 +2,23 @@
 #define FISICASPORTIPO_H
 
 enum Tipo {
-    circulo
+    circulo,
+    aabb,
+    obb
 };
 
 
 class FisicasPorTipo
 {
-protected:
-    Tipo tipo;
-public:
-    FisicasPorTipo();
-    void setTipo(Tipo _tipo);
-    Tipo getTipo();
+    protected:
+        Tipo tipo;
+
+    public:
+        FisicasPorTipo();
+
+        void setTipo(Tipo _tipo);
+
+        Tipo getTipo();
 };
 
 

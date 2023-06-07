@@ -15,16 +15,13 @@ public:
 	Bola();
 	Bola(const sf::Vector2f, const sf::Vector2f, const sf::Vector2f, const float);
 	virtual void draw(sf::RenderTarget&, sf::RenderStates) const;
+
 	sf::Color getColor() const;
 	void setColor(const sf::Color& );
 	
-	
-	/*void Mover(float deltaTime);
-	void Dibujar(sf::RenderWindow*& ventana);
-	void Comprobar_Colision_Bolas(Bola&, int);
-	void Comprobar_Colision(const Flippers objeto);
-	void impulso_prueba();
-	void comprobarLimites();*/
-
 	Bola(const FisicasCirculo& circulo, const sf::Color& color, const Cuerpo& cuerpo);
 };
+
+
+
+

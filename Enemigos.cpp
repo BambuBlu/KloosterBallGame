@@ -1,33 +1,32 @@
 #include "Enemigos.h"
 
-//Inicializar ENEMIGO
-
-void Enemigos::Init_Enemigo()
-{
-	this->vida = 5;
-	this->tamaño = 0;
-	this->posicion = 0;
-	this->esta_vivo = true;
-}
-
 Enemigos::Enemigos()
 {
-	this->Init_Enemigo();
-}
-
-Enemigos::~Enemigos()
-{
 
 }
 
-//Funciones Publicas de MOB 	
-
-void  Enemigos::Golpear_Bola()
+Enemigos::Enemigos(TipoEnemigo _tipo, int _puntos)
 {
-
+    tipo = _tipo;
+    puntos = _puntos;
 }
 
-void Enemigos::Bajar_Vida()
+void Enemigos::set_tipo(TipoEnemigo _tipo)
 {
+    tipo = _tipo;
+}
 
+void Enemigos::set_puntos(int _puntos)
+{
+    puntos = _puntos;
+}
+
+TipoEnemigo Enemigos::get_tipo()
+{
+    return tipo;
+}
+
+int Enemigos::get_puntos()
+{
+    return puntos;
 }
