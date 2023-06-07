@@ -1,2 +1,19 @@
-﻿  Manager.cpp
-  KloosterBallGame.vcxproj -> E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\x64\Debug\KloosterBallGame.exe
+﻿  Bola.cpp
+  Flippers.cpp
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Flippers.cpp(11,24): warning C4305: 'argumento': truncamiento de 'double' a 'const float'
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Flippers.cpp(64,26): warning C4305: 'argumento': truncamiento de 'double' a 'const float'
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Flippers.cpp(70,26): warning C4305: 'argumento': truncamiento de 'double' a 'const float'
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Flippers.cpp(78,27): warning C4305: 'argumento': truncamiento de 'double' a 'const float'
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Flippers.cpp(84,27): warning C4305: 'argumento': truncamiento de 'double' a 'const float'
+  Juego.cpp
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(8,8): error C2039: "puntaje": no es un miembro de "Juego"
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(17,7): message : vea la declaración de 'Juego'
+  Jugadores.cpp
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Jugadores.cpp(5,2): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Jugadores.cpp(11,2): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  main.cpp
+  Manager.cpp
+  ParametrosCuerpos.cpp
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\ParametrosCuerpos.cpp(76,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\ParametrosCuerpos.cpp(157,19): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+  Generando código...

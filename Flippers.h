@@ -1,5 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "SetsGlobales.h"
+#include "ParametrosCuerpos.h"
 
 class Flippers 
 {
@@ -8,27 +10,16 @@ class Flippers
            
         sf::Sprite _sprite;
         sf::Texture _texture;
-
-        sf::Sprite _sprite2;
-        sf::Texture _texture2;
-        
-
-        void Init_Flippers();
+        bool en_lado_izquierdo; 
 
     public:
-        Flippers();
+        Cuerpo cuerpo;
 
-        /*void Mover_Izquierda();
-
-        void Mover_Derecha();*/
+        Flippers(const sf::Vector2f& _position, const sf::Vector2f& _aceleracion, const sf::Vector2f& _velocidad, float _angulo, bool _lado);
 
         void Mover(std::string);
 
-        //void Mover_Flipper();
+        void clampPaddle();
 
         void Dibujar(sf::RenderWindow*&);
-        void Dibujar2(sf::RenderWindow*& ventana);
-        
-
-        
 };

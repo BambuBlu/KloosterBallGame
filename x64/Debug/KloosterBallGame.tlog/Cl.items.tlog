@@ -1,12 +1,12 @@
-E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Bola.cpp;E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\x64\Debug\Bola.obj
-E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Enemigos.cpp;E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\x64\Debug\Enemigos.obj
-E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\FisicasPorTipo.cpp;E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\x64\Debug\FisicasPorTipo.obj
-E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Flippers.cpp;E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\x64\Debug\Flippers.obj
-E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Juego.cpp;E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\x64\Debug\Juego.obj
-E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\main.cpp;E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\x64\Debug\main.obj
-E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Manager.cpp;E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\x64\Debug\Manager.obj
-E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Mapas.cpp;E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\x64\Debug\Mapas.obj
-E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Obstaculos.cpp;E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\x64\Debug\Obstaculos.obj
-E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\ParametrosCuerpos.cpp;E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\x64\Debug\ParametrosCuerpos.obj
-E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Pistones.cpp;E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\x64\Debug\Pistones.obj
-E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\TextureManager.cpp;E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\x64\Debug\TextureManager.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Bola.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\Bola.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Enemigos.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\Enemigos.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\FisicasPorTipo.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\FisicasPorTipo.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Flippers.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\Flippers.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\Juego.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\main.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\main.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\Manager.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Mapas.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\Mapas.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Obstaculos.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\Obstaculos.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\ParametrosCuerpos.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\ParametrosCuerpos.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Pistones.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\Pistones.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\TextureManager.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\TextureManager.obj

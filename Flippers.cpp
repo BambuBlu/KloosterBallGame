@@ -1,67 +1,94 @@
  #include "Flippers.h"
 
-void Flippers::Init_Flippers()
+Flippers::Flippers(const sf::Vector2f& _position, const sf::Vector2f& _aceleracion, const sf::Vector2f& _velocidad, float _angulo ,bool _lado)
 {
+	cuerpo = Cuerpo();
+	cuerpo.setPosicion(_position);
+	cuerpo.setAceleracion(_aceleracion);
+	cuerpo.setVelocidad(_velocidad);
+	cuerpo.setMasa(0);
+	cuerpo.setInercia(0);
+	cuerpo.setRestitucion(0.2);
+
+	en_lado_izquierdo = _lado;
+
+	if (en_lado_izquierdo == true) 
+	{
+		cuerpo.setRadioAngulo(_angulo);
+	}
+	else 
+	{
+		cuerpo.setRadioAngulo(-_angulo);
+	}
+
 	_texture.loadFromFile("flipper.png");
 	_sprite.setTexture(_texture);
-	_sprite.setPosition(50, 800);
+	_sprite.setPosition(_position);
 
-	_texture2.loadFromFile("flipper2.png");
-	_sprite2.setTexture(_texture2);
-	_sprite2.setPosition(450, 800);
-	
 }
-
-Flippers::Flippers()
-{
-	this->Init_Flippers();
-}
-
-/*void Flippers::Mover_Izquierda()
-{
-	
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {
-		_sprite.setOrigin(_sprite.getTexture()->getSize().x/20,_sprite.getTexture()->getSize().y/100);
-		_sprite.setRotation(-45);
-	}
-	else {
-		_sprite.setRotation(0);
-	}
-}
-
-void Flippers::Mover_Derecha()
-{
-	
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::X)) {
-		_sprite2.setOrigin(_sprite2.getTexture()->getSize().x, _sprite2.getTexture()->getSize().y/100);
-		_sprite2.setRotation(45);
-	}
-	else {
-		_sprite2.setRotation(0);
-	}
-
-}*/
 
 void Flippers::Mover(std::string evento)
 {
 	if (evento == "arriba") 
 	{
-		_sprite.setOrigin(_sprite.getTexture()->getSize().x / 20, _sprite.getTexture()->getSize().y / 100);
-		_sprite.setRotation(-45);
+		if (en_lado_izquierdo == true)
+		{
+			cuerpo.AplicarAnguloDeImpulso(PADDLE_SPEED);
+		}
+		else 
+		{
+			cuerpo.AplicarAnguloDeImpulso(-PADDLE_SPEED);
+		}
 	}
-	else if(evento == "abajo")
+	else if (evento == "abajo")
 	{
-		_sprite.setRotation(0);
+		if (en_lado_izquierdo == true)
+		{
+			cuerpo.AplicarAnguloDeImpulso(-PADDLE_SPEED);
+		}
+		else
+		{
+			cuerpo.AplicarAnguloDeImpulso(PADDLE_SPEED);
+		}
 	}
+}
+
+void Flippers::clampPaddle()
+{
+
+	if (en_lado_izquierdo == true) 
+	{
+
+		if (cuerpo.getRadioAngulo() > PADDLE_MAX_ANGLE) 
+		{
+			cuerpo.setRestitucion(PADDLE_MAX_ANGLE);
+			cuerpo.setVelocidadAngular(0);
+		}
+
+		if (cuerpo.getRadioAngulo() < PADDLE_MIN_ANGLE) 
+		{
+			cuerpo.setRadioAngulo(PADDLE_MIN_ANGLE);
+			cuerpo.setVelocidadAngular(0);
+		}
+	}
+	else 
+	{
+		if (cuerpo.getRadioAngulo() < -PADDLE_MAX_ANGLE)
+		{
+			cuerpo.setRadioAngulo(-PADDLE_MAX_ANGLE);
+			cuerpo.setVelocidadAngular(0);
+		}
+
+		if (cuerpo.getRadioAngulo() > -PADDLE_MIN_ANGLE)
+		{
+			cuerpo.setRadioAngulo(-PADDLE_MIN_ANGLE);
+			cuerpo.setVelocidadAngular(0);
+		}
+	}
+
 }
 
 void Flippers::Dibujar(sf::RenderWindow*& ventana)
 {
     ventana->draw(_sprite);
 }
-
-void Flippers::Dibujar2(sf::RenderWindow*& ventana)
-{	
-	ventana->draw(_sprite2);
-}
-

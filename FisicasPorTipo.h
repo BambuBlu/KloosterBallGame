@@ -2,7 +2,7 @@
 #define FISICASPORTIPO_H
 
 enum Tipo {
-    ciruclo
+    circulo
 };
 
 

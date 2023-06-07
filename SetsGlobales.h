@@ -8,5 +8,4 @@
 #define MAX_VELOCITY_X 30
 #define MAX_VELOCITY_Y 30
 
-
 #endif 

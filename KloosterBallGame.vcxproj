@@ -141,6 +141,7 @@
     <ClCompile Include="FisicasPorTipo.cpp" />
     <ClCompile Include="Flippers.cpp" />
     <ClCompile Include="Juego.cpp" />
+    <ClCompile Include="Jugadores.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="Mapas.cpp" />
@@ -157,6 +158,7 @@
     <ClInclude Include="FisicasPorTipo.h" />
     <ClInclude Include="Flippers.h" />
     <ClInclude Include="Juego.h" />
+    <ClInclude Include="Jugadores.h" />
     <ClInclude Include="Manager.h" />
     <ClInclude Include="Mapas.h" />
     <ClInclude Include="Obstaculos.h" />

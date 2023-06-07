@@ -36,20 +36,23 @@ Cuerpo::Cuerpo(const sf::Vector2f& _posicion, const sf::Vector2f& _velocidad, co
 void Cuerpo::update(float deltaTime)
 {
     sf::Vector2f velocidadBase(velocidad + (aceleracion * deltaTime));
+
     posicion += ((getVelocidad() + velocidadBase) / 2.f) * deltaTime;
+
     velocidad = velocidadBase;
 
     float anguloNuevo = angulo + (velocidadAngular * deltaTime);
+
     setRadioAngulo(anguloNuevo);
 
-    if (velocidad.x > MAX_VELOCITY_X) {
+    if (velocidad.x > MAX_VELOCITY_X) 
+    {
         velocidad.x = (MAX_VELOCITY_X);
-
     }
-    else if (velocidad.y > MAX_VELOCITY_Y) {
+    else if (velocidad.y > MAX_VELOCITY_Y) 
+    {
         velocidad.y = (MAX_VELOCITY_Y);
     }
-
 }
 
 void Cuerpo::setRestitucion(float _restitucion) //!< Sets the restitution
@@ -59,7 +62,6 @@ void Cuerpo::setRestitucion(float _restitucion) //!< Sets the restitution
 
 void Cuerpo::setMasa(const float _masa)
 {
-
     masa = _masa;
     if (masa == 0.0f) {
         masaInversa = 0.0f;
@@ -72,13 +74,17 @@ void Cuerpo::setMasa(const float _masa)
 void Cuerpo::setRadioAngulo(const float _angulo)
 {
     const float rotacionEntera = 2 * M_PI;
+
     float anguloNuevo = _angulo;
-    while (std::abs(anguloNuevo) > rotacionEntera) {
+
+    while (std::abs(anguloNuevo) > rotacionEntera) 
+    {
         if (anguloNuevo > 0)
             anguloNuevo -= rotacionEntera;
         else
             anguloNuevo += rotacionEntera;
     }
+
     angulo = anguloNuevo;
 }
 
@@ -174,5 +180,5 @@ void Cuerpo::AplicarImpulso(const sf::Vector2f _impulso, const sf::Vector2f _con
 
 float Cuerpo::ProductoCruzado(const sf::Vector2f & _valor, const sf::Vector2f& _contacto) const
 {
-    return (_contacto.x * _valor.y) - (_contacto.y * _valor.x);;
+    return (_contacto.x * _valor.y) - (_contacto.y * _valor.x);
 }

@@ -38,9 +38,13 @@ Bola::Bola(const sf::Vector2f _posicion, const sf::Vector2f _velocidad, const sf
 void Bola::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
     sf::CircleShape Bola = sf::CircleShape(circulo.getRadio() * PIXELTOMETER, 15);
+
     Bola.setFillColor(getColor());
+
     Bola.setOrigin(circulo.getRadio() * PIXELTOMETER, circulo.getRadio() * PIXELTOMETER);
+
     Bola.setPosition(cuerpo.getPosicion().x * PIXELTOMETER, cuerpo.getPosicion().y * PIXELTOMETER);
+
     target.draw(Bola);
 }
 
@@ -59,7 +63,8 @@ Bola::Bola(const FisicasCirculo& circulo, const sf::Color& color, const Cuerpo& 
 
 }
 
-/*void Bola::Mover(float deltaTime)
+/*
+void Bola::Mover(float deltaTime)
 {
 	this->bola.move(velocidad * deltaTime);
 
@@ -72,9 +77,9 @@ Bola::Bola(const FisicasCirculo& circulo, const sf::Color& color, const Cuerpo& 
 void Bola::Dibujar(sf::RenderWindow*& ventana) 
 {
 	ventana->draw(bola);
-}*/
+}
 
-/*void Bola::Comprobar_Colision_Bolas(Bola& objeto_a_colisionar, int tipo_de_colision = 1)
+void Bola::Comprobar_Colision_Bolas(Bola& objeto_a_colisionar, int tipo_de_colision = 1)
 {
 
         float distancia_entre_circulos =
@@ -149,10 +154,10 @@ void Bola::Dibujar(sf::RenderWindow*& ventana)
             }
 
         }
-}*/
+}
 
 
-/*void Bola::comprobarLimites()
+void Bola::comprobarLimites()
 {
      float factorRebote = 0.8f;
 
@@ -182,8 +187,8 @@ void Bola::impulso_prueba()
 
 void Bola::Comprobar_Colision(const Flippers objeto)
 {
+*/
 
-}*/
 
 
 

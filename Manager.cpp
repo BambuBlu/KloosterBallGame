@@ -185,14 +185,25 @@ void Manager::Iniciar_Juego()
 
 	sf::Clock clock;
 
-	Flippers fliper_1,fliper_2;
+	sf::Vector2f posicion(30.f, 500.f);
+
+	sf::Vector2f posicion2(260.f, 500.f);
+
+	sf::Vector2f aceleracion(1.f, 1.f);
+
+	sf::Vector2f velocidad(1.f, 1.f);
+
+	float angulo = 0.5;
+
+	Flippers flipper_1(posicion, aceleracion, velocidad,angulo,false);
+
+	Flippers flipper_2(posicion2, aceleracion, velocidad,angulo, true);
 
 
 	while (loop_juego)
 	{
-		loop_juego = this->EventosTeclas(fliper_1, fliper_2);
+		loop_juego = this->EventosTeclas(flipper_1, flipper_2);
 
-		this->ventana->clear();
 
 		sf::Time tInterval = clock.getElapsedTime();
 
@@ -202,14 +213,17 @@ void Manager::Iniciar_Juego()
 
 			std::cout << "Entro al if(tInterval...). Valor deltaTime: " << deltaTime << endl;
 
-			loop_juego = instancia_juego.Update(deltaTime, bolas, bolasIterador);
+			loop_juego = instancia_juego.Update(deltaTime, bolas, bolasIterador, flipper_1, flipper_2);
 
 			clock.restart();
 		}
 
-		instancia_juego.Dibujar(ventana, bolas, bolasIterador, fliper_1, fliper_2);
+		this->ventana->clear();
+
+		instancia_juego.Dibujar(this->ventana, bolas, bolasIterador, flipper_1, flipper_2);
 
 		this->ventana->display();
+
 	}
 	std::cout << "Paso el While y se va de la funcion" << endl;
 }
@@ -245,12 +259,18 @@ bool Manager::EventosTeclas(Flippers fliper_1, Flippers fliper_2)
 		}
 		else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Space)
 		{
-			sf::Vector2f posicion; posicion.x = 50; posicion.y = 15;
-			sf::Vector2f velocidad; velocidad.x = 0; velocidad.y = -60;
-			sf::Vector2f aceleracion; aceleracion.x = 0; aceleracion.y = 20;
+			sf::Vector2f posicion; posicion.x = 50; posicion.y = 300;
+
+			sf::Vector2f velocidad; velocidad.x = 0; velocidad.y = -20;
+
+			sf::Vector2f aceleracion; aceleracion.x = 0; aceleracion.y = 0;
+
 			Bola bola = Bola(posicion, velocidad, aceleracion, 0.9f);
+
 			bola.setColor(sf::Color::White);
+
 			bolas.push_back(bola);
+
 		}
 	}
 
