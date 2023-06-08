@@ -2,7 +2,7 @@
 
 FisicasPorTipo::FisicasPorTipo()
 {
-
+	tipo = circulo;
 }
 
 void FisicasPorTipo::setTipo(Tipo _tipo)
@@ -12,6 +12,5 @@ void FisicasPorTipo::setTipo(Tipo _tipo)
 
 Tipo FisicasPorTipo::getTipo()
 {
-
 	return tipo;
 }

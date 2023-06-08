@@ -1,9 +1,5 @@
 #include "Manager.h"
-#include "Juego.h"
-#include "TextureManager.h"
-#include "Bola.h"
-#include "Flippers.h"
-#include <list>
+
 
 
 void Manager::Init_Window()
@@ -131,7 +127,7 @@ void Manager::Actualizar()
 	}
 }
 
-void Manager::Dibujar_Menu(RenderWindow* &window)
+void Manager::Dibujar_Menu(sf::RenderWindow* &window)
 {
 
 	for (int i = 0; i < max_main_menu; i++)
@@ -247,7 +243,7 @@ bool Manager::EventosTeclas(Flippers fliper_1, Flippers fliper_2)
 
 			Bola bola = Bola(posicion, velocidad, aceleracion, 0.9f);
 
-			bola.setColor(sf::Color::White);
+			bola.set_color(sf::Color::White);
 
 			bolas.push_back(bola);
 

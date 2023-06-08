@@ -1,6 +1,5 @@
 #include "Multiple.h"
-#include <cmath>
-#include "rotationMat.h"
+
 
 Multiple::Multiple()//!< Default constructor
 {

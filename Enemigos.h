@@ -1,6 +1,9 @@
 #ifndef ENEMIGOS_H
 #define ENEMIGOS_H
 
+#include "Bola.h"
+#include "HitBox.h"
+
 /*
     Clase Proveniente de Bumpers
 */

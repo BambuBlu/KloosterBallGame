@@ -1,16 +1,17 @@
 #ifndef JUEGO_H
 #define JUEGO_H
 
-#include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <SFML/Window.hpp>
-#include <SFML/System.hpp>
-#include <SFML/Network.hpp>
+#include <SFML/Graphics.hpp>
+#include "Randomizador.h"
+#include "SetsGlobales.h"
+#include "Bola.h"
+#include "Rectangulo.h"
+#include "HitBox.h"
+#include "Multiple.h"
 #include "TextureManager.h"
 #include <list>
-#include "Jugadores.h"
-#include "Bola.h"
-#include "Flippers.h"
 
 /*
     Clase proveniente de Main 

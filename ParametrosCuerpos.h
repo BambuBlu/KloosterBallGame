@@ -2,7 +2,9 @@
 #define PARAMETROSCUERPOS_H
 
 #include <SFML/Graphics.hpp>
-#include "fisicasPorTipo.h"
+#include <cmath>
+#include "SetsGlobales.h"
+#include "FisicasPorTipo.h"
 
 /*
     Clase proveniente de Body

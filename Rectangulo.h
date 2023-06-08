@@ -8,6 +8,7 @@
 
 /*
     Clase proveniente de rect
+    Crea y dibuja un rectangulo usando las funciones de SFML
 */
 
 class Rectangulo : public sf::Drawable

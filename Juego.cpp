@@ -2,47 +2,47 @@
 
 Juego::Juego()
 {
+    ///FONDO DEL JUEGO
     TextureManager texturas;
-    texturas.loadTexture("background", "resources\\BackgroundGame.png");
-
+    texturas.cargar_textura("background", "resources\\BackgroundGame.png");
     sf::Sprite fondo;
-    fondo.setTexture(texturas.getTexture("background"));
+    fondo.setTexture(texturas.get_textura("background"));
     fondo.setPosition(0, 0);
 
-    
+    ///DECLARACION DE COLORES
     sf::Color azulcito = sf::Color(117,137,191);
     sf::Color cyan = sf::Color(179, 226, 221);
     sf::Color amarillo = sf::Color(255, 237, 81);
     sf::Color naranja = sf::Color(252, 169, 133);
     sf::Color verde = sf::Color(72, 181, 163);
 
-
+    ///FUENTE DE TEXTO
     sf::Font arcadeFont;
-
     arcadeFont.loadFromFile("Fonts\\SourceCodePro-Italic-VariableFont_wght.ttf");
-
-
+    
+    ///MENSAJES EN PANTALLA
     sf::Text str_maximo_puntaje = sf::Text("MAXIMO PUNTAJE: " + std::to_string(puntaje_mas_alto), arcadeFont, 60);
-    str_maximo_puntaje.setFillColor(redCol);
+    str_maximo_puntaje.setFillColor(verde);
     str_maximo_puntaje.setPosition(40, 5);
 
     sf::Text str_puntaje = sf::Text("PUNTAJE: " + std::to_string(puntaje_total), arcadeFont, 60);
-    str_puntaje.setFillColor(redCol);
+    str_puntaje.setFillColor(verde);
     str_puntaje.setPosition(40, 80);
 
     sf::Text str_bolas_restantes = sf::Text("BOLAS: " + std::to_string(bolas_restantes), arcadeFont, 60);
-    str_bolas_restantes.setFillColor(redCol);
+    str_bolas_restantes.setFillColor(verde);
     str_bolas_restantes.setPosition(500, 5);
 
     sf::Text str_fin_juego = sf::Text("FIN DEL JUEGO", arcadeFont, 150);
     str_fin_juego.setFillColor(sf::Color::Black);
     str_fin_juego.setPosition(100, 400);
 
-    /*
-    Randomiser rand;
+    ///DECLARACION DE RANDOMIZADOR
+    Randomizador rand;
 
-    std::list<Rect> rects;
-    std::list<Rect>::iterator rectIt;
+    //LISTAS E ITERADORES DE OBJETOS
+    std::list<Rectangulo> rects;
+    std::list<Rectangulo>::iterator rectIt;
 
     std::list<OBB> obbs;
     std::list<OBB>::iterator obbIt;
@@ -54,6 +54,7 @@ Juego::Juego()
     std::list<RectangleBumper> rectangleBumpers;
     std::list<RectangleBumper>::iterator rectBumperIt;
 
+    ///MUROS DEL JUEGO
     Rect topWall = Rect(Vector2D(18, 8.8), Vector2D(17, 0.7), darkBlueCol);
     Rect leftWall = Rect(Vector2D(0.5, 27.5), Vector2D(0.7, 30), darkBlueCol);
 
@@ -61,30 +62,32 @@ Juego::Juego()
     Rect topRightCorner = Rect(Vector2D(34.8, 9.8), Vector2D(0.5, 0.5), darkBlueCol);
     Rect tunnel = Rect(Vector2D(32.9, 34), Vector2D(0.2, 21), darkBlueCol);
 
+    ///ENEMIGOS / BUMPERS DEL JUEGO
     RoundBumper roundBumper1 = RoundBumper(Vector2D(10, 13), 1.7, 10, cyanCol);
     RoundBumper roundBumper2 = RoundBumper(Vector2D(27, 16), 1.7, 10, yellowCol);
     RoundBumper largeRoundBumper = RoundBumper(Vector2D(17.5, 21), 2, 10, orangeCol);
     RoundBumper largeRoundBumper2 = RoundBumper(Vector2D(6, 25), 2, 10, yellowCol);
     RoundBumper largeRoundBumper3 = RoundBumper(Vector2D(28, 25), 2, 10, cyanCol);
-    */
 
-    Flippers FlipperIzquierdo = Flippers(sf::Vector2f(10, 44.5), sf::Vector2f(4.5, 0.6), 0.5, true, cyanCol);
+    ///FLIPPERS
+    Flippers FlipperIzquierdo(sf::Vector2f(50.f, 200.f), sf::Vector2f(4.5, 0.6), sf::Vector2f(1.f,1.f), 0.5, sf::Vector2f(30.f,30.f), cyan, false);
+    Flippers FlipperDerecho(sf::Vector2f(350.f, 200.f), sf::Vector2f(4.5, 0.6), sf::Vector2f(1.f, 1.f), 0.5, sf::Vector2f(30.f, 30.f), cyan, true);
 
-    Flippers FlipperDerecho = Flippers(sf::Vector2f(23, 44.5), sf::Vector2f(4.5, 0.6), 0.5, false, cyanCol);
-
-    /*
+    
     Rect bottomLeftCorner = Rect(Vector2D(1.3, 37.5), Vector2D(0.5, 0.5), darkBlueCol);
     Rect bottomRightCorner = Rect(Vector2D(32.5, 37.5), Vector2D(0.5, 0.5), darkBlueCol);
 
     OBB leftRamp = OBB(Vector2D(5.5, 41), Vector2D(6, 0.5), 0.6, darkBlueCol);
     OBB rightRamp = OBB(Vector2D(27.7, 41), Vector2D(6, 0.5), -0.6, darkBlueCol);
 
+    ///ENEMIGOS RECTANGULARES
     RectangleBumper rectBumper1 = RectangleBumper(Vector2D(4.5, 33), Vector2D(0.5, 2), 0.3, 20, darkBlueCol);
     RectangleBumper rectBumper2 = RectangleBumper(Vector2D(30, 33), Vector2D(0.5, 2), -0.3, 20, darkBlueCol);
 
     rectangleBumpers.push_back(rectBumper1);
     rectangleBumpers.push_back(rectBumper2);
 
+    ///ENEMIGOS CIRCULARES
     roundBumpers.push_back(roundBumper1);
     roundBumpers.push_back(roundBumper2);
     roundBumpers.push_back(largeRoundBumper);
@@ -104,8 +107,6 @@ Juego::Juego()
     obbs.push_back(rightRamp);
     obbs.push_back(leftRamp);
 
-    //obbs.push_back(testOBB);
-    */
 
     sf::Clock clock;
     while (this->ventana.isOpen()) 
@@ -134,7 +135,7 @@ Juego::Juego()
 
                     Bola bola = Bola(pos, vel, acc, 0.9);
 
-                    bola.setColor(sf::Color::Black);
+                    bola.set_color(sf::Color::Black);
 
                     bola.push_back(bola);
 
@@ -179,7 +180,7 @@ Juego::Juego()
 
                     if (bolasIterador != p) 
                     {
-                        Manifold m = Manifold(&bolasIterador->body, &p->body);
+                        Multiple m = Multiple(&bolasIterador->cuerpo, &p->cuerpo);
 
                         if (m.CircleVsCircle()) 
                         {
@@ -191,7 +192,7 @@ Juego::Juego()
 
                 for (roundBumperIt = roundBumpers.begin(); roundBumperIt != roundBumpers.end(); ++roundBumperIt) {
 
-                    Manifold m = Manifold(&roundBumperIt->body, &bolasIterador->body);
+                    Multiple m = Multiple(&roundBumperIt->cuerpo, &bolasIterador->cuerpo);
 
                     if (m.CircleVsCircle()) 
                     {
@@ -206,7 +207,7 @@ Juego::Juego()
                 for (rectBumperIt = rectangleBumpers.begin(); rectBumperIt != rectangleBumpers.end(); ++rectBumperIt) 
                 {
 
-                    Manifold m = Manifold(&rectBumperIt->body, &bolasIterador->body);
+                    Multiple m = Multiple(&rectBumperIt->cuerpo, &bolasIterador->cuerpo);
 
                     if (m.CircleVsOBB()) 
                     {
@@ -221,7 +222,7 @@ Juego::Juego()
                 for (rectIt = rects.begin(); rectIt != rects.end(); ++rectIt) 
                 {
 
-                    Manifold m = Manifold(&rectIt->body, &bolasIterador->body);
+                    Multiple m = Multiple(&rectIt->cuerpo, &bolasIterador->cuerpo);
 
                     if (m.CircleVsRect()) 
                     {
@@ -233,7 +234,7 @@ Juego::Juego()
 
                 for (obbIt = obbs.begin(); obbIt != obbs.end(); ++obbIt) 
                 {
-                    Manifold m = Manifold(&obbIt->body, &bolasIterador->body);
+                    Multiple m = Multiple(&obbIt->cuerpo, &bolasIterador->cuerpo);
 
                     if (m.CircleVsOBB()) 
                     {
@@ -243,7 +244,7 @@ Juego::Juego()
                     }
                 }
 
-                Manifold FlipperIzquierdo_Manifold = Manifold(&rightPaddle.body, &bolasIterador->body);
+                Multiple FlipperIzquierdo_Manifold = Multiple(&rightPaddle.cuerpo, &bolasIterador->cuerpo);
 
                 if (FlipperIzquierdo_Manifold.CircleVsOBB())
                 {
@@ -252,7 +253,7 @@ Juego::Juego()
                     FlipperIzquierdo_Manifold.applyRotationalImpulse();
                 }
 
-                Manifold FlipperDerecho_Manifold = Manifold(&leftPaddle.body, &bolasIterador->body);
+                Multiple FlipperDerecho_Manifold = Multiple(&leftPaddle.cuerpo, &bolasIterador->cuerpo);
 
                 if (FlipperDerecho_Manifold.CircleVsOBB()) 
                 {
@@ -261,33 +262,33 @@ Juego::Juego()
                     FlipperDerecho_Manifold.applyRotationalImpulse();
                 }
 
-                bolasIterador->body.update(fSegundos);
+                bolasIterador->cuerpo.update(fSegundos);
             }
 
             for (roundBumperIt = roundBumpers.begin(); roundBumperIt != roundBumpers.end(); ++roundBumperIt) 
             {
-                roundBumperIt->body.update(fSegundos);
+                roundBumperIt->cuerpo.update(fSegundos);
             }
 
             for (rectBumperIt = rectangleBumpers.begin(); rectBumperIt != rectangleBumpers.end(); ++rectBumperIt)
             {
-                rectBumperIt->body.update(fSegundos);
+                rectBumperIt->cuerpo.update(fSegundos);
             }
 
             for (rectIt = rects.begin(); rectIt != rects.end(); ++rectIt)
             {
-                rectIt->body.update(fSegundos);
+                rectIt->cuerpo.update(fSegundos);
             }
 
             for (obbIt = obbs.begin(); obbIt != obbs.end(); ++obbIt) 
             {
-                obbIt->body.update(fSegundos);
+                obbIt->cuerpo.update(fSegundos);
             }
 
-            FlipperDerecho.body.update(fSegundos);
+            FlipperDerecho.cuerpo.update(fSegundos);
             FlipperDerecho.clampPaddle();
 
-            FlipperIzquierdo.body.update(fSegundos);
+            FlipperIzquierdo.cuerpo.update(fSegundos);
             FlipperIzquierdo.clampPaddle();
 
             clock.restart();
@@ -301,7 +302,7 @@ Juego::Juego()
 
         str_maximo_puntaje.setString("PUNTAJE MAS ALTO: " + std::to_string(puntaje_mas_alto));
 
-        loseLife();
+        restar_vida();
 
         if (bolas_restantes <= 0) 
         {
@@ -312,32 +313,32 @@ Juego::Juego()
         {
             puntaje_mas_alto = puntaje_total;
         }
-        /*
+        
         for (rectIt = rects.begin(); rectIt != rects.end(); ++rectIt)
         {
-            window.draw(*rectIt);
+            ventana.draw(*rectIt);
         }
 
         for (obbIt = obbs.begin(); obbIt != obbs.end(); ++obbIt)
         {
-            window.draw(*obbIt);
+            ventana.draw(*obbIt);
         }
-        */
+        
         for (bolasIterador = bolas.begin(); bolasIterador != bolas.end(); ++bolasIterador)
         {
             this->ventana.draw(*bolasIterador);
         }
-        /*
+        
         for (roundBumperIt = roundBumpers.begin(); roundBumperIt != roundBumpers.end(); ++roundBumperIt)
         {
-            window.draw(*roundBumperIt);
+            ventana.draw(*roundBumperIt);
         }
 
         for (rectBumperIt = rectangleBumpers.begin(); rectBumperIt != rectangleBumpers.end(); ++rectBumperIt)
         {
-            window.draw(*rectBumperIt);
+            ventana.draw(*rectBumperIt);
         }
-        */
+        
 
         this->ventana.draw(FlipperDerecho);
         this->ventana.draw(FlipperIzquierdo);
@@ -370,7 +371,6 @@ Juego::Juego()
 
         this->ventana.display();
     }
-
     return;
 }
 
@@ -378,15 +378,18 @@ Juego::Juego()
 void Juego::restar_vida()
 {
 
-    for (bolasIterador = bolas.begin(); bolasIterador != bolas.end();) {
+    for (bolasIterador = bolas.begin(); bolasIterador != bolas.end();) 
+    {
 
-        if (bolasIterador->cuerpo.getPosicion().y() > 60) {
+        if (bolasIterador->cuerpo.getPosicion().y() > 60) 
+        {
 
             bolasIterador = bolas.erase(bolasIterador);
             bolas_restantes--;
             bool_En_Juego = false;
         }
-        else {
+        else 
+        {
             ++bolasIterador;
         }
     }

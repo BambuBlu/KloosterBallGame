@@ -13,13 +13,18 @@ class FisicasCirculo : public FisicasPorTipo
         float radio;
 
     public:
-        FisicasCirculo() {tipo = Tipo::circulo; };
+
+        FisicasCirculo()
+        {
+            tipo = Tipo::circulo; 
+            radio = 0.f;
+        };
 
         FisicasCirculo(const float _radio) { tipo = Tipo::circulo; radio = _radio; };
 
         void setRadio(const float _radio) { radio = _radio; };
 
-        float getRadio() const { return radio; };
+        float getRadio() const { return radio;};
 };
 
 #endif

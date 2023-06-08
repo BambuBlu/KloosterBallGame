@@ -1,7 +1,8 @@
-#ifndef OBBPHYS_H
-#define OBBPHYS_H
-#include "FisicasPorTipo.h"
+#ifndef HITBOXFISICAS_H
+#define HITBOXFISICAS_H
+
 #include <SFML/Graphics.hpp>
+#include "FisicasPorTipo.h"
 #include <cmath>
 
 /*

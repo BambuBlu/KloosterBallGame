@@ -1,7 +1,4 @@
 #include "Bola.h"
-#include "Flippers.h"
-#include "SetsGlobales.h"
-
 
 Bola::Bola()
 {
@@ -10,14 +7,23 @@ Bola::Bola()
     aux.y = 0.f;
 
     cuerpo = Cuerpo();
+
     cuerpo.setPosicion(aux);
+
     cuerpo.setAceleracion(aux);
+
     cuerpo.setVelocidad(aux);
+
     cuerpo.setRestitucion(1);
+
     cuerpo.setInercia(0);
+
     cuerpo.setMasa(1);
+
     circulo = FisicasCirculo(0);
+
     cuerpo.fisicaTipo = (FisicasPorTipo*)&circulo;
+
     color = sf::Color::White;
 }
 
@@ -35,11 +41,11 @@ Bola::Bola(const sf::Vector2f _posicion, const sf::Vector2f _velocidad, const sf
     color = sf::Color::White;
 }
 
-void Bola::draw(sf::RenderTarget& target, sf::RenderStates states) const
+void Bola::Dibujar(sf::RenderTarget& target, sf::RenderStates states) const
 {
     sf::CircleShape Bola = sf::CircleShape(circulo.getRadio() * PIXELTOMETER, 15);
 
-    Bola.setFillColor(getColor());
+    Bola.setFillColor(get_color());
 
     Bola.setOrigin(circulo.getRadio() * PIXELTOMETER, circulo.getRadio() * PIXELTOMETER);
 
@@ -48,21 +54,15 @@ void Bola::draw(sf::RenderTarget& target, sf::RenderStates states) const
     target.draw(Bola);
 }
 
-sf::Color Bola::getColor() const
+sf::Color Bola::get_color() const
 {
     return color;
 }
 
-void Bola::setColor(const sf::Color& _color)
+void Bola::set_color(const sf::Color& _color)
 {
     color = _color;
 }
-
-Bola::Bola(const FisicasCirculo& circulo, const sf::Color& color, const Cuerpo& cuerpo)
-{
-
-}
-
 
 
 

@@ -2,18 +2,23 @@
 #define HITBOX_H
 
 #include <SFML/Graphics.hpp>
+#include "SetsGlobales.h"
 #include "ParametrosCuerpos.h"
 #include "HitBoxFisicas.h"
 
 /*
     Clase proveniente de  OBB
+    Crea una hitbox para el sistema de colisiones
 */
 
 class HitBox : public sf::Drawable
 {
     protected:
+
         HitBoxFisicas forma;
+
         sf::Color color;
+
     public:
         Cuerpo cuerpo;
 
@@ -21,11 +26,11 @@ class HitBox : public sf::Drawable
         
         HitBox(const sf::Vector2f, const sf::Vector2f, const float, const sf::Color);
    
-       virtual void Dibujar(sf::RenderTarget& target, sf::RenderStates states) const;
+        virtual void Dibujar(sf::RenderTarget& target, sf::RenderStates states) const;
    
-       sf::Color get_color() const;
+        sf::Color get_color() const;
   
-       void set_color(const sf::Color& _color);
+        void set_color(const sf::Color& _color);
 };
 #endif
 

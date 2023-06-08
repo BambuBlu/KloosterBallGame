@@ -1,5 +1,4 @@
 #include "HitBox.h"
-#include "SetsGlobales.h"
 
 HitBox::HitBox()
 {

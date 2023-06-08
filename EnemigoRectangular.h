@@ -1,5 +1,5 @@
-#ifndef RECTANGLEBUMPER_H
-#define RECTANGLEBUMPER_H
+#ifndef ENEMIGORECTANGULAR_H
+#define ENEMIGORECTANGULAR_H
 
 #include <SFML/Graphics.hpp>
 #include "Enemigos.h"

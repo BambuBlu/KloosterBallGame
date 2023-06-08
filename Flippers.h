@@ -3,8 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "SetsGlobales.h"
-#include "ParametrosCuerpos.h"
-#include "HitBoxFisicas.h"
+#include "HitBox.h"
 
 /*
     Clase proveniente de Paddle

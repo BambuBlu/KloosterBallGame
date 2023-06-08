@@ -2,14 +2,12 @@
 #define MANAGER_H
 
 #include <SFML/Graphics.hpp>
-#include <iostream>
-#include "Flippers.h"
+#include "SetsGlobales.h"
+#include "TextureManager.h"
+#include "Juego.h"
 #include "Bola.h"
-
-using namespace std;
-using namespace sf;
-
-#define max_main_menu 4
+#include "Flippers.h"
+#include <list>
 
 /*
 	Clase para controlar el menú y la continuidad del juego
@@ -19,12 +17,12 @@ class Manager
 {
 	private:
 		int main_menu_selected;
-		Font font;
-		Text main_menu[max_main_menu];
+		sf::Font font;
+		sf::Text main_menu[max_main_menu];
 
-		RenderWindow* ventana;
-		VideoMode video_mode;
-		Event evento;
+		sf::RenderWindow* ventana;
+		sf::VideoMode video_mode;
+		sf::Event evento;
 
 		void Init_Window();
 
@@ -46,7 +44,7 @@ class Manager
 
 		int MainMenuPressed();
 
-		void Dibujar_Menu(RenderWindow*& window);
+		void Dibujar_Menu(sf::RenderWindow*& window);
 
 		void Iniciar_Juego();
 };

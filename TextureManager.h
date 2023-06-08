@@ -1,12 +1,13 @@
-
 #ifndef TEXTUREMANAGER_H
 #define TEXTUREMANAGER_H
+
 #include <SFML/Graphics.hpp>
 #include <string>
 #include <map>
 
 /*
     Clase proveniente de Texture Manager
+    Carga y guarda las texturas
 */
 
 class TextureManager
@@ -17,8 +18,8 @@ class TextureManager
     public:
         TextureManager();
 
-        void loadTexture(const std::string& texture_name, const std::string& file_name);
+        void cargar_textura(const std::string&, const std::string&);
 
-        sf::Texture& getTexture(const std::string& texture);
+        sf::Texture& get_textura(const std::string&);
 };
 #endif

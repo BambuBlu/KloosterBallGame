@@ -1,9 +1,11 @@
 #ifndef MULTIPLE_H
 #define MULTIPLE_H
 
+#include <cmath>
 #include "bola.h"
-#include "rect.h"
-#include "obb.h"
+#include "Rectangulo.h"
+#include "HitBox.h"
+#include "Rotacion.h"
 
 /*
     Clase proveniente de Manifold
@@ -32,9 +34,9 @@ class Multiple
 
         bool CircleVsOBB(); //Determina colision entre circulo - obb
 
-        sf::Vector2f getNormal() const { return normal;}
+        sf::Vector2f get_normal() const { return normal;}
 
-        float getPenetration() const { return penetracion;}
+        float get_penetracion() const { return penetracion;}
 
         void applyRotationalImpulse();
 

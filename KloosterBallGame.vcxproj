@@ -138,6 +138,7 @@
   <ItemGroup>
     <ClCompile Include="Bola.cpp" />
     <ClCompile Include="EnemigoRectangular.cpp" />
+    <ClCompile Include="EnemigoRedondo.cpp" />
     <ClCompile Include="Enemigos.cpp" />
     <ClCompile Include="FisicasPorTipo.cpp" />
     <ClCompile Include="Flippers.cpp" />
@@ -159,6 +160,7 @@
   <ItemGroup>
     <ClInclude Include="Bola.h" />
     <ClInclude Include="EnemigoRectangular.h" />
+    <ClInclude Include="EnemigoRedondo.h" />
     <ClInclude Include="Enemigos.h" />
     <ClInclude Include="FisicasCirculo.h" />
     <ClInclude Include="FisicasPorTipo.h" />

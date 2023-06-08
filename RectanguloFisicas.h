@@ -1,8 +1,9 @@
 #ifndef RECTANGULOFISICAS_H
 #define RECTANGULOFISICAS_H
 
-#include "FisicasPorTipo.h"
+
 #include "SFML/Graphics.hpp"
+#include "FisicasPorTipo.h"
 
 /*
     Clase proveniente de rectPhys

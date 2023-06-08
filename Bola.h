@@ -2,6 +2,7 @@
 #define BOLA_H
 
 #include <SFML/Graphics.hpp>
+#include "SetsGlobales.h"
 #include "FisicasCirculo.h"
 #include "ParametrosCuerpos.h"
 
@@ -11,19 +12,23 @@
 
 class Bola : public sf::Drawable
 {
-	private:
+	protected:
 		FisicasCirculo circulo;
+
 		sf::Color color;
+
 	public:
 		Cuerpo cuerpo;
-		Bola();
-		Bola(const sf::Vector2f, const sf::Vector2f, const sf::Vector2f, const float);
-		virtual void draw(sf::RenderTarget&, sf::RenderStates) const;
 
-		sf::Color getColor() const;
-		void setColor(const sf::Color& );
-	
-		Bola(const FisicasCirculo& circulo, const sf::Color& color, const Cuerpo& cuerpo);
+		Bola();
+
+		Bola(const sf::Vector2f, const sf::Vector2f, const sf::Vector2f, const float);
+
+		virtual void Dibujar(sf::RenderTarget&, sf::RenderStates) const;
+
+		sf::Color get_color() const;
+
+		void set_color(const sf::Color& );
 };
 #endif
 

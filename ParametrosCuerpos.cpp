@@ -1,8 +1,5 @@
 #define _USE_MATH_DEFINES
-#include <cmath>
 #include "ParametrosCuerpos.h"
-#include "SetsGlobales.h"
-
 
 Cuerpo::Cuerpo()
 {

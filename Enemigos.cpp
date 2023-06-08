@@ -1,10 +1,5 @@
 #include "Enemigos.h"
 
-Enemigos::Enemigos()
-{
-
-}
-
 Enemigos::Enemigos(TipoEnemigo _tipo, int _puntos)
 {
     tipo = _tipo;
