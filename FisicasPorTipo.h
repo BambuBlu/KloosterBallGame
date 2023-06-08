@@ -1,10 +1,15 @@
 #ifndef FISICASPORTIPO_H
 #define FISICASPORTIPO_H
 
-enum Tipo {
+/*
+    Clase proveniente de PhysicsShape
+*/
+
+enum Tipo 
+{
     circulo,
     aabb,
-    obb
+    HitBox
 };
 
 

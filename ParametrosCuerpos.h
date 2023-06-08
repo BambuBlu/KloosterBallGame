@@ -4,10 +4,13 @@
 #include <SFML/Graphics.hpp>
 #include "fisicasPorTipo.h"
 
+/*
+    Clase proveniente de Body
+*/
 
-class Cuerpo {
+class Cuerpo 
+{
     protected:
-
         float masa;
         float masaInversa;
         float restitucion;
@@ -47,5 +50,4 @@ class Cuerpo {
         void AplicarAnguloDeImpulso(const float);
         float ProductoCruzado(const sf::Vector2f&, const sf::Vector2f&) const;
 };
-
 #endif

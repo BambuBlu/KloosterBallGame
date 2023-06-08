@@ -5,6 +5,10 @@
 #include <string>
 #include <map>
 
+/*
+    Clase proveniente de Texture Manager
+*/
+
 class TextureManager
 {
     private:

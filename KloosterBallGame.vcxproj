@@ -137,34 +137,43 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Bola.cpp" />
+    <ClCompile Include="EnemigoRectangular.cpp" />
     <ClCompile Include="Enemigos.cpp" />
     <ClCompile Include="FisicasPorTipo.cpp" />
     <ClCompile Include="Flippers.cpp" />
+    <ClCompile Include="HitBox.cpp" />
+    <ClCompile Include="HitBoxFisicas.cpp" />
     <ClCompile Include="Juego.cpp" />
     <ClCompile Include="Jugadores.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="Mapas.cpp" />
     <ClCompile Include="Multiple.cpp" />
-    <ClCompile Include="Obstaculos.cpp" />
     <ClCompile Include="ParametrosCuerpos.cpp" />
-    <ClCompile Include="Pistones.cpp" />
+    <ClCompile Include="Randomizador.cpp" />
+    <ClCompile Include="Rectangulo.cpp" />
+    <ClCompile Include="RectanguloFisicas.cpp" />
+    <ClCompile Include="Rotacion.cpp" />
     <ClCompile Include="TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bola.h" />
+    <ClInclude Include="EnemigoRectangular.h" />
     <ClInclude Include="Enemigos.h" />
     <ClInclude Include="FisicasCirculo.h" />
     <ClInclude Include="FisicasPorTipo.h" />
     <ClInclude Include="Flippers.h" />
+    <ClInclude Include="HitBox.h" />
+    <ClInclude Include="HitBoxFisicas.h" />
     <ClInclude Include="Juego.h" />
     <ClInclude Include="Jugadores.h" />
     <ClInclude Include="Manager.h" />
-    <ClInclude Include="Mapas.h" />
     <ClInclude Include="Multiple.h" />
-    <ClInclude Include="Obstaculos.h" />
     <ClInclude Include="ParametrosCuerpos.h" />
-    <ClInclude Include="Pistones.h" />
+    <ClInclude Include="Randomizador.h" />
+    <ClInclude Include="Rectangulo.h" />
+    <ClInclude Include="RectanguloFisicas.h" />
+    <ClInclude Include="Rotacion.h" />
     <ClInclude Include="SetsGlobales.h" />
     <ClInclude Include="TextureManager.h" />
   </ItemGroup>

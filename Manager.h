@@ -1,4 +1,5 @@
-#pragma once
+#ifndef MANAGER_H
+#define MANAGER_H
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
@@ -9,6 +10,10 @@ using namespace std;
 using namespace sf;
 
 #define max_main_menu 4
+
+/*
+	Clase para controlar el menú y la continuidad del juego
+*/
 
 class Manager
 {
@@ -45,4 +50,4 @@ class Manager
 
 		void Iniciar_Juego();
 };
-
+#endif

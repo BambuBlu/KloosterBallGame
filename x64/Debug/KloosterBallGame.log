@@ -1,371 +1,48 @@
-﻿  Juego.cpp
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(92,73): error C2065: 'g_iHighestScore': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(92,41): error C2440: '<function-style-cast>': no se puede realizar la conversión de 'initializer list' a 'sf::Text'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(92,41): message : Ningún constructor ha podido aceptar el tipo de origen o bien la resolución de sobrecarga del constructor era ambigua
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(96,62): error C2065: 'g_iScoreTotal': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(96,34): error C2440: '<function-style-cast>': no se puede realizar la conversión de 'initializer list' a 'sf::Text'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(96,34): message : Ningún constructor ha podido aceptar el tipo de origen o bien la resolución de sobrecarga del constructor era ambigua
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(100,66): error C2065: 'g_iBallsLeft': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(100,38): error C2440: '<function-style-cast>': no se puede realizar la conversión de 'initializer list' a 'sf::Text'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(100,38): message : Ningún constructor ha podido aceptar el tipo de origen o bien la resolución de sobrecarga del constructor era ambigua
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(109,5): error C2065: 'Randomiser': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(109,16): error C2146: error de sintaxis: falta ';' delante del identificador 'rand'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(109,16): warning C4551: la llamada a la función no tiene lista de argumentos
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(110,15): error C2065: 'Rect': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(110,10): error C2923: 'std::list': 'Rect' no es un argumento de tipo plantilla válido para el parámetro '_Ty'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(110,15): message : vea la declaración de 'Rect'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(110,10): error C2976: "std::list": no hay suficientes argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(110,21): error C2133: 'rects': tamaño desconocido
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(110,21): error C2512: 'std::list': no hay disponible un constructor predeterminado adecuado
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(111,15): error C2065: 'Rect': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(111,10): error C2923: 'std::list': 'Rect' no es un argumento de tipo plantilla válido para el parámetro '_Ty'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(111,15): message : vea la declaración de 'Rect'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(111,10): error C2976: "std::list": no hay suficientes argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(111,22): error C2955: 'std::list': el uso de clase plantilla requiere una lista de argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(111,31): error C2133: 'rectIt': tamaño desconocido
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(111,31): error C2512: 'std::_List_iterator<std::_List_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>,std::_List_simple_types<_Ty>,std::_List_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer,_Ty&,const _Ty&,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>::pointer>>::type>>': no hay disponible un constructor predeterminado adecuado
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(789,39): message : vea la declaración de 'std::_List_iterator<std::_List_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>,std::_List_simple_types<_Ty>,std::_List_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer,_Ty&,const _Ty&,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>::pointer>>::type>>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(113,15): error C2065: 'OBB': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(113,10): error C2923: 'std::list': 'OBB' no es un argumento de tipo plantilla válido para el parámetro '_Ty'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(113,15): message : vea la declaración de 'OBB'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(113,10): error C2976: "std::list": no hay suficientes argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(113,20): error C2133: 'obbs': tamaño desconocido
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(113,20): error C2512: 'std::list': no hay disponible un constructor predeterminado adecuado
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(114,15): error C2065: 'OBB': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(114,10): error C2923: 'std::list': 'OBB' no es un argumento de tipo plantilla válido para el parámetro '_Ty'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(114,15): message : vea la declaración de 'OBB'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(114,10): error C2976: "std::list": no hay suficientes argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(114,21): error C2955: 'std::list': el uso de clase plantilla requiere una lista de argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(114,30): error C2133: 'obbIt': tamaño desconocido
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(114,30): error C2512: 'std::_List_iterator<std::_List_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>,std::_List_simple_types<_Ty>,std::_List_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer,_Ty&,const _Ty&,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>::pointer>>::type>>': no hay disponible un constructor predeterminado adecuado
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(789,39): message : vea la declaración de 'std::_List_iterator<std::_List_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>,std::_List_simple_types<_Ty>,std::_List_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer,_Ty&,const _Ty&,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>::pointer>>::type>>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(117,15): error C2065: 'RoundBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(117,10): error C2923: 'std::list': 'RoundBumper' no es un argumento de tipo plantilla válido para el parámetro '_Ty'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(117,15): message : vea la declaración de 'RoundBumper'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(117,10): error C2976: "std::list": no hay suficientes argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(117,28): error C2133: 'roundBumpers': tamaño desconocido
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(117,28): error C2512: 'std::list': no hay disponible un constructor predeterminado adecuado
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(118,15): error C2065: 'RoundBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(118,10): error C2923: 'std::list': 'RoundBumper' no es un argumento de tipo plantilla válido para el parámetro '_Ty'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(118,15): message : vea la declaración de 'RoundBumper'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(118,10): error C2976: "std::list": no hay suficientes argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(118,29): error C2955: 'std::list': el uso de clase plantilla requiere una lista de argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(118,38): error C2133: 'roundBumperIt': tamaño desconocido
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(118,38): error C2512: 'std::_List_iterator<std::_List_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>,std::_List_simple_types<_Ty>,std::_List_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer,_Ty&,const _Ty&,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>::pointer>>::type>>': no hay disponible un constructor predeterminado adecuado
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(789,39): message : vea la declaración de 'std::_List_iterator<std::_List_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>,std::_List_simple_types<_Ty>,std::_List_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer,_Ty&,const _Ty&,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>::pointer>>::type>>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(120,15): error C2065: 'RectangleBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(120,10): error C2923: 'std::list': 'RectangleBumper' no es un argumento de tipo plantilla válido para el parámetro '_Ty'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(120,15): message : vea la declaración de 'RectangleBumper'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(120,10): error C2976: "std::list": no hay suficientes argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(120,32): error C2133: 'rectangleBumpers': tamaño desconocido
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(120,32): error C2512: 'std::list': no hay disponible un constructor predeterminado adecuado
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(121,15): error C2065: 'RectangleBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(121,10): error C2923: 'std::list': 'RectangleBumper' no es un argumento de tipo plantilla válido para el parámetro '_Ty'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(121,15): message : vea la declaración de 'RectangleBumper'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(121,10): error C2976: "std::list": no hay suficientes argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(121,33): error C2955: 'std::list': el uso de clase plantilla requiere una lista de argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(121,42): error C2133: 'rectBumperIt': tamaño desconocido
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(121,42): error C2512: 'std::_List_iterator<std::_List_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>,std::_List_simple_types<_Ty>,std::_List_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer,_Ty&,const _Ty&,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>::pointer>>::type>>': no hay disponible un constructor predeterminado adecuado
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(789,39): message : vea la declaración de 'std::_List_iterator<std::_List_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>,std::_List_simple_types<_Ty>,std::_List_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer,_Ty&,const _Ty&,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>::pointer>>::type>>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(123,5): error C2065: 'Rect': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(123,10): error C2146: error de sintaxis: falta ';' delante del identificador 'topWall'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(123,10): error C2065: 'topWall': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(123,25): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(123,44): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(123,20): error C3861: 'Rect': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(124,5): error C2065: 'Rect': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(124,10): error C2146: error de sintaxis: falta ';' delante del identificador 'leftWall'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(124,10): error C2065: 'leftWall': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(124,26): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(124,47): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(124,21): error C3861: 'Rect': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(126,5): error C2065: 'Rect': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(126,10): error C2146: error de sintaxis: falta ';' delante del identificador 'rightWall'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(126,10): error C2065: 'rightWall': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(126,27): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(126,49): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(126,22): error C3861: 'Rect': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(127,5): error C2065: 'Rect': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(127,10): error C2146: error de sintaxis: falta ';' delante del identificador 'topRightCorner'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(127,10): error C2065: 'topRightCorner': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(127,32): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(127,53): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(127,27): error C3861: 'Rect': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(128,5): error C2065: 'Rect': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(128,10): error C2146: error de sintaxis: falta ';' delante del identificador 'tunnel'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(128,10): error C2065: 'tunnel': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(128,24): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(128,44): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(128,19): error C3861: 'Rect': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(130,5): error C2065: 'RoundBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(130,17): error C2146: error de sintaxis: falta ';' delante del identificador 'roundBumper1'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(130,17): error C2065: 'roundBumper1': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(130,30): fatal  error C1003: el recuento de errores supera 100; se detiene la compilación
+﻿  Bola.cpp
+  Enemigos.cpp
+  FisicasPorTipo.cpp
+  Flippers.cpp
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Flippers.cpp(12,24): warning C4305: 'argumento': truncamiento de 'double' a 'const float'
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Flippers.cpp(73,26): warning C4305: 'argumento': truncamiento de 'double' a 'const float'
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Flippers.cpp(79,26): warning C4305: 'argumento': truncamiento de 'double' a 'const float'
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Flippers.cpp(87,27): warning C4305: 'argumento': truncamiento de 'double' a 'const float'
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Flippers.cpp(93,27): warning C4305: 'argumento': truncamiento de 'double' a 'const float'
+  HitBox.cpp
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\HitBox.cpp(42,37): error C2039: "getHalfExtent": no es un miembro de "HitBoxFisicas"
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\HitBoxFisicas.h(12,7): message : vea la declaración de 'HitBoxFisicas'
+  HitBoxFisicas.cpp
+  Juego.cpp
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(10,10): fatal  error C1083: No se puede abrir el archivo incluir: 'ElementoDeJuego.h': No such file or directory
   Jugadores.cpp
 C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Jugadores.cpp(5,2): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Jugadores.cpp(11,2): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   main.cpp
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(92,73): error C2065: 'g_iHighestScore': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(92,41): error C2440: '<function-style-cast>': no se puede realizar la conversión de 'initializer list' a 'sf::Text'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(92,41): message : Ningún constructor ha podido aceptar el tipo de origen o bien la resolución de sobrecarga del constructor era ambigua
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(96,62): error C2065: 'g_iScoreTotal': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(96,34): error C2440: '<function-style-cast>': no se puede realizar la conversión de 'initializer list' a 'sf::Text'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(96,34): message : Ningún constructor ha podido aceptar el tipo de origen o bien la resolución de sobrecarga del constructor era ambigua
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(100,66): error C2065: 'g_iBallsLeft': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(100,38): error C2440: '<function-style-cast>': no se puede realizar la conversión de 'initializer list' a 'sf::Text'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(100,38): message : Ningún constructor ha podido aceptar el tipo de origen o bien la resolución de sobrecarga del constructor era ambigua
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(109,5): error C2065: 'Randomiser': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(109,16): error C2146: error de sintaxis: falta ';' delante del identificador 'rand'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(109,16): warning C4551: la llamada a la función no tiene lista de argumentos
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(110,15): error C2065: 'Rect': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(110,10): error C2923: 'std::list': 'Rect' no es un argumento de tipo plantilla válido para el parámetro '_Ty'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(110,15): message : vea la declaración de 'Rect'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(110,10): error C2976: "std::list": no hay suficientes argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(110,21): error C2133: 'rects': tamaño desconocido
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(110,21): error C2512: 'std::list': no hay disponible un constructor predeterminado adecuado
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(111,15): error C2065: 'Rect': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(111,10): error C2923: 'std::list': 'Rect' no es un argumento de tipo plantilla válido para el parámetro '_Ty'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(111,15): message : vea la declaración de 'Rect'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(111,10): error C2976: "std::list": no hay suficientes argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(111,22): error C2955: 'std::list': el uso de clase plantilla requiere una lista de argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(111,31): error C2133: 'rectIt': tamaño desconocido
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(111,31): error C2512: 'std::_List_iterator<std::_List_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>,std::_List_simple_types<_Ty>,std::_List_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer,_Ty&,const _Ty&,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>::pointer>>::type>>': no hay disponible un constructor predeterminado adecuado
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(789,39): message : vea la declaración de 'std::_List_iterator<std::_List_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>,std::_List_simple_types<_Ty>,std::_List_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer,_Ty&,const _Ty&,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>::pointer>>::type>>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(113,15): error C2065: 'OBB': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(113,10): error C2923: 'std::list': 'OBB' no es un argumento de tipo plantilla válido para el parámetro '_Ty'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(113,15): message : vea la declaración de 'OBB'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(113,10): error C2976: "std::list": no hay suficientes argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(113,20): error C2133: 'obbs': tamaño desconocido
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(113,20): error C2512: 'std::list': no hay disponible un constructor predeterminado adecuado
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(114,15): error C2065: 'OBB': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(114,10): error C2923: 'std::list': 'OBB' no es un argumento de tipo plantilla válido para el parámetro '_Ty'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(114,15): message : vea la declaración de 'OBB'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(114,10): error C2976: "std::list": no hay suficientes argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(114,21): error C2955: 'std::list': el uso de clase plantilla requiere una lista de argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(114,30): error C2133: 'obbIt': tamaño desconocido
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(114,30): error C2512: 'std::_List_iterator<std::_List_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>,std::_List_simple_types<_Ty>,std::_List_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer,_Ty&,const _Ty&,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>::pointer>>::type>>': no hay disponible un constructor predeterminado adecuado
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(789,39): message : vea la declaración de 'std::_List_iterator<std::_List_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>,std::_List_simple_types<_Ty>,std::_List_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer,_Ty&,const _Ty&,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>::pointer>>::type>>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(117,15): error C2065: 'RoundBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(117,10): error C2923: 'std::list': 'RoundBumper' no es un argumento de tipo plantilla válido para el parámetro '_Ty'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(117,15): message : vea la declaración de 'RoundBumper'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(117,10): error C2976: "std::list": no hay suficientes argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(117,28): error C2133: 'roundBumpers': tamaño desconocido
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(117,28): error C2512: 'std::list': no hay disponible un constructor predeterminado adecuado
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(118,15): error C2065: 'RoundBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(118,10): error C2923: 'std::list': 'RoundBumper' no es un argumento de tipo plantilla válido para el parámetro '_Ty'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(118,15): message : vea la declaración de 'RoundBumper'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(118,10): error C2976: "std::list": no hay suficientes argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(118,29): error C2955: 'std::list': el uso de clase plantilla requiere una lista de argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(118,38): error C2133: 'roundBumperIt': tamaño desconocido
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(118,38): error C2512: 'std::_List_iterator<std::_List_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>,std::_List_simple_types<_Ty>,std::_List_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer,_Ty&,const _Ty&,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>::pointer>>::type>>': no hay disponible un constructor predeterminado adecuado
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(789,39): message : vea la declaración de 'std::_List_iterator<std::_List_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>,std::_List_simple_types<_Ty>,std::_List_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer,_Ty&,const _Ty&,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>::pointer>>::type>>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(120,15): error C2065: 'RectangleBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(120,10): error C2923: 'std::list': 'RectangleBumper' no es un argumento de tipo plantilla válido para el parámetro '_Ty'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(120,15): message : vea la declaración de 'RectangleBumper'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(120,10): error C2976: "std::list": no hay suficientes argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(120,32): error C2133: 'rectangleBumpers': tamaño desconocido
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(120,32): error C2512: 'std::list': no hay disponible un constructor predeterminado adecuado
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(121,15): error C2065: 'RectangleBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(121,10): error C2923: 'std::list': 'RectangleBumper' no es un argumento de tipo plantilla válido para el parámetro '_Ty'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(121,15): message : vea la declaración de 'RectangleBumper'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(121,10): error C2976: "std::list": no hay suficientes argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(121,33): error C2955: 'std::list': el uso de clase plantilla requiere una lista de argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(121,42): error C2133: 'rectBumperIt': tamaño desconocido
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(121,42): error C2512: 'std::_List_iterator<std::_List_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>,std::_List_simple_types<_Ty>,std::_List_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer,_Ty&,const _Ty&,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>::pointer>>::type>>': no hay disponible un constructor predeterminado adecuado
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(789,39): message : vea la declaración de 'std::_List_iterator<std::_List_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>,std::_List_simple_types<_Ty>,std::_List_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer,_Ty&,const _Ty&,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>::pointer>>::type>>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(123,5): error C2065: 'Rect': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(123,10): error C2146: error de sintaxis: falta ';' delante del identificador 'topWall'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(123,10): error C2065: 'topWall': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(123,25): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(123,44): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(123,20): error C3861: 'Rect': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(124,5): error C2065: 'Rect': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(124,10): error C2146: error de sintaxis: falta ';' delante del identificador 'leftWall'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(124,10): error C2065: 'leftWall': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(124,26): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(124,47): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(124,21): error C3861: 'Rect': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(126,5): error C2065: 'Rect': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(126,10): error C2146: error de sintaxis: falta ';' delante del identificador 'rightWall'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(126,10): error C2065: 'rightWall': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(126,27): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(126,49): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(126,22): error C3861: 'Rect': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(127,5): error C2065: 'Rect': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(127,10): error C2146: error de sintaxis: falta ';' delante del identificador 'topRightCorner'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(127,10): error C2065: 'topRightCorner': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(127,32): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(127,53): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(127,27): error C3861: 'Rect': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(128,5): error C2065: 'Rect': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(128,10): error C2146: error de sintaxis: falta ';' delante del identificador 'tunnel'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(128,10): error C2065: 'tunnel': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(128,24): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(128,44): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(128,19): error C3861: 'Rect': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(130,5): error C2065: 'RoundBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(130,17): error C2146: error de sintaxis: falta ';' delante del identificador 'roundBumper1'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(130,17): error C2065: 'roundBumper1': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(130,30): fatal  error C1003: el recuento de errores supera 100; se detiene la compilación
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(10,10): fatal  error C1083: No se puede abrir el archivo incluir: 'ElementoDeJuego.h': No such file or directory
   Manager.cpp
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(92,73): error C2065: 'g_iHighestScore': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(92,41): error C2440: '<function-style-cast>': no se puede realizar la conversión de 'initializer list' a 'sf::Text'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(92,41): message : Ningún constructor ha podido aceptar el tipo de origen o bien la resolución de sobrecarga del constructor era ambigua
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(96,62): error C2065: 'g_iScoreTotal': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(96,34): error C2440: '<function-style-cast>': no se puede realizar la conversión de 'initializer list' a 'sf::Text'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(96,34): message : Ningún constructor ha podido aceptar el tipo de origen o bien la resolución de sobrecarga del constructor era ambigua
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(100,66): error C2065: 'g_iBallsLeft': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(100,38): error C2440: '<function-style-cast>': no se puede realizar la conversión de 'initializer list' a 'sf::Text'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(100,38): message : Ningún constructor ha podido aceptar el tipo de origen o bien la resolución de sobrecarga del constructor era ambigua
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(109,5): error C2065: 'Randomiser': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(109,16): error C2146: error de sintaxis: falta ';' delante del identificador 'rand'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(109,16): warning C4551: la llamada a la función no tiene lista de argumentos
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(110,15): error C3203: 'Rect': clase plantilla no especializado no se puede usar como argumento plantilla para el parámetro plantilla '_Ty', se esperaba un tipo real
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(111,15): error C3203: 'Rect': clase plantilla no especializado no se puede usar como argumento plantilla para el parámetro plantilla '_Ty', se esperaba un tipo real
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(113,15): error C2065: 'OBB': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(113,10): error C2923: 'std::list': 'OBB' no es un argumento de tipo plantilla válido para el parámetro '_Ty'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(113,15): message : vea la declaración de 'OBB'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(113,10): error C2976: "std::list": no hay suficientes argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(113,20): error C2133: 'obbs': tamaño desconocido
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(113,20): error C2512: 'std::list': no hay disponible un constructor predeterminado adecuado
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(114,15): error C2065: 'OBB': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(114,10): error C2923: 'std::list': 'OBB' no es un argumento de tipo plantilla válido para el parámetro '_Ty'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(114,15): message : vea la declaración de 'OBB'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(114,10): error C2976: "std::list": no hay suficientes argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(114,21): error C2955: 'std::list': el uso de clase plantilla requiere una lista de argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(114,30): error C2133: 'obbIt': tamaño desconocido
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(114,30): error C2512: 'std::_List_iterator<std::_List_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>,std::_List_simple_types<_Ty>,std::_List_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer,_Ty&,const _Ty&,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>::pointer>>::type>>': no hay disponible un constructor predeterminado adecuado
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(789,39): message : vea la declaración de 'std::_List_iterator<std::_List_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>,std::_List_simple_types<_Ty>,std::_List_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer,_Ty&,const _Ty&,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>::pointer>>::type>>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(117,15): error C2065: 'RoundBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(117,10): error C2923: 'std::list': 'RoundBumper' no es un argumento de tipo plantilla válido para el parámetro '_Ty'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(117,15): message : vea la declaración de 'RoundBumper'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(117,10): error C2976: "std::list": no hay suficientes argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(117,28): error C2133: 'roundBumpers': tamaño desconocido
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(117,28): error C2512: 'std::list': no hay disponible un constructor predeterminado adecuado
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(118,15): error C2065: 'RoundBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(118,10): error C2923: 'std::list': 'RoundBumper' no es un argumento de tipo plantilla válido para el parámetro '_Ty'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(118,15): message : vea la declaración de 'RoundBumper'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(118,10): error C2976: "std::list": no hay suficientes argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(118,29): error C2955: 'std::list': el uso de clase plantilla requiere una lista de argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(118,38): error C2133: 'roundBumperIt': tamaño desconocido
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(118,38): error C2512: 'std::_List_iterator<std::_List_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>,std::_List_simple_types<_Ty>,std::_List_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer,_Ty&,const _Ty&,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>::pointer>>::type>>': no hay disponible un constructor predeterminado adecuado
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(789,39): message : vea la declaración de 'std::_List_iterator<std::_List_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>,std::_List_simple_types<_Ty>,std::_List_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer,_Ty&,const _Ty&,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>::pointer>>::type>>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(120,15): error C2065: 'RectangleBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(120,10): error C2923: 'std::list': 'RectangleBumper' no es un argumento de tipo plantilla válido para el parámetro '_Ty'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(120,15): message : vea la declaración de 'RectangleBumper'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(120,10): error C2976: "std::list": no hay suficientes argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(120,32): error C2133: 'rectangleBumpers': tamaño desconocido
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(120,32): error C2512: 'std::list': no hay disponible un constructor predeterminado adecuado
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(121,15): error C2065: 'RectangleBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(121,10): error C2923: 'std::list': 'RectangleBumper' no es un argumento de tipo plantilla válido para el parámetro '_Ty'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(121,15): message : vea la declaración de 'RectangleBumper'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(121,10): error C2976: "std::list": no hay suficientes argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(121,33): error C2955: 'std::list': el uso de clase plantilla requiere una lista de argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(121,42): error C2133: 'rectBumperIt': tamaño desconocido
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(121,42): error C2512: 'std::_List_iterator<std::_List_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>,std::_List_simple_types<_Ty>,std::_List_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer,_Ty&,const _Ty&,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>::pointer>>::type>>': no hay disponible un constructor predeterminado adecuado
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(789,39): message : vea la declaración de 'std::_List_iterator<std::_List_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>,std::_List_simple_types<_Ty>,std::_List_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer,_Ty&,const _Ty&,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>::pointer>>::type>>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(123,20): error C2955: 'sf::Rect': el uso de clase plantilla requiere una lista de argumentos de plantilla
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\Graphics\Rect.hpp(43,1): message : vea la declaración de 'sf::Rect'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(123,25): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(123,44): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(123,18): error C2512: 'sf::Rect': no hay disponible un constructor predeterminado adecuado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\Graphics\Rect.hpp(43,1): message : vea la declaración de 'sf::Rect'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(124,21): error C2955: 'sf::Rect': el uso de clase plantilla requiere una lista de argumentos de plantilla
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\Graphics\Rect.hpp(43,1): message : vea la declaración de 'sf::Rect'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(124,26): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(124,47): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(124,19): error C2512: 'sf::Rect': no hay disponible un constructor predeterminado adecuado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\Graphics\Rect.hpp(43,1): message : vea la declaración de 'sf::Rect'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(126,22): error C2955: 'sf::Rect': el uso de clase plantilla requiere una lista de argumentos de plantilla
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\Graphics\Rect.hpp(43,1): message : vea la declaración de 'sf::Rect'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(126,27): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(126,49): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(126,20): error C2512: 'sf::Rect': no hay disponible un constructor predeterminado adecuado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\Graphics\Rect.hpp(43,1): message : vea la declaración de 'sf::Rect'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(127,27): error C2955: 'sf::Rect': el uso de clase plantilla requiere una lista de argumentos de plantilla
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\Graphics\Rect.hpp(43,1): message : vea la declaración de 'sf::Rect'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(127,32): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(127,53): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(127,25): error C2512: 'sf::Rect': no hay disponible un constructor predeterminado adecuado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\Graphics\Rect.hpp(43,1): message : vea la declaración de 'sf::Rect'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(128,19): error C2955: 'sf::Rect': el uso de clase plantilla requiere una lista de argumentos de plantilla
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\Graphics\Rect.hpp(43,1): message : vea la declaración de 'sf::Rect'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(128,24): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(128,44): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(128,17): error C2512: 'sf::Rect': no hay disponible un constructor predeterminado adecuado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\Graphics\Rect.hpp(43,1): message : vea la declaración de 'sf::Rect'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(130,5): error C2065: 'RoundBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(130,17): error C2146: error de sintaxis: falta ';' delante del identificador 'roundBumper1'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(130,17): error C2065: 'roundBumper1': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(130,44): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(130,32): error C3861: 'RoundBumper': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(131,5): error C2065: 'RoundBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(131,17): error C2146: error de sintaxis: falta ';' delante del identificador 'roundBumper2'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(131,17): error C2065: 'roundBumper2': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(131,44): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(131,32): error C3861: 'RoundBumper': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(132,5): error C2065: 'RoundBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(132,17): error C2146: error de sintaxis: falta ';' delante del identificador 'largeRoundBumper'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(132,17): error C2065: 'largeRoundBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(132,48): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(132,36): error C3861: 'RoundBumper': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(133,5): error C2065: 'RoundBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(133,17): error C2146: error de sintaxis: falta ';' delante del identificador 'largeRoundBumper2'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(133,17): error C2065: 'largeRoundBumper2': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(133,49): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(133,37): error C3861: 'RoundBumper': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(134,5): error C2065: 'RoundBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(134,17): error C2146: error de sintaxis: falta ';' delante del identificador 'largeRoundBumper3'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(134,17): error C2065: 'largeRoundBumper3': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(134,49): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(134,37): error C3861: 'RoundBumper': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(136,5): error C2065: 'Paddle': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(136,23): fatal  error C1003: el recuento de errores supera 100; se detiene la compilación
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(10,10): fatal  error C1083: No se puede abrir el archivo incluir: 'ElementoDeJuego.h': No such file or directory
+  Mapas.cpp
+  Multiple.cpp
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.h(5,10): fatal  error C1083: No se puede abrir el archivo incluir: 'rect.h': No such file or directory
   ParametrosCuerpos.cpp
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\ParametrosCuerpos.cpp(76,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\ParametrosCuerpos.cpp(157,19): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\ParametrosCuerpos.cpp(75,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\ParametrosCuerpos.cpp(156,19): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+  Randomizador.cpp
+  Rectangulo.cpp
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Rectangulo.cpp(42,37): error C2039: "getHalfExtent": no es un miembro de "RectanguloFisicas"
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\RectanguloFisicas.h(7,7): message : vea la declaración de 'RectanguloFisicas'
+  RectanguloFisicas.cpp
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\RectanguloFisicas.cpp(10,5): error C2065: 'halfExtent': identificador no declarado
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\RectanguloFisicas.cpp(10,18): error C2065: 'kHalfExtentsIn': identificador no declarado
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\RectanguloFisicas.cpp(11,5): error C2065: 'shapeType': identificador no declarado
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\RectanguloFisicas.cpp(16,5): error C2065: 'halfExtent': identificador no declarado
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\RectanguloFisicas.cpp(16,18): error C2065: 'kHalfExtents': identificador no declarado
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\RectanguloFisicas.cpp(21,12): error C2065: 'halfExtent': identificador no declarado
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\RectanguloFisicas.cpp(26,12): error C3861: 'getMax': no se encontró el identificador
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\RectanguloFisicas.cpp(26,27): error C3861: 'getMin': no se encontró el identificador
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\RectanguloFisicas.cpp(31,12): error C3861: 'getMax': no se encontró el identificador
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\RectanguloFisicas.cpp(31,27): error C3861: 'getMin': no se encontró el identificador
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\RectanguloFisicas.cpp(34,51): error C2761: "sf::Vector2f RectanguloFisicas::get_minimo(void) const": no se permite la nueva declaración del miembro
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\RectanguloFisicas.cpp(35,1): error C2447: '{': falta el encabezado de función (¿lista formal de estilo anterior?)
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\RectanguloFisicas.cpp(39,51): error C2761: "sf::Vector2f RectanguloFisicas::get_maximo(void) const": no se permite la nueva declaración del miembro
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\RectanguloFisicas.cpp(40,1): error C2447: '{': falta el encabezado de función (¿lista formal de estilo anterior?)
   Generando código...

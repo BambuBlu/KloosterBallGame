@@ -6,11 +6,9 @@
 #include "obb.h"
 
 /*
-     La clase Multiple genera un sistema de colisiones.
-     Tenemos que encontrarle la vuelta para usarla en nuestro
-     código, porque aplica conceptos muy rebuscados y
-     no creo que esto lo podamos defender ni ahí.
- */
+    Clase proveniente de Manifold
+     Genera un sistema de colisiones.
+*/
 
 class Multiple
 {

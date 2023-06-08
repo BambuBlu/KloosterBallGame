@@ -1,6 +1,10 @@
 #ifndef SETSGLOBALES_H
 #define SETSGLOBALES_H
 
+/*
+	Proveniente de config
+*/
+
 #define PIXELTOMETER 20
 #define PADDLE_SPEED (-15)
 #define PADDLE_MAX_ANGLE 0.6

@@ -3,9 +3,12 @@
 
 #include "FisicasPorTipo.h"
 
+/*
+    Clase proveniente de CirclePhys
+*/
 
-class FisicasCirculo : public FisicasPorTipo {
-
+class FisicasCirculo : public FisicasPorTipo 
+{
     private:
         float radio;
 

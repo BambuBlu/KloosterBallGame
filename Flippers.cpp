@@ -1,6 +1,7 @@
  #include "Flippers.h"
 
-Flippers::Flippers(const sf::Vector2f& _position, const sf::Vector2f& _aceleracion, const sf::Vector2f& _velocidad, float _angulo ,bool _lado)
+Flippers::Flippers(const sf::Vector2f& _position, const sf::Vector2f& _aceleracion, const sf::Vector2f& _velocidad, 
+					float _angulo , const sf::Vector2f& _extensionMedia, sf::Color _color, bool _lado)
 {
 	cuerpo = Cuerpo();
 	cuerpo.setPosicion(_position);
@@ -21,9 +22,17 @@ Flippers::Flippers(const sf::Vector2f& _position, const sf::Vector2f& _aceleraci
 		cuerpo.setRadioAngulo(-_angulo);
 	}
 
+	forma = HitBoxFisicas(_position, _extensionMedia);
+
+	cuerpo.fisicaTipo = (FisicasPorTipo*)&forma;
+
+	color = _color;
+
+	/*
 	_texture.loadFromFile("flipper.png");
 	_sprite.setTexture(_texture);
-	_sprite.setPosition(_position);
+	_sprite.setPosition(_position);	
+	*/
 
 }
 
@@ -88,7 +97,22 @@ void Flippers::clampPaddle()
 
 }
 
-void Flippers::Dibujar(sf::RenderWindow*& ventana)
-{
-    ventana->draw(_sprite);
+void Flippers::Dibujar(sf::RenderTarget& _ventana) const
+{ 
+	const sf::Vector2f tamanio(forma.get_extension_media().x * (PIXELTOMETER * 2), //x
+								forma.get_extension_media().y * (PIXELTOMETER * 2)); //y
+
+	sf::RectangleShape rectangle;
+
+	rectangle.setSize(sf::Vector2f(tamanio.x, tamanio.y));
+
+	rectangle.setOrigin(tamanio.x / 2, tamanio.y / 2);
+
+	rectangle.setPosition(cuerpo.getPosicion().x * PIXELTOMETER, cuerpo.getPosicion().y * PIXELTOMETER);
+
+	rectangle.setRotation(cuerpo.getGradosAngulo());
+
+	rectangle.setFillColor(color);
+
+	_ventana.draw(rectangle);
 }
