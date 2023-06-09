@@ -4,6 +4,7 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
+
 #include "Randomizador.h"
 #include "SetsGlobales.h"
 #include "Bola.h"
@@ -28,16 +29,22 @@ class Juego
 		sf::RenderWindow ventana;
 		sf::VideoMode video_mode;
 		sf::Event evento;
+        sf::Font fuente_de_texto;
 
         ///Game Logic
-        bool bool_En_Juego = false;
-        bool bool_Fin_Juego = false;
-        int puntaje_total = 0;
-        int bolas_restantes = 3;
-        int puntaje_mas_alto = 0;
+        bool bool_En_Juego;
+        bool bool_Fin_Juego;
+        int puntaje_total;
+        int bolas_restantes;
+        int puntaje_mas_alto;
+
+        void InitJuego();
 
 	public:
         Juego();
+
+        void primer_nivel(int, char const**);
+
         void restar_vida();
 };
 

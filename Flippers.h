@@ -11,7 +11,6 @@
 
 class Flippers : public sf::Drawable
 {
-
     private:
         /*
         sf::Sprite _sprite;
