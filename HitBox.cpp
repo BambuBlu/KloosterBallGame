@@ -36,9 +36,13 @@ HitBox::HitBox(const sf::Vector2f _origen, const sf::Vector2f _extensionMedia, c
     color = _color;
 }
 
-void HitBox::Dibujar(sf::RenderTarget& _ventana, sf::RenderStates states) const
+void HitBox::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
-    const sf::Vector2f size = forma.getHalfExtent() * (PIXELTOMETER * 2);
+    sf::Vector2f aux;
+    aux.x = PIXELTOMETER;
+    aux.y = PIXELTOMETER;
+
+    const sf::Vector2f size = forma.get_extension_media() * (aux.x + aux.y);
 
     sf::RectangleShape rectangle;
 
@@ -52,7 +56,7 @@ void HitBox::Dibujar(sf::RenderTarget& _ventana, sf::RenderStates states) const
 
     rectangle.setFillColor(color);
 
-    _ventana.draw(rectangle);
+    target.draw(rectangle);
 }
 
 sf::Color HitBox::get_color() const
@@ -63,4 +67,8 @@ sf::Color HitBox::get_color() const
 void HitBox::set_color(const sf::Color& _color)
 { 
     color = _color;
+}
+
+HitBox::HitBox(const HitBoxFisicas& forma, const sf::Color& color, const Cuerpo& cuerpo)
+{
 }

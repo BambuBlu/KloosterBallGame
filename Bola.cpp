@@ -41,7 +41,7 @@ Bola::Bola(const sf::Vector2f _posicion, const sf::Vector2f _velocidad, const sf
     color = sf::Color::White;
 }
 
-void Bola::Dibujar(sf::RenderTarget& target, sf::RenderStates states) const
+void Bola::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
     sf::CircleShape Bola = sf::CircleShape(circulo.getRadio() * PIXELTOMETER, 15);
 
@@ -64,8 +64,6 @@ void Bola::set_color(const sf::Color& _color)
     color = _color;
 }
 
-
-
-
-
-
+Bola::Bola(const FisicasCirculo& circulo, const sf::Color& color, const Cuerpo& cuerpo)
+{
+}

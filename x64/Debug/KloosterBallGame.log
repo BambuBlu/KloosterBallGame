@@ -1,330 +1,137 @@
-﻿  Bola.cpp
-  EnemigoRectangular.cpp
-  EnemigoRedondo.cpp
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\EnemigoRedondo.cpp(9,27): warning C4305: 'argumento': truncamiento de 'double' a 'const float'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\EnemigoRedondo.cpp(17,5): error C3861: 'setColor': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\EnemigoRedondo.cpp(30,27): warning C4305: 'argumento': truncamiento de 'double' a 'const float'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\EnemigoRedondo.cpp(38,5): error C3861: 'setColor': no se encontró el identificador
-  Enemigos.cpp
-  FisicasPorTipo.cpp
-  Flippers.cpp
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Flippers.cpp(12,24): warning C4305: 'argumento': truncamiento de 'double' a 'const float'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Flippers.cpp(73,26): warning C4305: 'argumento': truncamiento de 'double' a 'const float'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Flippers.cpp(79,26): warning C4305: 'argumento': truncamiento de 'double' a 'const float'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Flippers.cpp(87,27): warning C4305: 'argumento': truncamiento de 'double' a 'const float'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Flippers.cpp(93,27): warning C4305: 'argumento': truncamiento de 'double' a 'const float'
-  HitBox.cpp
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\HitBox.cpp(41,37): error C2039: "getHalfExtent": no es un miembro de "HitBoxFisicas"
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\HitBoxFisicas.h(12,7): message : vea la declaración de 'HitBoxFisicas'
-  HitBoxFisicas.cpp
-  Juego.cpp
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(47,15): error C2065: 'OBB': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(47,10): error C2923: 'std::list': 'OBB' no es un argumento de tipo plantilla válido para el parámetro '_Ty'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(47,15): message : vea la declaración de 'OBB'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(47,10): error C2976: "std::list": no hay suficientes argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(47,20): error C2133: 'obbs': tamaño desconocido
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(47,20): error C2512: 'std::list': no hay disponible un constructor predeterminado adecuado
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(48,15): error C2065: 'OBB': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(48,10): error C2923: 'std::list': 'OBB' no es un argumento de tipo plantilla válido para el parámetro '_Ty'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(48,15): message : vea la declaración de 'OBB'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(48,10): error C2976: "std::list": no hay suficientes argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(48,21): error C2955: 'std::list': el uso de clase plantilla requiere una lista de argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(48,30): error C2133: 'obbIt': tamaño desconocido
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(48,30): error C2512: 'std::_List_iterator<std::_List_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>,std::_List_simple_types<_Ty>,std::_List_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer,_Ty&,const _Ty&,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>::pointer>>::type>>': no hay disponible un constructor predeterminado adecuado
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(789,39): message : vea la declaración de 'std::_List_iterator<std::_List_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>,std::_List_simple_types<_Ty>,std::_List_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer,_Ty&,const _Ty&,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>::pointer>>::type>>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(51,15): error C2065: 'RoundBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(51,10): error C2923: 'std::list': 'RoundBumper' no es un argumento de tipo plantilla válido para el parámetro '_Ty'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(51,15): message : vea la declaración de 'RoundBumper'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(51,10): error C2976: "std::list": no hay suficientes argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(51,28): error C2133: 'roundBumpers': tamaño desconocido
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(51,28): error C2512: 'std::list': no hay disponible un constructor predeterminado adecuado
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(52,15): error C2065: 'RoundBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(52,10): error C2923: 'std::list': 'RoundBumper' no es un argumento de tipo plantilla válido para el parámetro '_Ty'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(52,15): message : vea la declaración de 'RoundBumper'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(52,10): error C2976: "std::list": no hay suficientes argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(52,29): error C2955: 'std::list': el uso de clase plantilla requiere una lista de argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(52,38): error C2133: 'roundBumperIt': tamaño desconocido
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(52,38): error C2512: 'std::_List_iterator<std::_List_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>,std::_List_simple_types<_Ty>,std::_List_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer,_Ty&,const _Ty&,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>::pointer>>::type>>': no hay disponible un constructor predeterminado adecuado
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(789,39): message : vea la declaración de 'std::_List_iterator<std::_List_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>,std::_List_simple_types<_Ty>,std::_List_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer,_Ty&,const _Ty&,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>::pointer>>::type>>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(54,15): error C2065: 'RectangleBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(54,10): error C2923: 'std::list': 'RectangleBumper' no es un argumento de tipo plantilla válido para el parámetro '_Ty'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(54,15): message : vea la declaración de 'RectangleBumper'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(54,10): error C2976: "std::list": no hay suficientes argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(54,32): error C2133: 'rectangleBumpers': tamaño desconocido
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(54,32): error C2512: 'std::list': no hay disponible un constructor predeterminado adecuado
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(55,15): error C2065: 'RectangleBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(55,10): error C2923: 'std::list': 'RectangleBumper' no es un argumento de tipo plantilla válido para el parámetro '_Ty'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(55,15): message : vea la declaración de 'RectangleBumper'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(55,10): error C2976: "std::list": no hay suficientes argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(55,33): error C2955: 'std::list': el uso de clase plantilla requiere una lista de argumentos de plantilla
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(756,1): message : vea la declaración de 'std::list'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(55,42): error C2133: 'rectBumperIt': tamaño desconocido
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(55,42): error C2512: 'std::_List_iterator<std::_List_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>,std::_List_simple_types<_Ty>,std::_List_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer,_Ty&,const _Ty&,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>::pointer>>::type>>': no hay disponible un constructor predeterminado adecuado
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(789,39): message : vea la declaración de 'std::_List_iterator<std::_List_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>,std::_List_simple_types<_Ty>,std::_List_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer,_Ty&,const _Ty&,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<std::_List_node<_Ty,allocator_traits<_Alloc>::void_pointer>>>::pointer>>::type>>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(58,5): error C2065: 'Rect': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(58,10): error C2146: error de sintaxis: falta ';' delante del identificador 'topWall'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(58,10): error C2065: 'topWall': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(58,25): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(58,44): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(58,63): error C2065: 'darkBlueCol': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(58,20): error C3861: 'Rect': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(59,5): error C2065: 'Rect': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(59,10): error C2146: error de sintaxis: falta ';' delante del identificador 'leftWall'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(59,10): error C2065: 'leftWall': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(59,26): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(59,47): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(59,66): error C2065: 'darkBlueCol': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(59,21): error C3861: 'Rect': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(61,5): error C2065: 'Rect': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(61,10): error C2146: error de sintaxis: falta ';' delante del identificador 'rightWall'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(61,10): error C2065: 'rightWall': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(61,27): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(61,49): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(61,68): error C2065: 'darkBlueCol': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(61,22): error C3861: 'Rect': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(62,5): error C2065: 'Rect': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(62,10): error C2146: error de sintaxis: falta ';' delante del identificador 'topRightCorner'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(62,10): error C2065: 'topRightCorner': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(62,32): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(62,53): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(62,73): error C2065: 'darkBlueCol': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(62,27): error C3861: 'Rect': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(63,5): error C2065: 'Rect': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(63,10): error C2146: error de sintaxis: falta ';' delante del identificador 'tunnel'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(63,10): error C2065: 'tunnel': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(63,24): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(63,44): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(63,63): error C2065: 'darkBlueCol': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(63,19): error C3861: 'Rect': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(66,5): error C2065: 'RoundBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(66,17): error C2146: error de sintaxis: falta ';' delante del identificador 'roundBumper1'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(66,17): error C2065: 'roundBumper1': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(66,44): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(66,71): error C2065: 'cyanCol': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(66,32): error C3861: 'RoundBumper': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(67,5): error C2065: 'RoundBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(67,17): error C2146: error de sintaxis: falta ';' delante del identificador 'roundBumper2'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(67,17): error C2065: 'roundBumper2': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(67,44): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(67,71): error C2065: 'yellowCol': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(67,32): error C3861: 'RoundBumper': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(68,5): error C2065: 'RoundBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(68,17): error C2146: error de sintaxis: falta ';' delante del identificador 'largeRoundBumper'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(68,17): error C2065: 'largeRoundBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(68,48): error C3861: 'Vector2D': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(68,75): error C2065: 'orangeCol': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(68,36): error C3861: 'RoundBumper': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(69,5): error C2065: 'RoundBumper': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(69,17): error C2146: error de sintaxis: falta ';' delante del identificador 'largeRoundBumper2'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(69,17): error C2065: 'largeRoundBumper2': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(69,35): fatal  error C1003: el recuento de errores supera 100; se detiene la compilación
-  Jugadores.cpp
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Jugadores.cpp(5,2): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Jugadores.cpp(11,2): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  main.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(292,17): error C2259: "Bola": no se puede crear una instancia de una clase abstract
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Bola.h(13,7): message : vea la declaración de 'Bola'
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(292,17): message : debido a los siguientes miembros:
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(292,17): message : 'void sf::Drawable::draw(sf::RenderTarget &,sf::RenderStates) const': es abstracto
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\Graphics\Drawable.hpp(69,18): message : vea la declaración de 'sf::Drawable::draw'
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(1834,1): message : Vea la referencia a la creación de una instancia de clase plantilla "std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer>" que se está compilando
-          with
-          [
-              _Ty=Bola,
-              _Alloc=std::allocator<Bola>
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(1829,10): message : al compilar la función del miembro clase plantilla "void std::list<Bola,std::allocator<Bola>>::_Alloc_sentinel_and_proxy(void)"
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(798,34): message : vea la primera referencia a “std::list<Bola,std::allocator<Bola>>::_Alloc_sentinel_and_proxy” en “std::list<Bola,std::allocator<Bola>>::list”
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(21,17): message : vea la primera referencia a “std::list<Bola,std::allocator<Bola>>::list” en “void __cdecl `dynamic initializer for 'bolas''(void)”
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(21,17): message : Vea la referencia a la creación de una instancia de clase plantilla "std::list<Bola,std::allocator<Bola>>" que se está compilando
-  Manager.cpp
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(16,3): error C2065: 'cout': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(16,41): error C2065: 'endl': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(21,34): error C2653: 'Color': no es un nombre de clase o espacio de nombres
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(21,41): error C2065: 'Cyan': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(27,34): error C2653: 'Color': no es un nombre de clase o espacio de nombres
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(27,41): error C2065: 'White': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(33,34): error C2653: 'Color': no es un nombre de clase o espacio de nombres
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(33,41): error C2065: 'White': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(39,34): error C2653: 'Color': no es un nombre de clase o espacio de nombres
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(39,41): error C2065: 'White': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(103,11): error C2039: "cout": no es un miembro de "std"
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(24,1): message : vea la declaración de 'std'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(103,16): error C2065: 'cout': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(103,43): error C2065: 'endl': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(143,46): error C2653: 'Color': no es un nombre de clase o espacio de nombres
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(143,53): error C2065: 'White': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(149,46): error C2653: 'Color': no es un nombre de clase o espacio de nombres
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(149,53): error C2065: 'Cyan': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(157,46): error C2653: 'Color': no es un nombre de clase o espacio de nombres
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(157,53): error C2065: 'White': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(163,46): error C2653: 'Color': no es un nombre de clase o espacio de nombres
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(163,53): error C2065: 'Cyan': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(174,7): error C2039: "cout": no es un miembro de "std"
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(24,1): message : vea la declaración de 'std'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(174,12): error C2065: 'cout': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(174,44): error C2065: 'endl': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(183,36): error C2065: 'flipper_1': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(183,47): error C2065: 'flipper_2': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(192,9): error C2039: "cout": no es un miembro de "std"
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(24,1): message : vea la declaración de 'std'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(192,14): error C2065: 'cout': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(192,80): error C2065: 'endl': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(194,33): error C2039: "Update": no es un miembro de "Juego"
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.h(24,7): message : vea la declaración de 'Juego'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(194,73): error C2065: 'flipper_1': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(194,84): error C2065: 'flipper_2': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(204,7): error C2039: "cout": no es un miembro de "std"
-C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include\list(24,1): message : vea la declaración de 'std'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(204,12): error C2065: 'cout': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(204,56): error C2065: 'endl': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(207,15): error C2259: "Flippers": no se puede crear una instancia de una clase abstract
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Flippers.h(12,7): message : vea la declaración de 'Flippers'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(207,15): message : debido a los siguientes miembros:
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(207,15): message : 'void sf::Drawable::draw(sf::RenderTarget &,sf::RenderStates) const': es abstracto
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\Graphics\Drawable.hpp(69,18): message : vea la declaración de 'sf::Drawable::draw'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(244,9): error C2259: "Bola": no se puede crear una instancia de una clase abstract
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Bola.h(13,7): message : vea la declaración de 'Bola'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(244,9): message : debido a los siguientes miembros:
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(244,9): message : 'void sf::Drawable::draw(sf::RenderTarget &,sf::RenderStates) const': es abstracto
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\Graphics\Drawable.hpp(69,18): message : vea la declaración de 'sf::Drawable::draw'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(244,16): error C2259: "Bola": no se puede crear una instancia de una clase abstract
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Bola.h(13,7): message : vea la declaración de 'Bola'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(244,16): message : debido a los siguientes miembros:
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(244,16): message : 'void sf::Drawable::draw(sf::RenderTarget &,sf::RenderStates) const': es abstracto
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\Graphics\Drawable.hpp(69,18): message : vea la declaración de 'sf::Drawable::draw'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(244,14): error C2259: "Bola": no se puede crear una instancia de una clase abstract
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Bola.h(13,7): message : vea la declaración de 'Bola'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(244,14): message : debido a los siguientes miembros:
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(244,14): message : 'void sf::Drawable::draw(sf::RenderTarget &,sf::RenderStates) const': es abstracto
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\Graphics\Drawable.hpp(69,18): message : vea la declaración de 'sf::Drawable::draw'
+﻿  Manager.cpp
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Manager.cpp(28,34): error C2653: 'Color': no es un nombre de clase o espacio de nombres
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Manager.cpp(28,41): error C2065: 'Cyan': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Manager.cpp(34,34): error C2653: 'Color': no es un nombre de clase o espacio de nombres
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Manager.cpp(34,41): error C2065: 'White': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Manager.cpp(40,34): error C2653: 'Color': no es un nombre de clase o espacio de nombres
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Manager.cpp(40,41): error C2065: 'White': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Manager.cpp(46,34): error C2653: 'Color': no es un nombre de clase o espacio de nombres
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Manager.cpp(46,41): error C2065: 'White': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Manager.cpp(150,46): error C2653: 'Color': no es un nombre de clase o espacio de nombres
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Manager.cpp(150,53): error C2065: 'White': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Manager.cpp(156,46): error C2653: 'Color': no es un nombre de clase o espacio de nombres
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Manager.cpp(156,53): error C2065: 'Cyan': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Manager.cpp(164,46): error C2653: 'Color': no es un nombre de clase o espacio de nombres
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Manager.cpp(164,53): error C2065: 'White': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Manager.cpp(170,46): error C2653: 'Color': no es un nombre de clase o espacio de nombres
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Manager.cpp(170,53): error C2065: 'Cyan': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Manager.cpp(190,36): error C2065: 'flipper_1': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Manager.cpp(190,47): error C2065: 'flipper_2': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Manager.cpp(201,33): error C2039: "Update": no es un miembro de "Juego"
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Juego.h(28,7): message : vea la declaración de 'Juego'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Manager.cpp(201,73): error C2065: 'flipper_1': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Manager.cpp(201,84): error C2065: 'flipper_2': identificador no declarado
   Mapas.cpp
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Mapas.cpp(1,10): fatal  error C1083: No se puede abrir el archivo incluir: 'Mapas.h': No such file or directory
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Mapas.cpp(1,10): fatal  error C1083: No se puede abrir el archivo incluir: 'Mapas.h': No such file or directory
   Multiple.cpp
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(18,5): error C2065: 'CirclePhys': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(18,17): error C2065: 'circleA': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(18,28): error C2065: 'CirclePhys': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(18,39): error C2059: error de sintaxis: ')'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(19,5): error C2065: 'CirclePhys': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(19,17): error C2065: 'circleB': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(19,28): error C2065: 'CirclePhys': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(19,39): error C2059: error de sintaxis: ')'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(25,24): error C2065: 'circleA': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(25,47): error C2065: 'circleB': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(27,29): error C2039: "dotProduct": no es un miembro de "sf::Vector2<float>"
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(40,65): error C2065: 'circleB': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(44,23): error C2065: 'circleA': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(54,5): error C2065: 'RectPhys': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(54,15): error C2065: 'rect': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(54,23): error C2065: 'RectPhys': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(54,32): error C2059: error de sintaxis: ')'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(55,5): error C2065: 'CirclePhys': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(55,17): error C2065: 'circle': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(55,27): error C2065: 'CirclePhys': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(55,38): error C2059: error de sintaxis: ')'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(61,34): error C2065: 'rect': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(71,32): error C2064: el término no se evalúa como una función con 0 argumentos
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(71,59): error C2064: el término no se evalúa como una función con 0 argumentos
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(75,24): error C2064: el término no se evalúa como una función con 0 argumentos
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(77,25): error C2039: "setX": no es un miembro de "sf::Vector2<float>"
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(77,30): error C2065: 'rect': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(81,25): error C2039: "setX": no es un miembro de "sf::Vector2<float>"
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(81,31): error C2065: 'rect': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(86,24): error C2064: el término no se evalúa como una función con 0 argumentos
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(88,25): error C2039: "setY": no es un miembro de "sf::Vector2<float>"
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(88,30): error C2065: 'rect': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(92,25): error C2039: "setY": no es un miembro de "sf::Vector2<float>"
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(92,31): error C2065: 'rect': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(98,25): error C2039: "dotProduct": no es un miembro de "sf::Vector2<float>"
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(99,21): error C2065: 'circle': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(112,65): error C2065: 'circle': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(117,65): error C2065: 'circle': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(125,5): error C2065: 'ObbPhys': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(125,14): error C2065: 'obb': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(125,21): error C2065: 'ObbPhys': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(125,29): error C2059: error de sintaxis: ')'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(127,5): error C2065: 'CirclePhys': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(127,17): error C2065: 'circle': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(127,27): error C2065: 'CirclePhys': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(127,38): error C2059: error de sintaxis: ')'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(132,5): error C2065: 'RotationMat': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(132,17): error C2146: error de sintaxis: falta ';' delante del identificador 'matrix'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(132,17): error C2065: 'matrix': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(132,48): error C2039: "getAngleRad": no es un miembro de "Cuerpo"
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\ParametrosCuerpos.h(13,7): message : vea la declaración de 'Cuerpo'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(132,26): error C3861: 'RotationMat': no se encontró el identificador
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(134,30): error C2065: 'matrix': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(137,34): error C2065: 'obb': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(145,31): error C2064: el término no se evalúa como una función con 0 argumentos
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(145,58): error C2064: el término no se evalúa como una función con 0 argumentos
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(147,24): error C2064: el término no se evalúa como una función con 0 argumentos
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(149,25): error C2039: "setX": no es un miembro de "sf::Vector2<float>"
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(149,30): error C2065: 'obb': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(153,25): error C2039: "setX": no es un miembro de "sf::Vector2<float>"
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(153,31): error C2065: 'obb': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(158,24): error C2064: el término no se evalúa como una función con 0 argumentos
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(160,25): error C2039: "setY": no es un miembro de "sf::Vector2<float>"
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(160,30): error C2065: 'obb': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(164,25): error C2039: "setY": no es un miembro de "sf::Vector2<float>"
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(164,31): error C2065: 'obb': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(170,25): error C2039: "dotProduct": no es un miembro de "sf::Vector2<float>"
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(171,21): error C2065: 'circle': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(185,55): error C2065: 'matrix': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(185,84): error C2065: 'circle': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(191,55): error C2065: 'matrix': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(191,84): error C2065: 'circle': identificador no declarado
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(199,29): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(201,26): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(221,65): error C2039: "vectorCrossScalar": no es un miembro de "sf::Vector2<float>"
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(221,162): error C2039: "vectorCrossScalar": no es un miembro de "sf::Vector2<float>"
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(224,32): error C2039: "dotProduct": no es un miembro de "sf::Vector2<float>"
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(235,55): error C2039: "crossProduct": no es un miembro de "sf::Vector2<float>"
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(235,17): error C2737: 'kfContactACrossNormal': se debe inicializar el objeto const
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(236,55): error C2039: "crossProduct": no es un miembro de "sf::Vector2<float>"
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp(236,17): error C2737: 'kfContactBCrossNormal': se debe inicializar el objeto const
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(18,5): error C2065: 'CirclePhys': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(18,17): error C2065: 'circleA': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(18,28): error C2065: 'CirclePhys': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(18,39): error C2059: error de sintaxis: ')'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(19,5): error C2065: 'CirclePhys': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(19,17): error C2065: 'circleB': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(19,28): error C2065: 'CirclePhys': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(19,39): error C2059: error de sintaxis: ')'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(25,24): error C2065: 'circleA': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(25,47): error C2065: 'circleB': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(27,29): error C2039: "dotProduct": no es un miembro de "sf::Vector2<float>"
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(40,65): error C2065: 'circleB': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(44,23): error C2065: 'circleA': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(54,5): error C2065: 'RectPhys': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(54,15): error C2065: 'rect': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(54,23): error C2065: 'RectPhys': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(54,32): error C2059: error de sintaxis: ')'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(55,5): error C2065: 'CirclePhys': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(55,17): error C2065: 'circle': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(55,27): error C2065: 'CirclePhys': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(55,38): error C2059: error de sintaxis: ')'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(61,34): error C2065: 'rect': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(71,32): error C2064: el término no se evalúa como una función con 0 argumentos
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(71,59): error C2064: el término no se evalúa como una función con 0 argumentos
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(75,24): error C2064: el término no se evalúa como una función con 0 argumentos
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(77,25): error C2039: "setX": no es un miembro de "sf::Vector2<float>"
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(77,30): error C2065: 'rect': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(81,25): error C2039: "setX": no es un miembro de "sf::Vector2<float>"
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(81,31): error C2065: 'rect': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(86,24): error C2064: el término no se evalúa como una función con 0 argumentos
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(88,25): error C2039: "setY": no es un miembro de "sf::Vector2<float>"
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(88,30): error C2065: 'rect': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(92,25): error C2039: "setY": no es un miembro de "sf::Vector2<float>"
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(92,31): error C2065: 'rect': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(98,25): error C2039: "dotProduct": no es un miembro de "sf::Vector2<float>"
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(99,21): error C2065: 'circle': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(112,65): error C2065: 'circle': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(117,65): error C2065: 'circle': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(125,5): error C2065: 'ObbPhys': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(125,14): error C2065: 'obb': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(125,21): error C2065: 'ObbPhys': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(125,29): error C2059: error de sintaxis: ')'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(127,5): error C2065: 'CirclePhys': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(127,17): error C2065: 'circle': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(127,27): error C2065: 'CirclePhys': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(127,38): error C2059: error de sintaxis: ')'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(132,5): error C2065: 'RotationMat': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(132,17): error C2146: error de sintaxis: falta ';' delante del identificador 'matrix'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(132,17): error C2065: 'matrix': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(132,48): error C2039: "getAngleRad": no es un miembro de "Cuerpo"
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\ParametrosCuerpos.h(13,7): message : vea la declaración de 'Cuerpo'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(132,26): error C3861: 'RotationMat': no se encontró el identificador
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(134,30): error C2065: 'matrix': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(137,34): error C2065: 'obb': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(145,31): error C2064: el término no se evalúa como una función con 0 argumentos
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(145,58): error C2064: el término no se evalúa como una función con 0 argumentos
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(147,24): error C2064: el término no se evalúa como una función con 0 argumentos
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(149,25): error C2039: "setX": no es un miembro de "sf::Vector2<float>"
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(149,30): error C2065: 'obb': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(153,25): error C2039: "setX": no es un miembro de "sf::Vector2<float>"
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(153,31): error C2065: 'obb': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(158,24): error C2064: el término no se evalúa como una función con 0 argumentos
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(160,25): error C2039: "setY": no es un miembro de "sf::Vector2<float>"
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(160,30): error C2065: 'obb': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(164,25): error C2039: "setY": no es un miembro de "sf::Vector2<float>"
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(164,31): error C2065: 'obb': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(170,25): error C2039: "dotProduct": no es un miembro de "sf::Vector2<float>"
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(171,21): error C2065: 'circle': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(185,55): error C2065: 'matrix': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(185,84): error C2065: 'circle': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(191,55): error C2065: 'matrix': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(191,84): error C2065: 'circle': identificador no declarado
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(199,29): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(201,26): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(221,65): error C2039: "vectorCrossScalar": no es un miembro de "sf::Vector2<float>"
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(221,162): error C2039: "vectorCrossScalar": no es un miembro de "sf::Vector2<float>"
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(224,32): error C2039: "dotProduct": no es un miembro de "sf::Vector2<float>"
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(235,55): error C2039: "crossProduct": no es un miembro de "sf::Vector2<float>"
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(235,17): error C2737: 'kfContactACrossNormal': se debe inicializar el objeto const
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(236,55): error C2039: "crossProduct": no es un miembro de "sf::Vector2<float>"
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Multiple.cpp(236,17): error C2737: 'kfContactBCrossNormal': se debe inicializar el objeto const
   ParametrosCuerpos.cpp
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\ParametrosCuerpos.cpp(72,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\ParametrosCuerpos.cpp(153,19): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
-  Randomizador.cpp
-  Rectangulo.cpp
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Rectangulo.cpp(42,37): error C2039: "getHalfExtent": no es un miembro de "RectanguloFisicas"
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\RectanguloFisicas.h(12,7): message : vea la declaración de 'RectanguloFisicas'
-  RectanguloFisicas.cpp
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\ParametrosCuerpos.cpp(72,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\ParametrosCuerpos.cpp(153,19): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
   Rotacion.cpp
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Rotacion.cpp(32,39): error C2039: "dotProduct": no es un miembro de "sf::Vector2<float>"
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Rotacion.cpp(32,72): error C2039: "dotProduct": no es un miembro de "sf::Vector2<float>"
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Rotacion.cpp(40,39): error C2039: "dotProduct": no es un miembro de "sf::Vector2<float>"
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Rotacion.cpp(40,75): error C2039: "dotProduct": no es un miembro de "sf::Vector2<float>"
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Rotacion.cpp(32,39): error C2039: "dotProduct": no es un miembro de "sf::Vector2<float>"
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Rotacion.cpp(32,72): error C2039: "dotProduct": no es un miembro de "sf::Vector2<float>"
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Rotacion.cpp(40,39): error C2039: "dotProduct": no es un miembro de "sf::Vector2<float>"
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\Rotacion.cpp(40,75): error C2039: "dotProduct": no es un miembro de "sf::Vector2<float>"
+E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\SFML\include\SFML\System\Vector2.hpp(255,9): message : vea la declaración de 'sf::Vector2<float>'
   TextureManager.cpp
   Generando código...

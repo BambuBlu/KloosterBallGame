@@ -23,11 +23,13 @@ class Rectangulo : public sf::Drawable
 
         Rectangulo(const sf::Vector2f _origen, const sf::Vector2f _extensionMedia, const sf::Color _color);
        
-        void Dibujar(sf::RenderTarget& _ventana) const;
+        virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
         void set_color(const sf::Color&);
 
         sf::Color get_color() const;
+
+        Rectangulo(const RectanguloFisicas& forma, const sf::Color& color, const Cuerpo& cuerpo);
 };
 
 #endif

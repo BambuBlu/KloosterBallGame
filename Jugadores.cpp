@@ -2,13 +2,13 @@
 
 Jugadores::Jugadores()
 {
-	strcpy(jugador, "Facu");
+	strcpy_s(jugador, "Facu");
 	puntaje = 0;
 }
 
 void Jugadores::set_jugador(char* _Jugador)
 {
-	strcpy(jugador, _Jugador);
+	strcpy_s(jugador, _Jugador);
 }
 void Jugadores::set_puntaje(int _puntaje)
 {

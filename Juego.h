@@ -12,6 +12,9 @@
 #include "HitBox.h"
 #include "Multiple.h"
 #include "TextureManager.h"
+#include "EnemigoRedondo.h"
+#include "EnemigoRectangular.h"
+#include "Flippers.h"
 #include <list>
 
 /*

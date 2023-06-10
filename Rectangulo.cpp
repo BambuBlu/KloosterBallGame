@@ -37,9 +37,13 @@ Rectangulo::Rectangulo(const sf::Vector2f _origen, const sf::Vector2f _extension
     color = _color;
 }
 
-void Rectangulo::Dibujar(sf::RenderTarget& _ventana) const
+void Rectangulo::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
-    const sf::Vector2f size = forma.getHalfExtent() * 40;
+    sf::Vector2f aux;
+    aux.x = PIXELTOMETER;
+    aux.y = PIXELTOMETER;
+
+    const sf::Vector2f size = forma.get_extensionMedia() * (aux.x + aux.y);
 
     sf::RectangleShape rectangle;
 
@@ -51,7 +55,7 @@ void Rectangulo::Dibujar(sf::RenderTarget& _ventana) const
 
     rectangle.setFillColor(color);
 
-    _ventana.draw(rectangle);
+    target.draw(rectangle);
 }
 
 sf::Color Rectangulo::get_color() const
@@ -62,4 +66,8 @@ sf::Color Rectangulo::get_color() const
 void Rectangulo::set_color(const sf::Color& _color)
 {
     color = _color;
+}
+
+Rectangulo::Rectangulo(const RectanguloFisicas& forma, const sf::Color& color, const Cuerpo& cuerpo)
+{
 }

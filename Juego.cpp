@@ -43,19 +43,19 @@ void Juego::primer_nivel(int, char const**)
         sf::Color verde = sf::Color(72, 181, 163);
 
         ///MENSAJES EN PANTALLA
-        sf::Text str_maximo_puntaje = sf::Text("MAXIMO PUNTAJE: " + std::to_string(puntaje_mas_alto), arcadeFont, 60);
+        sf::Text str_maximo_puntaje = sf::Text("MAXIMO PUNTAJE: " + std::to_string(puntaje_mas_alto), fuente_de_texto, 60);
         str_maximo_puntaje.setFillColor(verde);
         str_maximo_puntaje.setPosition(40, 5);
 
-        sf::Text str_puntaje = sf::Text("PUNTAJE: " + std::to_string(puntaje_total), arcadeFont, 60);
+        sf::Text str_puntaje = sf::Text("PUNTAJE: " + std::to_string(puntaje_total), fuente_de_texto, 60);
         str_puntaje.setFillColor(verde);
         str_puntaje.setPosition(40, 80);
 
-        sf::Text str_bolas_restantes = sf::Text("BOLAS: " + std::to_string(bolas_restantes), arcadeFont, 60);
+        sf::Text str_bolas_restantes = sf::Text("BOLAS: " + std::to_string(bolas_restantes), fuente_de_texto, 60);
         str_bolas_restantes.setFillColor(verde);
         str_bolas_restantes.setPosition(500, 5);
 
-        sf::Text str_fin_juego = sf::Text("FIN DEL JUEGO", arcadeFont, 150);
+        sf::Text str_fin_juego = sf::Text("FIN DEL JUEGO", fuente_de_texto, 150);
         str_fin_juego.setFillColor(sf::Color::Black);
         str_fin_juego.setPosition(100, 400);
 
@@ -77,20 +77,20 @@ void Juego::primer_nivel(int, char const**)
         std::list<EnemigoRectangular>::iterator lEnemigosRectangularesIt; 
 
         ///MUROS DEL JUEGO
-        Rectangulo muro_superior = Rectangulo(sf::Vector2f(18, 8.8), sf::Vector2f(17, 0.7), azulcito);
-        Rectangulo muro_izquierdo = Rectangulo(sf::Vector2f(0.5, 27.5), sf::Vector2f(0.7, 30), azulcito);
-        Rectangulo muro_derecho = Rectangulo(sf::Vector2f(35.5, 27.5), sf::Vector2f(0.7, 30), azulcito);
-        Rectangulo esquina_superior_derecha = Rectangulo(sf::Vector2f(34.8, 9.8), sf::Vector2f(0.5, 0.5), azulcito);
-        Rectangulo esquina_inferior_izquierda = Rectangulo(sf::Vector2f(1.3, 37.5), sf::Vector2f(0.5, 0.5), azulcito);
-        Rectangulo esquina_inferior_derecha = Rectangulo(sf::Vector2f(32.5, 37.5), sf::Vector2f(0.5, 0.5), azulcito);
-        Rectangulo tunel = Rectangulo(sf::Vector2f(32.9, 34), sf::Vector2f(0.2, 21), azulcito);
+        Rectangulo muro_superior = Rectangulo(sf::Vector2f(18.f, 8.8f), sf::Vector2f(17.f, 0.7f), azulcito);
+        Rectangulo muro_izquierdo = Rectangulo(sf::Vector2f(0.5f, 27.5f), sf::Vector2f(0.7f, 30.f), azulcito);
+        Rectangulo muro_derecho = Rectangulo(sf::Vector2f(35.5f, 27.5f), sf::Vector2f(0.7f, 30.f), azulcito);
+        Rectangulo esquina_superior_derecha = Rectangulo(sf::Vector2f(34.8f, 9.8f), sf::Vector2f(0.5f, 0.5f), azulcito);
+        Rectangulo esquina_inferior_izquierda = Rectangulo(sf::Vector2f(1.3f, 37.5f), sf::Vector2f(0.5f, 0.5f), azulcito);
+        Rectangulo esquina_inferior_derecha = Rectangulo(sf::Vector2f(32.5f, 37.5f), sf::Vector2f(0.5f, 0.5f), azulcito);
+        Rectangulo tunel = Rectangulo(sf::Vector2f(32.9f, 34.f), sf::Vector2f(0.2f, 21.f), azulcito);
 
         ///ENEMIGOS / BUMPERS DEL JUEGO
-        EnemigoRedondo eRedondo1 = EnemigoRedondo(sf::Vector2f(10, 13), 1.7, 10, cyan);
-        EnemigoRedondo eRedondo2 = EnemigoRedondo(sf::Vector2f(27, 16), 1.7, 10, amarillo);
-        EnemigoRedondo eRedondoGrande1 = EnemigoRedondo(sf::Vector2f(17.5, 21), 2, 10, verde);
-        EnemigoRedondo eRedondoGrande2 = EnemigoRedondo(sf::Vector2f(6, 25), 2, 10, amarillo);
-        EnemigoRedondo eRedondoGrande3 = EnemigoRedondo(sf::Vector2f(28, 25), 2, 10, cyan);
+        EnemigoRedondo eRedondo1 = EnemigoRedondo(sf::Vector2f(10.f, 13.f), 1.7f, 10.f, cyan);
+        EnemigoRedondo eRedondo2 = EnemigoRedondo(sf::Vector2f(27.f, 16.f), 1.7f, 10.f, amarillo);
+        EnemigoRedondo eRedondoGrande1 = EnemigoRedondo(sf::Vector2f(17.5f, 21.f), 2.f, 10.f, verde);
+        EnemigoRedondo eRedondoGrande2 = EnemigoRedondo(sf::Vector2f(6.f, 25.f), 2.f, 10.f, amarillo);
+        EnemigoRedondo eRedondoGrande3 = EnemigoRedondo(sf::Vector2f(28.f, 25.f), 2.f, 10.f, cyan);
 
         ///FLIPPERS
         Flippers FlipperIzquierdo(sf::Vector2f(50.f, 200.f), sf::Vector2f(4.5, 0.6), sf::Vector2f(1.f, 1.f), 0.5, sf::Vector2f(30.f, 30.f), cyan, false);
@@ -98,12 +98,12 @@ void Juego::primer_nivel(int, char const**)
 
 
 
-        HitBox rampaIzquierda = HitBox(sf::Vector2f(5.5, 41), sf::Vector2f(6, 0.5), 0.6, azulcito);
-        HitBox rampaDerecha = HitBox(sf::Vector2f(27.7, 41), sf::Vector2f(6, 0.5), -0.6, azulcito);
+        HitBox rampaIzquierda = HitBox(sf::Vector2f(5.5f, 41.f), sf::Vector2f(6.f, 0.5f), 0.6f, azulcito);
+        HitBox rampaDerecha = HitBox(sf::Vector2f(27.7f, 41.f), sf::Vector2f(6.f, 0.5f), -0.6f, azulcito);
 
         ///ENEMIGOS RECTANGULARES
-        EnemigoRectangular eRectangular1 = EnemigoRectangular(sf::Vector2f(4.5, 33), sf::Vector2f(0.5, 2), 0.3, 20, azulcito);
-        EnemigoRectangular eRectangular2 = EnemigoRectangular(sf::Vector2f(30, 33), sf::Vector2f(0.5, 2), -0.3, 20, azulcito);
+        EnemigoRectangular eRectangular1 = EnemigoRectangular(sf::Vector2f(4.5f, 33.f), sf::Vector2f(0.5f, 2.f), 0.3f, 20.f, azulcito);
+        EnemigoRectangular eRectangular2 = EnemigoRectangular(sf::Vector2f(30.f, 33.f), sf::Vector2f(0.5f, 2.f), -0.3f, 20.f, azulcito);
 
         lEnemigosRectangulares.push_back(eRectangular1);
         lEnemigosRectangulares.push_back(eRectangular2);
@@ -153,7 +153,7 @@ void Juego::primer_nivel(int, char const**)
                         sf::Vector2f vel = sf::Vector2f(0.f, -60.f);
                         sf::Vector2f acc = sf::Vector2f(0.f, 20.f);
 
-                        Bola bola = Bola(pos, vel, acc, 0.9);
+                        Bola bola = Bola(pos, vel, acc, 0.9f);
 
                         bola.set_color(sf::Color::Black);
 
@@ -216,7 +216,7 @@ void Juego::primer_nivel(int, char const**)
 
                         if (m.CircleVsCircle())
                         {
-                            puntaje_total += lEnemigosRedondosIt->getPoints();
+                            puntaje_total += lEnemigosRedondosIt->get_puntos();
 
                             m.correctPosition();
 
@@ -231,7 +231,7 @@ void Juego::primer_nivel(int, char const**)
 
                         if (m.CircleVsOBB())
                         {
-                            puntaje_total += lEnemigosRectangularesIt->getPoints();
+                            puntaje_total += lEnemigosRectangularesIt->get_puntos();
 
                             m.correctPosition();
 

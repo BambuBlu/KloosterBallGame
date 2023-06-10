@@ -6,7 +6,7 @@ enum Tipo
 {
     circulo,
     aabb,
-    HitBox
+    Obb
 };
 
 /*

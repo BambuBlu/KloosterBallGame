@@ -6,7 +6,7 @@ Multiple::Multiple()//!< Default constructor
 
 }
 
-Multiple::Multiple(Cuerpo* first/*!< First rigid body*/, Cuerpo* second/*!< Second rigid body*/)//!< Constructor that takes in two bodies to generate the collision manifold
+Multiple::Multiple(Cuerpo* first, Cuerpo* second)//!< Constructor that takes in two bodies to generate the collision manifold
 {
     cuerpo_a = first;
     cuerpo_b = second;

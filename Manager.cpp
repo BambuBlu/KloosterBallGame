@@ -1,5 +1,11 @@
+#include <SFML/Audio.hpp>
+#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
 #include "Manager.h"
+#include <iostream>
+#include <list>
 
+using namespace std;
 
 
 void Manager::Init_Window()
@@ -13,7 +19,7 @@ void Manager::Init_Window()
 
 	if (!font.loadFromFile("Fonts/SourceCodePro-VariableFont_wght.ttf"))
 	{
-		cout << "Error cargando la fuente" << endl;
+		std::cout << "Error cargando la fuente" << endl;
 	}
 
 	//Opcion Jugar

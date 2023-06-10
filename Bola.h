@@ -24,11 +24,12 @@ class Bola : public sf::Drawable
 
 		Bola(const sf::Vector2f, const sf::Vector2f, const sf::Vector2f, const float);
 
-		virtual void Dibujar(sf::RenderTarget&, sf::RenderStates) const;
+		virtual void draw(sf::RenderTarget&, sf::RenderStates) const;
 
 		sf::Color get_color() const;
 
 		void set_color(const sf::Color& );
+		Bola(const FisicasCirculo& circulo, const sf::Color& color, const Cuerpo& cuerpo);
 };
 #endif
 

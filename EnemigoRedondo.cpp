@@ -4,17 +4,17 @@ EnemigoRedondo::EnemigoRedondo()
 {
     cuerpo = Cuerpo();
 
-    cuerpo.setPosicion(sf::Vector2f(0,0));
+    cuerpo.setPosicion(sf::Vector2f(0.f,0.f));
 
-    cuerpo.setRestitucion(0.9);
+    cuerpo.setRestitucion(0.9f);
 
-    cuerpo.setMasa(0);
+    cuerpo.setMasa(0.f);
 
-    circulo = FisicasCirculo(0);
+    circulo = FisicasCirculo(0.f);
 
     cuerpo.fisicaTipo = (FisicasPorTipo*)&circulo;
 
-    setColor(sf::Color::Black);
+    set_color(sf::Color::Black);
 
     set_tipo(redondo);
 
@@ -27,15 +27,15 @@ EnemigoRedondo::EnemigoRedondo(const sf::Vector2f _posicion, const float _radio,
 
     cuerpo.setPosicion(_posicion);
 
-    cuerpo.setRestitucion(0.9);
+    cuerpo.setRestitucion(0.9f);
 
-    cuerpo.setMasa(0);
+    cuerpo.setMasa(0.f);
 
     circulo = FisicasCirculo(_radio);
 
     cuerpo.fisicaTipo = (FisicasPorTipo*)&circulo;
 
-    setColor(_color);
+    set_color(_color);
 
     set_tipo(redondo);
 

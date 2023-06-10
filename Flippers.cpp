@@ -7,9 +7,9 @@ Flippers::Flippers(const sf::Vector2f& _position, const sf::Vector2f& _aceleraci
 	cuerpo.setPosicion(_position);
 	cuerpo.setAceleracion(_aceleracion);
 	cuerpo.setVelocidad(_velocidad);
-	cuerpo.setMasa(0);
-	cuerpo.setInercia(0);
-	cuerpo.setRestitucion(0.2);
+	cuerpo.setMasa(0.f);
+	cuerpo.setInercia(0.f);
+	cuerpo.setRestitucion(0.2f);
 
 	en_lado_izquierdo = _lado;
 
@@ -70,34 +70,34 @@ void Flippers::clampPaddle()
 
 		if (cuerpo.getRadioAngulo() > PADDLE_MAX_ANGLE) 
 		{
-			cuerpo.setRestitucion(PADDLE_MAX_ANGLE);
-			cuerpo.setVelocidadAngular(0);
+			cuerpo.setRestitucion((const float)PADDLE_MAX_ANGLE);
+			cuerpo.setVelocidadAngular(0.f);
 		}
 
 		if (cuerpo.getRadioAngulo() < PADDLE_MIN_ANGLE) 
 		{
-			cuerpo.setRadioAngulo(PADDLE_MIN_ANGLE);
-			cuerpo.setVelocidadAngular(0);
+			cuerpo.setRadioAngulo((const float)PADDLE_MIN_ANGLE);
+			cuerpo.setVelocidadAngular(0.f);
 		}
 	}
 	else 
 	{
 		if (cuerpo.getRadioAngulo() < -PADDLE_MAX_ANGLE)
 		{
-			cuerpo.setRadioAngulo(-PADDLE_MAX_ANGLE);
-			cuerpo.setVelocidadAngular(0);
+			cuerpo.setRadioAngulo((const float)-PADDLE_MAX_ANGLE);
+			cuerpo.setVelocidadAngular(0.f);
 		}
 
 		if (cuerpo.getRadioAngulo() > -PADDLE_MIN_ANGLE)
 		{
-			cuerpo.setRadioAngulo(-PADDLE_MIN_ANGLE);
-			cuerpo.setVelocidadAngular(0);
+			cuerpo.setRadioAngulo((const float)-PADDLE_MIN_ANGLE);
+			cuerpo.setVelocidadAngular(0.f);
 		}
 	}
 
 }
 
-void Flippers::Dibujar(sf::RenderTarget& _ventana) const
+void Flippers::draw(sf::RenderTarget& target, sf::RenderStates states) const
 { 
 	const sf::Vector2f tamanio(forma.get_extension_media().x * (PIXELTOMETER * 2), //x
 								forma.get_extension_media().y * (PIXELTOMETER * 2)); //y
@@ -114,5 +114,5 @@ void Flippers::Dibujar(sf::RenderTarget& _ventana) const
 
 	rectangle.setFillColor(color);
 
-	_ventana.draw(rectangle);
+	target.draw(rectangle);
 }

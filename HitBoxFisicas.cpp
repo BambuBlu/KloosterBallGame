@@ -2,12 +2,12 @@
 
 HitBoxFisicas::HitBoxFisicas()
 {
-    tipo = HitBox;
+    tipo = Obb;
 }
 
 HitBoxFisicas::HitBoxFisicas(const sf::Vector2f& _origen, const sf::Vector2f& _extensionMedia)
 {
-    tipo = HitBox;
+    tipo = Obb;
     extensionMedia = _extensionMedia;
 }
 

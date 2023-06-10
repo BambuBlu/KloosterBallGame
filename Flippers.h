@@ -30,6 +30,6 @@ class Flippers : public sf::Drawable
 
         void clampPaddle();
 
-        void Dibujar(sf::RenderTarget&) const;
+        virtual void draw(sf::RenderTarget&, sf::RenderStates) const;
 };
 #endif
