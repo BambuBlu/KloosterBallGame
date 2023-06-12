@@ -1,12 +1,4 @@
-#include <SFML/Audio.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/Graphics.hpp>
 #include "Manager.h"
-#include <iostream>
-#include <list>
-
-using namespace std;
-
 
 void Manager::Init_Window()
 {
@@ -19,37 +11,35 @@ void Manager::Init_Window()
 
 	if (!font.loadFromFile("Fonts/SourceCodePro-VariableFont_wght.ttf"))
 	{
-		std::cout << "Error cargando la fuente" << endl;
+		std::cout << "Error cargando la fuente" << std::endl;
 	}
 
 	//Opcion Jugar
 	this->main_menu[0].setFont(font);
-	this->main_menu[0].setFillColor(Color::Cyan);
+	this->main_menu[0].setFillColor(sf::Color::Cyan);
 	this->main_menu[0].setString("Jugar");
 	this->main_menu[0].setCharacterSize(40);
 	this->main_menu[0].setPosition(50, 200);
 	//Otras Opciones
 	this->main_menu[1].setFont(font);
-	this->main_menu[1].setFillColor(Color::White);
+	this->main_menu[1].setFillColor(sf::Color::White);
 	this->main_menu[1].setString("Maximos Puntajes");
 	this->main_menu[1].setCharacterSize(30);
 	this->main_menu[1].setPosition(50, 300);
 
 	this->main_menu[2].setFont(font);
-	this->main_menu[2].setFillColor(Color::White);
+	this->main_menu[2].setFillColor(sf::Color::White);
 	this->main_menu[2].setString("Logros");
 	this->main_menu[2].setCharacterSize(30);
 	this->main_menu[2].setPosition(50, 400);
 
 	this->main_menu[3].setFont(font);
-	this->main_menu[3].setFillColor(Color::White);
+	this->main_menu[3].setFillColor(sf::Color::White);
 	this->main_menu[3].setString("Salir");
 	this->main_menu[3].setCharacterSize(20);
 	this->main_menu[3].setPosition(50, 600);
 
 	main_menu_selected = 0;
-
-
 }
 
 Manager::Manager()
@@ -90,13 +80,13 @@ void Manager::Actualizar()
 			//Con la fechita para arriba subimos
 			else if (this->evento.key.code == sf::Keyboard::Up)
 			{
-				this->MoveUp();
+				this->Up();
 				break;
 			}
 			//Con la fechita para abajo, bajamos
 			else if (this->evento.key.code == sf::Keyboard::Down)
 			{
-				this->MoveDown();
+				this->Down();
 				break;
 			}
 			else if (this->evento.key.code == sf::Keyboard::Return)
@@ -106,7 +96,7 @@ void Manager::Actualizar()
 				//JUGAR
 				if (x == 0)
 				{	
-					std::cout << "Entro a if(x == 0)" << endl;
+					std::cout << "Entro a if(x == 0)" << std::endl;
 					this->Iniciar_Juego();
 				}
 				//MAYORES PUNTAJES
@@ -142,31 +132,31 @@ void Manager::Dibujar_Menu(sf::RenderWindow* &window)
 	}
 }
 
-void Manager::MoveUp()
+void Manager::Up()
 {
 	if (main_menu_selected >= 0)
 	{
-		main_menu[main_menu_selected].setFillColor(Color::White);
+		main_menu[main_menu_selected].setFillColor(sf::Color::White);
 		main_menu_selected--;
 		if (main_menu_selected == -1)
 		{
 			main_menu_selected = 3;
 		}
-		main_menu[main_menu_selected].setFillColor(Color::Cyan);
+		main_menu[main_menu_selected].setFillColor(sf::Color::Cyan);
 	}
 }
 
-void Manager::MoveDown()
+void Manager::Down()
 {
 	if (main_menu_selected + 1 <= max_main_menu)
 	{
-		main_menu[main_menu_selected].setFillColor(Color::White);
+		main_menu[main_menu_selected].setFillColor(sf::Color::White);
 		main_menu_selected++;
 		if (main_menu_selected == 4)
 		{
 			main_menu_selected = 0;
 		}
-		main_menu[main_menu_selected].setFillColor(Color::Cyan);
+		main_menu[main_menu_selected].setFillColor(sf::Color::Cyan);
 	}
 }
 
@@ -177,17 +167,14 @@ int Manager::MainMenuPressed()
 
 void Manager::Iniciar_Juego()
 {
-	std::cout << "entro a Iniciar_Juego()" << endl;
+	std::cout << "entro a Iniciar_Juego()" << std::endl;
 
 	bool loop_juego = true;
-	Juego instancia_juego;
-
-	sf::Clock clock;
 
 	while (loop_juego)
 	{
-		loop_juego = this->EventosTeclas(flipper_1, flipper_2);
-
+		/*
+		loop_juego = this->EventosTeclas();
 
 		sf::Time tInterval = clock.getElapsedTime();
 
@@ -205,56 +192,7 @@ void Manager::Iniciar_Juego()
 		this->ventana->clear();
 
 		this->ventana->display();
-
+		*/
 	}
-	std::cout << "Paso el While y se va de la funcion" << endl;
-}
-
-bool Manager::EventosTeclas(Flippers fliper_1, Flippers fliper_2)
-{
-	while (this->ventana->pollEvent(evento))
-	{
-		if (this->evento.type == sf::Event::Closed)
-		{
-			this->ventana->close();
-			return false;
-		}
-		else if(this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Escape)
-		{
-				return false;
-		}
-		else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Z)
-		{
-			fliper_1.Mover("arriba");
-		}
-		else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::X)
-		{
-			fliper_2.Mover("arriba");
-		}
-		else if (this->evento.type == sf::Event::KeyReleased && evento.key.code == sf::Keyboard::Z)
-		{
-			fliper_1.Mover("abajo");
-		}
-		else if (this->evento.type == sf::Event::KeyReleased && evento.key.code == sf::Keyboard::X)
-		{
-			fliper_2.Mover("abajo");
-		}
-		else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Space)
-		{
-			sf::Vector2f posicion; posicion.x = 50; posicion.y = 300;
-
-			sf::Vector2f velocidad; velocidad.x = 0; velocidad.y = -20;
-
-			sf::Vector2f aceleracion; aceleracion.x = 0; aceleracion.y = 0;
-
-			Bola bola = Bola(posicion, velocidad, aceleracion, 0.9f);
-
-			bola.set_color(sf::Color::White);
-
-			bolas.push_back(bola);
-
-		}
-	}
-
-	return true;
+	std::cout << "Paso el While y se va de la funcion" << std::endl;
 }

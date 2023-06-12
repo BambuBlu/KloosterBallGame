@@ -20,10 +20,9 @@
 /*
     Clase proveniente de Main 
     Pienso que la usemos para crear dos o tres mapas y manejemos todo de acá
+
 */
 
-std::list<Bola> bolas;  
-std::list<Bola>::iterator bolasIterador;
 
 class Juego
 {
@@ -46,7 +45,9 @@ class Juego
 	public:
         Juego();
 
-        void primer_nivel(int, char const**);
+        bool primer_nivel();
+
+        bool EventosTeclas(Flippers fliper_1, Flippers fliper_2);
 
         void restar_vida();
 };

@@ -1,13 +1,12 @@
 #ifndef MANAGER_H
 #define MANAGER_H
 
+#include <SFML/Audio.hpp>
+#include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include "SetsGlobales.h"
-#include "TextureManager.h"
 #include "Juego.h"
-#include "Bola.h"
-#include "Flippers.h"
-#include <list>
+#include <iostream>
 
 /*
 	Clase para controlar el menú y la continuidad del juego
@@ -30,17 +29,15 @@ class Manager
 	public:
 		Manager();
 
-		bool EventosTeclas(Flippers, Flippers);
-
 		virtual ~Manager();
 
 		const bool Ventana_Esta_Abierta() const;
 
 		void Actualizar();
 
-		void MoveUp();
+		void Up();
 
-		void MoveDown();
+		void Down();
 
 		int MainMenuPressed();
 

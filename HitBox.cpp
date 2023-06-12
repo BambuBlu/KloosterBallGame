@@ -24,15 +24,25 @@ HitBox::HitBox()
 HitBox::HitBox(const sf::Vector2f _origen, const sf::Vector2f _extensionMedia, const float _angulo, const sf::Color _color)
 {
     cuerpo = Cuerpo();
+
     cuerpo.setPosicion(_origen);
+
     cuerpo.setAceleracion(sf::Vector2f(0, 0));
+
     cuerpo.setVelocidad(sf::Vector2f(0, 0));
+
     cuerpo.setMasa(0);
+
     cuerpo.setInercia(0);
+
     cuerpo.setRestitucion(0.5);
+
     cuerpo.setRadioAngulo(_angulo);
+
     forma = HitBoxFisicas(_origen, _extensionMedia);
+
     cuerpo.fisicaTipo = (FisicasPorTipo*)&forma;
+
     color = _color;
 }
 
@@ -67,8 +77,4 @@ sf::Color HitBox::get_color() const
 void HitBox::set_color(const sf::Color& _color)
 { 
     color = _color;
-}
-
-HitBox::HitBox(const HitBoxFisicas& forma, const sf::Color& color, const Cuerpo& cuerpo)
-{
 }

@@ -16,7 +16,9 @@ class Rotacion
         Rotacion();
         Rotacion(const float);
         void set_radianes(const float);
+
         sf::Vector2f rotar_vector(const sf::Vector2f&) const;
-        sf::Vector2f rotar_vector_inversamente(const sf::Vector2f&) const;
+
+        sf::Vector2f rotar_vector_inversamente(const sf::Vector2f& _vectorARotar) const;
 };
 #endif

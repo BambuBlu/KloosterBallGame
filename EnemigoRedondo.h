@@ -9,6 +9,8 @@
 
 class EnemigoRedondo : public Enemigos, public Bola
 {
+	private:
+
 	public:
 		EnemigoRedondo();
 

@@ -1,6 +1,39 @@
 #include "Multiple.h"
 
+/// Funciones matematicas utilizadas
+float productoEscalar(sf::Vector2f& v1, sf::Vector2f& v2)
+{
+    float producto = 0;
+    producto = v1.x * v2.x + v1.y * v2.y;
+    return producto;
+}
 
+float productoEscalar(sf::Vector2f& v1)
+{
+    float producto = 0;
+    producto = v1.x * v1.x + v1.y * v1.y;
+    return producto;
+}
+
+float productoCruzado(sf::Vector2f& v1, sf::Vector2f& v2) 
+{
+
+    float resultado = v1.x * v2.y - v1.y * v2.x; // "Producto cruzado" extendido
+
+    return resultado;
+}
+
+sf::Vector2f escalar_cruzado(sf::Vector2f& vector, float scalar) {
+
+    sf::Vector2f resultado;
+
+    resultado.x = vector.y * scalar;
+    resultado.y = vector.x * -scalar;
+
+    return resultado;
+}
+
+///METODOS DE LA CLASE
 Multiple::Multiple()//!< Default constructor
 {
 
@@ -15,16 +48,16 @@ Multiple::Multiple(Cuerpo* first, Cuerpo* second)//!< Constructor that takes in 
 bool Multiple::CircleVsCircle()
 {
     /*!< Setting up pointers to two circles*/
-    CirclePhys* circleA = (CirclePhys*)cuerpo_a->physicsShape;
-    CirclePhys* circleB = (CirclePhys*)cuerpo_b->physicsShape;
+    FisicasCirculo* circleA = (FisicasCirculo*)cuerpo_a->fisicaTipo;
+    FisicasCirculo* circleB = (FisicasCirculo*)cuerpo_b->fisicaTipo;
 
     /*!< Calculating vector between the two bodies */
     sf::Vector2f difference = cuerpo_b->getPosicion() - cuerpo_a->getPosicion();
 
     /*!< Sum of both radiuses */
-    float fRadiusSum = circleA->getRadius() + circleB->getRadius();
+    float fRadiusSum = circleA->getRadio() + circleB->getRadio();
 
-    float fMag = difference.dotProduct(difference);
+    float fMag = productoEscalar(difference);
 
     if ((fRadiusSum * fRadiusSum) < fMag)
         return false;
@@ -37,11 +70,11 @@ bool Multiple::CircleVsCircle()
     {
         penetracion = fMag - fRadiusSum; // Penetration distance
         normal = difference / fMag; 
-        punto_de_contacto = cuerpo_b->getPosicion() - (normal * circleB->getRadius());
+        punto_de_contacto = cuerpo_b->getPosicion() - (normal * circleB->getRadio());
     }
     else
     {
-        penetracion = circleA->getRadius();
+        penetracion = circleA->getRadio();
         normal = sf::Vector2f(1, 0);
         punto_de_contacto = cuerpo_a->getPosicion();
     }
@@ -51,14 +84,14 @@ bool Multiple::CircleVsCircle()
 bool Multiple::CircleVsRect()
 {
     /*!< Setting up pointers to a rectangle and a circle */
-    RectPhys* rect = (RectPhys*)cuerpo_a->physicsShape;
-    CirclePhys* circle = (CirclePhys*)cuerpo_b->physicsShape;
+    RectanguloFisicas* rect = (RectanguloFisicas*)cuerpo_a->fisicaTipo;
+    FisicasCirculo* circle = (FisicasCirculo*)cuerpo_b->fisicaTipo;
 
     // Vector between A and B
     sf::Vector2f difference = cuerpo_b->getPosicion() - cuerpo_a->getPosicion();
 
     /*!< Clamping closest point to nearest edge */
-    sf::Vector2f closest = Clamp(rect->getHalfExtent(), difference);
+    sf::Vector2f closest = Clamp(rect->get_extensionMedia(), difference);
 
     bool bInside = false;
 
@@ -68,35 +101,37 @@ bool Multiple::CircleVsRect()
         bInside = true;
 
         // Find closest axis
-        if (std::abs(difference.x()) > std::abs(difference.y()))
+        if (std::abs(difference.x) > std::abs(difference.y))
         {
 
             // Clamp to closest extent
-            if (closest.x() > 0) 
+            if (closest.x > 0) 
             {
-                closest.setX(rect->getHalfExtent().x());
+                closest.x = (rect->get_extensionMedia().x);
             }
             else 
             {
-                closest.setX(-rect->getHalfExtent().x());
+                closest.x = (-rect->get_extensionMedia().x);
             }
         }
         else
         {
-            if (closest.y() > 0) 
+            if (closest.y > 0) 
             {
-                closest.setY(rect->getHalfExtent().y());
+                closest.y = (rect->get_extensionMedia().y);
             }
             else
             {
-                closest.setY(-rect->getHalfExtent().y());
+                closest.y = (-rect->get_extensionMedia().y);
             }
         }
     }
 
     sf::Vector2f n = difference - closest;
-    float fDistance = n.dotProduct(n);
-    float fRadius = circle->getRadius();
+
+    float fDistance = productoEscalar(n);
+
+    float fRadius = circle->getRadio();
 
     // if circle isn't inside AABB
     if (fDistance > fRadius * fRadius && !bInside) {
@@ -109,12 +144,12 @@ bool Multiple::CircleVsRect()
     // if circle is inside AABB
     if (bInside) {
         normal = -n;
-        punto_de_contacto = cuerpo_b->getPosicion() - (normal * circle->getRadius());
+        punto_de_contacto = cuerpo_b->getPosicion() - (normal * circle->getRadio());
         penetracion = fDistance - fRadius;
     }
     else {
         normal = n;
-        punto_de_contacto = cuerpo_b->getPosicion() - (normal * circle->getRadius());
+        punto_de_contacto = cuerpo_b->getPosicion() - (normal * circle->getRadio());
         penetracion = fDistance - fRadius;
     }
     return true;
@@ -122,53 +157,55 @@ bool Multiple::CircleVsRect()
 
 bool Multiple::CircleVsOBB()
 {
-    ObbPhys* obb = (ObbPhys*)cuerpo_a->physicsShape;
+    HitBoxFisicas* hitbox = (HitBoxFisicas*)cuerpo_a->fisicaTipo;
 
-    CirclePhys* circle = (CirclePhys*)cuerpo_b->physicsShape;
+    FisicasCirculo* circle = (FisicasCirculo*)cuerpo_b->fisicaTipo;
 
     // Vector between A and B
     sf::Vector2f difference = cuerpo_b->getPosicion() - cuerpo_a->getPosicion();
 
-    RotationMat matrix = RotationMat(cuerpo_a->getAngleRad());
+    Rotacion matrix = Rotacion(cuerpo_a->getGradosAngulo());
 
-    sf::Vector2f transform = matrix.inverseRotateVector(difference);
+    sf::Vector2f transform = matrix.rotar_vector_inversamente(difference);
 
     // Closest point on A to B
-    sf::Vector2f closest = Clamp(obb->getHalfExtent(), transform);
+    sf::Vector2f closest = Clamp(hitbox->get_extension_media(), transform);
 
     bool bInside = false;
 
     // Clamp circle to the closest edge
-    if (transform == closest) 
+    if (transform == closest)
     {
         bInside = true;
-        if (std::abs(transform.x()) >= std::abs(transform.y()))
+        if (std::abs(transform.x) >= std::abs(transform.y))
         {
-            if (closest.x() > 0) 
+            if (closest.x > 0)
             {
-                closest.setX(obb->getHalfExtent().x());
+                closest.x = (hitbox->get_extension_media().x);
             }
-            else 
+            else
             {
-                closest.setX(-obb->getHalfExtent().x());
+                closest.x = (-hitbox->get_extension_media().x);
             }
         }
-        else 
+        else
         {
-            if (closest.y() > 0) 
+            if (closest.y > 0)
             {
-                closest.setY(obb->getHalfExtent().y());
+                closest.y = (hitbox->get_extension_media().y);
             }
-            else 
+            else
             {
-                closest.setY(-obb->getHalfExtent().y());
+                closest.y = (-hitbox->get_extension_media().y);
             }
         }
     }
 
     sf::Vector2f n = transform - closest;
-    float fDistance = n.dotProduct(n);
-    float fRadius = circle->getRadius();
+
+    float fDistance = productoEscalar(n);
+
+    float fRadius = circle->getRadio();
 
     if (fDistance > fRadius * fRadius && !bInside)
     {
@@ -176,19 +213,24 @@ bool Multiple::CircleVsOBB()
     }
 
     fDistance = std::sqrtf(fDistance);
+
     n = n / fDistance;
 
     // if circle is inside AABB
-    if (bInside) 
+    if (bInside)
     {
         normal = -n;
-        punto_de_contacto = cuerpo_b->getPosicion() - matrix.rotateVector(normal * circle->getRadius());
+
+        punto_de_contacto = cuerpo_b->getPosicion() - matrix.rotar_vector(normal * circle->getRadio());
+
         penetracion = fDistance - fRadius;
     }
-    else 
+    else
     {
         normal = n;
-        punto_de_contacto = cuerpo_b->getPosicion() - matrix.rotateVector(normal * circle->getRadius());
+
+        punto_de_contacto = cuerpo_b->getPosicion() - matrix.rotar_vector(normal * circle->getRadio());
+
         penetracion = fDistance - fRadius;
     }
     return true;
@@ -196,9 +238,9 @@ bool Multiple::CircleVsOBB()
 
 void Multiple::correctPosition() //!< Applies position correction 
 {
-    const float kfPercent = 0.2;
+    const float kfPercent = 0.2f;
 
-    const float kfSlop = 0.01;
+    const float kfSlop = 0.01f;
 
     const float kfInvMassSum = cuerpo_a->getMasaInversa() + cuerpo_b->getMasaInversa();
 
@@ -214,14 +256,15 @@ void Multiple::correctPosition() //!< Applies position correction
 void Multiple::applyRotationalImpulse()
 {
     /*!< Calculating contact points*/
-    const sf::Vector2f kBodyAContact(punto_de_contacto - cuerpo_a->getPosicion());
-    const sf::Vector2f kBodyBContact(punto_de_contacto - cuerpo_b->getPosicion());
+    sf::Vector2f kBodyAContact(punto_de_contacto - cuerpo_a->getPosicion());
+    sf::Vector2f kBodyBContact(punto_de_contacto - cuerpo_b->getPosicion());
 
     /*!< Calculate the relative velocity */
-    sf::Vector2f rv = (cuerpo_b->getVelocidad() + kBodyBContact.vectorCrossScalar(-cuerpo_b->getVelocidadAngular())) - (cuerpo_a->getVelocidad() + kBodyAContact.vectorCrossScalar(-cuerpo_a->getVelocidadAngular()));
+    sf::Vector2f velocidadRelativa = (cuerpo_b->getVelocidad() + escalar_cruzado(kBodyBContact , -cuerpo_b->getVelocidadAngular())) -
+                         (cuerpo_a->getVelocidad() + escalar_cruzado(kBodyAContact, -cuerpo_a->getVelocidadAngular()));
 
     /*!< Calculate relative velocity along the normal*/
-    float fVelAlongNormal = rv.dotProduct(normal);
+    float fVelAlongNormal = productoEscalar(normal, velocidadRelativa);
 
     /*!< Do not apply impulse if velocities are separating*/
     if (fVelAlongNormal > 0) 
@@ -232,8 +275,9 @@ void Multiple::applyRotationalImpulse()
     /*!< Calculate restitution */
     float fRestitution = std::min(cuerpo_a->getRestitucion(), cuerpo_b->getRestitucion());
 
-    const float kfContactACrossNormal = kBodyAContact.crossProduct(normal);
-    const float kfContactBCrossNormal = kBodyBContact.crossProduct(normal);
+    const float kfContactACrossNormal = productoCruzado(normal, kBodyAContact);
+
+    const float kfContactBCrossNormal = productoCruzado(normal, kBodyBContact);
 
     /*!< Calculate impulse scalar */
     float fImpulseScalar = -(1 + fRestitution) * fVelAlongNormal;

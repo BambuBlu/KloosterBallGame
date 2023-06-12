@@ -19,7 +19,7 @@ class Multiple
         Cuerpo* cuerpo_b; 
 
     private:
-        float penetracion;+
+        float penetracion;
         sf::Vector2f normal;
         sf::Vector2f punto_de_contacto;
 

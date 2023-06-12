@@ -63,7 +63,3 @@ void Bola::set_color(const sf::Color& _color)
 {
     color = _color;
 }
-
-Bola::Bola(const FisicasCirculo& circulo, const sf::Color& color, const Cuerpo& cuerpo)
-{
-}

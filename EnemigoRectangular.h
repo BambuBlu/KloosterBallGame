@@ -12,10 +12,11 @@
 
 class EnemigoRectangular : public Enemigos, public HitBox
 {
+    private:
+
     public:
         EnemigoRectangular();
-        EnemigoRectangular(const sf::Vector2f _posicion, const sf::Vector2f _extensionMedia, const float _angulo,
-                            const int _puntos, const sf::Color _color);
+        EnemigoRectangular(const sf::Vector2f _posicion, const sf::Vector2f _extensionMedia, const float _angulo, const int _puntos, const sf::Color _color);
 };
 #endif
 

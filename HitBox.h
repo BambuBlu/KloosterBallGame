@@ -3,8 +3,8 @@
 
 #include <SFML/Graphics.hpp>
 #include "SetsGlobales.h"
-#include "ParametrosCuerpos.h"
 #include "HitBoxFisicas.h"
+#include "ParametrosCuerpos.h"
 
 /*
     Clase proveniente de OBB
@@ -31,7 +31,6 @@ class HitBox : public sf::Drawable
         sf::Color get_color() const;
   
         void set_color(const sf::Color& _color);
-        HitBox(const HitBoxFisicas& forma, const sf::Color& color, const Cuerpo& cuerpo);
 };
 #endif
 

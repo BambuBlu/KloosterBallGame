@@ -1,11 +1,10 @@
 #include "Juego.h"
 
+std::list<Bola> bolas;
+std::list<Bola>::iterator bolasIterador;
+
 void Juego::InitJuego()
 {
-    this->ventana;
-    this->video_mode;
-    this->evento;
-
     this->bool_En_Juego = false;
     this->bool_Fin_Juego = false;
     this->puntaje_total = 0;
@@ -22,7 +21,7 @@ Juego::Juego()
     InitJuego();
 }
 
-void Juego::primer_nivel(int, char const**)
+bool Juego::primer_nivel()
 {
     ///Cada vez que se inicie este nivel, las variables deberan volver a iniciarse
        InitJuego();
@@ -63,6 +62,8 @@ void Juego::primer_nivel(int, char const**)
         Randomizador rand;
 
         //LISTAS E ITERADORES DE OBJETOS
+
+
         std::list<Rectangulo> lRectangulos;
         std::list<Rectangulo>::iterator lRectangulosIt;
 
@@ -77,7 +78,7 @@ void Juego::primer_nivel(int, char const**)
         std::list<EnemigoRectangular>::iterator lEnemigosRectangularesIt; 
 
         ///MUROS DEL JUEGO
-        Rectangulo muro_superior = Rectangulo(sf::Vector2f(18.f, 8.8f), sf::Vector2f(17.f, 0.7f), azulcito);
+        Rectangulo muro_superior = Rectangulo(sf::Vector2f(18.f, 8.8f) /*ORIGEN*/, sf::Vector2f(17.f, 0.7f)/*EXTENSION MEDIA*/, azulcito/*COLOR*/);
         Rectangulo muro_izquierdo = Rectangulo(sf::Vector2f(0.5f, 27.5f), sf::Vector2f(0.7f, 30.f), azulcito);
         Rectangulo muro_derecho = Rectangulo(sf::Vector2f(35.5f, 27.5f), sf::Vector2f(0.7f, 30.f), azulcito);
         Rectangulo esquina_superior_derecha = Rectangulo(sf::Vector2f(34.8f, 9.8f), sf::Vector2f(0.5f, 0.5f), azulcito);
@@ -86,35 +87,33 @@ void Juego::primer_nivel(int, char const**)
         Rectangulo tunel = Rectangulo(sf::Vector2f(32.9f, 34.f), sf::Vector2f(0.2f, 21.f), azulcito);
 
         ///ENEMIGOS / BUMPERS DEL JUEGO
-        EnemigoRedondo eRedondo1 = EnemigoRedondo(sf::Vector2f(10.f, 13.f), 1.7f, 10.f, cyan);
-        EnemigoRedondo eRedondo2 = EnemigoRedondo(sf::Vector2f(27.f, 16.f), 1.7f, 10.f, amarillo);
-        EnemigoRedondo eRedondoGrande1 = EnemigoRedondo(sf::Vector2f(17.5f, 21.f), 2.f, 10.f, verde);
-        EnemigoRedondo eRedondoGrande2 = EnemigoRedondo(sf::Vector2f(6.f, 25.f), 2.f, 10.f, amarillo);
-        EnemigoRedondo eRedondoGrande3 = EnemigoRedondo(sf::Vector2f(28.f, 25.f), 2.f, 10.f, cyan);
+        EnemigoRedondo eRedondo1 = EnemigoRedondo(sf::Vector2f(10.f, 13.f)/*Posicion*/, 2.f/*Radio*/, 10/*Puntos*/, cyan/*Color*/);
+        EnemigoRedondo eRedondo2 = EnemigoRedondo(sf::Vector2f(27.f, 16.f), 2.f, 10, amarillo);
+        EnemigoRedondo eRedondoGrande1 = EnemigoRedondo(sf::Vector2f(17.5f, 21.f), 2.f, 10, verde);
+        EnemigoRedondo eRedondoGrande2 = EnemigoRedondo(sf::Vector2f(6.f, 25.f), 2.f, 10, amarillo);
+        EnemigoRedondo eRedondoGrande3 = EnemigoRedondo(sf::Vector2f(28.f, 25.f), 2.f, 10, cyan);
 
         ///FLIPPERS
-        Flippers FlipperIzquierdo(sf::Vector2f(50.f, 200.f), sf::Vector2f(4.5, 0.6), sf::Vector2f(1.f, 1.f), 0.5, sf::Vector2f(30.f, 30.f), cyan, false);
-        Flippers FlipperDerecho(sf::Vector2f(350.f, 200.f), sf::Vector2f(4.5, 0.6), sf::Vector2f(1.f, 1.f), 0.5, sf::Vector2f(30.f, 30.f), cyan, true);
+        Flippers FlipperIzquierdo(sf::Vector2f(50.f, 200.f), sf::Vector2f(5.f, 1.f), sf::Vector2f(1.f, 1.f), 0.5, sf::Vector2f(30.f, 30.f), cyan, false);
+        Flippers FlipperDerecho(sf::Vector2f(350.f, 200.f), sf::Vector2f(5.f, 1.f), sf::Vector2f(1.f, 1.f), 0.5, sf::Vector2f(30.f, 30.f), cyan, true);
 
-
-
+        //RAMPAS
         HitBox rampaIzquierda = HitBox(sf::Vector2f(5.5f, 41.f), sf::Vector2f(6.f, 0.5f), 0.6f, azulcito);
         HitBox rampaDerecha = HitBox(sf::Vector2f(27.7f, 41.f), sf::Vector2f(6.f, 0.5f), -0.6f, azulcito);
 
         ///ENEMIGOS RECTANGULARES
-        EnemigoRectangular eRectangular1 = EnemigoRectangular(sf::Vector2f(4.5f, 33.f), sf::Vector2f(0.5f, 2.f), 0.3f, 20.f, azulcito);
-        EnemigoRectangular eRectangular2 = EnemigoRectangular(sf::Vector2f(30.f, 33.f), sf::Vector2f(0.5f, 2.f), -0.3f, 20.f, azulcito);
+        EnemigoRectangular eRectangular1 = EnemigoRectangular(sf::Vector2f(4.5f, 33.f), sf::Vector2f(0.5f, 2.f), 0.3f, 20, azulcito);
+        EnemigoRectangular eRectangular2 = EnemigoRectangular(sf::Vector2f(30.f, 33.f), sf::Vector2f(0.5f, 2.f), -0.3f, 20, azulcito);
 
-        lEnemigosRectangulares.push_back(eRectangular1);
+        ///Pusheos de los objetos ¿? xd
+        lEnemigosRectangulares.push_back(eRectangular1);    
         lEnemigosRectangulares.push_back(eRectangular2);
 
-        ///ENEMIGOS CIRCULARES
         lEnemigosRedondos.push_back(eRedondo1);
         lEnemigosRedondos.push_back(eRedondo2);
         lEnemigosRedondos.push_back(eRedondoGrande1);
         lEnemigosRedondos.push_back(eRedondoGrande2);
         lEnemigosRedondos.push_back(eRedondoGrande3);
-
 
         lRectangulos.push_back(muro_superior);
         lRectangulos.push_back(muro_izquierdo);
@@ -391,8 +390,58 @@ void Juego::primer_nivel(int, char const**)
 
             this->ventana.display();
         }
-        return;
+        return false;
 }
+
+
+bool Juego::EventosTeclas(Flippers fliper_1, Flippers fliper_2)
+{
+    /*
+        if (this->evento.type == sf::Event::Closed)
+        {
+            this->ventana->close();
+            return false;
+        }
+        else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Escape)
+        {
+            return false;
+        }
+        else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Z)
+        {
+            fliper_1.Mover("arriba");
+        }
+        else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::X)
+        {
+            fliper_2.Mover("arriba");
+        }
+        else if (this->evento.type == sf::Event::KeyReleased && evento.key.code == sf::Keyboard::Z)
+        {
+            fliper_1.Mover("abajo");
+        }
+        else if (this->evento.type == sf::Event::KeyReleased && evento.key.code == sf::Keyboard::X)
+        {
+            fliper_2.Mover("abajo");
+        }
+        else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Space)
+        {
+            sf::Vector2f posicion; posicion.x = 50; posicion.y = 300;
+
+            sf::Vector2f velocidad; velocidad.x = 0; velocidad.y = -20;
+
+            sf::Vector2f aceleracion; aceleracion.x = 0; aceleracion.y = 0;
+
+            Bola bola = Bola(posicion, velocidad, aceleracion, 0.9f);
+
+            bola.set_color(sf::Color::White);
+
+            //bolas.push_back(bola);
+
+        }
+
+    return true;
+    */
+}
+
 
 void Juego::restar_vida()
 {

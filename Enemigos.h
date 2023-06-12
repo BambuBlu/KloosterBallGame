@@ -22,6 +22,7 @@ class Enemigos
 
     public:
         Enemigos();
+
         Enemigos(TipoEnemigo _tipo, int _puntos);
 
         void set_tipo(TipoEnemigo _tipo);

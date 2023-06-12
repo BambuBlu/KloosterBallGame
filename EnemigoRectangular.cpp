@@ -10,7 +10,7 @@ EnemigoRectangular::EnemigoRectangular()
 
     cuerpo.setMasa(0);
 
-    tipo = TipoEnemigo();
+    forma = HitBoxFisicas();
 
     cuerpo.fisicaTipo = (FisicasPorTipo*)&forma;
 
