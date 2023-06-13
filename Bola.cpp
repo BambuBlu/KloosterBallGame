@@ -30,14 +30,23 @@ Bola::Bola()
 Bola::Bola(const sf::Vector2f _posicion, const sf::Vector2f _velocidad, const sf::Vector2f _aceleracion, const float _radio)
 {
     cuerpo = Cuerpo();
+
     cuerpo.setPosicion(_posicion);
+
     cuerpo.setAceleracion(_aceleracion);
+
     cuerpo.setVelocidad(_velocidad);
+
     cuerpo.setRestitucion(1);
+
     cuerpo.setInercia(0);
+
     cuerpo.setMasa(1);
+
     circulo = FisicasCirculo(_radio);
+
     cuerpo.fisicaTipo = (FisicasPorTipo*)&circulo;
+
     color = sf::Color::White;
 }
 

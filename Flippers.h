@@ -23,8 +23,7 @@ class Flippers : public sf::Drawable
     public:
         Cuerpo cuerpo;
 
-        Flippers(const sf::Vector2f& _position, const sf::Vector2f& _aceleracion, const sf::Vector2f& _velocidad, 
-                float _angulo, const sf::Vector2f& _extensionMedia, sf::Color _color, bool _lado);
+        Flippers(const sf::Vector2f& _position, float _angulo, const sf::Vector2f& _extensionMedia, sf::Color _color, bool _lado);
 
         void Mover(std::string);
 

@@ -1,12 +1,11 @@
  #include "Flippers.h"
 
-Flippers::Flippers(const sf::Vector2f& _position, const sf::Vector2f& _aceleracion, const sf::Vector2f& _velocidad, 
-					float _angulo , const sf::Vector2f& _extensionMedia, sf::Color _color, bool _lado)
+Flippers::Flippers(const sf::Vector2f& _position, float _angulo , const sf::Vector2f& _extensionMedia, sf::Color _color, bool _lado)
 {
 	cuerpo = Cuerpo();
 	cuerpo.setPosicion(_position);
-	cuerpo.setAceleracion(_aceleracion);
-	cuerpo.setVelocidad(_velocidad);
+	cuerpo.setAceleracion(sf::Vector2f(0,0));
+	cuerpo.setVelocidad(sf::Vector2f(0, 0));
 	cuerpo.setMasa(0.f);
 	cuerpo.setInercia(0.f);
 	cuerpo.setRestitucion(0.2f);

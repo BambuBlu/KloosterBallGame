@@ -5,6 +5,7 @@ std::list<Bola>::iterator bolasIterador;
 
 void Juego::InitJuego()
 {
+    ///JUEGO
     this->bool_En_Juego = false;
     this->bool_Fin_Juego = false;
     this->puntaje_total = 0;
@@ -14,6 +15,12 @@ void Juego::InitJuego()
 
     ///FUENTE DE TEXTO
     this->fuente_de_texto.loadFromFile("Fonts\\SourceCodePro-Italic-VariableFont_wght.ttf");
+
+    ///VENTANA
+    this->video_mode.height = 980;
+    this->video_mode.width = 720;
+
+    this->ventana.create(this->video_mode, "KloosterBallGame", sf::Style::Default);
 }
 
 Juego::Juego()
@@ -21,18 +28,25 @@ Juego::Juego()
     InitJuego();
 }
 
+Juego::~Juego()
+{
+    this->ventana.close();
+}
+
 bool Juego::primer_nivel()
 {
     ///Cada vez que se inicie este nivel, las variables deberan volver a iniciarse
        InitJuego();
 
+       
         ///FONDO DEL NIVEL
         TextureManager texturas;
         texturas.cargar_textura("background", "resources\\BackgroundGame.png");
-
+        
         sf::Sprite fondo;
-        fondo.setTexture(texturas.get_textura("background"));
+       // fondo.setTexture(texturas.get_textura("background"));
         fondo.setPosition(0, 0);
+       
 
         ///DECLARACION DE COLORES DEL NIVEL
         sf::Color azulcito = sf::Color(117, 137, 191);
@@ -42,15 +56,15 @@ bool Juego::primer_nivel()
         sf::Color verde = sf::Color(72, 181, 163);
 
         ///MENSAJES EN PANTALLA
-        sf::Text str_maximo_puntaje = sf::Text("MAXIMO PUNTAJE: " + std::to_string(puntaje_mas_alto), fuente_de_texto, 60);
+        sf::Text str_maximo_puntaje = sf::Text("MAXPUNTOS:" + std::to_string(puntaje_mas_alto), fuente_de_texto, 40);
         str_maximo_puntaje.setFillColor(verde);
         str_maximo_puntaje.setPosition(40, 5);
 
-        sf::Text str_puntaje = sf::Text("PUNTAJE: " + std::to_string(puntaje_total), fuente_de_texto, 60);
+        sf::Text str_puntaje = sf::Text("PUNTOS:" + std::to_string(puntaje_total), fuente_de_texto, 40);
         str_puntaje.setFillColor(verde);
         str_puntaje.setPosition(40, 80);
 
-        sf::Text str_bolas_restantes = sf::Text("BOLAS: " + std::to_string(bolas_restantes), fuente_de_texto, 60);
+        sf::Text str_bolas_restantes = sf::Text("BOLAS:" + std::to_string(bolas_restantes), fuente_de_texto, 40);
         str_bolas_restantes.setFillColor(verde);
         str_bolas_restantes.setPosition(500, 5);
 
@@ -79,30 +93,43 @@ bool Juego::primer_nivel()
 
         ///MUROS DEL JUEGO
         Rectangulo muro_superior = Rectangulo(sf::Vector2f(18.f, 8.8f) /*ORIGEN*/, sf::Vector2f(17.f, 0.7f)/*EXTENSION MEDIA*/, azulcito/*COLOR*/);
+
         Rectangulo muro_izquierdo = Rectangulo(sf::Vector2f(0.5f, 27.5f), sf::Vector2f(0.7f, 30.f), azulcito);
+
         Rectangulo muro_derecho = Rectangulo(sf::Vector2f(35.5f, 27.5f), sf::Vector2f(0.7f, 30.f), azulcito);
+
         Rectangulo esquina_superior_derecha = Rectangulo(sf::Vector2f(34.8f, 9.8f), sf::Vector2f(0.5f, 0.5f), azulcito);
+
         Rectangulo esquina_inferior_izquierda = Rectangulo(sf::Vector2f(1.3f, 37.5f), sf::Vector2f(0.5f, 0.5f), azulcito);
+
         Rectangulo esquina_inferior_derecha = Rectangulo(sf::Vector2f(32.5f, 37.5f), sf::Vector2f(0.5f, 0.5f), azulcito);
-        Rectangulo tunel = Rectangulo(sf::Vector2f(32.9f, 34.f), sf::Vector2f(0.2f, 21.f), azulcito);
+
+        Rectangulo tunel = Rectangulo(sf::Vector2f(31.9f, 34.f), sf::Vector2f(0.2f, 21.f), azulcito);
 
         ///ENEMIGOS / BUMPERS DEL JUEGO
-        EnemigoRedondo eRedondo1 = EnemigoRedondo(sf::Vector2f(10.f, 13.f)/*Posicion*/, 2.f/*Radio*/, 10/*Puntos*/, cyan/*Color*/);
-        EnemigoRedondo eRedondo2 = EnemigoRedondo(sf::Vector2f(27.f, 16.f), 2.f, 10, amarillo);
+        EnemigoRedondo eRedondo1 = EnemigoRedondo(sf::Vector2f(10.f, 13.f)/*Posicion*/, 1.7f/*Radio*/, 10/*Puntos*/, cyan/*Color*/);
+
+        EnemigoRedondo eRedondo2 = EnemigoRedondo(sf::Vector2f(27.f, 16.f), 1.7f, 10, amarillo);
+
         EnemigoRedondo eRedondoGrande1 = EnemigoRedondo(sf::Vector2f(17.5f, 21.f), 2.f, 10, verde);
+
         EnemigoRedondo eRedondoGrande2 = EnemigoRedondo(sf::Vector2f(6.f, 25.f), 2.f, 10, amarillo);
+
         EnemigoRedondo eRedondoGrande3 = EnemigoRedondo(sf::Vector2f(28.f, 25.f), 2.f, 10, cyan);
 
         ///FLIPPERS
-        Flippers FlipperIzquierdo(sf::Vector2f(50.f, 200.f), sf::Vector2f(5.f, 1.f), sf::Vector2f(1.f, 1.f), 0.5, sf::Vector2f(30.f, 30.f), cyan, false);
-        Flippers FlipperDerecho(sf::Vector2f(350.f, 200.f), sf::Vector2f(5.f, 1.f), sf::Vector2f(1.f, 1.f), 0.5, sf::Vector2f(30.f, 30.f), cyan, true);
+        Flippers FlipperIzquierdo(sf::Vector2f(10.f, 44.5f)/*Posicion*/, 0.5f/*Angulo*/, sf::Vector2f(4.5, 0.6f)/*Extension media*/, cyan/*Color*/, true/*EnladoIzquierdo*/);
+
+        Flippers FlipperDerecho(sf::Vector2f(23.f, 44.5f)/*Posicion*/, 0.5f/*Angulo*/, sf::Vector2f(4.5f, 0.6f)/*Extension media*/, cyan/*Color*/, false/*EnladoIzquierdo*/);
 
         //RAMPAS
         HitBox rampaIzquierda = HitBox(sf::Vector2f(5.5f, 41.f), sf::Vector2f(6.f, 0.5f), 0.6f, azulcito);
+
         HitBox rampaDerecha = HitBox(sf::Vector2f(27.7f, 41.f), sf::Vector2f(6.f, 0.5f), -0.6f, azulcito);
 
         ///ENEMIGOS RECTANGULARES
         EnemigoRectangular eRectangular1 = EnemigoRectangular(sf::Vector2f(4.5f, 33.f), sf::Vector2f(0.5f, 2.f), 0.3f, 20, azulcito);
+
         EnemigoRectangular eRectangular2 = EnemigoRectangular(sf::Vector2f(30.f, 33.f), sf::Vector2f(0.5f, 2.f), -0.3f, 20, azulcito);
 
         ///Pusheos de los objetos ¿? xd
@@ -148,13 +175,15 @@ bool Juego::primer_nivel()
                     if (!bool_En_Juego && !bool_Fin_Juego)
                     {
 
-                        sf::Vector2f pos = sf::Vector2f(34.f, 55.f);
-                        sf::Vector2f vel = sf::Vector2f(0.f, -60.f);
-                        sf::Vector2f acc = sf::Vector2f(0.f, 20.f);
+                        sf::Vector2f posicion = sf::Vector2f(34.f, 55.f);
 
-                        Bola bola = Bola(pos, vel, acc, 0.9f);
+                        sf::Vector2f velocidad = sf::Vector2f(0.f, -60.f);
 
-                        bola.set_color(sf::Color::Black);
+                        sf::Vector2f aceleracion = sf::Vector2f(0.f, 20.f);
+
+                        Bola bola = Bola(posicion, velocidad, aceleracion, 0.9f);
+
+                        bola.set_color(sf::Color::White);
 
                         bolas.push_back(bola);
 
@@ -315,11 +344,11 @@ bool Juego::primer_nivel()
 
             this->ventana.draw(fondo);
 
-            str_puntaje.setString("PUNTAJE: " + std::to_string(puntaje_total));
+            str_puntaje.setString("PUNTOS:" + std::to_string(puntaje_total));
 
-            str_bolas_restantes.setString("BOLAS: " + std::to_string(bolas_restantes));
+            str_bolas_restantes.setString("BOLAS:" + std::to_string(bolas_restantes));
 
-            str_maximo_puntaje.setString("PUNTAJE MAS ALTO: " + std::to_string(puntaje_mas_alto));
+            str_maximo_puntaje.setString("MAXPUNTOS:" + std::to_string(puntaje_mas_alto));
 
             restar_vida();
 
@@ -393,53 +422,53 @@ bool Juego::primer_nivel()
         return false;
 }
 
-/*
+
 bool Juego::EventosTeclas(Flippers fliper_1, Flippers fliper_2)
 {
-    
-        if (this->evento.type == sf::Event::Closed)
-        {
-            this->ventana->close();
-            return false;
-        }
-        else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Escape)
-        {
-            return false;
-        }
-        else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Z)
-        {
-            fliper_1.Mover("arriba");
-        }
-        else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::X)
-        {
-            fliper_2.Mover("arriba");
-        }
-        else if (this->evento.type == sf::Event::KeyReleased && evento.key.code == sf::Keyboard::Z)
-        {
-            fliper_1.Mover("abajo");
-        }
-        else if (this->evento.type == sf::Event::KeyReleased && evento.key.code == sf::Keyboard::X)
-        {
-            fliper_2.Mover("abajo");
-        }
-        else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Space)
-        {
-            sf::Vector2f posicion; posicion.x = 50; posicion.y = 300;
 
-            sf::Vector2f velocidad; velocidad.x = 0; velocidad.y = -20;
+    if (this->evento.type == sf::Event::Closed)
+    {
+        this->ventana.close();
+        return false;
+    }
+    else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Escape)
+    {
+        return false;
+    }
+    else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Z)
+    {
+        fliper_1.Mover("arriba");
+    }
+    else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::X)
+    {
+        fliper_2.Mover("arriba");
+    }
+    else if (this->evento.type == sf::Event::KeyReleased && evento.key.code == sf::Keyboard::Z)
+    {
+        fliper_1.Mover("abajo");
+    }
+    else if (this->evento.type == sf::Event::KeyReleased && evento.key.code == sf::Keyboard::X)
+    {
+        fliper_2.Mover("abajo");
+    }
+    else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Space)
+    {
+        sf::Vector2f posicion; posicion.x = 50; posicion.y = 300;
 
-            sf::Vector2f aceleracion; aceleracion.x = 0; aceleracion.y = 0;
+        sf::Vector2f velocidad; velocidad.x = 0; velocidad.y = -20;
 
-            Bola bola = Bola(posicion, velocidad, aceleracion, 0.9f);
+        sf::Vector2f aceleracion; aceleracion.x = 0; aceleracion.y = 0;
 
-            bola.set_color(sf::Color::White);
+        Bola bola = Bola(posicion, velocidad, aceleracion, 0.9f);
 
-            //bolas.push_back(bola);
+        bola.set_color(sf::Color::White);
 
-        }
+        //bolas.push_back(bola);
+
+    }
 
     return true;
-    */
+}
 
 
 

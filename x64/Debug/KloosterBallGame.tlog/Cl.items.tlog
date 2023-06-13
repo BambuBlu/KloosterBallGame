@@ -1,19 +1,19 @@
-E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\Bola.cpp;E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\x64\Debug\Bola.obj
-E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\EnemigoRectangular.cpp;E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\x64\Debug\EnemigoRectangular.obj
-E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\EnemigoRedondo.cpp;E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\x64\Debug\EnemigoRedondo.obj
-E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\Enemigos.cpp;E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\x64\Debug\Enemigos.obj
-E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\FisicasPorTipo.cpp;E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\x64\Debug\FisicasPorTipo.obj
-E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\Flippers.cpp;E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\x64\Debug\Flippers.obj
-E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\HitBox.cpp;E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\x64\Debug\HitBox.obj
-E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\HitBoxFisicas.cpp;E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\x64\Debug\HitBoxFisicas.obj
-E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\Juego.cpp;E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\x64\Debug\Juego.obj
-E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\Jugadores.cpp;E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\x64\Debug\Jugadores.obj
-E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\main.cpp;E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\x64\Debug\main.obj
-E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\Manager.cpp;E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\x64\Debug\Manager.obj
-E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\Multiple.cpp;E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\x64\Debug\Multiple.obj
-E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\ParametrosCuerpos.cpp;E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\x64\Debug\ParametrosCuerpos.obj
-E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\Randomizador.cpp;E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\x64\Debug\Randomizador.obj
-E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\Rectangulo.cpp;E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\x64\Debug\Rectangulo.obj
-E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\RectanguloFisicas.cpp;E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\x64\Debug\RectanguloFisicas.obj
-E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\Rotacion.cpp;E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\x64\Debug\Rotacion.obj
-E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\TextureManager.cpp;E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\x64\Debug\TextureManager.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Bola.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\Bola.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\EnemigoRectangular.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\EnemigoRectangular.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\EnemigoRedondo.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\EnemigoRedondo.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Enemigos.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\Enemigos.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\FisicasPorTipo.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\FisicasPorTipo.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Flippers.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\Flippers.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\HitBox.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\HitBox.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\HitBoxFisicas.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\HitBoxFisicas.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\Juego.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Jugadores.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\Jugadores.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\main.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\main.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\Manager.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Multiple.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\Multiple.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\ParametrosCuerpos.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\ParametrosCuerpos.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Randomizador.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\Randomizador.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Rectangulo.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\Rectangulo.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\RectanguloFisicas.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\RectanguloFisicas.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Rotacion.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\Rotacion.obj
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\TextureManager.cpp;C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\TextureManager.obj

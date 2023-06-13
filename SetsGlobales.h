@@ -6,6 +6,7 @@
 */
 
 #define max_main_menu 4
+
 #define PIXELTOMETER 20
 #define PADDLE_SPEED (-15)
 #define PADDLE_MAX_ANGLE 0.6

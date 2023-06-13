@@ -7,7 +7,7 @@ void Manager::Init_Window()
 	this->video_mode.height = 854;
 	this->video_mode.width = 480;
 
-	this->ventana = new sf::RenderWindow(this->video_mode, "KloosterBall", sf::Style::Default);
+	this->ventana = new sf::RenderWindow(this->video_mode, "KloosterBallMenu", sf::Style::Default);
 
 	if (!font.loadFromFile("Fonts/SourceCodePro-VariableFont_wght.ttf"))
 	{
@@ -171,28 +171,17 @@ void Manager::Iniciar_Juego()
 
 	bool loop_juego = true;
 
+	Juego instancia_juego;
+
 	while (loop_juego)
 	{
-		/*
-		loop_juego = this->EventosTeclas();
+		std::cout << "entro a while(loop_juego)" << std::endl;
 
-		sf::Time tInterval = clock.getElapsedTime();
+		this->ventana->setVisible(false);
 
-		if (tInterval.asMilliseconds() >= 16)
-		{
-			const float deltaTime = tInterval.asSeconds();
+		loop_juego = instancia_juego.primer_nivel();
 
-			std::cout << "Entro al if(tInterval...). Valor deltaTime: " << deltaTime << endl;
-
-			loop_juego = instancia_juego.Update(deltaTime, bolas, bolasIterador, flipper_1, flipper_2);
-
-			clock.restart();
-		}
-
-		this->ventana->clear();
-
-		this->ventana->display();
-		*/
+		this->ventana->setVisible(true);
 	}
 	std::cout << "Paso el While y se va de la funcion" << std::endl;
 }

@@ -31,6 +31,7 @@ class Juego
 		sf::RenderWindow ventana;
 		sf::VideoMode video_mode;
 		sf::Event evento;
+
         sf::Font fuente_de_texto;
 
         ///Game Logic
@@ -44,11 +45,10 @@ class Juego
 
 	public:
         Juego();
+        ~Juego();
 
         bool primer_nivel();
-
         bool EventosTeclas(Flippers fliper_1, Flippers fliper_2);
-
         void restar_vida();
 };
 

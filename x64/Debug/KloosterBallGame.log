@@ -1,6 +1,16 @@
-﻿  Multiple.cpp
+﻿  Bola.cpp
+  EnemigoRectangular.cpp
+  EnemigoRedondo.cpp
+  Enemigos.cpp
+  Flippers.cpp
+  HitBox.cpp
+  Juego.cpp
+  Manager.cpp
+  Multiple.cpp
   ParametrosCuerpos.cpp
-E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\ParametrosCuerpos.cpp(72,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
-E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\ParametrosCuerpos.cpp(153,19): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\ParametrosCuerpos.cpp(72,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\ParametrosCuerpos.cpp(153,19): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+  Rectangulo.cpp
+  main.cpp
   Generando código...
-  KloosterBallGame.vcxproj -> E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\x64\Debug\KloosterBallGame.exe
+  KloosterBallGame.vcxproj -> C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\KloosterBallGame.exe
