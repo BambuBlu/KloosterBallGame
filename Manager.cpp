@@ -9,7 +9,7 @@ void Manager::Init_Window()
 
 	this->ventana = new sf::RenderWindow(this->video_mode, "KloosterBallMenu", sf::Style::Default);
 
-	if (!font.loadFromFile("Fonts/SourceCodePro-VariableFont_wght.ttf"))
+	if (!font.loadFromFile("Fonts\\BrunoAceSC-Regular.ttf"))
 	{
 		std::cout << "Error cargando la fuente" << std::endl;
 	}
@@ -167,23 +167,89 @@ int Manager::MainMenuPressed()
 
 void Manager::Iniciar_Juego()
 {
-	std::cout << "entro a Iniciar_Juego()" << std::endl;
-
-	bool loop_juego = true;
 
 	Juego instancia_juego;
 
-	while (loop_juego)
+	this->ventana->setVisible(false);
+
+	instancia_juego.primer_nivel();
+
+	this->ventana->setVisible(true);
+
+	/*
+	sf::Text menu_niveles[3];
+	
+	//Primer nivel
+	menu_niveles[0].setFont(font);
+	menu_niveles[0].setFillColor(sf::Color::Cyan);
+	menu_niveles[0].setString("Primer nivel");
+	menu_niveles[0].setCharacterSize(40);
+	menu_niveles[0].setPosition(50, 200);
+	//Segundo Nivel
+	menu_niveles[1].setFont(font);
+	menu_niveles[1].setFillColor(sf::Color::White);
+	menu_niveles[1].setString("Segundo nivel");
+	menu_niveles[1].setCharacterSize(30);
+	menu_niveles[1].setPosition(50, 300);
+	//Tercer Nivel
+	menu_niveles[2].setFont(font);
+	menu_niveles[2].setFillColor(sf::Color::White);
+	menu_niveles[2].setString("Tercer nivel");
+	menu_niveles[2].setCharacterSize(30);
+	menu_niveles[2].setPosition(50, 400);
+
+	for (int i = 0; i < 3; i++)
 	{
-		std::cout << "entro a while(loop_juego)" << std::endl;
-
-		this->ventana->setVisible(false);
-
-		loop_juego = instancia_juego.primer_nivel();
-
-		std::cout << "Termino el juego" << std::endl;
-
-		this->ventana->setVisible(true);
+		this->ventana->draw(menu_niveles[i]);
 	}
-	std::cout << "Paso el While y vuelve al menu" << std::endl;
+
+	
+	switch (this->evento.type)
+	{
+		//La "X" de la ventana es para cerrar
+		case sf::Event::Closed:
+			this->ventana->close();
+			break;
+
+		//"Escape" es para cerrar
+		case sf::Event::KeyPressed:
+			if (this->evento.key.code == sf::Keyboard::Escape)
+			{
+				this->ventana->close();
+				break;
+			}
+			//Con la fechita para arriba subimos
+			else if (this->evento.key.code == sf::Keyboard::Up)
+			{
+				
+				break;
+			}
+			//Con la fechita para abajo, bajamos
+			else if (this->evento.key.code == sf::Keyboard::Down)
+			{
+			
+				break;
+			}
+			else if (this->evento.key.code == sf::Keyboard::Return)
+			{
+				//JUGAR
+				if (x == 0)
+				{
+					this->ventana->setVisible(false);
+
+					instancia_juego.primer_nivel();
+
+					this->ventana->setVisible(true);
+				}
+				if (x == 1)
+				{
+
+				}
+				if (x == 2)
+				{
+
+				}
+			}
+	}
+	*/
 }

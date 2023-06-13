@@ -21,7 +21,7 @@ float productoEscalar(sf::Vector2f& v1)
 float productoCruzado(sf::Vector2f& v1, sf::Vector2f& v2) 
 {
 
-    float resultado = (v1.x * v2.y) - (v1.y * v2.x); // "Producto cruzado" extendido
+    float resultado = (v1.x * v2.y) - (v1.y * v2.x);
 
     return resultado;
 }
@@ -65,14 +65,16 @@ bool Multiple::CirculoVsCirculo()
     //Eleva al cuadrado las variables del vector2f diferencia 
     float diferenciaAlCuadrado = productoEscalar(diferencia);
 
+    //Comprueba si un circulo está dentro de otro
     if ((suma_radios * suma_radios) < diferenciaAlCuadrado)
     {
         return false;
     }
 
+    //Calcula la raiz cuadrada
     diferenciaAlCuadrado = std::sqrtf(diferenciaAlCuadrado);
 
-    //Si la distancia entre 2 circuos no es 0
+    //Si la distancia entre 2 circulos != 0
     if (diferenciaAlCuadrado != 0)
     {
         penetracion = diferenciaAlCuadrado - suma_radios; // distancia de penetracion
@@ -85,9 +87,9 @@ bool Multiple::CirculoVsCirculo()
         normal = sf::Vector2f(1, 0);
         punto_de_contacto = cuerpo_a->getPosicion();
     }
+
     return true;
 }
-
 
 bool Multiple::CirculoVsRectangulo()
 {
@@ -142,7 +144,7 @@ bool Multiple::CirculoVsRectangulo()
 
     float radio = circulo->getRadio();
 
-    // si el circulo no esta adentro AABB
+    //Si el circulo no esta adentro AABB
     if (distancia > radio * radio && !adentro) 
     {
         return false;
@@ -166,7 +168,7 @@ bool Multiple::CirculoVsRectangulo()
     return true;
 }
 
-bool Multiple::CirculoVsOBB()
+bool Multiple::CirculoVsHitbox()
 {
     HitBoxFisicas* hitbox = (HitBoxFisicas*)cuerpo_a->fisicaTipo;
 
@@ -302,7 +304,8 @@ void Multiple::aplicarImpulsoRotacional()
     cuerpo_b->AplicarImpulso(impulso, contactoCuerpoB);
 }
 
-sf::Vector2f Multiple::Clamp(const sf::Vector2f& rectExtents, const sf::Vector2f& circlePos) { //!< Determina el punto mas cercano al borde mas cercano de AABB
+sf::Vector2f Multiple::Clamp(const sf::Vector2f& rectExtents, const sf::Vector2f& circlePos) 
+{ //Determina el punto mas cercano al borde mas cercano de AABB
 
     sf::Vector2f gancho = sf::Vector2f();
 

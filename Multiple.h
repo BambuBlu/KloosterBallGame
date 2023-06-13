@@ -32,7 +32,7 @@ class Multiple
 
         bool CirculoVsRectangulo(); //Determina colision entre circulo - rectangulo
 
-        bool CirculoVsOBB(); //Determina colision entre circulo - obb
+        bool CirculoVsHitbox(); //Determina colision entre circulo - hitbox
 
         sf::Vector2f get_normal() const { return normal;}
 

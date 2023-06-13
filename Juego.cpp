@@ -19,7 +19,7 @@ void Juego::InitJuego()
 
 
     ///FUENTE DE TEXTO
-    this->fuente_de_texto.loadFromFile("Fonts\\SourceCodePro-Italic-VariableFont_wght.ttf");
+    this->fuente_de_texto.loadFromFile("Fonts\\BrunoAceSC-Regular.ttf");
 
     ///VENTANA
     this->video_mode.width = 720;
@@ -47,8 +47,7 @@ bool Juego::primer_nivel()
         sf::Sprite fondo;
         //fondo.setTexture(texturas.get_textura("background"));
         fondo.setPosition(0, 0);
-       
-
+      
         ///DECLARACION DE COLORES DEL NIVEL
         sf::Color azulcito = sf::Color(117, 137, 191);
         sf::Color cyan = sf::Color(179, 226, 221);
@@ -57,21 +56,21 @@ bool Juego::primer_nivel()
         sf::Color verde = sf::Color(72, 181, 163);
 
         ///MENSAJES EN PANTALLA
-        sf::Text str_maximo_puntaje = sf::Text("MAXPUNTOS:" + std::to_string(puntaje_mas_alto), fuente_de_texto, 40);
+        sf::Text str_maximo_puntaje = sf::Text("MAXPUNTOS :" + std::to_string(puntaje_mas_alto), fuente_de_texto, 30);
         str_maximo_puntaje.setFillColor(verde);
         str_maximo_puntaje.setPosition(40, 5);
 
-        sf::Text str_puntaje = sf::Text("PUNTOS:" + std::to_string(puntaje_total), fuente_de_texto, 40);
+        sf::Text str_puntaje = sf::Text("PUNTOS :" + std::to_string(puntaje_total), fuente_de_texto, 30);
         str_puntaje.setFillColor(verde);
         str_puntaje.setPosition(40, 80);
 
-        sf::Text str_bolas_restantes = sf::Text("BOLAS:" + std::to_string(bolas_restantes), fuente_de_texto, 40);
+        sf::Text str_bolas_restantes = sf::Text("BOLAS :" + std::to_string(bolas_restantes), fuente_de_texto, 30);
         str_bolas_restantes.setFillColor(verde);
         str_bolas_restantes.setPosition(500, 5);
 
-        sf::Text str_fin_juego = sf::Text("FIN DEL JUEGO", fuente_de_texto, 150);
-        str_fin_juego.setFillColor(sf::Color::Black);
-        str_fin_juego.setPosition(100, 400);
+        sf::Text str_fin_juego = sf::Text("FIN DEL JUEGO", fuente_de_texto, 70);
+        str_fin_juego.setFillColor(sf::Color::White);
+        str_fin_juego.setPosition(50, 400);
 
         ///DECLARACION DE RANDOMIZADOR
         Randomizador rand;
@@ -99,7 +98,7 @@ bool Juego::primer_nivel()
 
         Rectangulo esquina_inferior_derecha = Rectangulo(sf::Vector2f(32.5f, 37.5f), sf::Vector2f(0.5f, 0.5f), azulcito);
 
-        Rectangulo tunel = Rectangulo(sf::Vector2f(30.9f, 34.f), sf::Vector2f(0.2f, 21.f), azulcito);
+        Rectangulo tunel = Rectangulo(sf::Vector2f(32.9f, 34.f), sf::Vector2f(0.2f, 21.f), azulcito);
 
         ///ENEMIGOS / BUMPERS DEL JUEGO
         EnemigoRedondo eRedondo1 = EnemigoRedondo(sf::Vector2f(10.f, 13.f)/*Posicion*/, 1.7f/*Radio*/, 10/*Puntos*/, cyan/*Color*/);
@@ -154,11 +153,6 @@ bool Juego::primer_nivel()
         {
             while (this->ventana.pollEvent(this->evento))
             {
-
-                //EventosTeclas(FlipperIzquierdo, FlipperDerecho);
-                //Al llamar a EventosTeclas se buguea la bola y al lanzarla todo se rompe
-                //Al dejarlo como está ahora, la bola se choca con algo invisible y no funciona
-
                 if (this->evento.type == sf::Event::Closed)
                 {
                     this->ventana.close();
@@ -169,7 +163,7 @@ bool Juego::primer_nivel()
                 }
                 else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Space)
                 {
-                    if (!bool_En_Juego /*la bola no está en juego*/ && !bool_Fin_Juego/*el juego no terminó*/)
+                    if (!bool_En_Juego && !bool_Fin_Juego)
                     {
                         std::cout << "Detecta que no hay bola y lanza otra" << std::endl;
 
@@ -207,6 +201,8 @@ bool Juego::primer_nivel()
             }
 
             this->ventana.clear(sf::Color::Black);
+
+
 
             sf::Time intervalo_tiempo = clock.getElapsedTime();
 
@@ -252,7 +248,7 @@ bool Juego::primer_nivel()
 
                         Multiple m = Multiple(&lEnemigosRectangularesIt->cuerpo, &bolasIterador->cuerpo);
 
-                        if (m.CirculoVsOBB())
+                        if (m.CirculoVsHitbox())
                         {
                             puntaje_total += lEnemigosRectangularesIt->get_puntos();
 
@@ -279,7 +275,7 @@ bool Juego::primer_nivel()
                     {
                         Multiple m = Multiple(&lHitboxIt->cuerpo, &bolasIterador->cuerpo);
 
-                        if (m.CirculoVsOBB())
+                        if (m.CirculoVsHitbox())
                         {
                             m.correctPosition();
 
@@ -289,7 +285,7 @@ bool Juego::primer_nivel()
 
                     Multiple FlipperIzquierdo_Manifold = Multiple(&FlipperDerecho.cuerpo, &bolasIterador->cuerpo);
 
-                    if (FlipperIzquierdo_Manifold.CirculoVsOBB())
+                    if (FlipperIzquierdo_Manifold.CirculoVsHitbox())
                     {
                         FlipperIzquierdo_Manifold.correctPosition();
 
@@ -298,7 +294,7 @@ bool Juego::primer_nivel()
 
                     Multiple FlipperDerecho_Manifold = Multiple(&FlipperIzquierdo.cuerpo, &bolasIterador->cuerpo);
 
-                    if (FlipperDerecho_Manifold.CirculoVsOBB())
+                    if (FlipperDerecho_Manifold.CirculoVsHitbox())
                     {
                         FlipperDerecho_Manifold.correctPosition();
 
@@ -339,11 +335,11 @@ bool Juego::primer_nivel()
 
             this->ventana.draw(fondo);
 
-            str_puntaje.setString("PUNTOS:" + std::to_string(puntaje_total));
+            str_puntaje.setString("PUNTOS: " + std::to_string(puntaje_total));
 
-            str_bolas_restantes.setString("BOLAS:" + std::to_string(bolas_restantes));
+            str_bolas_restantes.setString("BOLAS: " + std::to_string(bolas_restantes));
 
-            str_maximo_puntaje.setString("MAXPUNTOS:" + std::to_string(puntaje_mas_alto));
+            str_maximo_puntaje.setString("MAXPUNTOS: " + std::to_string(puntaje_mas_alto));
 
             restar_vida();
 
@@ -417,65 +413,11 @@ bool Juego::primer_nivel()
     return false;
 }
 
-void Juego::EventosTeclas(Flippers& fliper_1, Flippers& fliper_2)
-{
-    if (this->evento.type == sf::Event::Closed)
-    {
-        bool_En_Juego = false;
-        bool_Fin_Juego = true;
-        this->ventana.close();
-    }
-    else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Escape)
-    {
-        bool_En_Juego = false;
-        bool_Fin_Juego = true;
-        this->ventana.close();
-    }
-    else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Space)
-    {
-        if (!bool_En_Juego /*la bola no está en juego*/ && !bool_Fin_Juego/*el juego no terminó*/)
-        {
-            std::cout << "Detecta que no hay bola y lanza otra" << std::endl;
-
-            sf::Vector2f posicion = sf::Vector2f(34.f, 50.f);
-
-            sf::Vector2f velocidad = sf::Vector2f(0.f, -60.f);
-
-            sf::Vector2f aceleracion = sf::Vector2f(0.f, 20.f);
-
-            Bola bola = Bola(posicion, velocidad, aceleracion, 0.9f);
-
-            bola.set_color(sf::Color::White);
-
-            bolas.push_back(bola);
-
-            bool_En_Juego = true;
-        }
-    }
-    else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Z)
-    {
-        fliper_1.Mover("arriba");
-    }
-    else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::X)
-    {
-        fliper_2.Mover("arriba");
-    }
-    else if (this->evento.type == sf::Event::KeyReleased && evento.key.code == sf::Keyboard::Z)
-    {
-        fliper_1.Mover("abajo");
-    }
-    else if (this->evento.type == sf::Event::KeyReleased && evento.key.code == sf::Keyboard::X)
-    {
-        fliper_2.Mover("abajo");
-    }
-}
 
 void Juego::restar_vida()
 {
-
     for (bolasIterador = bolas.begin(); bolasIterador != bolas.end();) 
     {
-
         if (bolasIterador->cuerpo.getPosicion().y > 60) 
         {
 

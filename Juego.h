@@ -22,7 +22,6 @@
 /*
     Clase proveniente de Main 
     Pienso que la usemos para crear dos o tres mapas y manejemos todo de acá
-
 */
 
 
@@ -50,7 +49,6 @@ class Juego
         ~Juego();
 
         bool primer_nivel();
-        void EventosTeclas(Flippers& fliper_1, Flippers& fliper_2);
         void restar_vida();
 };
 

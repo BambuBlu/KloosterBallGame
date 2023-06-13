@@ -26,6 +26,4 @@ class FisicasPorTipo
 
         Tipo getTipo();
 };
-
-
 #endif

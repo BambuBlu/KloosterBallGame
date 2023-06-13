@@ -16,7 +16,7 @@ Bola::Bola()
 
     cuerpo.setRestitucion(1);
 
-    cuerpo.setInercia(0);
+    cuerpo.setInercia(8);
 
     cuerpo.setMasa(1);
 
@@ -39,7 +39,7 @@ Bola::Bola(const sf::Vector2f _posicion, const sf::Vector2f _velocidad, const sf
 
     cuerpo.setRestitucion(1);
 
-    cuerpo.setInercia(0);
+    cuerpo.setInercia(8.f);
 
     cuerpo.setMasa(1);
 
