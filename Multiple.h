@@ -28,17 +28,17 @@ class Multiple
 
         Multiple(Cuerpo* first , Cuerpo* second); 
 
-        bool CircleVsCircle();  //Determina colision entre circulo - circulo
+        bool CirculoVsCirculo();  //Determina colision entre circulo - circulo
 
-        bool CircleVsRect(); //Determina colision entre circulo - rectangulo
+        bool CirculoVsRectangulo(); //Determina colision entre circulo - rectangulo
 
-        bool CircleVsOBB(); //Determina colision entre circulo - obb
+        bool CirculoVsOBB(); //Determina colision entre circulo - obb
 
         sf::Vector2f get_normal() const { return normal;}
 
         float get_penetracion() const { return penetracion;}
 
-        void applyRotationalImpulse();
+        void aplicarImpulsoRotacional();
 
         void correctPosition();
 

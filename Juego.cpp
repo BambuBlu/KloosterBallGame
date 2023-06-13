@@ -201,10 +201,10 @@ bool Juego::primer_nivel()
                         {
                             Multiple m = Multiple(&bolasIterador->cuerpo, &p->cuerpo);
 
-                            if (m.CircleVsCircle())
+                            if (m.CirculoVsCirculo())
                             {
                                 m.correctPosition();
-                                m.applyRotationalImpulse();
+                                m.aplicarImpulsoRotacional();
                             }
                         }
                     }
@@ -213,13 +213,13 @@ bool Juego::primer_nivel()
 
                         Multiple m = Multiple(&lEnemigosRedondosIt->cuerpo, &bolasIterador->cuerpo);
 
-                        if (m.CircleVsCircle())
+                        if (m.CirculoVsCirculo())
                         {
                             puntaje_total += lEnemigosRedondosIt->get_puntos();
 
                             m.correctPosition();
 
-                            m.applyRotationalImpulse();
+                            m.aplicarImpulsoRotacional();
                         }
                     }
 
@@ -228,13 +228,13 @@ bool Juego::primer_nivel()
 
                         Multiple m = Multiple(&lEnemigosRectangularesIt->cuerpo, &bolasIterador->cuerpo);
 
-                        if (m.CircleVsOBB())
+                        if (m.CirculoVsOBB())
                         {
                             puntaje_total += lEnemigosRectangularesIt->get_puntos();
 
                             m.correctPosition();
 
-                            m.applyRotationalImpulse();
+                            m.aplicarImpulsoRotacional();
                         }
                     }
 
@@ -243,11 +243,11 @@ bool Juego::primer_nivel()
 
                         Multiple m = Multiple(&lRectangulosIt->cuerpo, &bolasIterador->cuerpo);
 
-                        if (m.CircleVsRect())
+                        if (m.CirculoVsRectangulo())
                         {
                             m.correctPosition();
 
-                            m.applyRotationalImpulse();
+                            m.aplicarImpulsoRotacional();
                         }
                     }
 
@@ -255,30 +255,30 @@ bool Juego::primer_nivel()
                     {
                         Multiple m = Multiple(&lHitboxIt->cuerpo, &bolasIterador->cuerpo);
 
-                        if (m.CircleVsOBB())
+                        if (m.CirculoVsOBB())
                         {
                             m.correctPosition();
 
-                            m.applyRotationalImpulse();
+                            m.aplicarImpulsoRotacional();
                         }
                     }
 
                     Multiple FlipperIzquierdo_Manifold = Multiple(&FlipperDerecho.cuerpo, &bolasIterador->cuerpo);
 
-                    if (FlipperIzquierdo_Manifold.CircleVsOBB())
+                    if (FlipperIzquierdo_Manifold.CirculoVsOBB())
                     {
                         FlipperIzquierdo_Manifold.correctPosition();
 
-                        FlipperIzquierdo_Manifold.applyRotationalImpulse();
+                        FlipperIzquierdo_Manifold.aplicarImpulsoRotacional();
                     }
 
                     Multiple FlipperDerecho_Manifold = Multiple(&FlipperIzquierdo.cuerpo, &bolasIterador->cuerpo);
 
-                    if (FlipperDerecho_Manifold.CircleVsOBB())
+                    if (FlipperDerecho_Manifold.CirculoVsOBB())
                     {
                         FlipperDerecho_Manifold.correctPosition();
 
-                        FlipperDerecho_Manifold.applyRotationalImpulse();
+                        FlipperDerecho_Manifold.aplicarImpulsoRotacional();
                     }
 
                     bolasIterador->cuerpo.update(fSegundos);
@@ -393,10 +393,10 @@ bool Juego::primer_nivel()
         return false;
 }
 
-
+/*
 bool Juego::EventosTeclas(Flippers fliper_1, Flippers fliper_2)
 {
-    /*
+    
         if (this->evento.type == sf::Event::Closed)
         {
             this->ventana->close();
@@ -440,7 +440,7 @@ bool Juego::EventosTeclas(Flippers fliper_1, Flippers fliper_2)
 
     return true;
     */
-}
+
 
 
 void Juego::restar_vida()

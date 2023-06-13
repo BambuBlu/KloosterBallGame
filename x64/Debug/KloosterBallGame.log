@@ -1,8 +1,6 @@
-﻿  Juego.cpp
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(400,26): error C2819: el tipo 'sf::RenderWindow' no tiene un miembro sobrecargado 'operator ->'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\SFML\include\SFML\Graphics\RenderWindow.hpp(44,25): message : vea la declaración de 'sf::RenderWindow'
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(400,26): message : ¿deseaba utilizar '.' en su lugar?
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(400,33): error C2232: '->sf::Window::close': el operando izquierdo tiene el tipo 'class'; utilice '.'
-  Manager.cpp
-  main.cpp
+﻿  Multiple.cpp
+  ParametrosCuerpos.cpp
+E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\ParametrosCuerpos.cpp(72,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\ParametrosCuerpos.cpp(153,19): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
   Generando código...
+  KloosterBallGame.vcxproj -> E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\x64\Debug\KloosterBallGame.exe

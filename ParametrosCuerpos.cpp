@@ -51,7 +51,7 @@ void Cuerpo::update(float deltaTime)
     }
 }
 
-void Cuerpo::setRestitucion(float _restitucion) //!< Sets the restitution
+void Cuerpo::setRestitucion(float _restitucion) //!< Sets de restitucion
 {
     restitucion = _restitucion;
 }
@@ -72,7 +72,7 @@ void Cuerpo::setRadioAngulo(const float _angulo)
     const float rotacionEntera = 2 * M_PI;
 
     float anguloNuevo = _angulo;
-
+    //abs devuelve la distancia del numero hacia el 0 osea siempre un num positivo
     while (std::abs(anguloNuevo) > rotacionEntera) 
     {
         if (anguloNuevo > 0)

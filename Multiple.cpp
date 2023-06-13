@@ -8,6 +8,7 @@ float productoEscalar(sf::Vector2f& v1, sf::Vector2f& v2)
     return producto;
 }
 
+/// calcula el cuadrado de las variables del vector "x" e "y", y devuelve su suma
 float productoEscalar(sf::Vector2f& v1)
 {
     float producto = 0;
@@ -39,144 +40,147 @@ Multiple::Multiple()//!< Default constructor
 
 }
 
-Multiple::Multiple(Cuerpo* first, Cuerpo* second)//!< Constructor that takes in two bodies to generate the collision manifold
+//Constructor que toma dos cuerpos para generar la variedad de colisión
+Multiple::Multiple(Cuerpo* first, Cuerpo* second)
 {
     cuerpo_a = first;
     cuerpo_b = second;
 }
 
-bool Multiple::CircleVsCircle()
+bool Multiple::CirculoVsCirculo()
 {
-    /*!< Setting up pointers to two circles*/
-    FisicasCirculo* circleA = (FisicasCirculo*)cuerpo_a->fisicaTipo;
-    FisicasCirculo* circleB = (FisicasCirculo*)cuerpo_b->fisicaTipo;
+    /*!< Configuración de punteros a dos círculos*/
+    FisicasCirculo* circulo1 = (FisicasCirculo*)cuerpo_a->fisicaTipo;
+    FisicasCirculo* circulo2 = (FisicasCirculo*)cuerpo_b->fisicaTipo;
 
-    /*!< Calculating vector between the two bodies */
-    sf::Vector2f difference = cuerpo_b->getPosicion() - cuerpo_a->getPosicion();
+    /*!< Cálculo del vector entre los dos cuerpos.*/
+    sf::Vector2f diferencia = cuerpo_b->getPosicion() - cuerpo_a->getPosicion();
 
-    /*!< Sum of both radiuses */
-    float fRadiusSum = circleA->getRadio() + circleB->getRadio();
+    /*!< Suma de ambos radios */
+    float suma_radios = circulo1->getRadio() + circulo2->getRadio();
 
-    float fMag = productoEscalar(difference);
+    // eleva al cuadrado las variables del vector2f diferencia 
+    float diferenciaAlCuadrado = productoEscalar(diferencia);
 
-    if ((fRadiusSum * fRadiusSum) < fMag)
+    if ((suma_radios * suma_radios) < diferenciaAlCuadrado)
         return false;
 
 
-    fMag = std::sqrtf(fMag);
+    diferenciaAlCuadrado = std::sqrtf(diferenciaAlCuadrado);
 
-    // If distance between circles is not 0
-    if (fMag != 0)
+    // si la distancia entre 2 circuos no es 0
+    if (diferenciaAlCuadrado != 0)
     {
-        penetracion = fMag - fRadiusSum; // Penetration distance
-        normal = difference / fMag; 
-        punto_de_contacto = cuerpo_b->getPosicion() - (normal * circleB->getRadio());
+        penetracion = diferenciaAlCuadrado - suma_radios; // distancia de penetracion
+        normal = diferencia / diferenciaAlCuadrado;
+        punto_de_contacto = cuerpo_b->getPosicion() - (normal * circulo2->getRadio());
     }
     else
     {
-        penetracion = circleA->getRadio();
+        penetracion = circulo1->getRadio();
         normal = sf::Vector2f(1, 0);
         punto_de_contacto = cuerpo_a->getPosicion();
     }
     return true;
 }
 
-bool Multiple::CircleVsRect()
-{
-    /*!< Setting up pointers to a rectangle and a circle */
-    RectanguloFisicas* rect = (RectanguloFisicas*)cuerpo_a->fisicaTipo;
-    FisicasCirculo* circle = (FisicasCirculo*)cuerpo_b->fisicaTipo;
 
-    // Vector between A and B
-    sf::Vector2f difference = cuerpo_b->getPosicion() - cuerpo_a->getPosicion();
+bool Multiple::CirculoVsRectangulo()
+{
+    /*!< Configuración de punteros a un rectángulo y un círculo */
+    RectanguloFisicas* rectangulo = (RectanguloFisicas*)cuerpo_a->fisicaTipo;
+    FisicasCirculo* circulo = (FisicasCirculo*)cuerpo_b->fisicaTipo;
+
+    // Vector de la diferencia entre el cuerpo (B - A)
+    sf::Vector2f diferencia = cuerpo_b->getPosicion() - cuerpo_a->getPosicion();
 
     /*!< Clamping closest point to nearest edge */
-    sf::Vector2f closest = Clamp(rect->get_extensionMedia(), difference);
+    sf::Vector2f closest = Clamp(rectangulo->get_extensionMedia(), diferencia);
 
-    bool bInside = false;
+    bool adentro = false;
 
     // Clamp circle to the closest edge
-    if (difference == closest) 
+    if (diferencia == closest)
     {
-        bInside = true;
+        adentro = true;
 
-        // Find closest axis
-        if (std::abs(difference.x) > std::abs(difference.y))
+        // Encuentra el eje más cercano
+        if (std::abs(diferencia.x) > std::abs(diferencia.y))
         {
 
             // Clamp to closest extent
             if (closest.x > 0) 
             {
-                closest.x = (rect->get_extensionMedia().x);
+                closest.x = (rectangulo->get_extensionMedia().x);
             }
             else 
             {
-                closest.x = (-rect->get_extensionMedia().x);
+                closest.x = (-rectangulo->get_extensionMedia().x);
             }
         }
         else
         {
             if (closest.y > 0) 
             {
-                closest.y = (rect->get_extensionMedia().y);
+                closest.y = (rectangulo->get_extensionMedia().y);
             }
             else
             {
-                closest.y = (-rect->get_extensionMedia().y);
+                closest.y = (-rectangulo->get_extensionMedia().y);
             }
         }
     }
 
-    sf::Vector2f n = difference - closest;
+    sf::Vector2f aux = diferencia - closest;
 
-    float fDistance = productoEscalar(n);
+    float distancia = productoEscalar(aux);
 
-    float fRadius = circle->getRadio();
+    float radio = circulo->getRadio();
 
-    // if circle isn't inside AABB
-    if (fDistance > fRadius * fRadius && !bInside) {
+    // si el circulo no esta adentro AABB
+    if (distancia > radio * radio && !adentro) {
         return false;
     }
 
-    fDistance = std::sqrtf(fDistance);
-    n = n / fDistance;
+    distancia = std::sqrtf(distancia);
+    aux = aux / distancia;
 
-    // if circle is inside AABB
-    if (bInside) {
-        normal = -n;
-        punto_de_contacto = cuerpo_b->getPosicion() - (normal * circle->getRadio());
-        penetracion = fDistance - fRadius;
+    //si el circulo esta adentro AABB
+    if (adentro) {
+        normal = -aux;
+        punto_de_contacto = cuerpo_b->getPosicion() - (normal * circulo->getRadio());
+        penetracion = distancia - radio;
     }
     else {
-        normal = n;
-        punto_de_contacto = cuerpo_b->getPosicion() - (normal * circle->getRadio());
-        penetracion = fDistance - fRadius;
+        normal = aux;
+        punto_de_contacto = cuerpo_b->getPosicion() - (normal * circulo->getRadio());
+        penetracion = distancia - radio;
     }
     return true;
 }
 
-bool Multiple::CircleVsOBB()
+bool Multiple::CirculoVsOBB()
 {
     HitBoxFisicas* hitbox = (HitBoxFisicas*)cuerpo_a->fisicaTipo;
 
-    FisicasCirculo* circle = (FisicasCirculo*)cuerpo_b->fisicaTipo;
+    FisicasCirculo* circulo = (FisicasCirculo*)cuerpo_b->fisicaTipo;
 
-    // Vector between A and B
-    sf::Vector2f difference = cuerpo_b->getPosicion() - cuerpo_a->getPosicion();
+    // Vector entre A y B
+    sf::Vector2f diferencia = cuerpo_b->getPosicion() - cuerpo_a->getPosicion();
 
-    Rotacion matrix = Rotacion(cuerpo_a->getGradosAngulo());
+    Rotacion rotar = Rotacion(cuerpo_a->getGradosAngulo());
 
-    sf::Vector2f transform = matrix.rotar_vector_inversamente(difference);
+    sf::Vector2f transform = rotar.rotar_vector_inversamente(diferencia);
 
-    // Closest point on A to B
+    // Punto más cercano de A a B
     sf::Vector2f closest = Clamp(hitbox->get_extension_media(), transform);
 
-    bool bInside = false;
+    bool adentro = false;
 
     // Clamp circle to the closest edge
     if (transform == closest)
     {
-        bInside = true;
+        adentro = true;
         if (std::abs(transform.x) >= std::abs(transform.y))
         {
             if (closest.x > 0)
@@ -201,97 +205,97 @@ bool Multiple::CircleVsOBB()
         }
     }
 
-    sf::Vector2f n = transform - closest;
+    sf::Vector2f aux = transform - closest;
 
-    float fDistance = productoEscalar(n);
+    float distancia = productoEscalar(aux);
 
-    float fRadius = circle->getRadio();
+    float radio = circulo->getRadio();
 
-    if (fDistance > fRadius * fRadius && !bInside)
+    if (distancia > radio * radio && !adentro)
     {
         return false;
     }
 
-    fDistance = std::sqrtf(fDistance);
+    distancia = std::sqrtf(distancia);
 
-    n = n / fDistance;
+    aux = aux / distancia;
 
-    // if circle is inside AABB
-    if (bInside)
+    //si el círculo está dentro AABB
+    if (adentro)
     {
-        normal = -n;
+        normal = -aux;
 
-        punto_de_contacto = cuerpo_b->getPosicion() - matrix.rotar_vector(normal * circle->getRadio());
+        punto_de_contacto = cuerpo_b->getPosicion() - rotar.rotar_vector(normal * circulo->getRadio());
 
-        penetracion = fDistance - fRadius;
+        penetracion = distancia - radio;
     }
     else
     {
-        normal = n;
+        normal = aux;
 
-        punto_de_contacto = cuerpo_b->getPosicion() - matrix.rotar_vector(normal * circle->getRadio());
+        punto_de_contacto = cuerpo_b->getPosicion() - rotar.rotar_vector(normal * circulo->getRadio());
 
-        penetracion = fDistance - fRadius;
+        penetracion = distancia - radio;
     }
     return true;
 }
 
-void Multiple::correctPosition() //!< Applies position correction 
+void Multiple::correctPosition() //!< Aplica la corrección de posición
 {
-    const float kfPercent = 0.2f;
-
+    const float porcentaje = 0.2f;
+    
     const float kfSlop = 0.01f;
 
-    const float kfInvMassSum = cuerpo_a->getMasaInversa() + cuerpo_b->getMasaInversa();
+    const float sumatoriaMasaInversa = cuerpo_a->getMasaInversa() + cuerpo_b->getMasaInversa();
 
-    const float kFScalarNum = std::max(std::abs(penetracion) - kfSlop, 0.0f) / kfInvMassSum;
+    const float kFScalarNum = std::max(std::abs(penetracion) - kfSlop, 0.0f) / sumatoriaMasaInversa;
 
-    sf::Vector2f correction = normal * kFScalarNum * kfPercent;
+    sf::Vector2f correncion = normal * kFScalarNum * porcentaje;
 
-    cuerpo_a->posicion -= correction * cuerpo_a->getMasaInversa();
+    cuerpo_a->posicion -= correncion * cuerpo_a->getMasaInversa();
 
-    cuerpo_b->posicion += correction * cuerpo_b->getMasaInversa();
+    cuerpo_b->posicion += correncion * cuerpo_b->getMasaInversa();
 }
 
-void Multiple::applyRotationalImpulse()
+void Multiple::aplicarImpulsoRotacional()
 {
-    /*!< Calculating contact points*/
-    sf::Vector2f kBodyAContact(punto_de_contacto - cuerpo_a->getPosicion());
-    sf::Vector2f kBodyBContact(punto_de_contacto - cuerpo_b->getPosicion());
+    /*!< Calcula los puntos de contacto*/
+    sf::Vector2f contactoCuerpoA(punto_de_contacto - cuerpo_a->getPosicion());
+    sf::Vector2f contactoCuerpoB(punto_de_contacto - cuerpo_b->getPosicion());
 
-    /*!< Calculate the relative velocity */
-    sf::Vector2f velocidadRelativa = (cuerpo_b->getVelocidad() + escalar_cruzado(kBodyBContact , -cuerpo_b->getVelocidadAngular())) -
-                         (cuerpo_a->getVelocidad() + escalar_cruzado(kBodyAContact, -cuerpo_a->getVelocidadAngular()));
+    /*!< Calcula la velocidad relativa */
+    sf::Vector2f velocidadRelativa = (cuerpo_b->getVelocidad() + escalar_cruzado(contactoCuerpoB, -cuerpo_b->getVelocidadAngular())) -
+                         (cuerpo_a->getVelocidad() + escalar_cruzado(contactoCuerpoA, -cuerpo_a->getVelocidadAngular()));
 
-    /*!< Calculate relative velocity along the normal*/
+    /*!< Calcula la velocidad relativa a travez de la normal */
     float fVelAlongNormal = productoEscalar(normal, velocidadRelativa);
 
-    /*!< Do not apply impulse if velocities are separating*/
+    /*!< si es mayor a 0 NO aplica impulso si las velocidades se están separando*/
     if (fVelAlongNormal > 0) 
     {
         return;
     }
 
-    /*!< Calculate restitution */
-    float fRestitution = std::min(cuerpo_a->getRestitucion(), cuerpo_b->getRestitucion());
+    /*!< Calcula  restitucion */
+    float restitucion = std::min(cuerpo_a->getRestitucion(), cuerpo_b->getRestitucion());
 
-    const float kfContactACrossNormal = productoCruzado(normal, kBodyAContact);
+    const float kfContactACrossNormal = productoCruzado(normal, contactoCuerpoA);
 
-    const float kfContactBCrossNormal = productoCruzado(normal, kBodyBContact);
+    const float kfContactBCrossNormal = productoCruzado(normal, contactoCuerpoB);
 
     /*!< Calculate impulse scalar */
-    float fImpulseScalar = -(1 + fRestitution) * fVelAlongNormal;
+    float fImpulseScalar = -(1 + restitucion) * fVelAlongNormal;
     fImpulseScalar /= cuerpo_a->getMasaInversa() + cuerpo_b->getMasaInversa() + (kfContactACrossNormal * kfContactACrossNormal) * cuerpo_a->getInerciaInversa() + (kfContactBCrossNormal * kfContactBCrossNormal) * cuerpo_b->getInerciaInversa();
 
-    /*!< Apply rotational impulse */
-    sf::Vector2f impulse = normal * fImpulseScalar;
+    /*!<Aplica impulso de rotacion */
+    sf::Vector2f impulso = normal * fImpulseScalar;
 
-    cuerpo_a->AplicarImpulso(-impulse, kBodyAContact);
+    cuerpo_a->AplicarImpulso(-impulso, contactoCuerpoA);
 
-    cuerpo_b->AplicarImpulso(impulse, kBodyBContact);
+    cuerpo_b->AplicarImpulso(impulso, contactoCuerpoB);
 }
 
-sf::Vector2f Multiple::Clamp(const sf::Vector2f& rectExtents, const sf::Vector2f& circlePos) { //!< Determining closest point to closest edge of AABB
+sf::Vector2f Multiple::Clamp(const sf::Vector2f& rectExtents, const sf::Vector2f& circlePos) { //!< Determina el punto mas cercano al borde mas cercano de AABB
 
     sf::Vector2f gancho = sf::Vector2f();
 
