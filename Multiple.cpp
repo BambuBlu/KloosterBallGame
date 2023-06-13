@@ -1,6 +1,8 @@
 #include "Multiple.h"
 
 /// Funciones matematicas utilizadas
+
+//Calcula el cuadrado de las variables del vector v1 con el v2
 float productoEscalar(sf::Vector2f& v1, sf::Vector2f& v2)
 {
     float producto = 0;
@@ -8,18 +10,18 @@ float productoEscalar(sf::Vector2f& v1, sf::Vector2f& v2)
     return producto;
 }
 
-/// calcula el cuadrado de las variables del vector "x" e "y", y devuelve su suma
+//Calcula el cuadrado de las variables del vector v1
 float productoEscalar(sf::Vector2f& v1)
 {
     float producto = 0;
-    producto = v1.x * v1.x + v1.y * v1.y;
+    producto = (v1.x * v1.x) + (v1.y * v1.y);
     return producto;
 }
 
 float productoCruzado(sf::Vector2f& v1, sf::Vector2f& v2) 
 {
 
-    float resultado = v1.x * v2.y - v1.y * v2.x; // "Producto cruzado" extendido
+    float resultado = (v1.x * v2.y) - (v1.y * v2.x); // "Producto cruzado" extendido
 
     return resultado;
 }
@@ -59,16 +61,18 @@ bool Multiple::CirculoVsCirculo()
     /*!< Suma de ambos radios */
     float suma_radios = circulo1->getRadio() + circulo2->getRadio();
 
-    // eleva al cuadrado las variables del vector2f diferencia 
+
+    //Eleva al cuadrado las variables del vector2f diferencia 
     float diferenciaAlCuadrado = productoEscalar(diferencia);
 
     if ((suma_radios * suma_radios) < diferenciaAlCuadrado)
+    {
         return false;
-
+    }
 
     diferenciaAlCuadrado = std::sqrtf(diferenciaAlCuadrado);
 
-    // si la distancia entre 2 circuos no es 0
+    //Si la distancia entre 2 circuos no es 0
     if (diferenciaAlCuadrado != 0)
     {
         penetracion = diferenciaAlCuadrado - suma_radios; // distancia de penetracion
@@ -89,6 +93,7 @@ bool Multiple::CirculoVsRectangulo()
 {
     /*!< Configuración de punteros a un rectángulo y un círculo */
     RectanguloFisicas* rectangulo = (RectanguloFisicas*)cuerpo_a->fisicaTipo;
+
     FisicasCirculo* circulo = (FisicasCirculo*)cuerpo_b->fisicaTipo;
 
     // Vector de la diferencia entre el cuerpo (B - A)
@@ -138,11 +143,13 @@ bool Multiple::CirculoVsRectangulo()
     float radio = circulo->getRadio();
 
     // si el circulo no esta adentro AABB
-    if (distancia > radio * radio && !adentro) {
+    if (distancia > radio * radio && !adentro) 
+    {
         return false;
     }
 
     distancia = std::sqrtf(distancia);
+
     aux = aux / distancia;
 
     //si el circulo esta adentro AABB
@@ -168,7 +175,7 @@ bool Multiple::CirculoVsOBB()
     // Vector entre A y B
     sf::Vector2f diferencia = cuerpo_b->getPosicion() - cuerpo_a->getPosicion();
 
-    Rotacion rotar = Rotacion(cuerpo_a->getGradosAngulo());
+    Rotacion rotar = Rotacion(cuerpo_a->getRadioAngulo());
 
     sf::Vector2f transform = rotar.rotar_vector_inversamente(diferencia);
 

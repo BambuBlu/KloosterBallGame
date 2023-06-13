@@ -6,10 +6,15 @@ std::list<Bola>::iterator bolasIterador;
 void Juego::InitJuego()
 {
     ///JUEGO
+    //Determina si la bola está en juego
     this->bool_En_Juego = false;
+    //Determina si el juego sigue o no
     this->bool_Fin_Juego = false;
+
     this->puntaje_total = 0;
+
     this->bolas_restantes = 3;
+
     this->puntaje_mas_alto = 0;
 
 
@@ -17,8 +22,8 @@ void Juego::InitJuego()
     this->fuente_de_texto.loadFromFile("Fonts\\SourceCodePro-Italic-VariableFont_wght.ttf");
 
     ///VENTANA
-    this->video_mode.height = 980;
     this->video_mode.width = 720;
+    this->video_mode.height = 980;
 
     this->ventana.create(this->video_mode, "KloosterBallGame", sf::Style::Default);
 }
@@ -35,16 +40,12 @@ Juego::~Juego()
 
 bool Juego::primer_nivel()
 {
-    ///Cada vez que se inicie este nivel, las variables deberan volver a iniciarse
-       InitJuego();
-
-       
         ///FONDO DEL NIVEL
         TextureManager texturas;
         texturas.cargar_textura("background", "resources\\BackgroundGame.png");
         
         sf::Sprite fondo;
-       // fondo.setTexture(texturas.get_textura("background"));
+        //fondo.setTexture(texturas.get_textura("background"));
         fondo.setPosition(0, 0);
        
 
@@ -76,18 +77,12 @@ bool Juego::primer_nivel()
         Randomizador rand;
 
         //LISTAS E ITERADORES DE OBJETOS
-
-
         std::list<Rectangulo> lRectangulos;
         std::list<Rectangulo>::iterator lRectangulosIt;
-
         std::list<HitBox> lHitbox;
         std::list<HitBox>::iterator lHitboxIt;
-
-
         std::list<EnemigoRedondo> lEnemigosRedondos;
         std::list<EnemigoRedondo>::iterator lEnemigosRedondosIt;
-
         std::list<EnemigoRectangular> lEnemigosRectangulares;
         std::list<EnemigoRectangular>::iterator lEnemigosRectangularesIt; 
 
@@ -104,7 +99,7 @@ bool Juego::primer_nivel()
 
         Rectangulo esquina_inferior_derecha = Rectangulo(sf::Vector2f(32.5f, 37.5f), sf::Vector2f(0.5f, 0.5f), azulcito);
 
-        Rectangulo tunel = Rectangulo(sf::Vector2f(31.9f, 34.f), sf::Vector2f(0.2f, 21.f), azulcito);
+        Rectangulo tunel = Rectangulo(sf::Vector2f(30.9f, 34.f), sf::Vector2f(0.2f, 21.f), azulcito);
 
         ///ENEMIGOS / BUMPERS DEL JUEGO
         EnemigoRedondo eRedondo1 = EnemigoRedondo(sf::Vector2f(10.f, 13.f)/*Posicion*/, 1.7f/*Radio*/, 10/*Puntos*/, cyan/*Color*/);
@@ -157,25 +152,28 @@ bool Juego::primer_nivel()
 
         while (this->ventana.isOpen())
         {
-
             while (this->ventana.pollEvent(this->evento))
             {
+
+                //EventosTeclas(FlipperIzquierdo, FlipperDerecho);
+                //Al llamar a EventosTeclas se buguea la bola y al lanzarla todo se rompe
+                //Al dejarlo como está ahora, la bola se choca con algo invisible y no funciona
 
                 if (this->evento.type == sf::Event::Closed)
                 {
                     this->ventana.close();
                 }
-                else if (this->evento.type == sf::Event::KeyPressed && this->evento.key.code == sf::Keyboard::Escape)
+                else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Escape)
                 {
                     this->ventana.close();
                 }
-                else if (this->evento.type == sf::Event::KeyPressed && this->evento.key.code == sf::Keyboard::Space)
+                else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Space)
                 {
-
-                    if (!bool_En_Juego && !bool_Fin_Juego)
+                    if (!bool_En_Juego /*la bola no está en juego*/ && !bool_Fin_Juego/*el juego no terminó*/)
                     {
+                        std::cout << "Detecta que no hay bola y lanza otra" << std::endl;
 
-                        sf::Vector2f posicion = sf::Vector2f(34.f, 55.f);
+                        sf::Vector2f posicion = sf::Vector2f(34.f, 50.f);
 
                         sf::Vector2f velocidad = sf::Vector2f(0.f, -60.f);
 
@@ -190,24 +188,22 @@ bool Juego::primer_nivel()
                         bool_En_Juego = true;
                     }
                 }
-                else if (this->evento.type == sf::Event::KeyPressed && this->evento.key.code == sf::Keyboard::Left)
+                else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Z)
                 {
-                    FlipperIzquierdo.Mover("up");
+                    FlipperIzquierdo.Mover("arriba");
                 }
-                else if (this->evento.type == sf::Event::KeyPressed && this->evento.key.code == sf::Keyboard::Right)
+                else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::X)
                 {
-                    FlipperDerecho.Mover("up");
+                    FlipperDerecho.Mover("arriba");
                 }
-
-                else if (this->evento.type == sf::Event::KeyReleased && this->evento.key.code == sf::Keyboard::Left)
+                else if (this->evento.type == sf::Event::KeyReleased && evento.key.code == sf::Keyboard::Z)
                 {
-                    FlipperIzquierdo.Mover("down");
+                    FlipperIzquierdo.Mover("abajo");
                 }
-                else if (this->evento.type == sf::Event::KeyReleased && this->evento.key.code == sf::Keyboard::Right)
+                else if (this->evento.type == sf::Event::KeyReleased && evento.key.code == sf::Keyboard::X)
                 {
-                    FlipperDerecho.Mover("down");
+                    FlipperDerecho.Mover("abajo");
                 }
-
             }
 
             this->ventana.clear(sf::Color::Black);
@@ -222,18 +218,17 @@ bool Juego::primer_nivel()
 
                 for (bolasIterador = bolas.begin(); bolasIterador != bolas.end(); ++bolasIterador)
                 {
-
-                    for (auto p = bolas.begin(); p != bolas.end(); ++p)
+                    for (auto p = bolas.begin(); p != bolas.end(); p++)
                     {
-
                         if (bolasIterador != p)
                         {
-                            Multiple m = Multiple(&bolasIterador->cuerpo, &p->cuerpo);
+                            Multiple colision = Multiple(&bolasIterador->cuerpo, &p->cuerpo);
 
-                            if (m.CirculoVsCirculo())
+                            if (colision.CirculoVsCirculo())
                             {
-                                m.correctPosition();
-                                m.aplicarImpulsoRotacional();
+                                colision.correctPosition();
+
+                                colision.aplicarImpulsoRotacional();
                             }
                         }
                     }
@@ -364,12 +359,12 @@ bool Juego::primer_nivel()
 
             for (lRectangulosIt = lRectangulos.begin(); lRectangulosIt != lRectangulos.end(); ++lRectangulosIt)
             {
-                ventana.draw(*lRectangulosIt);
+                this->ventana.draw(*lRectangulosIt);
             }
 
             for (lHitboxIt = lHitbox.begin(); lHitboxIt != lHitbox.end(); ++lHitboxIt)
             {
-                ventana.draw(*lHitboxIt);
+                this->ventana.draw(*lHitboxIt);
             }
 
             for (bolasIterador = bolas.begin(); bolasIterador != bolas.end(); ++bolasIterador)
@@ -379,12 +374,12 @@ bool Juego::primer_nivel()
 
             for (lEnemigosRedondosIt = lEnemigosRedondos.begin(); lEnemigosRedondosIt != lEnemigosRedondos.end(); ++lEnemigosRedondosIt)
             {
-                ventana.draw(*lEnemigosRedondosIt);
+                this->ventana.draw(*lEnemigosRedondosIt);
             }
 
             for (lEnemigosRectangularesIt = lEnemigosRectangulares.begin(); lEnemigosRectangularesIt != lEnemigosRectangulares.end(); ++lEnemigosRectangularesIt)
             {
-                ventana.draw(*lEnemigosRectangularesIt);
+                this->ventana.draw(*lEnemigosRectangularesIt);
             }
 
             this->ventana.draw(FlipperDerecho);
@@ -419,21 +414,43 @@ bool Juego::primer_nivel()
 
             this->ventana.display();
         }
-        return false;
+    return false;
 }
 
-
-bool Juego::EventosTeclas(Flippers fliper_1, Flippers fliper_2)
+void Juego::EventosTeclas(Flippers& fliper_1, Flippers& fliper_2)
 {
-
     if (this->evento.type == sf::Event::Closed)
     {
+        bool_En_Juego = false;
+        bool_Fin_Juego = true;
         this->ventana.close();
-        return false;
     }
     else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Escape)
     {
-        return false;
+        bool_En_Juego = false;
+        bool_Fin_Juego = true;
+        this->ventana.close();
+    }
+    else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Space)
+    {
+        if (!bool_En_Juego /*la bola no está en juego*/ && !bool_Fin_Juego/*el juego no terminó*/)
+        {
+            std::cout << "Detecta que no hay bola y lanza otra" << std::endl;
+
+            sf::Vector2f posicion = sf::Vector2f(34.f, 50.f);
+
+            sf::Vector2f velocidad = sf::Vector2f(0.f, -60.f);
+
+            sf::Vector2f aceleracion = sf::Vector2f(0.f, 20.f);
+
+            Bola bola = Bola(posicion, velocidad, aceleracion, 0.9f);
+
+            bola.set_color(sf::Color::White);
+
+            bolas.push_back(bola);
+
+            bool_En_Juego = true;
+        }
     }
     else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Z)
     {
@@ -451,26 +468,7 @@ bool Juego::EventosTeclas(Flippers fliper_1, Flippers fliper_2)
     {
         fliper_2.Mover("abajo");
     }
-    else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Space)
-    {
-        sf::Vector2f posicion; posicion.x = 50; posicion.y = 300;
-
-        sf::Vector2f velocidad; velocidad.x = 0; velocidad.y = -20;
-
-        sf::Vector2f aceleracion; aceleracion.x = 0; aceleracion.y = 0;
-
-        Bola bola = Bola(posicion, velocidad, aceleracion, 0.9f);
-
-        bola.set_color(sf::Color::White);
-
-        //bolas.push_back(bola);
-
-    }
-
-    return true;
 }
-
-
 
 void Juego::restar_vida()
 {

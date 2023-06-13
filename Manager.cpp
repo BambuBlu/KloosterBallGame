@@ -181,7 +181,9 @@ void Manager::Iniciar_Juego()
 
 		loop_juego = instancia_juego.primer_nivel();
 
+		std::cout << "Termino el juego" << std::endl;
+
 		this->ventana->setVisible(true);
 	}
-	std::cout << "Paso el While y se va de la funcion" << std::endl;
+	std::cout << "Paso el While y vuelve al menu" << std::endl;
 }

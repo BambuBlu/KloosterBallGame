@@ -1,6 +1,8 @@
 #ifndef JUEGO_H
 #define JUEGO_H
 
+#include <iostream>
+
 #include <SFML/Audio.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
@@ -48,7 +50,7 @@ class Juego
         ~Juego();
 
         bool primer_nivel();
-        bool EventosTeclas(Flippers fliper_1, Flippers fliper_2);
+        void EventosTeclas(Flippers& fliper_1, Flippers& fliper_2);
         void restar_vida();
 };
 
