@@ -2,6 +2,7 @@
 
 void Manager::Init_Window()
 {
+	//Especificaciones de la ventana
 	this->ventana = nullptr;
 
 	this->video_mode.height = 854;
@@ -9,18 +10,16 @@ void Manager::Init_Window()
 
 	this->ventana = new sf::RenderWindow(this->video_mode, "KloosterBallMenu", sf::Style::Default);
 
-	if (!font.loadFromFile("Fonts\\BrunoAceSC-Regular.ttf"))
-	{
-		std::cout << "Error cargando la fuente" << std::endl;
-	}
+	//Carga la fuente utilizada en la ventana
+	this->font.loadFromFile("Fonts\\BrunoAceSC-Regular.ttf");
 
-	//Opcion Jugar
+	//Vector con las opciones del MENU PRINCIPAL
 	this->main_menu[0].setFont(font);
 	this->main_menu[0].setFillColor(sf::Color::Cyan);
 	this->main_menu[0].setString("Jugar");
 	this->main_menu[0].setCharacterSize(40);
 	this->main_menu[0].setPosition(50, 200);
-	//Otras Opciones
+
 	this->main_menu[1].setFont(font);
 	this->main_menu[1].setFillColor(sf::Color::White);
 	this->main_menu[1].setString("Maximos Puntajes");
@@ -39,7 +38,34 @@ void Manager::Init_Window()
 	this->main_menu[3].setCharacterSize(20);
 	this->main_menu[3].setPosition(50, 600);
 
-	main_menu_selected = 0;
+
+	//Vector con los distintos niveles
+	this->menu_niveles[0].setFont(font);
+	this->menu_niveles[0].setFillColor(sf::Color::Cyan);
+	this->menu_niveles[0].setString("Primer nivel");
+	this->menu_niveles[0].setCharacterSize(40);
+	this->menu_niveles[0].setPosition(50, 200);
+
+	this->menu_niveles[1].setFont(font);
+	this->menu_niveles[1].setFillColor(sf::Color::White);
+	this->menu_niveles[1].setString("Segundo nivel");
+	this->menu_niveles[1].setCharacterSize(30);
+	this->menu_niveles[1].setPosition(50, 300);
+
+	this->menu_niveles[2].setFont(font);
+	this->menu_niveles[2].setFillColor(sf::Color::White);
+	this->menu_niveles[2].setString("Tercer nivel");
+	this->menu_niveles[2].setCharacterSize(30);
+	this->menu_niveles[2].setPosition(50, 400);
+
+	this->menu_niveles[3].setFont(font);
+	this->menu_niveles[3].setFillColor(sf::Color::White);
+	this->menu_niveles[3].setString("Regresar");
+	this->menu_niveles[3].setCharacterSize(30);
+	this->menu_niveles[3].setPosition(50, 600);
+
+	//Variable que recorre el menu para elegir la opción
+	this->main_menu_selected = 0;
 }
 
 Manager::Manager()
@@ -80,13 +106,13 @@ void Manager::Actualizar()
 			//Con la fechita para arriba subimos
 			else if (this->evento.key.code == sf::Keyboard::Up)
 			{
-				this->Up();
+				this->Up(1);
 				break;
 			}
 			//Con la fechita para abajo, bajamos
 			else if (this->evento.key.code == sf::Keyboard::Down)
 			{
-				this->Down();
+				this->Down(1);
 				break;
 			}
 			else if (this->evento.key.code == sf::Keyboard::Return)
@@ -118,45 +144,95 @@ void Manager::Actualizar()
 			}
 		}
 		this->ventana->clear();
-		this->Dibujar_Menu(ventana);
+		this->Dibujar_Menu(ventana, 1);
 		this->ventana->display();
 	}
 }
 
-void Manager::Dibujar_Menu(sf::RenderWindow* &window)
+void Manager::Dibujar_Menu(sf::RenderWindow*& ventana, int tipo_de_menu)
 {
-
-	for (int i = 0; i < max_main_menu; i++)
+	if (tipo_de_menu == 1)
 	{
-		window->draw(main_menu[i]);
+		for (int i = 0; i < max_main_menu; i++)
+		{
+			ventana->draw(main_menu[i]);
+		}
+	}
+	if (tipo_de_menu == 2)
+	{
+		for (int i = 0; i < max_main_menu; i++)
+		{
+			this->ventana->draw(menu_niveles[i]);
+		}
 	}
 }
 
-void Manager::Up()
+void Manager::Up(int tipo_de_menu)
 {
-	if (main_menu_selected >= 0)
+	if (tipo_de_menu == 1)
 	{
-		main_menu[main_menu_selected].setFillColor(sf::Color::White);
-		main_menu_selected--;
-		if (main_menu_selected == -1)
+		if (main_menu_selected >= 0)
 		{
-			main_menu_selected = 3;
+			main_menu[main_menu_selected].setFillColor(sf::Color::White);
+
+			main_menu_selected--;
+
+			if (main_menu_selected == -1)
+			{
+				main_menu_selected = 3;
+			}
+			main_menu[main_menu_selected].setFillColor(sf::Color::Cyan);
 		}
-		main_menu[main_menu_selected].setFillColor(sf::Color::Cyan);
 	}
+	if (tipo_de_menu == 2)
+	{
+		if (main_menu_selected >= 0)
+		{
+			menu_niveles[main_menu_selected].setFillColor(sf::Color::White);
+
+			main_menu_selected--;
+
+			if (main_menu_selected == -1)
+			{
+				main_menu_selected = 3;
+			}
+
+			this->menu_niveles[main_menu_selected].setFillColor(sf::Color::Cyan);
+		}
+	}
+
 }
 
-void Manager::Down()
+void Manager::Down(int tipo_de_menu)
 {
-	if (main_menu_selected + 1 <= max_main_menu)
+	if (tipo_de_menu == 1)
 	{
-		main_menu[main_menu_selected].setFillColor(sf::Color::White);
-		main_menu_selected++;
-		if (main_menu_selected == 4)
+		if (main_menu_selected + 1 <= max_main_menu)
 		{
-			main_menu_selected = 0;
+			main_menu[main_menu_selected].setFillColor(sf::Color::White);
+			main_menu_selected++;
+			if (main_menu_selected == 4)
+			{
+				main_menu_selected = 0;
+			}
+			main_menu[main_menu_selected].setFillColor(sf::Color::Cyan);
 		}
-		main_menu[main_menu_selected].setFillColor(sf::Color::Cyan);
+	}
+	if (tipo_de_menu == 2)
+	{
+		if (main_menu_selected + 1 <= max_main_menu)
+		{
+			menu_niveles[main_menu_selected].setFillColor(sf::Color::White);
+
+			main_menu_selected++;
+
+			if (main_menu_selected == 4)
+			{
+				main_menu_selected = 0;
+			}
+
+			menu_niveles[main_menu_selected].setFillColor(sf::Color::Cyan);
+		}
 	}
 }
 
@@ -167,89 +243,61 @@ int Manager::MainMenuPressed()
 
 void Manager::Iniciar_Juego()
 {
+	main_menu_selected = 0;
 
-	Juego instancia_juego;
-
-	this->ventana->setVisible(false);
-
-	instancia_juego.primer_nivel();
-
-	this->ventana->setVisible(true);
-
-	/*
-	sf::Text menu_niveles[3];
-	
-	//Primer nivel
-	menu_niveles[0].setFont(font);
-	menu_niveles[0].setFillColor(sf::Color::Cyan);
-	menu_niveles[0].setString("Primer nivel");
-	menu_niveles[0].setCharacterSize(40);
-	menu_niveles[0].setPosition(50, 200);
-	//Segundo Nivel
-	menu_niveles[1].setFont(font);
-	menu_niveles[1].setFillColor(sf::Color::White);
-	menu_niveles[1].setString("Segundo nivel");
-	menu_niveles[1].setCharacterSize(30);
-	menu_niveles[1].setPosition(50, 300);
-	//Tercer Nivel
-	menu_niveles[2].setFont(font);
-	menu_niveles[2].setFillColor(sf::Color::White);
-	menu_niveles[2].setString("Tercer nivel");
-	menu_niveles[2].setCharacterSize(30);
-	menu_niveles[2].setPosition(50, 400);
-
-	for (int i = 0; i < 3; i++)
+	while (Ventana_Esta_Abierta())
 	{
-		this->ventana->draw(menu_niveles[i]);
+		while (this->ventana->pollEvent(this->evento))
+		{
+			switch (this->evento.type)
+			{
+				case sf::Event::Closed:
+					this->ventana->close();
+					break;
+
+				case sf::Event::KeyPressed:
+					if (this->evento.key.code == sf::Keyboard::Escape)
+					{
+						this->ventana->close();
+						break;
+					}
+
+					else if (this->evento.key.code == sf::Keyboard::Up)
+					{
+						this->Up(2);
+						break;
+					}
+					else if (this->evento.key.code == sf::Keyboard::Down)
+					{
+						this->Down(2);
+						break;
+					}
+					else if (this->evento.key.code == sf::Keyboard::Return)
+					{
+						if (main_menu_selected == 0)
+						{
+							this->ventana->setVisible(false);
+							Juego instancia_juego;
+							instancia_juego.primer_nivel();
+							this->ventana->setVisible(true);
+						}
+						if (main_menu_selected == 1)
+						{
+
+						}
+						if (main_menu_selected == 2)
+						{
+
+						}
+						if (main_menu_selected == 3)
+						{
+							return;
+						}
+					}
+			}
+			this->ventana->clear();
+			this->Dibujar_Menu(ventana, 2);
+			this->ventana->display();
+		}
 	}
-
-	
-	switch (this->evento.type)
-	{
-		//La "X" de la ventana es para cerrar
-		case sf::Event::Closed:
-			this->ventana->close();
-			break;
-
-		//"Escape" es para cerrar
-		case sf::Event::KeyPressed:
-			if (this->evento.key.code == sf::Keyboard::Escape)
-			{
-				this->ventana->close();
-				break;
-			}
-			//Con la fechita para arriba subimos
-			else if (this->evento.key.code == sf::Keyboard::Up)
-			{
-				
-				break;
-			}
-			//Con la fechita para abajo, bajamos
-			else if (this->evento.key.code == sf::Keyboard::Down)
-			{
-			
-				break;
-			}
-			else if (this->evento.key.code == sf::Keyboard::Return)
-			{
-				//JUGAR
-				if (x == 0)
-				{
-					this->ventana->setVisible(false);
-
-					instancia_juego.primer_nivel();
-
-					this->ventana->setVisible(true);
-				}
-				if (x == 1)
-				{
-
-				}
-				if (x == 2)
-				{
-
-				}
-			}
-	}
-	*/
 }

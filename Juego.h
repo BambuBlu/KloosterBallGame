@@ -47,7 +47,6 @@ class Juego
 	public:
         Juego();
         ~Juego();
-
         bool primer_nivel();
         void restar_vida();
 };
