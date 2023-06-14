@@ -15,14 +15,12 @@ void Juego::InitJuego()
     //Bolas
     this->bolas_restantes = 3;
 
-
     ///FUENTE DE TEXTO
     this->fuente_de_texto.loadFromFile("Fonts\\BrunoAceSC-Regular.ttf");
 
     ///VENTANA
     this->video_mode.width = 720;
     this->video_mode.height = 980;
-
     this->ventana.create(this->video_mode, "KloosterBallGame", sf::Style::Default);
 }
 
@@ -67,7 +65,7 @@ bool Juego::primer_nivel()
 
         sf::Text str_fin_juego = sf::Text("FIN DEL JUEGO", fuente_de_texto, 70);
         str_fin_juego.setFillColor(sf::Color::White);
-        str_fin_juego.setPosition(50, 400);
+        str_fin_juego.setPosition(40, 400);
 
         ///DECLARACION DE RANDOMIZADOR
         //Randomizador rand;
@@ -83,19 +81,15 @@ bool Juego::primer_nivel()
         std::list<EnemigoRectangular>::iterator lEnemigosRectangularesIt; 
 
         //MUROS DEL JUEGO
-        Rectangulo muro_superior = Rectangulo(sf::Vector2f(18.f, 8.8f) /*ORIGEN*/, sf::Vector2f(17.f, 0.7f)/*EXTENSION MEDIA*/, azulcito/*COLOR*/);
+        Rectangulo muro_superior = Rectangulo(sf::Vector2f(18.f, 8.8f) /*ORIGEN*/, sf::Vector2f(17.f, 0.7f)/*EXTENSION*/, azulcito/*COLOR*/);
 
-        Rectangulo muro_izquierdo = Rectangulo(sf::Vector2f(0.5f, 27.5f), sf::Vector2f(0.7f, 30.f), azulcito);
+        Rectangulo muro_izquierdo = Rectangulo(sf::Vector2f(0.5f, 27.5f)/*ORIGEN*/, sf::Vector2f(0.7f, 30.f)/*EXTENSION*/, azulcito/*COLOR*/);
 
         Rectangulo muro_derecho = Rectangulo(sf::Vector2f(35.5f, 27.5f), sf::Vector2f(0.7f, 30.f), azulcito);
 
-        Rectangulo esquina_superior_derecha = Rectangulo(sf::Vector2f(34.8f, 9.8f), sf::Vector2f(0.5f, 0.5f), azulcito);
+        Rectangulo esquina_superior_derecha = Rectangulo(sf::Vector2f(34.8f, 9.8f)/*POSICION*/, sf::Vector2f(0.5f, 0.5f)/*EXTENSION MEDIA*/, azulcito/*COLOR*/);
 
-        Rectangulo esquina_inferior_izquierda = Rectangulo(sf::Vector2f(1.3f, 37.5f), sf::Vector2f(0.5f, 0.5f), azulcito);
-
-        Rectangulo esquina_inferior_derecha = Rectangulo(sf::Vector2f(32.5f, 37.5f), sf::Vector2f(0.5f, 0.5f), azulcito);
-
-        Rectangulo tunel = Rectangulo(sf::Vector2f(32.9f, 34.f), sf::Vector2f(0.2f, 21.f), azulcito);
+        Rectangulo tunel = Rectangulo(sf::Vector2f(32.9f, 40.f), sf::Vector2f(0.4f, 15.f), azulcito);
 
         //ENEMIGOS REDONDOS - BUMPERS DEL JUEGO
         EnemigoRedondo eRedondo1 = EnemigoRedondo(sf::Vector2f(10.f, 13.f)/*Posicion*/, 1.7f/*Radio*/, 10/*Puntos*/, cyan/*Color*/);
@@ -109,16 +103,17 @@ bool Juego::primer_nivel()
         EnemigoRedondo eRedondoGrande3 = EnemigoRedondo(sf::Vector2f(28.f, 25.f), 2.f, 10, cyan);
 
         //FLIPPERS
-        Flippers FlipperIzquierdo(sf::Vector2f(10.f, 44.5f)/*Posicion*/, 0.5f/*Angulo*/, sf::Vector2f(4.5, 0.6f)/*Extension media*/, cyan/*Color*/, true/*EnladoIzquierdo*/);
+        Flippers FlipperIzquierdo(sf::Vector2f(11.5f, 44.2f)/*Posicion*/, 0.6f/*Angulo*/, sf::Vector2f(4.5f, 0.5f)/*Extension media*/, cyan/*Color*/, true/*EnladoIzquierdo*/);
 
-        Flippers FlipperDerecho(sf::Vector2f(23.f, 44.5f)/*Posicion*/, 0.5f/*Angulo*/, sf::Vector2f(4.5f, 0.6f)/*Extension media*/, cyan/*Color*/, false/*EnladoIzquierdo*/);
+        Flippers FlipperDerecho(sf::Vector2f(21.9f, 44.2f)/*Posicion*/, 0.6f/*Angulo*/, sf::Vector2f(4.5f, 0.5f)/*Extension media*/, cyan/*Color*/, false/*EnladoIzquierdo*/);
 
         //RAMPAS AL COSTADO DE LOS FLIPPERS
-        HitBox rampaIzquierda = HitBox(sf::Vector2f(5.5f, 41.f), sf::Vector2f(6.f, 0.5f), 0.6f, azulcito);
 
-        HitBox rampaDerecha = HitBox(sf::Vector2f(27.7f, 41.f), sf::Vector2f(6.f, 0.5f), -0.6f, azulcito);
+        HitBox rampaIzquierda = HitBox(sf::Vector2f(5.5f, 40.f), sf::Vector2f(6.f, 0.5f), 0.6f, azulcito);
 
-        //ENEMIGOS RECTANGULARES
+        HitBox rampaDerecha = HitBox(sf::Vector2f(27.9f, 40.f), sf::Vector2f(6.f, 0.5f), -0.6f, azulcito);
+
+        //ENEMIGOS RECTANGULARES (Los dos finitos de la pantalla)
         EnemigoRectangular eRectangular1 = EnemigoRectangular(sf::Vector2f(4.5f, 33.f), sf::Vector2f(0.5f, 2.f), 0.3f, 20, azulcito);
 
         EnemigoRectangular eRectangular2 = EnemigoRectangular(sf::Vector2f(30.f, 33.f), sf::Vector2f(0.5f, 2.f), -0.3f, 20, azulcito);
@@ -136,10 +131,9 @@ bool Juego::primer_nivel()
         lRectangulos.push_back(muro_superior);
         lRectangulos.push_back(muro_izquierdo);
         lRectangulos.push_back(muro_derecho);
-        lRectangulos.push_back(tunel);
         lRectangulos.push_back(esquina_superior_derecha);
-        lRectangulos.push_back(esquina_inferior_derecha);
-        lRectangulos.push_back(esquina_inferior_izquierda);
+
+        lRectangulos.push_back(tunel);
 
         lHitbox.push_back(rampaIzquierda);
         lHitbox.push_back(rampaDerecha);

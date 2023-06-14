@@ -69,7 +69,7 @@ void Flippers::clampPaddle()
 
 		if (cuerpo.getRadioAngulo() > PADDLE_MAX_ANGLE) 
 		{
-			cuerpo.setRestitucion((const float)PADDLE_MAX_ANGLE);
+			cuerpo.setRadioAngulo((const float)PADDLE_MAX_ANGLE);
 			cuerpo.setVelocidadAngular(0.f);
 		}
 

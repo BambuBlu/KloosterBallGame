@@ -24,7 +24,7 @@ class HitBox : public sf::Drawable
 
         HitBox();
         
-        HitBox(const sf::Vector2f, const sf::Vector2f, const float, const sf::Color);
+        HitBox(const sf::Vector2f _origen, const sf::Vector2f _extensionMedia, const float _angulo, const sf::Color _color);
    
         virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
    
