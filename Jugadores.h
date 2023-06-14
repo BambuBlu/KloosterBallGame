@@ -21,5 +21,7 @@ class Jugadores
 		void set_puntaje(int _puntaje);
 		const char *get_jugador();
 		int get_puntaje();
+
 };
+
 #endif

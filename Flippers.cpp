@@ -61,7 +61,7 @@ void Flippers::Mover(std::string evento)
 	}
 }
 
-void Flippers::clampPaddle()
+void Flippers::rotarFlipper()
 {
 
 	if (en_lado_izquierdo == true) 

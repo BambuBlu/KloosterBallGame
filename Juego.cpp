@@ -1,5 +1,6 @@
 #include "Juego.h"
 
+
 std::list<Bola> bolas;
 std::list<Bola>::iterator bolasIterador;
 
@@ -14,14 +15,18 @@ void Juego::InitJuego()
     this->puntaje_mas_alto = 0;
     //Bolas
     this->bolas_restantes = 3;
+    //cantidad de juegos 
+    this->intentos = 0;
 
     ///FUENTE DE TEXTO
     this->fuente_de_texto.loadFromFile("Fonts\\BrunoAceSC-Regular.ttf");
-
+   
     ///VENTANA
     this->video_mode.width = 720;
     this->video_mode.height = 980;
     this->ventana.create(this->video_mode, "KloosterBallGame", sf::Style::Default);
+
+   
 }
 
 Juego::Juego()
@@ -34,7 +39,7 @@ Juego::~Juego()
     this->ventana.close();
 }
 
-bool Juego::primer_nivel()
+bool Juego::primer_nivel(Jugadores jugador)
 {
         ///FONDO DEL NIVEL
         TextureManager texturas;
@@ -53,19 +58,23 @@ bool Juego::primer_nivel()
         ///MENSAJES EN PANTALLA
         sf::Text str_maximo_puntaje = sf::Text("MAXPUNTOS :" + std::to_string(puntaje_mas_alto), fuente_de_texto, 30);
         str_maximo_puntaje.setFillColor(verde);
-        str_maximo_puntaje.setPosition(40, 5);
+        str_maximo_puntaje.setPosition(40, 10);
 
         sf::Text str_puntaje = sf::Text("PUNTOS :" + std::to_string(puntaje_total), fuente_de_texto, 30);
         str_puntaje.setFillColor(verde);
-        str_puntaje.setPosition(40, 80);
+        str_puntaje.setPosition(40, 85);
 
         sf::Text str_bolas_restantes = sf::Text("BOLAS :" + std::to_string(bolas_restantes), fuente_de_texto, 30);
         str_bolas_restantes.setFillColor(verde);
-        str_bolas_restantes.setPosition(500, 5);
+        str_bolas_restantes.setPosition(430, 10);
 
         sf::Text str_fin_juego = sf::Text("FIN DEL JUEGO", fuente_de_texto, 70);
         str_fin_juego.setFillColor(sf::Color::White);
-        str_fin_juego.setPosition(40, 400);
+        str_fin_juego.setPosition(35, 400);
+
+        sf::Text str_intentos = sf::Text("INTENTOS :" + std::to_string(intentos), fuente_de_texto, 30);
+        str_intentos.setFillColor(verde);
+        str_intentos.setPosition(410, 85);
 
         ///DECLARACION DE RANDOMIZADOR
         //Randomizador rand;
@@ -94,13 +103,16 @@ bool Juego::primer_nivel()
         //ENEMIGOS REDONDOS - BUMPERS DEL JUEGO
         EnemigoRedondo eRedondo1 = EnemigoRedondo(sf::Vector2f(10.f, 13.f)/*Posicion*/, 1.7f/*Radio*/, 10/*Puntos*/, cyan/*Color*/);
 
-        EnemigoRedondo eRedondo2 = EnemigoRedondo(sf::Vector2f(27.f, 16.f), 1.7f, 10, amarillo);
+        EnemigoRedondo eRedondo2 = EnemigoRedondo(sf::Vector2f(24.f, 13.f), 1.7f, 10, amarillo);
 
-        EnemigoRedondo eRedondoGrande1 = EnemigoRedondo(sf::Vector2f(17.5f, 21.f), 2.f, 10, verde);
+
+        EnemigoRedondo eRedondoGrande1 = EnemigoRedondo(sf::Vector2f(17.5f, 25.f), 2.f, 10, verde);
 
         EnemigoRedondo eRedondoGrande2 = EnemigoRedondo(sf::Vector2f(6.f, 25.f), 2.f, 10, amarillo);
 
         EnemigoRedondo eRedondoGrande3 = EnemigoRedondo(sf::Vector2f(28.f, 25.f), 2.f, 10, cyan);
+
+        EnemigoRedondo eRedondoGrande4 = EnemigoRedondo(sf::Vector2f(17.5f, 17.f), 2.f, 10, verde);
 
         //FLIPPERS
         Flippers FlipperIzquierdo(sf::Vector2f(11.5f, 44.2f)/*Posicion*/, 0.6f/*Angulo*/, sf::Vector2f(4.5f, 0.5f)/*Extension media*/, cyan/*Color*/, true/*EnladoIzquierdo*/);
@@ -127,6 +139,7 @@ bool Juego::primer_nivel()
         lEnemigosRedondos.push_back(eRedondoGrande1);
         lEnemigosRedondos.push_back(eRedondoGrande2);
         lEnemigosRedondos.push_back(eRedondoGrande3);
+        lEnemigosRedondos.push_back(eRedondoGrande4);
 
         lRectangulos.push_back(muro_superior);
         lRectangulos.push_back(muro_izquierdo);
@@ -226,56 +239,56 @@ bool Juego::primer_nivel()
                     ///FOR PARA CONTROLAR LA COLISION DE LA BOLA CON CADA ENEMIGO REDONDO
                     for (lEnemigosRedondosIt = lEnemigosRedondos.begin(); lEnemigosRedondosIt != lEnemigosRedondos.end(); ++lEnemigosRedondosIt) 
                     {
-                        Multiple m = Multiple(&lEnemigosRedondosIt->cuerpo, &bolasIterador->cuerpo);
+                        Multiple colision = Multiple(&lEnemigosRedondosIt->cuerpo, &bolasIterador->cuerpo);
 
-                        if (m.CirculoVsCirculo())
+                        if (colision.CirculoVsCirculo())
                         {
                             puntaje_total += lEnemigosRedondosIt->get_puntos();
 
-                            m.correctPosition();
+                            colision.correctPosition();
 
-                            m.aplicarImpulsoRotacional();
+                            colision.aplicarImpulsoRotacional();
                         }
                     }
 
                     ///FOR PARA CONTROLAR LA COLISION DE LA BOLA CON CADA ENEMIGO RECTANGULAR
                     for (lEnemigosRectangularesIt = lEnemigosRectangulares.begin(); lEnemigosRectangularesIt != lEnemigosRectangulares.end(); ++lEnemigosRectangularesIt)
                     {
-                        Multiple m = Multiple(&lEnemigosRectangularesIt->cuerpo, &bolasIterador->cuerpo);
+                        Multiple colision = Multiple(&lEnemigosRectangularesIt->cuerpo, &bolasIterador->cuerpo);
 
-                        if (m.CirculoVsHitbox())
+                        if (colision.CirculoVsHitbox())
                         {
                             puntaje_total += lEnemigosRectangularesIt->get_puntos();
 
-                            m.correctPosition();
+                            colision.correctPosition();
 
-                            m.aplicarImpulsoRotacional();
+                            colision.aplicarImpulsoRotacional();
                         }
                     }
 
                     ///FOR PARA CONTROLAR LA COLISION DE LA BOLA CON CADA OBJETO RECTANGULAR
                     for (lRectangulosIt = lRectangulos.begin(); lRectangulosIt != lRectangulos.end(); ++lRectangulosIt)
                     {
-                        Multiple m = Multiple(&lRectangulosIt->cuerpo, &bolasIterador->cuerpo);
+                        Multiple colision = Multiple(&lRectangulosIt->cuerpo, &bolasIterador->cuerpo);
 
-                        if (m.CirculoVsRectangulo())
+                        if (colision.CirculoVsRectangulo())
                         {
-                            m.correctPosition();
+                            colision.correctPosition();
 
-                            m.aplicarImpulsoRotacional();
+                            colision.aplicarImpulsoRotacional();
                         }
                     }
 
                     //FOR PARA CONTROLAR LA COLISION DE LA BOLA CON CADA RAMPA
                     for (lHitboxIt = lHitbox.begin(); lHitboxIt != lHitbox.end(); ++lHitboxIt)
                     {
-                        Multiple m = Multiple(&lHitboxIt->cuerpo, &bolasIterador->cuerpo);
+                        Multiple colision = Multiple(&lHitboxIt->cuerpo, &bolasIterador->cuerpo);
 
-                        if (m.CirculoVsHitbox())
+                        if (colision.CirculoVsHitbox())
                         {
-                            m.correctPosition();
+                            colision.correctPosition();
 
-                            m.aplicarImpulsoRotacional();
+                            colision.aplicarImpulsoRotacional();
                         }
                     }
 
@@ -283,22 +296,22 @@ bool Juego::primer_nivel()
                         TOMA A UN FLIPPER COMO CUERPO A Y A UNA BOLA COMO CUERPO B.
                         CHECKEA SI SE ESTÁN TOCANDO, CORRIGE LA POSICIÓN Y LE APLICA EL IMPULSO A LA BOLA.
                     */
-                    Multiple FlipperIzquierdo_Manifold = Multiple(&FlipperDerecho.cuerpo, &bolasIterador->cuerpo);
+                    Multiple FlipperIzquierdo_colision = Multiple(&FlipperDerecho.cuerpo, &bolasIterador->cuerpo);
 
-                    if (FlipperIzquierdo_Manifold.CirculoVsHitbox())
+                    if (FlipperIzquierdo_colision.CirculoVsHitbox())
                     {
-                        FlipperIzquierdo_Manifold.correctPosition();
+                        FlipperIzquierdo_colision.correctPosition();
 
-                        FlipperIzquierdo_Manifold.aplicarImpulsoRotacional();
+                        FlipperIzquierdo_colision.aplicarImpulsoRotacional();
                     }
 
-                    Multiple FlipperDerecho_Manifold = Multiple(&FlipperIzquierdo.cuerpo, &bolasIterador->cuerpo);
+                    Multiple FlipperDerecho_colision = Multiple(&FlipperIzquierdo.cuerpo, &bolasIterador->cuerpo);
 
-                    if (FlipperDerecho_Manifold.CirculoVsHitbox())
+                    if (FlipperDerecho_colision.CirculoVsHitbox())
                     {
-                        FlipperDerecho_Manifold.correctPosition();
+                        FlipperDerecho_colision.correctPosition();
 
-                        FlipperDerecho_Manifold.aplicarImpulsoRotacional();
+                        FlipperDerecho_colision.aplicarImpulsoRotacional();
                     }
 
                     //ACTUALIZA LAS PROPIEDADES DE LA BOLA (POSICION, VELOCIDAD Y ACELERACION)
@@ -310,6 +323,8 @@ bool Juego::primer_nivel()
                     PARA ACTUALIZAR EL ESTADO DE TODOS LOS OBJETOS DE LA PANTALLA
                     QUE NO SON LA BOLA.
                 */
+                //actualmente no se necesita ya que los objetos no estan en movimiento (facu no lo quiere borrar yo si )
+                /*
                 for (lEnemigosRedondosIt = lEnemigosRedondos.begin(); lEnemigosRedondosIt != lEnemigosRedondos.end(); ++lEnemigosRedondosIt)
                 {
                     lEnemigosRedondosIt->cuerpo.update(fSegundos);
@@ -329,12 +344,14 @@ bool Juego::primer_nivel()
                 {
                     lHitboxIt->cuerpo.update(fSegundos);
                 }
+                */
 
+                //actualiza el movimientos de los flipper
                 FlipperDerecho.cuerpo.update(fSegundos);
-                FlipperDerecho.clampPaddle();
+                FlipperDerecho.rotarFlipper();
 
                 FlipperIzquierdo.cuerpo.update(fSegundos);
-                FlipperIzquierdo.clampPaddle();
+                FlipperIzquierdo.rotarFlipper();
 
                 clock.restart();
             }
@@ -348,7 +365,10 @@ bool Juego::primer_nivel()
 
             str_maximo_puntaje.setString("MAXPUNTOS: " + std::to_string(puntaje_mas_alto));
 
-            restar_vida();
+            str_intentos.setString("INTENTOS :" + std::to_string(intentos));
+            
+
+            restar_bola();
 
             //Si no quedan bolas, termina el juego
             if (bolas_restantes <= 0)
@@ -390,9 +410,16 @@ bool Juego::primer_nivel()
                 this->ventana.draw(*lEnemigosRectangularesIt);
             }
 
+            //dibuja los frlippers
             this->ventana.draw(FlipperDerecho);
-
             this->ventana.draw(FlipperIzquierdo);
+
+            //Dibuja los mensajes de la pantalla
+            this->ventana.draw(str_maximo_puntaje);
+            this->ventana.draw(str_puntaje);
+            this->ventana.draw(str_bolas_restantes);
+            this->ventana.draw(str_intentos);
+
 
 
             /*
@@ -414,21 +441,26 @@ bool Juego::primer_nivel()
                 sf::Time now = clock.getElapsedTime();
 
                 printf("%f \n", now.asSeconds());
+                
 
                 if (now.asSeconds() >= fDelay)
                 {
+                    intentos++;
                     puntaje_total = 0;
                     bolas_restantes = 3;
                     bool_Fin_Juego = false;
                     clock.restart();
                 }
+
+                /*
+                // aca cuando se termina el juego se guardan los puntos en el archivo 
+                jugador.set_puntaje(puntaje_total);
+                ArchivoJugadores archivo;
+                archivo.guardar(jugador);
+                */
             }
 
-            //Dibuja los mensajes de la pantalla
-            this->ventana.draw(str_maximo_puntaje);
-            this->ventana.draw(str_puntaje);
-            this->ventana.draw(str_bolas_restantes);
-
+           
             //Muestra todo lo dibujado
             this->ventana.display();
         }
@@ -439,7 +471,7 @@ bool Juego::primer_nivel()
     CONTROLA QUE LA PELOTA NO SE HAYA IDO DE LA PANTALLA,
     EN CASO DE QUE SI, RESTA UNA VIDA.
 */
-void Juego::restar_vida()
+void Juego::restar_bola()
 {
     for (bolasIterador = bolas.begin(); bolasIterador != bolas.end();) 
     {

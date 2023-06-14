@@ -1,4 +1,5 @@
 #include "Manager.h"
+#include "Jugadores.h"
 
 void Manager::Init_Window()
 {
@@ -276,9 +277,10 @@ void Manager::Iniciar_Juego()
 					{
 						if (main_menu_selected == 0)
 						{
+							Jugadores jugador;
 							this->ventana->setVisible(false);
 							Juego instancia_juego;
-							instancia_juego.primer_nivel();
+							instancia_juego.primer_nivel(jugador);
 							this->ventana->setVisible(true);
 						}
 						if (main_menu_selected == 1)

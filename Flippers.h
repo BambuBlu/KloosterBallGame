@@ -27,7 +27,7 @@ class Flippers : public sf::Drawable
 
         void Mover(std::string);
 
-        void clampPaddle();
+        void rotarFlipper();
 
         virtual void draw(sf::RenderTarget&, sf::RenderStates) const;
 };

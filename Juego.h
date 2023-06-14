@@ -1,6 +1,7 @@
 #ifndef JUEGO_H
 #define JUEGO_H
-
+#include "Jugadores.h"
+#include "ArchivoJugadores.h"
 #include <iostream>
 
 #include <SFML/Audio.hpp>
@@ -41,14 +42,15 @@ class Juego
         int puntaje_total;
         int bolas_restantes;
         int puntaje_mas_alto;
+        int intentos;
 
         void InitJuego();
 
 	public:
         Juego();
         ~Juego();
-        bool primer_nivel();
-        void restar_vida();
+        bool primer_nivel(Jugadores jugador);
+        void restar_bola();
 };
 
 #endif

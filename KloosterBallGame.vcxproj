@@ -136,6 +136,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ArchivoJugadores.cpp" />
     <ClCompile Include="Bola.cpp" />
     <ClCompile Include="EnemigoRectangular.cpp" />
     <ClCompile Include="EnemigoRedondo.cpp" />
@@ -157,6 +158,7 @@
     <ClCompile Include="TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ArchivoJugadores.h" />
     <ClInclude Include="Bola.h" />
     <ClInclude Include="EnemigoRectangular.h" />
     <ClInclude Include="EnemigoRedondo.h" />
