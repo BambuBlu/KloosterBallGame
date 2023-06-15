@@ -1,5 +1,9 @@
-﻿  Juego.cpp
+﻿  ArchivoJugadores.cpp
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\ArchivoJugadores.cpp(13,15): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\ArchivoJugadores.cpp(29,15): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\ArchivoJugadores.cpp(46,15): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\ArchivoJugadores.cpp(61,15): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Juego.cpp
   main.cpp
   Manager.cpp
   Generando código...
-  KloosterBallGame.vcxproj -> E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\x64\Debug\KloosterBallGame.exe

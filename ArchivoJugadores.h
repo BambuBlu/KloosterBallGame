@@ -3,12 +3,13 @@
 #include <cstdio>
 #include "Jugadores.h"
 
+using namespace std;
 
-/*
+
 class ArchivoJugadores
 {
 private:
-	std::string _ruta;
+	string _ruta;
 public:
 	ArchivoJugadores();
 
@@ -16,7 +17,10 @@ public:
 	bool guardar(Jugadores reg);
 	Jugadores leer(int nroRegistro);
 	
+	void ListarTodo();
+	void CrearCopiadeSeguridad();
+	  
 
 };
-*/
+
 

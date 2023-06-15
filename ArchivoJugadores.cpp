@@ -1,6 +1,7 @@
 #include "ArchivoJugadores.h"
+#include <iostream>
 
-/*
+
 ArchivoJugadores::ArchivoJugadores()
 {
     _ruta = "Jugadores.dat";
@@ -34,6 +35,7 @@ bool ArchivoJugadores::guardar(Jugadores reg)
 
     bool pudoEscribir = fwrite(&reg, sizeof(Jugadores), 1, p);
     fclose(p);
+    cout << "Guardado con exito " << endl;
     return pudoEscribir;
 }
 
@@ -53,4 +55,22 @@ Jugadores ArchivoJugadores::leer(int nroRegistro)
     return aux;
 }
 
-*/
+void ArchivoJugadores::ListarTodo() {
+    Jugadores aux;
+
+    FILE* p = fopen(_ruta.c_str(), "rb");
+    if (p == NULL)
+    {
+        return;
+    }
+
+    for (int x = 0; x < getCantidadRegistros(); x++) {
+        aux = leer(x);
+
+        cout << "Nombre del Jugador: " << aux.get_jugador() << endl;
+        cout << "Puntaje: " << aux.get_puntaje() << endl << endl; 
+    }
+
+
+}
+
