@@ -1,12 +1,13 @@
 #ifndef MANAGER_H
 #define MANAGER_H
 
+#include <iostream>
 #include <SFML/Audio.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include "SetsGlobales.h"
 #include "Juego.h"
-#include <iostream>
+#include "Jugadores.h"
 
 /*
 	Clase para controlar el menú y la continuidad del juego
@@ -48,5 +49,7 @@ class Manager
 		void Dibujar_Menu(sf::RenderWindow*& ventana, int tipo_de_menu);
 
 		void Iniciar_Juego();
+
+		bool ingresar_nombre(Jugadores& _jugador);
 };
 #endif

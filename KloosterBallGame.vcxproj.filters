@@ -54,9 +54,6 @@
     <ClCompile Include="HitBoxFisicas.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Randomizador.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="Rectangulo.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
@@ -117,9 +114,6 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="HitBoxFisicas.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="Randomizador.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Rectangulo.h">

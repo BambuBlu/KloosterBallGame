@@ -7,7 +7,6 @@ ArchivoJugadores::ArchivoJugadores()
     _ruta = "Jugadores.dat";
 }
 
-
 int ArchivoJugadores::getCantidadRegistros()
 {
     FILE* p = fopen(_ruta.c_str(), "rb");
@@ -34,43 +33,51 @@ bool ArchivoJugadores::guardar(Jugadores reg)
     }
 
     bool pudoEscribir = fwrite(&reg, sizeof(Jugadores), 1, p);
+
     fclose(p);
-    cout << "Guardado con exito " << endl;
+
+    std::cout << "Guardado con exito " << std::endl;
+
     return pudoEscribir;
 }
-
 
 Jugadores ArchivoJugadores::leer(int nroRegistro)
 {
     Jugadores aux;
+
     FILE* p = fopen(_ruta.c_str(), "rb");
+
     if (p == NULL)
     {
         return aux;
     }
 
     fseek(p, nroRegistro * sizeof(Jugadores), SEEK_SET);
+
     fread(&aux, sizeof(Jugadores), 1, p);
+
     fclose(p);
+
     return aux;
 }
 
-void ArchivoJugadores::ListarTodo() {
+void ArchivoJugadores::ListarTodo() 
+{
     Jugadores aux;
 
     FILE* p = fopen(_ruta.c_str(), "rb");
+
     if (p == NULL)
     {
         return;
     }
 
-    for (int x = 0; x < getCantidadRegistros(); x++) {
+    for (int x = 0; x < getCantidadRegistros(); x++) 
+    {
         aux = leer(x);
 
-        cout << "Nombre del Jugador: " << aux.get_jugador() << endl;
-        cout << "Puntaje: " << aux.get_puntaje() << endl << endl; 
+        std::cout << "Nombre del Jugador: " << aux.get_nombre() << std::endl;
+
+        std::cout << "Puntaje: " << aux.get_puntaje() << std::endl << std::endl;
     }
-
-
 }
-

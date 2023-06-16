@@ -1,5 +1,5 @@
 #include "Manager.h"
-#include "Jugadores.h"
+
 
 void Manager::Init_Window()
 {
@@ -246,6 +246,13 @@ void Manager::Iniciar_Juego()
 {
 	main_menu_selected = 0;
 
+	Jugadores jugador;
+
+	if (!ingresar_nombre(jugador))
+	{
+		return;
+	}
+	
 	while (Ventana_Esta_Abierta())
 	{
 		while (this->ventana->pollEvent(this->evento))
@@ -280,6 +287,7 @@ void Manager::Iniciar_Juego()
 							Jugadores jugador;
 							this->ventana->setVisible(false);
 							Juego instancia_juego;
+
 							instancia_juego.primer_nivel(jugador);
 							this->ventana->setVisible(true);
 						}
@@ -291,15 +299,82 @@ void Manager::Iniciar_Juego()
 						{
 
 						}
-						if (main_menu_selected == 3)
-						{
-							return;
-						}
+						if (main_menu_selected == 3){return;}
 					}
 			}
 			this->ventana->clear();
 			this->Dibujar_Menu(ventana, 2);
 			this->ventana->display();
 		}
+	}
+}
+
+bool Manager::ingresar_nombre(Jugadores& _jugador)
+{
+	sf::Text texto;
+	texto.setFont(font);
+	texto.setFillColor(sf::Color::Cyan);
+	texto.setString("Ingrese su nombre");
+	texto.setCharacterSize(35);
+	texto.setPosition(40, 300);
+
+	sf::Text textBox;
+	textBox.setFont(font);
+	textBox.setCharacterSize(40);
+	textBox.setPosition(40, 400);
+
+	sf::String _nombreDeJugador;
+
+	while (Ventana_Esta_Abierta())
+	{
+		this->ventana->clear();
+
+		while (this->ventana->pollEvent(this->evento))
+		{
+			switch (this->evento.type)
+			{
+				case sf::Event::Closed:
+
+					this->ventana->close();
+					break;
+
+				case sf::Event::KeyPressed:
+
+					if (this->evento.key.code == sf::Keyboard::Escape)
+					{
+						return false;
+					}
+					if (this->evento.key.code == sf::Keyboard::Enter)
+					{
+						_jugador.set_nombre(_nombreDeJugador);
+						return true;
+					}
+
+				case sf::Event::TextEntered:
+
+					if (this->evento.type == sf::Event::TextEntered)
+					{
+						if (this->evento.text.unicode < 256)
+						{
+							if (this->evento.text.unicode == 8 && _nombreDeJugador.getSize() > 0)
+							{
+								_nombreDeJugador.erase(_nombreDeJugador.getSize() - 1, 1);
+							}
+							else
+							{
+								_nombreDeJugador += static_cast<char>(this->evento.text.unicode);
+							}
+
+							textBox.setString(_nombreDeJugador);
+						}
+					}
+			}
+		}
+
+		this->ventana->draw(texto);
+
+		this->ventana->draw(textBox);
+
+		this->ventana->display();
 	}
 }

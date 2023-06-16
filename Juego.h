@@ -8,7 +8,6 @@
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 
-#include "Randomizador.h"
 #include "SetsGlobales.h"
 #include "Bola.h"
 #include "Rectangulo.h"
@@ -49,7 +48,7 @@ class Juego
 	public:
         Juego();
         ~Juego();
-        bool primer_nivel(Jugadores jugador);
+        void primer_nivel(Jugadores& jugador);
         void restar_bola();
 };
 

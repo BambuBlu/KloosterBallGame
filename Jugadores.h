@@ -1,8 +1,8 @@
 #ifndef JUGADORES_H
 #define JUGADORES_H
 
-#include <string.h>
-
+#include <SFML/Graphics.hpp>
+#include <cstring>
 /*
 	Clase para controlar los jugadores y sus puntajes	
 */
@@ -10,18 +10,19 @@
 class Jugadores
 {
 	private:
-
-		char jugador[30];
+		char nombre[30];
 		int puntaje;
 
 	public:
+
 		Jugadores();
 
-		void set_jugador(char* _Jugador);
+		void set_nombre(sf::String& _nombre);
+
 		void set_puntaje(int _puntaje);
-		const char *get_jugador();
+
+		const char* get_nombre();
+
 		int get_puntaje();
-
 };
-
 #endif

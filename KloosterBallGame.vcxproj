@@ -110,7 +110,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -151,7 +151,6 @@
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="Multiple.cpp" />
     <ClCompile Include="ParametrosCuerpos.cpp" />
-    <ClCompile Include="Randomizador.cpp" />
     <ClCompile Include="Rectangulo.cpp" />
     <ClCompile Include="RectanguloFisicas.cpp" />
     <ClCompile Include="Rotacion.cpp" />
@@ -173,7 +172,6 @@
     <ClInclude Include="Manager.h" />
     <ClInclude Include="Multiple.h" />
     <ClInclude Include="ParametrosCuerpos.h" />
-    <ClInclude Include="Randomizador.h" />
     <ClInclude Include="Rectangulo.h" />
     <ClInclude Include="RectanguloFisicas.h" />
     <ClInclude Include="Rotacion.h" />

@@ -39,7 +39,7 @@ Juego::~Juego()
     this->ventana.close();
 }
 
-bool Juego::primer_nivel(Jugadores jugador)
+void Juego::primer_nivel(Jugadores& jugador)
 {
         ///FONDO DEL NIVEL
         TextureManager texturas;
@@ -76,8 +76,9 @@ bool Juego::primer_nivel(Jugadores jugador)
         str_intentos.setFillColor(verde);
         str_intentos.setPosition(410, 85);
 
-        ///DECLARACION DE RANDOMIZADOR
-        //Randomizador rand;
+        std::cout << "Nombre del Jugador: " << jugador.get_nombre() << std::endl;
+
+        std::cout << "Puntaje: " << jugador.get_puntaje() << std::endl << std::endl;
 
         ///LISTAS E ITERADORES DE OBJETOS (Almacenan los Objetos)
         std::list<Rectangulo> lRectangulos;
@@ -205,6 +206,10 @@ bool Juego::primer_nivel(Jugadores jugador)
                 {
                     FlipperDerecho.Mover("abajo");
                 }
+                else if (this->evento.key.code == sf::Keyboard::B)
+                {
+                    this->ventana.close();
+                }
             }
 
 
@@ -318,34 +323,6 @@ bool Juego::primer_nivel(Jugadores jugador)
                     bolasIterador->cuerpo.update(fSegundos);
                 }
 
-                /*
-                    LOS PROXIMOS FOR, HASTA QUE SE REINICIE EL "CLOCK" SON UTILIZADOS
-                    PARA ACTUALIZAR EL ESTADO DE TODOS LOS OBJETOS DE LA PANTALLA
-                    QUE NO SON LA BOLA.
-                */
-                //actualmente no se necesita ya que los objetos no estan en movimiento (facu no lo quiere borrar yo si )
-                /*
-                for (lEnemigosRedondosIt = lEnemigosRedondos.begin(); lEnemigosRedondosIt != lEnemigosRedondos.end(); ++lEnemigosRedondosIt)
-                {
-                    lEnemigosRedondosIt->cuerpo.update(fSegundos);
-                }
-
-                for (lEnemigosRectangularesIt = lEnemigosRectangulares.begin(); lEnemigosRectangularesIt != lEnemigosRectangulares.end(); ++lEnemigosRectangularesIt)
-                {
-                    lEnemigosRectangularesIt->cuerpo.update(fSegundos);
-                }
-
-                for (lRectangulosIt = lRectangulos.begin(); lRectangulosIt != lRectangulos.end(); ++lRectangulosIt)
-                {
-                    lRectangulosIt->cuerpo.update(fSegundos);
-                }
-
-                for (lHitboxIt = lHitbox.begin(); lHitboxIt != lHitbox.end(); ++lHitboxIt)
-                {
-                    lHitboxIt->cuerpo.update(fSegundos);
-                }
-                */
-
                 //actualiza el movimientos de los flipper
                 FlipperDerecho.cuerpo.update(fSegundos);
                 FlipperDerecho.rotarFlipper();
@@ -451,20 +428,15 @@ bool Juego::primer_nivel(Jugadores jugador)
                     bool_Fin_Juego = false;
                     clock.restart();
                 }
-
-                /*
-                // aca cuando se termina el juego se guardan los puntos en el archivo 
-                jugador.set_puntaje(puntaje_total);
-                ArchivoJugadores archivo;
-                archivo.guardar(jugador);
-                */
             }
-
-           
             //Muestra todo lo dibujado
             this->ventana.display();
         }
-    return false;
+        jugador.set_puntaje(puntaje_total);
+        ArchivoJugadores archivo;
+        archivo.guardar(jugador);
+        archivo.ListarTodo();
+    
 }
 
 /*
