@@ -150,6 +150,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="Multiple.cpp" />
+    <ClCompile Include="Sonidos.cpp" />
     <ClCompile Include="ParametrosCuerpos.cpp" />
     <ClCompile Include="Rectangulo.cpp" />
     <ClCompile Include="RectanguloFisicas.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="Jugadores.h" />
     <ClInclude Include="Manager.h" />
     <ClInclude Include="Multiple.h" />
+    <ClInclude Include="Sonidos.h" />
     <ClInclude Include="ParametrosCuerpos.h" />
     <ClInclude Include="Rectangulo.h" />
     <ClInclude Include="RectanguloFisicas.h" />

@@ -5,6 +5,7 @@ using namespace std;
 
 int main()
 {
+	
 	Manager menu;
 
 	while (menu.Ventana_Esta_Abierta())

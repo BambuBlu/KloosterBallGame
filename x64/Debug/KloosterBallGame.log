@@ -1,6 +1,2 @@
 ﻿  Juego.cpp
-  Manager.cpp
-  main.cpp
-  Generando código...
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(380): warning C4715: 'Manager::ingresar_nombre': no todas las rutas de acceso de control devuelven un valor
-  KloosterBallGame.vcxproj -> C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\KloosterBallGame.exe
+  KloosterBallGame.vcxproj -> C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\x64\Debug\KloosterBallGame.exe

@@ -26,6 +26,19 @@ void Juego::InitJuego()
     this->video_mode.height = 980;
     this->ventana.create(this->video_mode, "KloosterBallGame", sf::Style::Default);
 
+    ///MUSICA
+    if (!buffer.loadFromFile("Sonidos/gentes.wav")) {
+        std::cout << "No se cargo los sonidos" << std::endl;
+    }
+    sound.setBuffer(buffer);
+
+    if (!buffer2.loadFromFile("Sonidos/Arranque.wav")) {
+        std::cout << "No se cargo los sonidos" << std::endl;
+    }
+    sound2.setBuffer(buffer2);
+
+    
+
    
 }
 
@@ -47,6 +60,9 @@ void Juego::primer_nivel(Jugadores& jugador)
         sf::Sprite fondo;
         //fondo.setTexture(texturas.get_textura("background"));
         fondo.setPosition(0, 0);
+        sound2.play();
+       
+
       
         ///DECLARACION DE COLORES DEL NIVEL
         sf::Color azulcito = sf::Color(117, 137, 191);
@@ -163,6 +179,7 @@ void Juego::primer_nivel(Jugadores& jugador)
             {
                 if (this->evento.type == sf::Event::Closed) //Cierra la ventana
                 {
+                
                     this->ventana.close();
                 }
                 else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Escape) //Cierra la ventana
@@ -171,6 +188,7 @@ void Juego::primer_nivel(Jugadores& jugador)
                 }
                 else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Space) //Crea y lanza la bola
                 {
+                    
                     if (!bool_En_Juego && !bool_Fin_Juego)
                     {
                         //Parametros de la bola
@@ -192,18 +210,25 @@ void Juego::primer_nivel(Jugadores& jugador)
                 }
                 else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Z)
                 {
+                    sound.play();
                     FlipperIzquierdo.Mover("arriba");
+                   
+                    
                 }
                 else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::X)
                 {
+                    sound.play();
                     FlipperDerecho.Mover("arriba");
+                   
                 }
                 else if (this->evento.type == sf::Event::KeyReleased && evento.key.code == sf::Keyboard::Z)
                 {
+                    
                     FlipperIzquierdo.Mover("abajo");
                 }
                 else if (this->evento.type == sf::Event::KeyReleased && evento.key.code == sf::Keyboard::X)
                 {
+                    
                     FlipperDerecho.Mover("abajo");
                 }
                 else if (this->evento.key.code == sf::Keyboard::B)

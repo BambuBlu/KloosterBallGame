@@ -67,6 +67,12 @@ void Manager::Init_Window()
 
 	//Variable que recorre el menu para elegir la opción
 	this->main_menu_selected = 0;
+	///MUSICA MENU
+	if (!musica.openFromFile("Sonidos/Musica.wav")) {
+		std::cout << "No se cargo la musica" << std::endl;
+	}
+	musica.setVolume(25);
+	musica.play();
 }
 
 Manager::Manager()
@@ -86,9 +92,11 @@ const bool Manager::Ventana_Esta_Abierta() const
 
 void Manager::Actualizar()
 {
+
 	//Siempre que haya un evento se mantiene el While
 	while (this->ventana->pollEvent(this->evento))
 	{
+		
 		//Checkea el tipo de evento
 		switch (this->evento.type)
 		{
@@ -287,7 +295,7 @@ void Manager::Iniciar_Juego()
 							Jugadores jugador;
 							this->ventana->setVisible(false);
 							Juego instancia_juego;
-
+							musica.stop();
 							instancia_juego.primer_nivel(jugador);
 							this->ventana->setVisible(true);
 						}

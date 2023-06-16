@@ -27,6 +27,8 @@ class Manager
 		sf::RenderWindow* ventana;
 		sf::VideoMode video_mode;
 		sf::Event evento;
+		sf::Music musica;
+		
 
 		void Init_Window();
 
