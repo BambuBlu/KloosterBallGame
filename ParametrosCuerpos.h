@@ -30,6 +30,7 @@ class Cuerpo
         Cuerpo(const sf::Vector2f&, const sf::Vector2f&, const sf::Vector2f&, const float);
 
         void update(float);
+        void updateBola(float);
         void setRestitucion(const float);
         void setMasa(const float);
         void setPosicion(const sf::Vector2f&);

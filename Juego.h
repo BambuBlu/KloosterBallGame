@@ -25,7 +25,6 @@
     Pienso que la usemos para crear dos o tres mapas y manejemos todo de acá
 */
 
-
 class Juego
 {
 	private:
@@ -52,7 +51,6 @@ class Juego
 
 	public:
         Juego();
-        ~Juego();
         void primer_nivel(Jugadores& jugador);
         void restar_bola();
 };

@@ -76,8 +76,9 @@ void ArchivoJugadores::ListarTodo()
     {
         aux = leer(x);
 
-        std::cout << "Nombre del Jugador: " << aux.get_nombre() << std::endl;
-
-        std::cout << "Puntaje: " << aux.get_puntaje() << std::endl << std::endl;
+        std::cout << "Nombre del Jugador: " << std::endl;
+        std::cout << aux.get_nombre() << std::endl;
+        std::cout << "Puntaje: " << std::endl;
+        std::cout << aux.get_puntaje() << std::endl << std::endl;
     }
 }

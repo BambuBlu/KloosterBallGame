@@ -51,6 +51,33 @@ void Cuerpo::update(float deltaTime)
     }
 }
 
+void Cuerpo::updateBola(float deltaTime)
+{
+    sf::Vector2f velocidadBase(velocidad + (aceleracion * deltaTime));
+
+    posicion += ((getVelocidad() + velocidadBase) / 2.f) * deltaTime;
+
+    velocidad = velocidadBase;
+
+    float anguloNuevo = angulo + (velocidadAngular * deltaTime);
+
+    setRadioAngulo(anguloNuevo);
+
+    if (velocidad.x > MAX_VELOCITY_X)
+    {
+        velocidad.x = (MAX_VELOCITY_X);
+    }
+    else if (velocidad.y > MAX_VELOCITY_Y)
+    {
+        velocidad.y = (MAX_VELOCITY_Y);
+    }
+
+    else if (velocidad.y > 0 && velocidad.y < MIN_VELOCITY_Y)
+    {
+        velocidad.y = MIN_VELOCITY_Y;
+    }
+}
+
 void Cuerpo::setRestitucion(float _restitucion) //!< Sets de restitucion
 {
     restitucion = _restitucion;
@@ -59,17 +86,20 @@ void Cuerpo::setRestitucion(float _restitucion) //!< Sets de restitucion
 void Cuerpo::setMasa(const float _masa)
 {
     masa = _masa;
-    if (masa == 0.0f) {
+
+    if (masa == 0.0f) 
+    {
         masaInversa = 0.0f;
     }
-    else {
+    else 
+    {
         masaInversa = 1.0f / masaInversa;
     }
 }
 
 void Cuerpo::setRadioAngulo(const float _angulo)
 {
-    const float rotacionEntera = 2 * M_PI;
+    const float rotacionEntera = 2.f * M_PI;
 
     float anguloNuevo = _angulo;
     //abs devuelve la distancia del numero hacia el 0 osea siempre un num positivo

@@ -14,7 +14,7 @@ public:
 	Jugadores leer(int nroRegistro);
 	void ListarTodo();
 
-	void CrearCopiadeSeguridad();
+	//void CrearCopiadeSeguridad();
 };
 
 

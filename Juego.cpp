@@ -1,6 +1,5 @@
 #include "Juego.h"
 
-
 std::list<Bola> bolas;
 std::list<Bola>::iterator bolasIterador;
 
@@ -47,12 +46,7 @@ Juego::Juego()
     InitJuego();
 }
 
-Juego::~Juego()
-{
-    this->ventana.close();
-}
-
-void Juego::primer_nivel(Jugadores& jugador)
+void Juego::primer_nivel(Jugadores& _jugador)
 {
         ///FONDO DEL NIVEL
         TextureManager texturas;
@@ -60,10 +54,9 @@ void Juego::primer_nivel(Jugadores& jugador)
         sf::Sprite fondo;
         //fondo.setTexture(texturas.get_textura("background"));
         fondo.setPosition(0, 0);
+
         sound2.play();
        
-
-      
         ///DECLARACION DE COLORES DEL NIVEL
         sf::Color azulcito = sf::Color(117, 137, 191);
         sf::Color cyan = sf::Color(179, 226, 221);
@@ -92,9 +85,10 @@ void Juego::primer_nivel(Jugadores& jugador)
         str_intentos.setFillColor(verde);
         str_intentos.setPosition(410, 85);
 
-        std::cout << "Nombre del Jugador: " << jugador.get_nombre() << std::endl;
-
-        std::cout << "Puntaje: " << jugador.get_puntaje() << std::endl << std::endl;
+        std::cout << "Nombre en PrimerNivel() " << std::endl;
+        std::cout << _jugador.get_nombre() << std::endl;
+        std::cout << "Puntaje PrimerNivel() " << std::endl;
+        std::cout << _jugador.get_puntaje() << std::endl;
 
         ///LISTAS E ITERADORES DE OBJETOS (Almacenan los Objetos)
         std::list<Rectangulo> lRectangulos;
@@ -107,29 +101,32 @@ void Juego::primer_nivel(Jugadores& jugador)
         std::list<EnemigoRectangular>::iterator lEnemigosRectangularesIt; 
 
         //MUROS DEL JUEGO
-        Rectangulo muro_superior = Rectangulo(sf::Vector2f(18.f, 8.8f) /*ORIGEN*/, sf::Vector2f(17.f, 0.7f)/*EXTENSION*/, azulcito/*COLOR*/);
+        Rectangulo muro_superior = Rectangulo(sf::Vector2f(18.f, 7.8f) /*ORIGEN*/, sf::Vector2f(17.f, 0.4f)/*EXTENSION*/, azulcito/*COLOR*/);
 
         Rectangulo muro_izquierdo = Rectangulo(sf::Vector2f(0.5f, 27.5f)/*ORIGEN*/, sf::Vector2f(0.7f, 30.f)/*EXTENSION*/, azulcito/*COLOR*/);
 
         Rectangulo muro_derecho = Rectangulo(sf::Vector2f(35.5f, 27.5f), sf::Vector2f(0.7f, 30.f), azulcito);
 
-        Rectangulo esquina_superior_derecha = Rectangulo(sf::Vector2f(34.8f, 9.8f)/*POSICION*/, sf::Vector2f(0.5f, 0.5f)/*EXTENSION MEDIA*/, azulcito/*COLOR*/);
+        Rectangulo esquina_superior_derecha = Rectangulo(sf::Vector2f(34.8f, 8.2f)/*POSICION*/, sf::Vector2f(0.5f, 0.5f)/*EXTENSION MEDIA*/, azulcito/*COLOR*/);
 
         Rectangulo tunel = Rectangulo(sf::Vector2f(32.9f, 40.f), sf::Vector2f(0.4f, 15.f), azulcito);
 
         //ENEMIGOS REDONDOS - BUMPERS DEL JUEGO
-        EnemigoRedondo eRedondo1 = EnemigoRedondo(sf::Vector2f(10.f, 13.f)/*Posicion*/, 1.7f/*Radio*/, 10/*Puntos*/, cyan/*Color*/);
 
-        EnemigoRedondo eRedondo2 = EnemigoRedondo(sf::Vector2f(24.f, 13.f), 1.7f, 10, amarillo);
+        EnemigoRedondo eRedondo1 = EnemigoRedondo(sf::Vector2f(17.f, 12.f)/*Posicion*/, 1.2f/*Radio*/, 10/*Puntos*/, verde/*Color*/);
 
+        EnemigoRedondo eRedondo2 = EnemigoRedondo(sf::Vector2f(17.f, 24.f), 1.2f, 10, verde); 
 
-        EnemigoRedondo eRedondoGrande1 = EnemigoRedondo(sf::Vector2f(17.5f, 25.f), 2.f, 10, verde);
+        EnemigoRedondo eRedondo3 = EnemigoRedondo(sf::Vector2f(10.2f, 18.f), 1.2f, 10, verde);
 
-        EnemigoRedondo eRedondoGrande2 = EnemigoRedondo(sf::Vector2f(6.f, 25.f), 2.f, 10, amarillo);
+        EnemigoRedondo eRedondo4 = EnemigoRedondo(sf::Vector2f(23.8f, 18.f), 1.2f, 10, verde);
 
-        EnemigoRedondo eRedondoGrande3 = EnemigoRedondo(sf::Vector2f(28.f, 25.f), 2.f, 10, cyan);
+        EnemigoRedondo eRedondoGrande1 = EnemigoRedondo(sf::Vector2f(17.f, 18.f), 2.f, 10, amarillo);
 
-        EnemigoRedondo eRedondoGrande4 = EnemigoRedondo(sf::Vector2f(17.5f, 17.f), 2.f, 10, verde);
+        EnemigoRedondo eRedondoGrande2 = EnemigoRedondo(sf::Vector2f(6.f, 25.f), 2.f, 10, verde);
+
+        EnemigoRedondo eRedondoGrande3 = EnemigoRedondo(sf::Vector2f(28.f, 25.f), 2.f, 10, verde);
+
 
         //FLIPPERS
         Flippers FlipperIzquierdo(sf::Vector2f(11.5f, 44.2f)/*Posicion*/, 0.6f/*Angulo*/, sf::Vector2f(4.5f, 0.5f)/*Extension media*/, cyan/*Color*/, true/*EnladoIzquierdo*/);
@@ -143,20 +140,25 @@ void Juego::primer_nivel(Jugadores& jugador)
         HitBox rampaDerecha = HitBox(sf::Vector2f(27.9f, 40.f), sf::Vector2f(6.f, 0.5f), -0.6f, azulcito);
 
         //ENEMIGOS RECTANGULARES (Los dos finitos de la pantalla)
-        EnemigoRectangular eRectangular1 = EnemigoRectangular(sf::Vector2f(4.5f, 33.f), sf::Vector2f(0.5f, 2.f), 0.3f, 20, azulcito);
+        EnemigoRectangular eRectangular1 = EnemigoRectangular(sf::Vector2f(10.4f, 36.3f), sf::Vector2f(0.5f, 2.9f), -0.7f, 20, azulcito);
 
-        EnemigoRectangular eRectangular2 = EnemigoRectangular(sf::Vector2f(30.f, 33.f), sf::Vector2f(0.5f, 2.f), -0.3f, 20, azulcito);
+        EnemigoRectangular eRectangular2 = EnemigoRectangular(sf::Vector2f(23.f, 36.3f), sf::Vector2f(0.5f, 2.9f), 0.7f, 20, azulcito);
+
+        EnemigoRectangular eRectangular3 = EnemigoRectangular(sf::Vector2f(5.f, 11.5f), sf::Vector2f(0.5f, 2.f), 0.65f, 20, azulcito);
 
         ///AÑADE LOS OBJETOS CREADOS A LAS LISTAS
         lEnemigosRectangulares.push_back(eRectangular1);    
         lEnemigosRectangulares.push_back(eRectangular2);
+        lEnemigosRectangulares.push_back(eRectangular3);
+
 
         lEnemigosRedondos.push_back(eRedondo1);
         lEnemigosRedondos.push_back(eRedondo2);
+        lEnemigosRedondos.push_back(eRedondo3);
+        lEnemigosRedondos.push_back(eRedondo4);
         lEnemigosRedondos.push_back(eRedondoGrande1);
         lEnemigosRedondos.push_back(eRedondoGrande2);
         lEnemigosRedondos.push_back(eRedondoGrande3);
-        lEnemigosRedondos.push_back(eRedondoGrande4);
 
         lRectangulos.push_back(muro_superior);
         lRectangulos.push_back(muro_izquierdo);
@@ -231,12 +233,7 @@ void Juego::primer_nivel(Jugadores& jugador)
                     
                     FlipperDerecho.Mover("abajo");
                 }
-                else if (this->evento.key.code == sf::Keyboard::B)
-                {
-                    this->ventana.close();
-                }
             }
-
 
             this->ventana.clear(sf::Color::Black);
 
@@ -345,7 +342,7 @@ void Juego::primer_nivel(Jugadores& jugador)
                     }
 
                     //ACTUALIZA LAS PROPIEDADES DE LA BOLA (POSICION, VELOCIDAD Y ACELERACION)
-                    bolasIterador->cuerpo.update(fSegundos);
+                    bolasIterador->cuerpo.updateBola(fSegundos);
                 }
 
                 //actualiza el movimientos de los flipper
@@ -387,6 +384,7 @@ void Juego::primer_nivel(Jugadores& jugador)
                 A PARTIR DE ACA SE DIBUJAN LOS OBJETOS HASTA
                     "if (bool_Fin_Juego)"
             */
+
             for (lRectangulosIt = lRectangulos.begin(); lRectangulosIt != lRectangulos.end(); ++lRectangulosIt)
             {
                 this->ventana.draw(*lRectangulosIt);
@@ -412,11 +410,11 @@ void Juego::primer_nivel(Jugadores& jugador)
                 this->ventana.draw(*lEnemigosRectangularesIt);
             }
 
-            //dibuja los frlippers
+            //DIBUJA FLIPPERS
             this->ventana.draw(FlipperDerecho);
             this->ventana.draw(FlipperIzquierdo);
 
-            //Dibuja los mensajes de la pantalla
+            //DIBUJA TEXTO EN LA PANTALLA
             this->ventana.draw(str_maximo_puntaje);
             this->ventana.draw(str_puntaje);
             this->ventana.draw(str_bolas_restantes);
@@ -432,6 +430,7 @@ void Juego::primer_nivel(Jugadores& jugador)
                 Al ser la funcion un booleano, puede retornar True en caso de haber superado el maximo puntaje
                 y False en caso de no haberlo superado o algo xd
             */
+
             if (bool_Fin_Juego)
             {
                 bool_En_Juego = false;
@@ -457,13 +456,17 @@ void Juego::primer_nivel(Jugadores& jugador)
             //Muestra todo lo dibujado
             this->ventana.display();
         }
-        jugador.set_puntaje(puntaje_total);
-        ArchivoJugadores archivo;
-        archivo.guardar(jugador);
-        archivo.ListarTodo();
-    
-}
 
+        _jugador.set_puntaje(puntaje_total);
+        _jugador.set_nivel(1);
+
+        ArchivoJugadores archivo;
+        if (archivo.guardar(_jugador))
+        {
+            std::cout << "Jugador guardado correctamente!" << std::endl;
+        }
+
+}
 /*
     CONTROLA QUE LA PELOTA NO SE HAYA IDO DE LA PANTALLA,
     EN CASO DE QUE SI, RESTA UNA VIDA.
