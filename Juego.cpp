@@ -25,20 +25,7 @@ void Juego::InitJuego()
     this->video_mode.height = 980;
     this->ventana.create(this->video_mode, "KloosterBallGame", sf::Style::Default);
 
-    ///MUSICA
-    if (!buffer.loadFromFile("Sonidos/gentes.wav")) {
-        std::cout << "No se cargo los sonidos" << std::endl;
-    }
-    sound.setBuffer(buffer);
-
-    if (!buffer2.loadFromFile("Sonidos/Arranque.wav")) {
-        std::cout << "No se cargo los sonidos" << std::endl;
-    }
-    sound2.setBuffer(buffer2);
-
     
-
-   
 }
 
 Juego::Juego()
@@ -54,8 +41,9 @@ void Juego::primer_nivel(Jugadores& _jugador)
         sf::Sprite fondo;
         //fondo.setTexture(texturas.get_textura("background"));
         fondo.setPosition(0, 0);
-
-        sound2.play();
+       
+        sound = sonido.ReproducirArranque();
+        sound.play();
        
         ///DECLARACION DE COLORES DEL NIVEL
         sf::Color azulcito = sf::Color(117, 137, 191);
@@ -212,14 +200,14 @@ void Juego::primer_nivel(Jugadores& _jugador)
                 }
                 else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Z)
                 {
-                    sound.play();
+                    
                     FlipperIzquierdo.Mover("arriba");
                    
                     
                 }
                 else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::X)
                 {
-                    sound.play();
+                    
                     FlipperDerecho.Mover("arriba");
                    
                 }
@@ -270,6 +258,9 @@ void Juego::primer_nivel(Jugadores& _jugador)
 
                         if (colision.CirculoVsCirculo())
                         {
+                            sound = sonido.ReproducirGentes();
+                            sound.play();
+                            
                             puntaje_total += lEnemigosRedondosIt->get_puntos();
 
                             colision.correctPosition();

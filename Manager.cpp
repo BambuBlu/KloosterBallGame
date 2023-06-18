@@ -68,13 +68,7 @@ void Manager::Init_Menu()
 	//Variable que recorre el menu para elegir la opción
 	this->main_menu_selected = 0;
 
-	///MUSICA MENU
-	if (!musica.openFromFile("Sonidos/Musica.wav")) 
-	{
-		std::cout << "No se cargo la musica" << std::endl;
-	}
-	musica.setVolume(25);
-	musica.play();
+	
 }
 
 Manager::Manager()

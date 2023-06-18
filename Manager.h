@@ -9,6 +9,7 @@
 #include "Juego.h"
 #include "Jugadores.h"
 
+
 /*
 	Clase para controlar el menú y la continuidad del juego
 */
@@ -24,6 +25,7 @@ class Manager
 		sf::VideoMode video_mode;
 		sf::Font font;
 		sf::Event evento;
+		Sonidos sonido;
 		sf::Music musica;
 
 		void Init_Menu();
