@@ -25,6 +25,8 @@ class Manager
 		sf::Font font;
 		sf::Event evento;
 		sf::Music musica;
+		sf::Texture textura[4];
+		sf::Sprite sprite[4];
 
 		void Init_Menu();
 
@@ -42,5 +44,6 @@ class Manager
 		bool IngresarNombre(Jugadores& _jugador);
 		void RankingDePuntajes();
 		void OrdenarJugadoresxPuntos(Jugadores*& _vector, int _tamanio);
+		void MoverKlooster();
 };
 #endif

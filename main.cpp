@@ -8,6 +8,8 @@ int main()
 	
 	Manager menu;
 
+	srand(time(NULL));
+
 	while (menu.Ventana_Esta_Abierta())
 	{
 

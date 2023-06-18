@@ -18,12 +18,12 @@ void Juego::InitJuego()
     this->intentos = 0;
 
     ///FUENTE DE TEXTO
-    this->fuente_de_texto.loadFromFile("Fonts\\BrunoAceSC-Regular.ttf");
+    this->fuente_de_texto.loadFromFile("Fonts\\Roboto-Black.ttf");
    
     ///VENTANA
     this->video_mode.width = 720;
     this->video_mode.height = 980;
-    this->ventana.create(this->video_mode, "KloosterBallGame", sf::Style::Default);
+    this->ventana.create(this->video_mode, "Capitán Kloosman", sf::Style::Default);
 
     ///MUSICA
     if (!buffer.loadFromFile("Sonidos/gentes.wav")) {
@@ -35,10 +35,6 @@ void Juego::InitJuego()
         std::cout << "No se cargo los sonidos" << std::endl;
     }
     sound2.setBuffer(buffer2);
-
-    
-
-   
 }
 
 Juego::Juego()
@@ -49,41 +45,57 @@ Juego::Juego()
 void Juego::primer_nivel(Jugadores& _jugador)
 {
         ///FONDO DEL NIVEL
-        TextureManager texturas;
-        //texturas.cargar_textura("background", "png\\");
-        sf::Sprite fondo;
-        //fondo.setTexture(texturas.get_textura("background"));
-        fondo.setPosition(0, 0);
+        sf::Texture textura;
+        sf::Texture textura1;
+        sf::Texture textura2;
+        if (!textura.loadFromFile("resources/background.png"))
+        {
+            std::cout << "No se cargo el fondo" << std::endl;
+        }
+        sf::Sprite background(textura);
+        if (!textura1.loadFromFile("resources/game_over.png"))
+        {
+            std::cout << "No se cargo el fondo" << std::endl;
+        }
+        sf::Sprite gameOver(textura1);
+        if (!textura2.loadFromFile("resources/texture_map.png"))
+        {
+            std::cout << "No se cargo el fondo" << std::endl;
+        }
+        sf::Sprite textureMap(textura2);
 
         sound2.play();
        
         ///DECLARACION DE COLORES DEL NIVEL
-        sf::Color azulcito = sf::Color(117, 137, 191);
-        sf::Color cyan = sf::Color(179, 226, 221);
-        sf::Color amarillo = sf::Color(255, 237, 81);
-        sf::Color naranja = sf::Color(252, 169, 133);
-        sf::Color verde = sf::Color(72, 181, 163);
+        sf::Color Azul = sf::Color(8, 68, 112);
+        sf::Color blanco = sf::Color(235, 235, 235);
+        sf::Color rosa = sf::Color(200, 90, 129);
+        sf::Color gris = sf::Color(39, 36, 36);
 
         ///MENSAJES EN PANTALLA
-        sf::Text str_maximo_puntaje = sf::Text("MAXPUNTOS :" + std::to_string(puntaje_mas_alto), fuente_de_texto, 30);
-        str_maximo_puntaje.setFillColor(verde);
-        str_maximo_puntaje.setPosition(40, 10);
+        sf::Text str_maximo_puntaje = sf::Text("~ Mejor puntaje: " + std::to_string(puntaje_mas_alto) + "...", fuente_de_texto, 18);
+        str_maximo_puntaje.setFillColor(blanco);
+        str_maximo_puntaje.setPosition(200, 30);
 
-        sf::Text str_puntaje = sf::Text("PUNTOS :" + std::to_string(puntaje_total), fuente_de_texto, 30);
-        str_puntaje.setFillColor(verde);
-        str_puntaje.setPosition(40, 85);
+        sf::Text puntos = sf::Text("Puntos", fuente_de_texto, 35);
+        puntos.setFillColor(blanco);
+        puntos.setPosition(448, 28);
 
-        sf::Text str_bolas_restantes = sf::Text("BOLAS :" + std::to_string(bolas_restantes), fuente_de_texto, 30);
-        str_bolas_restantes.setFillColor(verde);
-        str_bolas_restantes.setPosition(430, 10);
+        sf::Text str_puntaje = sf::Text(std::to_string(puntaje_total), fuente_de_texto, 30);
+        str_puntaje.setFillColor(blanco);
+        str_puntaje.setPosition(445, 72);
 
-        sf::Text str_fin_juego = sf::Text("FIN DEL JUEGO", fuente_de_texto, 70);
-        str_fin_juego.setFillColor(sf::Color::White);
-        str_fin_juego.setPosition(35, 400);
+        sf::Text bola = sf::Text("Bola", fuente_de_texto, 25);
+        bola.setFillColor(rosa);
+        bola.setPosition(616, 22);
 
-        sf::Text str_intentos = sf::Text("INTENTOS :" + std::to_string(intentos), fuente_de_texto, 30);
-        str_intentos.setFillColor(verde);
-        str_intentos.setPosition(410, 85);
+        sf::Text str_bolas_restantes = sf::Text(std::to_string(bolas_restantes), fuente_de_texto, 30);
+        str_bolas_restantes.setFillColor(blanco);
+        str_bolas_restantes.setPosition(634,64);
+
+        sf::Text str_intentos = sf::Text("~ Intentos: " + std::to_string(intentos) + "...", fuente_de_texto, 18);
+        str_intentos.setFillColor(blanco);
+        str_intentos.setPosition(230, 50);
 
         std::cout << "Nombre en PrimerNivel() " << std::endl;
         std::cout << _jugador.get_nombre() << std::endl;
@@ -99,52 +111,58 @@ void Juego::primer_nivel(Jugadores& _jugador)
         std::list<EnemigoRedondo>::iterator lEnemigosRedondosIt;
         std::list<EnemigoRectangular> lEnemigosRectangulares;
         std::list<EnemigoRectangular>::iterator lEnemigosRectangularesIt; 
+        std::list<TextureManager>::iterator lTexturas;
+
 
         //MUROS DEL JUEGO
-        Rectangulo muro_superior = Rectangulo(sf::Vector2f(18.f, 7.8f) /*ORIGEN*/, sf::Vector2f(17.f, 0.4f)/*EXTENSION*/, azulcito/*COLOR*/);
+        Rectangulo muro_superior = Rectangulo(sf::Vector2f(18.f, 7.8f) /*ORIGEN*/, sf::Vector2f(17.f, 0.4f)/*EXTENSION*/, gris/*COLOR*/);
 
-        Rectangulo muro_izquierdo = Rectangulo(sf::Vector2f(0.5f, 27.5f)/*ORIGEN*/, sf::Vector2f(0.7f, 30.f)/*EXTENSION*/, azulcito/*COLOR*/);
+        Rectangulo muro_izquierdo = Rectangulo(sf::Vector2f(0.5f, 27.5f)/*ORIGEN*/, sf::Vector2f(0.7f, 30.f)/*EXTENSION*/, gris/*COLOR*/);
 
-        Rectangulo muro_derecho = Rectangulo(sf::Vector2f(35.5f, 27.5f), sf::Vector2f(0.7f, 30.f), azulcito);
+        Rectangulo muro_derecho = Rectangulo(sf::Vector2f(35.5f, 27.5f), sf::Vector2f(0.7f, 30.f), gris);
 
-        Rectangulo esquina_superior_derecha = Rectangulo(sf::Vector2f(34.8f, 8.2f)/*POSICION*/, sf::Vector2f(0.5f, 0.5f)/*EXTENSION MEDIA*/, azulcito/*COLOR*/);
+        Rectangulo esquina_superior_derecha = Rectangulo(sf::Vector2f(34.8f, 8.2f)/*POSICION*/, sf::Vector2f(0.5f, 0.5f)/*EXTENSION MEDIA*/, gris/*COLOR*/);
 
-        Rectangulo tunel = Rectangulo(sf::Vector2f(32.9f, 40.f), sf::Vector2f(0.4f, 15.f), azulcito);
+        Rectangulo tunel = Rectangulo(sf::Vector2f(32.9f, 40.f), sf::Vector2f(0.4f, 15.f), gris);
 
         //ENEMIGOS REDONDOS - BUMPERS DEL JUEGO
 
-        EnemigoRedondo eRedondo1 = EnemigoRedondo(sf::Vector2f(17.f, 12.f)/*Posicion*/, 1.2f/*Radio*/, 10/*Puntos*/, verde/*Color*/);
+        EnemigoRedondo eRedondo1 = EnemigoRedondo(sf::Vector2f(17.f, 12.f)/*Posicion*/, 1.2f/*Radio*/, 50/*Puntos*/, gris/*Color*/);
 
-        EnemigoRedondo eRedondo2 = EnemigoRedondo(sf::Vector2f(17.f, 24.f), 1.2f, 10, verde); 
+        EnemigoRedondo eRedondo2 = EnemigoRedondo(sf::Vector2f(17.f, 24.f), 1.2f, 50, gris);
 
-        EnemigoRedondo eRedondo3 = EnemigoRedondo(sf::Vector2f(10.2f, 18.f), 1.2f, 10, verde);
+        EnemigoRedondo eRedondo3 = EnemigoRedondo(sf::Vector2f(10.2f, 18.f), 1.2f, 100, gris);
 
-        EnemigoRedondo eRedondo4 = EnemigoRedondo(sf::Vector2f(23.8f, 18.f), 1.2f, 10, verde);
+        EnemigoRedondo eRedondo4 = EnemigoRedondo(sf::Vector2f(23.8f, 18.f), 1.2f, 100, gris);
 
-        EnemigoRedondo eRedondoGrande1 = EnemigoRedondo(sf::Vector2f(17.f, 18.f), 2.f, 10, amarillo);
+        EnemigoRedondo eRedondoGrande1 = EnemigoRedondo(sf::Vector2f(17.f, 18.f), 2.f, 10, gris);
 
-        EnemigoRedondo eRedondoGrande2 = EnemigoRedondo(sf::Vector2f(6.f, 25.f), 2.f, 10, verde);
+        EnemigoRedondo eRedondoGrande2 = EnemigoRedondo(sf::Vector2f(6.f, 25.f), 2.f, 25, gris);
 
-        EnemigoRedondo eRedondoGrande3 = EnemigoRedondo(sf::Vector2f(28.f, 25.f), 2.f, 10, verde);
+        EnemigoRedondo eRedondoGrande3 = EnemigoRedondo(sf::Vector2f(28.f, 25.f), 2.f, 25, gris);
 
 
         //FLIPPERS
-        Flippers FlipperIzquierdo(sf::Vector2f(11.5f, 44.2f)/*Posicion*/, 0.6f/*Angulo*/, sf::Vector2f(4.5f, 0.5f)/*Extension media*/, cyan/*Color*/, true/*EnladoIzquierdo*/);
+        Flippers FlipperIzquierdo(sf::Vector2f(11.5f, 44.1f)/*Posicion*/, 0.6f/*Angulo*/, sf::Vector2f(4.75f, 0.5f)/*Extension media*/, Azul/*Color*/, true/*EnladoIzquierdo*/);
 
-        Flippers FlipperDerecho(sf::Vector2f(21.9f, 44.2f)/*Posicion*/, 0.6f/*Angulo*/, sf::Vector2f(4.5f, 0.5f)/*Extension media*/, cyan/*Color*/, false/*EnladoIzquierdo*/);
+        Flippers FlipperDerecho(sf::Vector2f(21.9f, 44.1f)/*Posicion*/, 0.6f/*Angulo*/, sf::Vector2f(4.75f, 0.5f)/*Extension media*/, Azul/*Color*/, false/*EnladoIzquierdo*/);
 
         //RAMPAS AL COSTADO DE LOS FLIPPERS
 
-        HitBox rampaIzquierda = HitBox(sf::Vector2f(5.5f, 40.f), sf::Vector2f(6.f, 0.5f), 0.6f, azulcito);
+        HitBox rampaIzquierda = HitBox(sf::Vector2f(5.5f, 40.f), sf::Vector2f(6.f, 0.5f), 0.6f, gris);
 
-        HitBox rampaDerecha = HitBox(sf::Vector2f(27.9f, 40.f), sf::Vector2f(6.f, 0.5f), -0.6f, azulcito);
+        HitBox rampaDerecha = HitBox(sf::Vector2f(27.9f, 40.f), sf::Vector2f(6.f, 0.5f), -0.6f, gris);
 
         //ENEMIGOS RECTANGULARES (Los dos finitos de la pantalla)
-        EnemigoRectangular eRectangular1 = EnemigoRectangular(sf::Vector2f(10.4f, 36.3f), sf::Vector2f(0.5f, 2.9f), -0.7f, 20, azulcito);
+        EnemigoRectangular eRectangular1 = EnemigoRectangular(sf::Vector2f(10.4f, 36.3f), sf::Vector2f(0.5f, 2.9f), -0.7f, 10, gris);
 
-        EnemigoRectangular eRectangular2 = EnemigoRectangular(sf::Vector2f(23.f, 36.3f), sf::Vector2f(0.5f, 2.9f), 0.7f, 20, azulcito);
+        EnemigoRectangular eRectangular2 = EnemigoRectangular(sf::Vector2f(23.f, 36.3f), sf::Vector2f(0.5f, 2.9f), 0.7f, 10, gris);
 
-        EnemigoRectangular eRectangular3 = EnemigoRectangular(sf::Vector2f(5.f, 11.5f), sf::Vector2f(0.5f, 2.f), 0.65f, 20, azulcito);
+        EnemigoRectangular eRectangular3 = EnemigoRectangular(sf::Vector2f(5.f, 11.5f), sf::Vector2f(0.5f, 2.f), 0.65f, 500, gris);
+
+        //TEXTURAS
+        
+
 
         ///AÑADE LOS OBJETOS CREADOS A LAS LISTAS
         lEnemigosRectangulares.push_back(eRectangular1);    
@@ -208,6 +226,8 @@ void Juego::primer_nivel(Jugadores& _jugador)
 
                         //Indica que hay una bola en juego
                         bool_En_Juego = true;
+
+
                     }
                 }
                 else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Z)
@@ -355,16 +375,16 @@ void Juego::primer_nivel(Jugadores& _jugador)
                 clock.restart();
             }
 
-            this->ventana.draw(fondo);
+            this->ventana.draw(background);
 
             //Actualiza los mensajes de la pantalla
-            str_puntaje.setString("PUNTOS: " + std::to_string(puntaje_total));
+            str_puntaje.setString(std::to_string(puntaje_total));
 
-            str_bolas_restantes.setString("BOLAS: " + std::to_string(bolas_restantes));
+            str_bolas_restantes.setString(std::to_string(bolas_restantes));
 
-            str_maximo_puntaje.setString("MAXPUNTOS: " + std::to_string(puntaje_mas_alto));
+            str_maximo_puntaje.setString("~ Mejor puntaje: " + std::to_string(puntaje_mas_alto) + "...");
 
-            str_intentos.setString("INTENTOS :" + std::to_string(intentos));
+            str_intentos.setString("~ Intentos: " + std::to_string(intentos) + "...");
             
 
             restar_bola();
@@ -384,6 +404,10 @@ void Juego::primer_nivel(Jugadores& _jugador)
                 A PARTIR DE ACA SE DIBUJAN LOS OBJETOS HASTA
                     "if (bool_Fin_Juego)"
             */
+
+            //DIBUJA FLIPPERS
+            this->ventana.draw(FlipperDerecho);
+            this->ventana.draw(FlipperIzquierdo);
 
             for (lRectangulosIt = lRectangulos.begin(); lRectangulosIt != lRectangulos.end(); ++lRectangulosIt)
             {
@@ -410,15 +434,16 @@ void Juego::primer_nivel(Jugadores& _jugador)
                 this->ventana.draw(*lEnemigosRectangularesIt);
             }
 
-            //DIBUJA FLIPPERS
-            this->ventana.draw(FlipperDerecho);
-            this->ventana.draw(FlipperIzquierdo);
+
 
             //DIBUJA TEXTO EN LA PANTALLA
             this->ventana.draw(str_maximo_puntaje);
+            this->ventana.draw(puntos);
             this->ventana.draw(str_puntaje);
+            this->ventana.draw(bola);
             this->ventana.draw(str_bolas_restantes);
             this->ventana.draw(str_intentos);
+            this->ventana.draw(textureMap);
 
 
 
@@ -435,9 +460,9 @@ void Juego::primer_nivel(Jugadores& _jugador)
             {
                 bool_En_Juego = false;
 
-                this->ventana.draw(str_fin_juego);
+                this->ventana.draw(gameOver);
 
-                float  fDelay = sf::seconds(2.0).asSeconds();
+                float  fDelay = sf::seconds(6.0).asSeconds();
 
                 sf::Time now = clock.getElapsedTime();
 

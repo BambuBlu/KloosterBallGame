@@ -5,7 +5,8 @@
 	Proveniente de config
 */
 
-#define max_main_menu 4
+#define max_main_menu 7
+#define klooster 3
 
 #define PIXELTOMETER 20
 #define PADDLE_SPEED (-15)

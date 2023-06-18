@@ -1,4 +1,6 @@
 #include "Manager.h"
+#include <ctime>
+#include <cstdlib>
 
 
 void Manager::Init_Menu()
@@ -9,61 +11,81 @@ void Manager::Init_Menu()
 	this->video_mode.height = 854;
 	this->video_mode.width = 480;
 
-	this->ventana = new sf::RenderWindow(this->video_mode, "KloosterBallMenu", sf::Style::Default);
+	this->ventana = new sf::RenderWindow(this->video_mode, "Capitán Kloosman", sf::Style::Default);
 
 	//Carga la fuente utilizada en la ventana
 	this->font.loadFromFile("Fonts\\BrunoAceSC-Regular.ttf");
 
 	//Vector con las opciones del MENU PRINCIPAL
+	sf::Color caqui = sf::Color(62, 74, 60);
+
 	this->main_menu[0].setFont(font);
-	this->main_menu[0].setFillColor(sf::Color::Cyan);
+	this->main_menu[0].setFillColor(caqui);
 	this->main_menu[0].setString("Jugar");
-	this->main_menu[0].setCharacterSize(40);
-	this->main_menu[0].setPosition(50, 200);
+	this->main_menu[0].setCharacterSize(30);
+	this->main_menu[0].setPosition(182, 520);
 
 	this->main_menu[1].setFont(font);
-	this->main_menu[1].setFillColor(sf::Color::White);
+	this->main_menu[1].setFillColor(caqui);
 	this->main_menu[1].setString("Maximos Puntajes");
-	this->main_menu[1].setCharacterSize(30);
-	this->main_menu[1].setPosition(50, 300);
+	this->main_menu[1].setCharacterSize(20);
+	this->main_menu[1].setPosition(125, 580);
 
 	this->main_menu[2].setFont(font);
-	this->main_menu[2].setFillColor(sf::Color::White);
+	this->main_menu[2].setFillColor(caqui);
 	this->main_menu[2].setString("Logros");
-	this->main_menu[2].setCharacterSize(30);
-	this->main_menu[2].setPosition(50, 400);
+	this->main_menu[2].setCharacterSize(20);
+	this->main_menu[2].setPosition(193, 630);
 
 	this->main_menu[3].setFont(font);
-	this->main_menu[3].setFillColor(sf::Color::White);
+	this->main_menu[3].setFillColor(caqui);
 	this->main_menu[3].setString("Salir");
-	this->main_menu[3].setCharacterSize(20);
-	this->main_menu[3].setPosition(50, 600);
+	this->main_menu[3].setCharacterSize(15);
+	this->main_menu[3].setPosition(215, 685);
+
+	this->main_menu[4].setFont(font);
+	this->main_menu[4].setFillColor(caqui);
+	this->main_menu[4].setString("By");
+	this->main_menu[4].setCharacterSize(10);
+	this->main_menu[4].setPosition(231, 795);
+
+	this->main_menu[5].setFont(font);
+	this->main_menu[5].setFillColor(caqui);
+	this->main_menu[5].setString("Nicolas rodriguez - Sanchez Facundo");
+	this->main_menu[5].setCharacterSize(10);
+	this->main_menu[5].setPosition(110, 810);
+
+	this->main_menu[6].setFont(font);
+	this->main_menu[6].setFillColor(caqui);
+	this->main_menu[6].setString("Moscatelli Tobias - Alvarez Leandro");
+	this->main_menu[6].setCharacterSize(10);
+	this->main_menu[6].setPosition(112, 825);
 
 
 	//Vector con los distintos niveles
 	this->menu_niveles[0].setFont(font);
-	this->menu_niveles[0].setFillColor(sf::Color::Cyan);
+	this->menu_niveles[0].setFillColor(caqui);
 	this->menu_niveles[0].setString("Primer nivel");
-	this->menu_niveles[0].setCharacterSize(40);
-	this->menu_niveles[0].setPosition(50, 200);
+	this->menu_niveles[0].setCharacterSize(30);
+	this->menu_niveles[0].setPosition(128, 302);
 
 	this->menu_niveles[1].setFont(font);
-	this->menu_niveles[1].setFillColor(sf::Color::White);
+	this->menu_niveles[1].setFillColor(caqui);
 	this->menu_niveles[1].setString("Segundo nivel");
-	this->menu_niveles[1].setCharacterSize(30);
-	this->menu_niveles[1].setPosition(50, 300);
+	this->menu_niveles[1].setCharacterSize(27);
+	this->menu_niveles[1].setPosition(122, 392);
 
 	this->menu_niveles[2].setFont(font);
-	this->menu_niveles[2].setFillColor(sf::Color::White);
+	this->menu_niveles[2].setFillColor(caqui);
 	this->menu_niveles[2].setString("Tercer nivel");
-	this->menu_niveles[2].setCharacterSize(30);
-	this->menu_niveles[2].setPosition(50, 400);
+	this->menu_niveles[2].setCharacterSize(27);
+	this->menu_niveles[2].setPosition(133, 478);
 
 	this->menu_niveles[3].setFont(font);
-	this->menu_niveles[3].setFillColor(sf::Color::White);
+	this->menu_niveles[3].setFillColor(caqui);
 	this->menu_niveles[3].setString("Regresar");
-	this->menu_niveles[3].setCharacterSize(30);
-	this->menu_niveles[3].setPosition(50, 600);
+	this->menu_niveles[3].setCharacterSize(18);
+	this->menu_niveles[3].setPosition(186, 742);
 
 	//Variable que recorre el menu para elegir la opción
 	this->main_menu_selected = 0;
@@ -75,6 +97,30 @@ void Manager::Init_Menu()
 	}
 	musica.setVolume(25);
 	musica.play();
+
+
+	if (!this->textura[0].loadFromFile("resources/main_menu.png"))
+	{
+		std::cout << "No se cargo el fondo" << std::endl;
+	}
+	this->sprite[0].setTexture(this->textura[0]);
+	if (!this->textura[1].loadFromFile("resources/Kloosman.png"))
+	{
+		std::cout << "No se cargo el fondo" << std::endl;
+	}
+	this->sprite[1].setTexture(this->textura[1]);
+	this->sprite[1].scale(0.5f, 0.5f);
+	this->sprite[1].setPosition(800.f, -200.f);
+	if (!this->textura[2].loadFromFile("resources/nombre_menu.png"))
+	{
+		std::cout << "No se cargo el fondo" << std::endl;
+	}
+	this->sprite[2].setTexture(this->textura[2]);
+	if (!this->textura[3].loadFromFile("resources/nivel_menu.png"))
+	{
+		std::cout << "No se cargo el fondo" << std::endl;
+	}
+	this->sprite[3].setTexture(this->textura[3]);
 }
 
 Manager::Manager()
@@ -95,6 +141,8 @@ const bool Manager::Ventana_Esta_Abierta() const
 void Manager::Actualizar()
 {
 
+	MoverKlooster();
+	
 	//Siempre que haya un evento se mantiene el While
 	while (this->ventana->pollEvent(this->evento))
 	{
@@ -133,7 +181,6 @@ void Manager::Actualizar()
 				//JUGAR
 				if (x == 0)
 				{	
-					std::cout << "Entro a if(x == 0)" << std::endl;
 					this->IniciarJuego();
 					break;
 				}
@@ -156,10 +203,13 @@ void Manager::Actualizar()
 				}
 			}
 		}
-		this->ventana->clear();
-		this->DibujarMenu(ventana, 1);
-		this->ventana->display();
 	}
+
+	this->ventana->clear();
+	this->ventana->draw(this->sprite[0]);
+	this->DibujarMenu(ventana, 1);
+	this->ventana->draw(this->sprite[1]);
+	this->ventana->display();
 }
 
 int Manager::MainMenuPressed()
@@ -169,11 +219,12 @@ int Manager::MainMenuPressed()
 
 void Manager::Up(int tipo_de_menu)
 {
+	sf::Color caqui = sf::Color(62, 74, 60);
 	if (tipo_de_menu == 1)
 	{
 		if (main_menu_selected >= 0)
 		{
-			main_menu[main_menu_selected].setFillColor(sf::Color::White);
+			main_menu[main_menu_selected].setFillColor(caqui);
 
 			main_menu_selected--;
 
@@ -188,7 +239,7 @@ void Manager::Up(int tipo_de_menu)
 	{
 		if (main_menu_selected >= 0)
 		{
-			menu_niveles[main_menu_selected].setFillColor(sf::Color::White);
+			menu_niveles[main_menu_selected].setFillColor(caqui);
 
 			main_menu_selected--;
 
@@ -205,11 +256,12 @@ void Manager::Up(int tipo_de_menu)
 
 void Manager::Down(int tipo_de_menu)
 {
+	sf::Color caqui = sf::Color(62, 74, 60);
 	if (tipo_de_menu == 1)
 	{
 		if (main_menu_selected + 1 <= max_main_menu)
 		{
-			main_menu[main_menu_selected].setFillColor(sf::Color::White);
+			main_menu[main_menu_selected].setFillColor(caqui);
 			main_menu_selected++;
 			if (main_menu_selected == 4)
 			{
@@ -222,7 +274,7 @@ void Manager::Down(int tipo_de_menu)
 	{
 		if (main_menu_selected + 1 <= max_main_menu)
 		{
-			menu_niveles[main_menu_selected].setFillColor(sf::Color::White);
+			menu_niveles[main_menu_selected].setFillColor(caqui);
 
 			main_menu_selected++;
 
@@ -318,6 +370,7 @@ void Manager::IniciarJuego()
 					}
 			}
 			this->ventana->clear();
+			this->ventana->draw(this->sprite[3]);
 			this->DibujarMenu(ventana, 2);
 			this->ventana->display();
 		}
@@ -328,15 +381,23 @@ bool Manager::IngresarNombre(Jugadores& _jugador)
 {
 	sf::Text texto;
 	texto.setFont(font);
-	texto.setFillColor(sf::Color::Cyan);
+	texto.setFillColor(sf::Color(62, 74, 60));
 	texto.setString("Ingrese su nombre");
 	texto.setCharacterSize(35);
-	texto.setPosition(40, 300);
+	texto.setPosition(40, 338);
+
+	sf::Text texto1;
+	texto1.setFont(font);
+	texto1.setFillColor(sf::Color(62, 74, 60));
+	texto1.setString("Enter para continuar");
+	texto1.setCharacterSize(18);
+	texto1.setPosition(117, 372);
 
 	sf::Text textBox;
 	textBox.setFont(font);
-	textBox.setCharacterSize(40);
-	textBox.setPosition(40, 400);
+	textBox.setFillColor(sf::Color(62, 74, 60));
+	textBox.setCharacterSize(20);
+	textBox.setPosition(80, 467);
 
 	sf::String _nombreDeJugador;
 
@@ -386,7 +447,9 @@ bool Manager::IngresarNombre(Jugadores& _jugador)
 					}
 			}
 		}
+		this->ventana->draw(this->sprite[2]);
 		this->ventana->draw(texto);
+		this->ventana->draw(texto1);
 		this->ventana->draw(textBox);
 		this->ventana->display();
 	}
@@ -531,5 +594,17 @@ void Manager::OrdenarJugadoresxPuntos(Jugadores*& _vector, int _tamanio)
 		_vector[actual] = _vector[mayor];
 
 		_vector[mayor] = aux;
+	}
+}
+
+void Manager::MoverKlooster()
+{
+	this->sprite[1].move((-klooster * 0.02f), (-klooster * -0.02f));
+	if (this->sprite[1].getPosition().x < -800)
+	{
+		float random1 = rand() % (800 - 150 + 1) + 150;
+		float random2 = rand() % (-200 - -400 - 1) - 400;
+
+		this->sprite[1].setPosition(random1, random2);
 	}
 }
