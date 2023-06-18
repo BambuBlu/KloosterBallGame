@@ -1,6 +1,6 @@
 ﻿  Juego.cpp
-  main.cpp
-  Manager.cpp
-  Sonidos.cpp
+  Jugadores.cpp
+  TextureManager.cpp
   Generando código...
-  KloosterBallGame.vcxproj -> C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\x64\Debug\KloosterBallGame.exe
+  LINK : no se encontró E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\x64\Debug\KloosterBallGame.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
+  KloosterBallGame.vcxproj -> E:\Facultad\UTN\Materias\Cursando\Laboratorio II\TpFinal\KloosterBallGame\KloosterBallGame\x64\Debug\KloosterBallGame.exe

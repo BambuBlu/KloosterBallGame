@@ -24,17 +24,6 @@ void Juego::InitJuego()
     this->video_mode.width = 720;
     this->video_mode.height = 980;
     this->ventana.create(this->video_mode, "Capitán Kloosman", sf::Style::Default);
-
-    ///MUSICA
-    if (!buffer.loadFromFile("Sonidos/gentes.wav")) {
-        std::cout << "No se cargo los sonidos" << std::endl;
-    }
-    sound.setBuffer(buffer);
-
-    if (!buffer2.loadFromFile("Sonidos/Arranque.wav")) {
-        std::cout << "No se cargo los sonidos" << std::endl;
-    }
-    sound2.setBuffer(buffer2);
 }
 
 Juego::Juego()
@@ -63,8 +52,6 @@ void Juego::primer_nivel(Jugadores& _jugador)
             std::cout << "No se cargo el fondo" << std::endl;
         }
         sf::Sprite textureMap(textura2);
-
-        sound2.play();
        
         sound = sonido.ReproducirArranque();
         sound.play();
