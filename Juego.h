@@ -32,10 +32,8 @@ class Juego
 		sf::RenderWindow ventana;
 		sf::VideoMode video_mode;
 		sf::Event evento;
-        sf::SoundBuffer buffer;
-        sf::SoundBuffer buffer2;
         sf::Sound sound;
-        sf::Sound sound2;
+        Sonidos sonido;
         
         sf::Font fuente_de_texto;
 

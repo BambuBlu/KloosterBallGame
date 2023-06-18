@@ -18,8 +18,8 @@ class Sonidos
 	void ReproducirMusicaFondo();
 	void DetenerMusicaFondo();
 	
-	void ReproducirGentes();
-
-	Sound& getsonido();
+	Sound ReproducirGentes();
+	Sound ReproducirArranque();
+	
 };
 

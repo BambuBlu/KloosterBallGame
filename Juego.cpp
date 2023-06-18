@@ -66,6 +66,9 @@ void Juego::primer_nivel(Jugadores& _jugador)
 
         sound2.play();
        
+        sound = sonido.ReproducirArranque();
+        sound.play();
+       
         ///DECLARACION DE COLORES DEL NIVEL
         sf::Color Azul = sf::Color(8, 68, 112);
         sf::Color blanco = sf::Color(235, 235, 235);
@@ -232,14 +235,14 @@ void Juego::primer_nivel(Jugadores& _jugador)
                 }
                 else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Z)
                 {
-                    sound.play();
+                    
                     FlipperIzquierdo.Mover("arriba");
                    
                     
                 }
                 else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::X)
                 {
-                    sound.play();
+                    
                     FlipperDerecho.Mover("arriba");
                    
                 }
@@ -290,6 +293,9 @@ void Juego::primer_nivel(Jugadores& _jugador)
 
                         if (colision.CirculoVsCirculo())
                         {
+                            sound = sonido.ReproducirGentes();
+                            sound.play();
+                            
                             puntaje_total += lEnemigosRedondosIt->get_puntos();
 
                             colision.correctPosition();
