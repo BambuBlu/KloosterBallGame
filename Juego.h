@@ -50,6 +50,7 @@ class Juego
 	public:
         Juego();
         void primer_nivel(Jugadores& jugador);
+        void segundo_nivel(Jugadores& jugador);
         void restar_bola();
 };
 

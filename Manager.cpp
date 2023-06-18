@@ -352,15 +352,19 @@ void Manager::IniciarJuego()
 					{
 						if (main_menu_selected == 0)
 						{
+							musica.stop();
 							this->ventana->setVisible(false);
 							Juego instancia_juego;
-							musica.stop();
 							instancia_juego.primer_nivel(Jugador);
 							this->ventana->setVisible(true);
 						}
 						if (main_menu_selected == 1)
 						{
-
+							musica.stop();
+							this->ventana->setVisible(false);
+							Juego instancia_juego;
+							instancia_juego.segundo_nivel(Jugador);
+							this->ventana->setVisible(true);
 						}
 						if (main_menu_selected == 2)
 						{
