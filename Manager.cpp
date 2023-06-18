@@ -2,7 +2,6 @@
 #include <ctime>
 #include <cstdlib>
 
-
 void Manager::Init_Menu()
 {
 	//Especificaciones de la ventana

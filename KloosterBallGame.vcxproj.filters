@@ -45,7 +45,7 @@
     <ClCompile Include="Jugadores.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Multiple.cpp">
+    <ClCompile Include="Colisiones.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="HitBox.cpp">
@@ -110,7 +110,7 @@
     <ClInclude Include="Jugadores.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Multiple.h">
+    <ClInclude Include="Colisiones.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="HitBox.h">

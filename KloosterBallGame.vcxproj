@@ -149,7 +149,7 @@
     <ClCompile Include="Jugadores.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Manager.cpp" />
-    <ClCompile Include="Multiple.cpp" />
+    <ClCompile Include="Colisiones.cpp" />
     <ClCompile Include="Sonidos.cpp" />
     <ClCompile Include="ParametrosCuerpos.cpp" />
     <ClCompile Include="Rectangulo.cpp" />
@@ -171,7 +171,7 @@
     <ClInclude Include="Juego.h" />
     <ClInclude Include="Jugadores.h" />
     <ClInclude Include="Manager.h" />
-    <ClInclude Include="Multiple.h" />
+    <ClInclude Include="Colisiones.h" />
     <ClInclude Include="Sonidos.h" />
     <ClInclude Include="ParametrosCuerpos.h" />
     <ClInclude Include="Rectangulo.h" />

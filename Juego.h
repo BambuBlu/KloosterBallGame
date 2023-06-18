@@ -12,7 +12,7 @@
 #include "Bola.h"
 #include "Rectangulo.h"
 #include "HitBox.h"
-#include "Multiple.h"
+#include "Colisiones.h"
 #include "TextureManager.h"
 #include "EnemigoRedondo.h"
 #include "EnemigoRectangular.h"
