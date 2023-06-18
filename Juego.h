@@ -51,6 +51,7 @@ class Juego
         Juego();
         void primer_nivel(Jugadores& jugador);
         void segundo_nivel(Jugadores& jugador);
+        void tercer_nivel(Jugadores& jugador);
         void restar_bola();
 };
 

@@ -368,7 +368,11 @@ void Manager::IniciarJuego()
 						}
 						if (main_menu_selected == 2)
 						{
-
+							musica.stop();
+							this->ventana->setVisible(false);
+							Juego instancia_juego;
+							instancia_juego.tercer_nivel(Jugador);
+							this->ventana->setVisible(true);
 						}
 						if (main_menu_selected == 3){return;}
 					}
