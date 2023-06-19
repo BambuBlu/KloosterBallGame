@@ -186,7 +186,7 @@ void Manager::Actualizar()
 				//MAYORES PUNTAJES
 				if (x == 1)
 				{
-					//RankingDePuntajes();
+					RankingDePuntajes();
 					break;
 				}
 				//LOGROS
@@ -386,6 +386,8 @@ void Manager::IniciarJuego()
 
 bool Manager::IngresarNombre(Jugadores& _jugador)
 {
+
+
 	sf::Text texto;
 	texto.setFont(font);
 	texto.setFillColor(sf::Color(62, 74, 60));
@@ -465,6 +467,13 @@ bool Manager::IngresarNombre(Jugadores& _jugador)
 
 void Manager::RankingDePuntajes()
 {
+	sf::Texture textura;
+	if (!textura.loadFromFile("resources/max_points.png"))
+	{
+		std::cout << "No se cargo el fondo" << std::endl;
+	}
+	sf::Sprite background(textura);
+
 	sf::Text titulo;
 	titulo.setFont(font);
 	titulo.setFillColor(sf::Color::Green);
@@ -564,6 +573,7 @@ void Manager::RankingDePuntajes()
 					}
 			}
 		}
+		this->ventana->draw(background);
 		this->ventana->draw(titulo);
 		this->ventana->draw(titulo2);
 

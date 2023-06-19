@@ -34,6 +34,8 @@ class Juego
 		sf::Event evento;
         sf::Sound sound;
         Sonidos sonido;
+        sf::Texture textura;
+        sf::Sprite sprite;
         
         sf::Font fuente_de_texto;
 
@@ -53,6 +55,7 @@ class Juego
         void segundo_nivel(Jugadores& jugador);
         void tercer_nivel(Jugadores& jugador);
         void restar_bola();
+        void MoverKlooster();
 };
 
 #endif

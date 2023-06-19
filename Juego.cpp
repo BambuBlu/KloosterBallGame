@@ -24,6 +24,14 @@ void Juego::InitJuego()
     this->video_mode.width = 720;
     this->video_mode.height = 980;
     this->ventana.create(this->video_mode, "Capitán Kloosman", sf::Style::Default);
+
+    if (!this->textura.loadFromFile("resources/Kloosman.png"))
+    {
+        std::cout << "No se cargo el fondo" << std::endl;
+    }
+    this->sprite.setTexture(this->textura);
+    this->sprite.scale(0.2f, 0.2f);
+    this->sprite.setPosition(800.f, -200.f);
 }
 
 Juego::Juego()
@@ -144,11 +152,11 @@ void Juego::primer_nivel(Jugadores& _jugador)
         HitBox rampaDerecha = HitBox(sf::Vector2f(27.9f, 40.f), sf::Vector2f(6.f, 0.5f), -0.6f, gris);
 
         //ENEMIGOS RECTANGULARES (Los dos finitos de la pantalla)
-        EnemigoRectangular eRectangular1 = EnemigoRectangular(sf::Vector2f(10.4f, 36.3f), sf::Vector2f(0.5f, 2.9f), -0.7f, 10, gris);
+        EnemigoRectangular eRectangular1 = EnemigoRectangular(sf::Vector2f(10.4f, 36.3f), sf::Vector2f(0.5f, 2.9f), -0.7f, 0, gris);
 
-        EnemigoRectangular eRectangular2 = EnemigoRectangular(sf::Vector2f(23.f, 36.3f), sf::Vector2f(0.5f, 2.9f), 0.7f, 10, gris);
+        EnemigoRectangular eRectangular2 = EnemigoRectangular(sf::Vector2f(23.f, 36.3f), sf::Vector2f(0.5f, 2.9f), 0.7f, 0, gris);
 
-        EnemigoRectangular eRectangular3 = EnemigoRectangular(sf::Vector2f(5.f, 11.5f), sf::Vector2f(0.5f, 2.f), 0.65f, 500, gris);
+        EnemigoRectangular eRectangular3 = EnemigoRectangular(sf::Vector2f(5.f, 11.5f), sf::Vector2f(0.5f, 2.f), 0.65f, 0, gris);
 
         //TEXTURAS
         
@@ -492,7 +500,7 @@ void Juego::segundo_nivel(Jugadores& _jugador)
     sf::Texture textura;
     sf::Texture textura1;
     sf::Texture textura2;
-    if (!textura.loadFromFile("resources/background.png"))
+    if (!textura.loadFromFile("resources/background2.png"))
     {
         std::cout << "No se cargo el fondo" << std::endl;
     }
@@ -502,7 +510,7 @@ void Juego::segundo_nivel(Jugadores& _jugador)
         std::cout << "No se cargo el fondo" << std::endl;
     }
     sf::Sprite gameOver(textura1);
-    if (!textura2.loadFromFile("resources/texture_map.png"))
+    if (!textura2.loadFromFile("resources/texture_map2.png"))
     {
         std::cout << "No se cargo el fondo" << std::endl;
     }
@@ -553,36 +561,38 @@ void Juego::segundo_nivel(Jugadores& _jugador)
     std::list<EnemigoRectangular>::iterator lEnemigosRectangularesIt;
 
     //MUROS DEL JUEGO
-    Rectangulo muro_superior = Rectangulo(sf::Vector2f(18.f, 7.8f) /*ORIGEN*/, sf::Vector2f(17.f, 0.4f)/*EXTENSION*/, rosa/*COLOR*/);
+    Rectangulo muro_superior = Rectangulo(sf::Vector2f(18.f, 7.8f) /*ORIGEN*/, sf::Vector2f(17.f, 0.4f)/*EXTENSION*/, gris/*COLOR*/);
 
-    Rectangulo muro_izquierdo = Rectangulo(sf::Vector2f(0.5f, 27.5f)/*ORIGEN*/, sf::Vector2f(0.7f, 30.f)/*EXTENSION*/, rosa/*COLOR*/);
+    Rectangulo muro_izquierdo = Rectangulo(sf::Vector2f(0.5f, 27.5f)/*ORIGEN*/, sf::Vector2f(0.7f, 30.f)/*EXTENSION*/, gris/*COLOR*/);
 
-    Rectangulo muro_derecho = Rectangulo(sf::Vector2f(35.5f, 27.5f), sf::Vector2f(0.7f, 30.f), rosa);
+    Rectangulo muro_derecho = Rectangulo(sf::Vector2f(35.5f, 27.5f), sf::Vector2f(0.7f, 30.f), gris);
 
-    Rectangulo esquina_superior_derecha = Rectangulo(sf::Vector2f(34.8f, 8.2f)/*POSICION*/, sf::Vector2f(0.5f, 0.5f)/*EXTENSION MEDIA*/, rosa/*COLOR*/);
+    Rectangulo esquina_superior_derecha = Rectangulo(sf::Vector2f(34.8f, 8.2f)/*POSICION*/, sf::Vector2f(0.5f, 0.5f)/*EXTENSION MEDIA*/, gris/*COLOR*/);
 
-    Rectangulo tunel = Rectangulo(sf::Vector2f(32.9f, 40.f), sf::Vector2f(0.4f, 15.f), rosa);
+    Rectangulo esquina_superior_izquierda = Rectangulo(sf::Vector2f(1.f, 8.2f)/*POSICION*/, sf::Vector2f(0.5f, 0.5f)/*EXTENSION MEDIA*/, gris/*COLOR*/);
+
+    Rectangulo tunel = Rectangulo(sf::Vector2f(32.9f, 40.f), sf::Vector2f(0.4f, 15.f), gris);
 
     //ENEMIGOS REDONDOS - BUMPERS DEL JUEGO
-    EnemigoRedondo eRedondo1 = EnemigoRedondo(sf::Vector2f(22.5f, 25.f), 1.f, 10, gris);
+    EnemigoRedondo eRedondo1 = EnemigoRedondo(sf::Vector2f(22.5f, 25.f), 1.f, 100, gris);
 
     EnemigoRedondo eRedondo2 = EnemigoRedondo(sf::Vector2f(28.f, 18.f), 1.2f, 10, gris);
 
-    EnemigoRedondo eRedondo3 = EnemigoRedondo(sf::Vector2f(12.5f, 39.f), 1.3f, 10, gris);
+    EnemigoRedondo eRedondo3 = EnemigoRedondo(sf::Vector2f(12.5f, 39.f), 1.3f, 25, gris);
 
-    EnemigoRedondo eRedondo4 = EnemigoRedondo(sf::Vector2f(6.f, 35.f), 1.4f, 10, gris);
+    EnemigoRedondo eRedondo4 = EnemigoRedondo(sf::Vector2f(6.f, 35.f), 1.4f, 50, gris);
 
-    EnemigoRedondo eRedondo5 = EnemigoRedondo(sf::Vector2f(20.9f, 39.f), 1.5f, 10, gris);
+    EnemigoRedondo eRedondo5 = EnemigoRedondo(sf::Vector2f(20.9f, 39.f), 1.5f, 25, gris);
 
     EnemigoRedondo eRedondo6 = EnemigoRedondo(sf::Vector2f(17.f, 18.f), 1.5f, 10, gris);
 
-    EnemigoRedondo eRedondo7 = EnemigoRedondo(sf::Vector2f(13.f, 26.f), 1.6f, 10, gris);
+    EnemigoRedondo eRedondo7 = EnemigoRedondo(sf::Vector2f(13.f, 26.f), 1.6f, 50, gris);
 
-    EnemigoRedondo eRedondo8 = EnemigoRedondo(sf::Vector2f(21.f, 12.f), 1.6f, 10, gris);
+    EnemigoRedondo eRedondo8 = EnemigoRedondo(sf::Vector2f(21.f, 12.f), 1.6f, 20, gris);
 
-    EnemigoRedondo eRedondo9 = EnemigoRedondo(sf::Vector2f(27.4f, 35.f), 1.8f, 10, gris);
+    EnemigoRedondo eRedondo9 = EnemigoRedondo(sf::Vector2f(27.4f, 35.f), 1.8f, 50, gris);
 
-    EnemigoRedondo eRedondo10 = EnemigoRedondo(sf::Vector2f(7.f, 12.f), 2.f, 10, gris);
+    EnemigoRedondo eRedondo10 = EnemigoRedondo(sf::Vector2f(7.f, 12.f), 2.f, 100, gris);
 
 
     //FLIPPERS
@@ -595,18 +605,18 @@ void Juego::segundo_nivel(Jugadores& _jugador)
     Flippers FlipperDerechoSup(sf::Vector2f(28.9f, 30.f)/*Posicion*/, 0.6f/*Angulo*/, sf::Vector2f(4.4f, 0.5f)/*Extension media*/, Azul/*Color*/, false/*EnladoIzquierdo*/);
 
     //RAMPAS AL COSTADO DE LOS FLIPPERS
-    HitBox rampaIzquierdaInf = HitBox(sf::Vector2f(5.5f, 42.f), sf::Vector2f(6.f, 0.5f), 0.6f, blanco);
+    HitBox rampaIzquierdaInf = HitBox(sf::Vector2f(5.5f, 42.f), sf::Vector2f(6.f, 0.5f), 0.6f, gris);
 
-    HitBox rampaDerechaInf = HitBox(sf::Vector2f(27.9f, 42.f), sf::Vector2f(6.f, 0.5f), -0.6f, blanco);
+    HitBox rampaDerechaInf = HitBox(sf::Vector2f(27.9f, 42.f), sf::Vector2f(6.f, 0.5f), -0.6f, gris);
 
     //ENEMIGOS RECTANGULARES (Los dos finitos de la pantalla)
-    EnemigoRectangular eRectangular1 = EnemigoRectangular(sf::Vector2f(4.5f, 24.9f), sf::Vector2f(0.5f, 2.5f), -0.f, 1, Azul);
+    EnemigoRectangular eRectangular1 = EnemigoRectangular(sf::Vector2f(4.5f, 24.9f), sf::Vector2f(0.5f, 2.5f), -0.f, 0, gris);
 
-    EnemigoRectangular eRectangular2 = EnemigoRectangular(sf::Vector2f(28.9f, 24.9f), sf::Vector2f(0.5f, 2.5f), 0.f, 1, Azul);
+    EnemigoRectangular eRectangular2 = EnemigoRectangular(sf::Vector2f(28.9f, 24.9f), sf::Vector2f(0.5f, 2.5f), 0.f, 0, gris);
 
-    EnemigoRectangular eRectangular3 = EnemigoRectangular(sf::Vector2f(8.5f, 18.9f), sf::Vector2f(0.5f, 2.5f), -6.f, 1, Azul);
+    EnemigoRectangular eRectangular3 = EnemigoRectangular(sf::Vector2f(8.5f, 18.9f), sf::Vector2f(0.5f, 2.5f), -6.f, 0, gris);
 
-    EnemigoRectangular eRectangular4 = EnemigoRectangular(sf::Vector2f(24.9f, 18.9f), sf::Vector2f(0.5f, 2.5f), 6.f, 1, Azul);
+    EnemigoRectangular eRectangular4 = EnemigoRectangular(sf::Vector2f(24.9f, 18.9f), sf::Vector2f(0.5f, 2.5f), 6.f, 0, gris);
 
     ///AÑADE LOS OBJETOS CREADOS A LAS LISTAS
     lEnemigosRectangulares.push_back(eRectangular1);
@@ -628,7 +638,8 @@ void Juego::segundo_nivel(Jugadores& _jugador)
     lRectangulos.push_back(muro_superior);
     lRectangulos.push_back(muro_izquierdo);
     lRectangulos.push_back(muro_derecho);
-    lRectangulos.push_back(esquina_superior_derecha);
+    lRectangulos.push_back(esquina_superior_derecha); 
+    lRectangulos.push_back(esquina_superior_izquierda);
     lRectangulos.push_back(tunel);
 
     lHitbox.push_back(rampaIzquierdaInf);
@@ -848,6 +859,7 @@ void Juego::segundo_nivel(Jugadores& _jugador)
 
         this->ventana.draw(background);
 
+
         //Actualiza los mensajes de la pantalla
         str_puntaje.setString(std::to_string(puntaje_total));
 
@@ -876,6 +888,12 @@ void Juego::segundo_nivel(Jugadores& _jugador)
                 "if (bool_Fin_Juego)"
         */
 
+        //DIBUJA FLIPPERS
+        this->ventana.draw(FlipperDerechoInf);
+        this->ventana.draw(FlipperIzquierdoInf);
+        this->ventana.draw(FlipperDerechoSup);
+        this->ventana.draw(FlipperIzquierdoSup);
+
         for (lRectangulosIt = lRectangulos.begin(); lRectangulosIt != lRectangulos.end(); ++lRectangulosIt)
         {
             this->ventana.draw(*lRectangulosIt);
@@ -901,11 +919,7 @@ void Juego::segundo_nivel(Jugadores& _jugador)
             this->ventana.draw(*lEnemigosRectangularesIt);
         }
 
-        //DIBUJA FLIPPERS
-        this->ventana.draw(FlipperDerechoInf);
-        this->ventana.draw(FlipperIzquierdoInf);
-        this->ventana.draw(FlipperDerechoSup);
-        this->ventana.draw(FlipperIzquierdoSup);
+
 
         //DIBUJA TEXTO EN LA PANTALLA
         this->ventana.draw(str_maximo_puntaje);
@@ -914,6 +928,7 @@ void Juego::segundo_nivel(Jugadores& _jugador)
         this->ventana.draw(bola);
         this->ventana.draw(str_bolas_restantes);
         this->ventana.draw(str_intentos);
+        this->ventana.draw(textureMap);
 
 
         /*
@@ -988,8 +1003,8 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
     ///FONDO DEL NIVEL
     sf::Texture textura;
     sf::Texture textura1;
-   // sf::Texture textura2;
-    if (!textura.loadFromFile("resources/background.png"))
+    sf::Texture textura2;
+    if (!textura.loadFromFile("resources/background3.png"))
     {
         std::cout << "No se cargo el fondo" << std::endl;
     }
@@ -999,13 +1014,12 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
         std::cout << "No se cargo el fondo" << std::endl;
     }
     sf::Sprite gameOver(textura1);
-   /*
-    if (!textura2.loadFromFile("resources/texture_map.png"))
+    if (!textura2.loadFromFile("resources/texture_map3.png"))
     {
         std::cout << "No se cargo el fondo" << std::endl;
     }
     sf::Sprite textureMap(textura2);
-    */
+    
     sound = sonido.ReproducirArranque();
     sound.play();
 
@@ -1070,8 +1084,6 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
 
     //ENEMIGOS REDONDOS - BUMPERS DEL JUEGO-----------------
 
-    EnemigoRedondo eRedondo1 = EnemigoRedondo(sf::Vector2f(25.f, 35.f)/*Posicion*/, 1.f/*Radio*/, 50/*Puntos*/, gris/*Color*/);
-
     EnemigoRedondo eRedondo2 = EnemigoRedondo(sf::Vector2f(9.f, 18.f), 1.f, 100, gris);
 
     EnemigoRedondo eRedondo3 = EnemigoRedondo(sf::Vector2f(25.f, 18.f), 1.f, 100, gris);
@@ -1097,17 +1109,17 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
     HitBox rampaDerecha = HitBox(sf::Vector2f(27.9f, 40.f), sf::Vector2f(6.f, 0.5f), -0.6f, gris);
 
     //ENEMIGOS RECTANGULARES (Los dos finitos de la pantalla)-----------------
-    EnemigoRectangular eRectangular1 = EnemigoRectangular(sf::Vector2f(5.f, 15.f), sf::Vector2f(0.5f, 2.f), -0.7f, 10, gris);
+    EnemigoRectangular eRectangular1 = EnemigoRectangular(sf::Vector2f(5.f, 15.f), sf::Vector2f(0.5f, 2.f), -0.7f, 0, gris);
 
-    EnemigoRectangular eRectangular2 = EnemigoRectangular(sf::Vector2f(13.f, 15.3f), sf::Vector2f(0.5f, 2.f), 0.7f, 10, gris);
+    EnemigoRectangular eRectangular2 = EnemigoRectangular(sf::Vector2f(13.f, 15.3f), sf::Vector2f(0.5f, 2.f), 0.7f, 0, gris);
 
-    EnemigoRectangular eRectangular3 = EnemigoRectangular(sf::Vector2f(21.f, 15.5f), sf::Vector2f(0.5f, 2.f), -0.7f, 500, gris);
+    EnemigoRectangular eRectangular3 = EnemigoRectangular(sf::Vector2f(21.f, 15.5f), sf::Vector2f(0.5f, 2.f), -0.7f, 0, gris);
 
-    EnemigoRectangular eRectangular4 = EnemigoRectangular(sf::Vector2f(29.f, 15.5f), sf::Vector2f(0.5f, 2.f), 0.7f, 500, gris);
+    EnemigoRectangular eRectangular4 = EnemigoRectangular(sf::Vector2f(29.f, 15.5f), sf::Vector2f(0.5f, 2.f), 0.7f, 0, gris);
 
-    EnemigoRectangular eRectangular5 = EnemigoRectangular(sf::Vector2f(5.f, 20.5f), sf::Vector2f(0.5f, 2.f), -0.7f, 500, gris);
+    EnemigoRectangular eRectangular5 = EnemigoRectangular(sf::Vector2f(5.f, 20.5f), sf::Vector2f(0.5f, 2.f), -0.7f, 0, gris);
 
-    EnemigoRectangular eRectangular6 = EnemigoRectangular(sf::Vector2f(30.f, 20.5f), sf::Vector2f(0.5f, 2.f), 0.7f, 500, gris);
+    EnemigoRectangular eRectangular6 = EnemigoRectangular(sf::Vector2f(30.f, 20.5f), sf::Vector2f(0.5f, 2.f), 0.7f, 0, gris);
 
     //TEXTURAS
 
@@ -1123,7 +1135,6 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
 
 
    // lEnemigosRedondos.push_back(eRedondo1);
-    lEnemigosRedondos.push_back(eRedondo1);
     lEnemigosRedondos.push_back(eRedondo2);
     lEnemigosRedondos.push_back(eRedondo3);
     lEnemigosRedondos.push_back(eRedondoGrande1);
@@ -1212,6 +1223,8 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
 
         ///SE UTILIZAN FUNCIONES DE TIEMPO PARA EL FLUJO DEL JUEGO
         sf::Time intervalo_tiempo = clock.getElapsedTime();
+
+        MoverKlooster();
 
         const unsigned int tiempo_transcurrido = intervalo_tiempo.asMilliseconds();
 
@@ -1368,6 +1381,16 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
         this->ventana.draw(FlipperDerecho);
         this->ventana.draw(FlipperIzquierdo);
 
+        //DIBUJA TEXTO EN LA PANTALLA
+
+        this->ventana.draw(str_maximo_puntaje);
+        this->ventana.draw(puntos);
+        this->ventana.draw(str_puntaje);
+        this->ventana.draw(bola);
+        this->ventana.draw(str_bolas_restantes);
+        this->ventana.draw(str_intentos);
+        this->ventana.draw(this->sprite);
+
         for (lRectangulosIt = lRectangulos.begin(); lRectangulosIt != lRectangulos.end(); ++lRectangulosIt)
         {
             this->ventana.draw(*lRectangulosIt);
@@ -1393,18 +1416,7 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
             this->ventana.draw(*lEnemigosRectangularesIt);
         }
 
-
-
-        //DIBUJA TEXTO EN LA PANTALLA
-        this->ventana.draw(str_maximo_puntaje);
-        this->ventana.draw(puntos);
-        this->ventana.draw(str_puntaje);
-        this->ventana.draw(bola);
-        this->ventana.draw(str_bolas_restantes);
-        this->ventana.draw(str_intentos);
-
-       // this->ventana.draw(textureMap);
-
+        this->ventana.draw(textureMap);
 
 
         /*
@@ -1451,4 +1463,16 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
         std::cout << "Jugador guardado correctamente!" << std::endl;
     }
 
+}
+
+void Juego::MoverKlooster()
+{
+    this->sprite.move((-klooster * 0.01f), (-klooster * -0.01f));
+    if (this->sprite.getPosition().x < -800)
+    {
+        float random1 = rand() % (800 - 150 + 1) + 150;
+        float random2 = rand() % (-200 - -400 - 1) - 400;
+
+        this->sprite.setPosition(random1, random2);
+    }
 }
