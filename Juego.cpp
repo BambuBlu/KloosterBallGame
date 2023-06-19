@@ -222,14 +222,16 @@ void Juego::primer_nivel(Jugadores& _jugador)
                 }
                 else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Z)
                 {
-                    
+                    sound = sonido.ReproducirFlipper();
+                    sound.play();
                     FlipperIzquierdo.Mover("arriba");
                    
                     
                 }
                 else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::X)
                 {
-                    
+                    sound = sonido.ReproducirFlipper();
+                    sound.play();
                     FlipperDerecho.Mover("arriba");
                    
                 }
@@ -675,6 +677,7 @@ void Juego::segundo_nivel(Jugadores& _jugador)
             }
             else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Z)
             {
+                sound = sonido.ReproducirFlipper();
                 sound.play();
                 FlipperIzquierdoInf.Mover("arriba");
                 FlipperIzquierdoSup.Mover("arriba");
@@ -682,6 +685,7 @@ void Juego::segundo_nivel(Jugadores& _jugador)
             }
             else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::X)
             {
+                sound = sonido.ReproducirFlipper();
                 sound.play();
                 FlipperDerechoInf.Mover("arriba");
                 FlipperDerechoSup.Mover("arriba");
@@ -723,6 +727,7 @@ void Juego::segundo_nivel(Jugadores& _jugador)
 
                         if (colision.CirculoVsCirculo())
                         {
+                            
                             colision.correctPosition();
 
                             colision.aplicarImpulsoRotacional();
@@ -736,6 +741,9 @@ void Juego::segundo_nivel(Jugadores& _jugador)
 
                     if (colision.CirculoVsCirculo())
                     {
+                        sound = sonido.ReproducirGentes();
+                        sound.play();
+
                         puntaje_total += lEnemigosRedondosIt->get_puntos();
 
                         colision.correctPosition();
@@ -1185,14 +1193,16 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
             }
             else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Z)
             {
-
+                sound = sonido.ReproducirFlipper();
+                sound.play();
                 FlipperIzquierdo.Mover("arriba");
 
 
             }
             else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::X)
             {
-
+                sound = sonido.ReproducirFlipper();
+                sound.play();
                 FlipperDerecho.Mover("arriba");
 
             }

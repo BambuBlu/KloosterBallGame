@@ -7,10 +7,7 @@
 #include "HitBox.h"
 #include "Rotacion.h"
 
-/*
-    Clase proveniente de Manifold
-     Genera un sistema de colisiones.
-*/
+
 
 class Colisiones
 {

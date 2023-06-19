@@ -25,8 +25,9 @@ class Manager
 		sf::VideoMode video_mode;
 		sf::Font font;
 		sf::Event evento;
+		Sonidos musica;
 		Sonidos sonido;
-		sf::Music musica;
+		sf::Sound sound;
 		sf::Texture textura[4];
 		sf::Sprite sprite[4];
 
