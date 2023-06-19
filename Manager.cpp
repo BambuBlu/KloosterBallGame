@@ -89,13 +89,7 @@ void Manager::Init_Menu()
 	//Variable que recorre el menu para elegir la opción
 	this->main_menu_selected = 0;
 
-	///MUSICA MENU
-	if (!musica.openFromFile("Sonidos/Musica.wav")) 
-	{
-		std::cout << "No se cargo la musica" << std::endl;
-	}
-	musica.setVolume(25);
-	musica.play();
+	
 
 
 	if (!this->textura[0].loadFromFile("resources/main_menu.png"))
@@ -120,6 +114,9 @@ void Manager::Init_Menu()
 		std::cout << "No se cargo el fondo" << std::endl;
 	}
 	this->sprite[3].setTexture(this->textura[3]);
+	
+	///Reproducir Musica
+	musica.ReproducirMusicaFondo();
 }
 
 Manager::Manager()
@@ -139,7 +136,6 @@ const bool Manager::Ventana_Esta_Abierta() const
 
 void Manager::Actualizar()
 {
-
 	MoverKlooster();
 	
 	//Siempre que haya un evento se mantiene el While
@@ -164,12 +160,16 @@ void Manager::Actualizar()
 			//Con la fechita para arriba subimos
 			else if (this->evento.key.code == sf::Keyboard::Up)
 			{
+				sound = sonido.ReproducirSeleccion();
+				sound.play();
 				this->Up(1);
 				break;
 			}
 			//Con la fechita para abajo, bajamos
 			else if (this->evento.key.code == sf::Keyboard::Down)
 			{
+				sound = sonido.ReproducirSeleccion();
+				sound.play();
 				this->Down(1);
 				break;
 			}
@@ -327,23 +327,30 @@ void Manager::IniciarJuego()
 			switch (this->evento.type)
 			{
 				case sf::Event::Closed:
+					musica.DetenerMusicaJuego();
 					this->ventana->close();
 					break;
 
 				case sf::Event::KeyPressed:
 					if (this->evento.key.code == sf::Keyboard::Escape)
 					{
+						
 						this->ventana->close();
+						
 						break;
 					}
 
 					else if (this->evento.key.code == sf::Keyboard::Up)
 					{
+						sound = sonido.ReproducirSeleccion();
+						sound.play();
 						this->Up(2);
 						break;
 					}
 					else if (this->evento.key.code == sf::Keyboard::Down)
 					{
+						sound = sonido.ReproducirSeleccion();
+						sound.play();
 						this->Down(2);
 						break;
 					}
@@ -351,7 +358,9 @@ void Manager::IniciarJuego()
 					{
 						if (main_menu_selected == 0)
 						{
-							musica.stop();
+							musica.DetenerMusicaFondo();
+							musica.ReproducirMusicaJuego();
+
 							this->ventana->setVisible(false);
 							Juego instancia_juego;
 							instancia_juego.primer_nivel(Jugador);
@@ -359,7 +368,9 @@ void Manager::IniciarJuego()
 						}
 						if (main_menu_selected == 1)
 						{
-							musica.stop();
+							musica.DetenerMusicaFondo();
+							musica.ReproducirMusicaJuego();
+
 							this->ventana->setVisible(false);
 							Juego instancia_juego;
 							instancia_juego.segundo_nivel(Jugador);
@@ -367,7 +378,9 @@ void Manager::IniciarJuego()
 						}
 						if (main_menu_selected == 2)
 						{
-							musica.stop();
+							musica.DetenerMusicaFondo();
+							musica.ReproducirMusicaJuego();
+
 							this->ventana->setVisible(false);
 							Juego instancia_juego;
 							instancia_juego.tercer_nivel(Jugador);
@@ -441,6 +454,8 @@ bool Manager::IngresarNombre(Jugadores& _jugador)
 
 					if (this->evento.type == sf::Event::TextEntered)
 					{
+						sound = sonido.ReproducirSeleccion();
+						sound.play();
 						if (this->evento.text.unicode < 256)
 						{
 							if (this->evento.text.unicode == 8 && _nombreDeJugador.getSize() > 0)

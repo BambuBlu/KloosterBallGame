@@ -6,7 +6,7 @@ using namespace sf;
 class Sonidos
 {
  private: 
-	 Music musicafondo;
+	 Music musica;
 	 SoundBuffer buffer;
 	 Sound sound;
 
@@ -17,9 +17,15 @@ class Sonidos
 
 	void ReproducirMusicaFondo();
 	void DetenerMusicaFondo();
+
+	void ReproducirMusicaJuego();
+	void DetenerMusicaJuego();
 	
+
+	Sound ReproducirFlipper();
 	Sound ReproducirGentes();
 	Sound ReproducirArranque();
+	Sound ReproducirSeleccion();
 	
 };
 

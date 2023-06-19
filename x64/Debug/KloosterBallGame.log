@@ -1,9 +1,4 @@
-﻿  Juego.cpp
-  main.cpp
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\main.cpp(11,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-  Manager.cpp
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(612,17): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(613,17): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
-  Colisiones.cpp
-  Generando código...
-  KloosterBallGame.vcxproj -> C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\KloosterBallGame.exe
+﻿  Manager.cpp
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Manager.cpp(627,17): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Manager.cpp(628,17): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+  KloosterBallGame.vcxproj -> C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\x64\Debug\KloosterBallGame.exe
