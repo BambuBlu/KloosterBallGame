@@ -471,6 +471,8 @@ void Juego::primer_nivel(Jugadores& _jugador)
 
                 printf("%f \n", now.asSeconds());
                 
+                _jugador.set_puntaje(puntaje_total);
+                _jugador.set_nivel(1);
 
                 if (now.asSeconds() >= fDelay)
                 {
@@ -484,9 +486,6 @@ void Juego::primer_nivel(Jugadores& _jugador)
             //Muestra todo lo dibujado
             this->ventana.display();
         }
-
-        _jugador.set_puntaje(puntaje_total);
-        _jugador.set_nivel(1);
 
         ArchivoJugadores archivo;
         if (archivo.guardar(_jugador))

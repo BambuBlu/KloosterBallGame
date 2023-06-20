@@ -10,7 +10,6 @@
 class Jugadores
 {
 	private:
-		std::string str_nombre;
 		char char_nombre[30];
 		int puntaje;
 		int nivel; 

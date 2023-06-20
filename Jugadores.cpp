@@ -3,7 +3,6 @@
 Jugadores::Jugadores()
 {
 	strcpy(char_nombre, "Sin Nombre");
-	str_nombre = "Sin Nombre";
 	nivel = 0;
 	puntaje = 0;
 }
@@ -11,9 +10,10 @@ Jugadores::Jugadores()
 
 void Jugadores::set_nombre(sf::String& _nombre)
 {
+	std::string str_nombre;
 	str_nombre = _nombre.toAnsiString();
 
-	strcpy(char_nombre, _nombre.toAnsiString().c_str());
+	strcpy(char_nombre, str_nombre.c_str());
 
 }
 
@@ -34,7 +34,10 @@ const char *Jugadores::get_nombre()
 
 std::string Jugadores::get_str_nombre()
 {
-	return str_nombre;
+	const char* nombre = char_nombre;
+	sf::String sf_str_nombre(nombre);
+
+	return sf_str_nombre;
 }
 
 int Jugadores::get_puntaje()
