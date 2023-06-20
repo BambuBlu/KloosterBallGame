@@ -16,16 +16,18 @@ class Sonidos
 	 
 
 	void ReproducirMusicaFondo();
-	void DetenerMusicaFondo();
-
+	void DetenerMusica();
 	void ReproducirMusicaJuego();
-	void DetenerMusicaJuego();
-	
+	void PausarMusica();
+	void Reanudar();
 
-	Sound ReproducirFlipper();
-	Sound ReproducirGentes();
-	Sound ReproducirArranque();
-	Sound ReproducirSeleccion();
+	void ReproducirFlipper();
+	void ReproducirGentes();
+	void ReproducirArranque();
+	void ReproducirSeleccion();
+	void ReproducirGameOver();
+	void ReproducirRestarBola();
+	void ReproducirChoque();
 	
 };
 
