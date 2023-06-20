@@ -1,4 +1,1 @@
-﻿  Manager.cpp
-C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Manager.cpp(643,17): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Manager.cpp(644,17): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
-  KloosterBallGame.vcxproj -> C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\x64\Debug\KloosterBallGame.exe
+﻿  KloosterBallGame.vcxproj -> C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\x64\Debug\KloosterBallGame.exe

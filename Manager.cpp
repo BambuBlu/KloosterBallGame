@@ -307,6 +307,7 @@ void Manager::IniciarJuego()
 
 	if (!IngresarNombre(Jugador))
 	{
+		std::cout << "No se cargo nombre... " << std::endl;
 		return;
 	}
 	
@@ -326,6 +327,7 @@ void Manager::IniciarJuego()
 			switch (this->evento.type)
 			{
 				case sf::Event::Closed:
+					
 					this->ventana->close();
 					break;
 
@@ -382,7 +384,10 @@ void Manager::IniciarJuego()
 							instancia_juego.tercer_nivel(Jugador);
 							this->ventana->setVisible(true);
 						}
-						if (main_menu_selected == 3){return;}
+						if (main_menu_selected == 3){
+							main_menu_selected = 0; 
+							return;
+						}
 					}
 			}
 			this->ventana->clear();
@@ -396,7 +401,7 @@ void Manager::IniciarJuego()
 bool Manager::IngresarNombre(Jugadores& _jugador)
 {
 
-
+	
 	sf::Text texto;
 	texto.setFont(font);
 	texto.setFillColor(sf::Color(62, 74, 60));
@@ -419,6 +424,8 @@ bool Manager::IngresarNombre(Jugadores& _jugador)
 
 	sf::String _nombreDeJugador;
 
+	
+
 	while (Ventana_Esta_Abierta())
 	{
 		this->ventana->clear();
@@ -440,10 +447,16 @@ bool Manager::IngresarNombre(Jugadores& _jugador)
 					}
 					if (this->evento.key.code == sf::Keyboard::Enter)
 					{
-						_jugador.set_nombre(_nombreDeJugador);
-						std::cout << "nombre en ingresar_nombre() " << std::endl;
-						std::cout << _jugador.get_nombre() << std::endl;
-						return true;
+						if (_nombreDeJugador.getSize() > 1) {
+							_jugador.set_nombre(_nombreDeJugador);
+							std::cout << "nombre en ingresar_nombre() " << std::endl;
+							std::cout << _jugador.get_nombre() << std::endl;
+							return true;
+						}
+						else {
+							return false;
+						}
+					
 					}
 
 				case sf::Event::TextEntered:
@@ -473,7 +486,6 @@ bool Manager::IngresarNombre(Jugadores& _jugador)
 		this->ventana->draw(textBox);
 		this->ventana->display();
 	}
-	return false;
 }
 
 void Manager::RankingDePuntajes()

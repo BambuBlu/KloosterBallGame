@@ -56,6 +56,7 @@ void Sonidos::ReproducirGentes() {
 	}
 
 	sound.setBuffer(buffer);
+	sound.setVolume(25);
 	sound.play();
 
 }
