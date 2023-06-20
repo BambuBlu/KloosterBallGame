@@ -24,10 +24,11 @@ class Sonidos
 	void ReproducirFlipper();
 	void ReproducirGentes();
 	void ReproducirArranque();
-	void ReproducirSeleccion();
+	void ReproducirSeleccion(int);
 	void ReproducirGameOver();
 	void ReproducirRestarBola();
 	void ReproducirChoque();
+	void ReproducirLanzamiento();
 	
 };
 

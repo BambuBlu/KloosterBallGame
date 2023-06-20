@@ -76,9 +76,15 @@ void Manager::Init_Menu()
 
 	this->menu_niveles[3].setFont(font);
 	this->menu_niveles[3].setFillColor(caqui);
-	this->menu_niveles[3].setString("Regresar");
+	this->menu_niveles[3].setString("regresar");
 	this->menu_niveles[3].setCharacterSize(18);
 	this->menu_niveles[3].setPosition(186, 742);
+
+	this->menu_niveles[4].setFont(font);
+	this->menu_niveles[4].setFillColor(caqui);
+	this->menu_niveles[4].setString("Enter para Regresar");
+	this->menu_niveles[4].setCharacterSize(18);
+	this->menu_niveles[4].setPosition(38, 807);
 
 	//Variable que recorre el menu para elegir la opción
 	this->main_menu_selected = 0;
@@ -158,7 +164,7 @@ void Manager::Actualizar()
 			//Con la fechita para arriba subimos
 			else if (this->evento.key.code == sf::Keyboard::Up)
 			{
-				sonido.ReproducirSeleccion();
+				sonido.ReproducirSeleccion(1);
 				
 				this->Up(1);
 				break;
@@ -166,7 +172,7 @@ void Manager::Actualizar()
 			//Con la fechita para abajo, bajamos
 			else if (this->evento.key.code == sf::Keyboard::Down)
 			{
-				sonido.ReproducirSeleccion();
+				sonido.ReproducirSeleccion(1);
 				
 				this->Down(1);
 				break;
@@ -184,6 +190,7 @@ void Manager::Actualizar()
 				//MAYORES PUNTAJES
 				if (x == 1)
 				{
+					sonido.ReproducirSeleccion(4);
 					RankingDePuntajes();
 					break;
 				}
@@ -293,7 +300,10 @@ void Manager::DibujarMenu(sf::RenderWindow*& ventana, int tipo_de_menu)
 	{
 		for (int i = 0; i < max_main_menu; i++)
 		{
-			this->ventana->draw(menu_niveles[i]);
+			if (i != 4)
+			{
+				this->ventana->draw(menu_niveles[i]);	
+			}
 		}
 	}
 }
@@ -342,13 +352,13 @@ void Manager::IniciarJuego()
 
 					else if (this->evento.key.code == sf::Keyboard::Up)
 					{
-						sonido.ReproducirSeleccion();
+						sonido.ReproducirSeleccion(1);
 						this->Up(2);
 						break;
 					}
 					else if (this->evento.key.code == sf::Keyboard::Down)
 					{
-						sonido.ReproducirSeleccion();
+						sonido.ReproducirSeleccion(1);
 						this->Down(2);
 						break;
 					}
@@ -356,6 +366,7 @@ void Manager::IniciarJuego()
 					{
 						if (main_menu_selected == 0)
 						{
+							sonido.ReproducirSeleccion(4);
 							sonido.PausarMusica();
 							BandMusica = false;
 
@@ -366,6 +377,7 @@ void Manager::IniciarJuego()
 						}
 						if (main_menu_selected == 1)
 						{
+							sonido.ReproducirSeleccion(4);
 							sonido.PausarMusica();
 							BandMusica = false;
 
@@ -376,6 +388,7 @@ void Manager::IniciarJuego()
 						}
 						if (main_menu_selected == 2)
 						{
+							sonido.ReproducirSeleccion(4);
 							sonido.PausarMusica();
 							BandMusica = false;
 
@@ -385,6 +398,7 @@ void Manager::IniciarJuego()
 							this->ventana->setVisible(true);
 						}
 						if (main_menu_selected == 3){
+							sonido.ReproducirSeleccion(4);
 							main_menu_selected = 0; 
 							return;
 						}
@@ -449,8 +463,6 @@ bool Manager::IngresarNombre(Jugadores& _jugador)
 					{
 						if (_nombreDeJugador.getSize() > 1) {
 							_jugador.set_nombre(_nombreDeJugador);
-							std::cout << "nombre en ingresar_nombre() " << std::endl;
-							std::cout << _jugador.get_nombre() << std::endl;
 							return true;
 						}
 						else {
@@ -463,17 +475,21 @@ bool Manager::IngresarNombre(Jugadores& _jugador)
 
 					if (this->evento.type == sf::Event::TextEntered)
 					{
-						sonido.ReproducirSeleccion();
-					
 						if (this->evento.text.unicode < 256)
 						{
 							if (this->evento.text.unicode == 8 && _nombreDeJugador.getSize() > 0)
 							{
+								sonido.ReproducirSeleccion(2);
 								_nombreDeJugador.erase(_nombreDeJugador.getSize() - 1, 1);
+							}
+							else if (_nombreDeJugador.getSize() < 18)
+							{
+								sonido.ReproducirSeleccion(4);
+								_nombreDeJugador += static_cast<char>(this->evento.text.unicode);
 							}
 							else
 							{
-								_nombreDeJugador += static_cast<char>(this->evento.text.unicode);
+								sonido.ReproducirSeleccion(3);
 							}
 							textBox.setString(_nombreDeJugador);
 						}
@@ -493,8 +509,6 @@ void Manager::RankingDePuntajes()
 	sf::Vector2f nombre(70.f, 180.f);
 	sf::Vector2f puntaje(370.f, nombre.y);
 	float separacion = 63.f;
-
-	menu_niveles[3].setPosition(38, 807);
 
 	sf::Color caqui = sf::Color(62, 74, 60);
 
@@ -605,12 +619,13 @@ void Manager::RankingDePuntajes()
 						}
 						if (this->evento.key.code == sf::Keyboard::Enter)
 						{
+							sonido.ReproducirSeleccion(4);
 							return;
 						}
 				}
 			}
 			this->ventana->draw(background);
-			this->ventana->draw(menu_niveles[3]);
+			this->ventana->draw(menu_niveles[4]);
 
 			for (int i = 0; i < cantidad_de_registros; i++)
 			{

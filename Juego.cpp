@@ -230,7 +230,7 @@ void Juego::primer_nivel(Jugadores& _jugador)
                         //Indica que hay una bola en juego
                         bool_En_Juego = true;
 
-
+                        sonido.ReproducirLanzamiento();
                     }
                 }
                 else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Z)
@@ -479,8 +479,10 @@ void Juego::primer_nivel(Jugadores& _jugador)
 
                 printf("%f \n", now.asSeconds());
                 
-                _jugador.set_puntaje(puntaje_total);
-                _jugador.set_nivel(1);
+                if (puntaje_total > 0)
+                {
+                    _jugador.set_puntaje(puntaje_total);
+                }
 
                 if (now.asSeconds() >= fDelay)
                 {
@@ -693,6 +695,8 @@ void Juego::segundo_nivel(Jugadores& _jugador)
 
                     //Indica que hay una bola en juego
                     bool_En_Juego = true;
+
+                    sonido.ReproducirLanzamiento();
                 }
             }
             else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Z)
@@ -971,8 +975,10 @@ void Juego::segundo_nivel(Jugadores& _jugador)
 
             sf::Time now = clock.getElapsedTime();
 
-            _jugador.set_puntaje(puntaje_total);
-            _jugador.set_nivel(2);
+            if (puntaje_total > 0)
+            {
+                _jugador.set_puntaje(puntaje_total);
+            }
 
             if (now.asSeconds() >= fDelay)
             {
@@ -1211,7 +1217,7 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
                     //Indica que hay una bola en juego
                     bool_En_Juego = true;
 
-
+                    sonido.ReproducirLanzamiento();
                 }
             }
             else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Z)
@@ -1467,8 +1473,10 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
 
             sf::Time now = clock.getElapsedTime();
 
-            _jugador.set_puntaje(puntaje_total);
-            _jugador.set_nivel(3);
+            if (puntaje_total > 0)
+            {
+                _jugador.set_puntaje(puntaje_total);
+            }
 
             if (now.asSeconds() >= fDelay)
             {

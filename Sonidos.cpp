@@ -70,10 +70,48 @@ void Sonidos::ReproducirArranque() {
 	sound.play();
 }
 
-void Sonidos::ReproducirSeleccion()
-{
-	if (!buffer.loadFromFile("Sonidos/seleccion.wav")) {
+void Sonidos::ReproducirLanzamiento() {
+
+	if (!buffer.loadFromFile("Sonidos/deploy.wav")) {
 		std::cout << "No se cargo los sonidos" << std::endl;
+	}
+	sound.setBuffer(buffer);
+
+	sound.play();
+}
+
+void Sonidos::ReproducirSeleccion(int caso)
+{
+	switch(caso)
+	{
+		case 1:
+		{
+			if (!buffer.loadFromFile("Sonidos/seleccion.wav")) {
+				std::cout << "No se cargo los sonidos" << std::endl;
+			}
+			break;
+		}
+		case 2:
+		{
+			if (!buffer.loadFromFile("Sonidos/Erase.wav")) {
+				std::cout << "No se cargo los sonidos" << std::endl;
+			}
+			break;
+		}
+		case 3:
+		{
+			if (!buffer.loadFromFile("Sonidos/Error.wav")) {
+				std::cout << "No se cargo los sonidos" << std::endl;
+			}
+			break;
+		}
+		case 4:
+		{
+			if (!buffer.loadFromFile("Sonidos/typeSound.wav")) {
+				std::cout << "No se cargo los sonidos" << std::endl;
+			}
+			break;
+		}
 	}
 	sound.setBuffer(buffer);
 	sound.setVolume(20);

@@ -12,18 +12,15 @@ class Jugadores
 	private:
 		char char_nombre[30];
 		int puntaje;
-		int nivel; 
 
 	public:
 
 		Jugadores();
 		void set_nombre(sf::String& _nombre);
 		void set_puntaje(int _puntaje);
-		void set_nivel(int _nroNivel);
 
 		const char* get_nombre();
 		std::string get_str_nombre();
 		int get_puntaje();
-		int get_nivel();
 };
 #endif

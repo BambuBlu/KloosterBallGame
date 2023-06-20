@@ -5,7 +5,7 @@
 	Proveniente de config
 */
 
-#define max_main_menu 7
+#define max_main_menu 8
 #define klooster 3
 
 #define PIXELTOMETER 20
