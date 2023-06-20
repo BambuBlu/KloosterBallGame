@@ -133,6 +133,7 @@ const bool Manager::Ventana_Esta_Abierta() const
 
 void Manager::Actualizar()
 {
+	menu_niveles[3].setPosition(186, 742);
 	MoverKlooster();
 	
 	//Siempre que haya un evento se mantiene el While
@@ -477,10 +478,17 @@ bool Manager::IngresarNombre(Jugadores& _jugador)
 
 void Manager::RankingDePuntajes()
 {
+	sf::Vector2f nombre(70.f, 180.f);
+	sf::Vector2f puntaje(370.f, nombre.y);
+	float separacion = 63.f;
+
+	menu_niveles[3].setPosition(38, 807);
+
+	sf::Color caqui = sf::Color(62, 74, 60);
 
 	//Creo los textos y les paso los nombres de los TRES primeros jugadores y sus respectivos puntajes
-	sf::Text PodioNombres[3];
-	sf::Text PodioPuntajes[3];
+	sf::Text *PodioNombres;
+	sf::Text *PodioPuntajes;
 
 	sf::Texture textura;
 	if (!textura.loadFromFile("resources/max_points.png"))
@@ -489,82 +497,78 @@ void Manager::RankingDePuntajes()
 	}
 	sf::Sprite background(textura);
 
-	sf::Text titulo;
-	titulo.setFont(font);
-	titulo.setFillColor(sf::Color::Green);
-	titulo.setString("Ranking");
-	titulo.setCharacterSize(35);
-	titulo.setPosition(66, 20);
-
-	sf::Text titulo2;
-	titulo2.setFont(font);
-	titulo2.setFillColor(sf::Color::Green);
-	titulo2.setString("Maximos Puntajes");
-	titulo2.setCharacterSize(35);
-	titulo2.setPosition(40, 50);
-
 	//CREA UN VECTOR DINAMICO CON TODOS LOS REGISTROS DE JUGADORES
 	ArchivoJugadores archivo;
 	int cantidad_de_registros = archivo.getCantidadRegistros();
 
+	PodioNombres = new sf::Text[cantidad_de_registros];
+	PodioPuntajes = new sf::Text[cantidad_de_registros];
+
 	if (cantidad_de_registros != 0)
 	{
-		std::cout << "cantidad de registros:" << cantidad_de_registros << std::endl;
-
 		Jugadores *vJugadores;
 
 		vJugadores = new Jugadores[cantidad_de_registros];
 
 		for (int i = 0; i < cantidad_de_registros; i++)
 		{
-			std::cout << "Entro al for " << std::endl;
 			vJugadores[i] = archivo.leer(i);
-			std::cout << "Termino el for " << std::endl;
 		}
 
 		//ORDENA EL VECTOR DE MAYOR A MENOR PUNTAJE
 		OrdenarJugadoresxPuntos(vJugadores, cantidad_de_registros);
 
+		//MENSAJES DE NOMBRES Y PUNTOS
+		for (int i = 0; i < cantidad_de_registros; i++)
+		{
+			if (i == 0)
+			{
+				std::cout << "entro en if " << std::endl;
+				PodioNombres[i].setFont(font);
+				PodioNombres[i].setFillColor(caqui);
+				PodioNombres[i].setString(vJugadores[i].get_str_nombre());
+				PodioNombres[i].setCharacterSize(25);
+				PodioNombres[i].setPosition(nombre.x, nombre.y);
 
-		//MENSAJES DE NOMBRES
+				PodioPuntajes[i].setFont(font);
+				PodioPuntajes[i].setFillColor(caqui);
+				PodioPuntajes[i].setString(std::to_string(vJugadores[i].get_puntaje()));
+				PodioPuntajes[i].setCharacterSize(25);
+				PodioPuntajes[i].setPosition(puntaje.x, puntaje.y);
+			}
+			else if (i < 3)
+			{
+				PodioNombres[i].setFont(font);
+				PodioNombres[i].setFillColor(caqui);
+				PodioNombres[i].setString(vJugadores[i].get_str_nombre());
+				PodioNombres[i].setCharacterSize(25);
+				PodioNombres[i].setPosition(nombre.x, nombre.y + separacion);
 
-		PodioNombres[0].setFont(font);
-		PodioNombres[0].setFillColor(sf::Color::Cyan);
-		PodioNombres[0].setString(vJugadores[0].get_str_nombre());
-		PodioNombres[0].setCharacterSize(35);
-		PodioNombres[0].setPosition(20, 100);
+				PodioPuntajes[i].setFont(font);
+				PodioPuntajes[i].setFillColor(caqui);
+				PodioPuntajes[i].setString(std::to_string(vJugadores[i].get_puntaje()));
+				PodioPuntajes[i].setCharacterSize(25);
+				PodioPuntajes[i].setPosition(puntaje.x, puntaje.y + separacion);
 
-		PodioNombres[1].setFont(font);
-		PodioNombres[1].setFillColor(sf::Color::Green);
-		PodioNombres[1].setString(vJugadores[1].get_str_nombre());
-		PodioNombres[1].setCharacterSize(35);
-		PodioNombres[1].setPosition(20, 130);
+				separacion += separacion;
+			}
+			else
+			{
+				PodioNombres[i].setFont(font);
+				PodioNombres[i].setFillColor(caqui);
+				PodioNombres[i].setString(vJugadores[i].get_str_nombre());
+				PodioNombres[i].setCharacterSize(25);
+				PodioNombres[i].setPosition(nombre.x - 35, nombre.y + separacion);
 
-		PodioNombres[2].setFont(font);
-		PodioNombres[2].setFillColor(sf::Color::Cyan);
-		PodioNombres[2].setString(vJugadores[2].get_str_nombre());
-		PodioNombres[2].setCharacterSize(35);
-		PodioNombres[2].setPosition(20, 160);
+				PodioPuntajes[i].setFont(font);
+				PodioPuntajes[i].setFillColor(caqui);
+				PodioPuntajes[i].setString(std::to_string(vJugadores[i].get_puntaje()));
+				PodioPuntajes[i].setCharacterSize(25);
+				PodioPuntajes[i].setPosition(puntaje.x, puntaje.y + separacion);
 
-		//MENSAJES DE PUNTOS
-
-		PodioPuntajes[0].setFont(font);
-		PodioPuntajes[0].setFillColor(sf::Color::Cyan);
-		PodioPuntajes[0].setString(std::to_string(vJugadores[0].get_puntaje()));
-		PodioPuntajes[0].setCharacterSize(35);
-		PodioPuntajes[0].setPosition(60, 100);
-
-		PodioPuntajes[1].setFont(font);
-		PodioPuntajes[1].setFillColor(sf::Color::Green);
-		PodioPuntajes[1].setString(std::to_string(vJugadores[1].get_puntaje()));
-		PodioPuntajes[1].setCharacterSize(35);
-		PodioPuntajes[1].setPosition(60, 130);
-
-		PodioPuntajes[2].setFont(font);
-		PodioPuntajes[2].setFillColor(sf::Color::Cyan);
-		PodioPuntajes[2].setString(std::to_string(vJugadores[2].get_puntaje()));
-		PodioPuntajes[2].setCharacterSize(35);
-		PodioPuntajes[2].setPosition(60, 160);
+				separacion += separacion;
+			}
+		}
 
 		delete[] vJugadores;
 
@@ -594,8 +598,7 @@ void Manager::RankingDePuntajes()
 				}
 			}
 			this->ventana->draw(background);
-			this->ventana->draw(titulo);
-			this->ventana->draw(titulo2);
+			this->ventana->draw(menu_niveles[3]);
 
 			for (int i = 0; i < cantidad_de_registros; i++)
 			{

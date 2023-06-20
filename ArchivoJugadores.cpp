@@ -43,33 +43,22 @@ bool ArchivoJugadores::guardar(Jugadores reg)
 
 Jugadores ArchivoJugadores::leer(int nroRegistro)
 {
-    std::cout << "Entro a Leer " << std::endl;
     Jugadores aux;
 
-    std::cout << "Paso Jugadores aux " << std::endl;
+    FILE* pointer = fopen(_ruta.c_str(), "rb");
 
-    FILE* p = fopen(_ruta.c_str(), "rb");
 
-    std::cout << "Paso fopen " << std::endl;
-
-    if (p == NULL)
+    if (pointer == NULL)
     {
         return aux;
     }
 
-    std::cout << "Paso if(NULL) " << std::endl;
 
-    fseek(p, nroRegistro * sizeof(Jugadores), SEEK_SET);
+    fseek(pointer, nroRegistro * sizeof(Jugadores), SEEK_SET);
 
-    std::cout << "Paso fseek " << std::endl;
+    fread(&aux, sizeof(Jugadores), 1, pointer);
 
-    fread(&aux, sizeof(Jugadores), 1, p);
-
-    std::cout << "Paso fread " << std::endl;
-
-    fclose(p);
-
-    std::cout << "Llego al final de leer " << std::endl;
+    fclose(pointer);
 
     return aux;
 }

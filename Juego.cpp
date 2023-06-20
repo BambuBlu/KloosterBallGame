@@ -971,8 +971,8 @@ void Juego::segundo_nivel(Jugadores& _jugador)
 
             sf::Time now = clock.getElapsedTime();
 
-            printf("%f \n", now.asSeconds());
-
+            _jugador.set_puntaje(puntaje_total);
+            _jugador.set_nivel(2);
 
             if (now.asSeconds() >= fDelay)
             {
@@ -988,8 +988,6 @@ void Juego::segundo_nivel(Jugadores& _jugador)
         this->ventana.display();
     }
 
-    _jugador.set_puntaje(puntaje_total);
-    _jugador.set_nivel(2);
     ArchivoJugadores archivo;
     if (archivo.guardar(_jugador))
     {
@@ -1469,8 +1467,8 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
 
             sf::Time now = clock.getElapsedTime();
 
-            printf("%f \n", now.asSeconds());
-
+            _jugador.set_puntaje(puntaje_total);
+            _jugador.set_nivel(3);
 
             if (now.asSeconds() >= fDelay)
             {
@@ -1488,8 +1486,6 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
        
     }
     
-    _jugador.set_puntaje(puntaje_total);
-    _jugador.set_nivel(3);
 
     ArchivoJugadores archivo;
     if (archivo.guardar(_jugador))
