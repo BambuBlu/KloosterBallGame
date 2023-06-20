@@ -32,7 +32,6 @@ class Juego
 		sf::RenderWindow ventana;
 		sf::VideoMode video_mode;
 		sf::Event evento;
-        sf::Sound sound;
         Sonidos sonido;
         sf::Texture textura;
         sf::Sprite sprite;
@@ -46,6 +45,7 @@ class Juego
         int bolas_restantes;
         int puntaje_mas_alto;
         int intentos;
+        bool BandSonido;
 
         void InitJuego();
 

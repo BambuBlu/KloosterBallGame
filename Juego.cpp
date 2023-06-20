@@ -32,6 +32,10 @@ void Juego::InitJuego()
     this->sprite.setTexture(this->textura);
     this->sprite.scale(0.2f, 0.2f);
     this->sprite.setPosition(800.f, -200.f);
+
+    BandSonido = true;
+
+    sonido.ReproducirMusicaJuego();
 }
 
 Juego::Juego()
@@ -61,8 +65,8 @@ void Juego::primer_nivel(Jugadores& _jugador)
         }
         sf::Sprite textureMap(textura2);
        
-        sound = sonido.ReproducirArranque();
-        sound.play();
+        sonido.ReproducirArranque();
+        
        
         ///DECLARACION DE COLORES DEL NIVEL
         sf::Color Azul = sf::Color(8, 68, 112);
@@ -197,11 +201,12 @@ void Juego::primer_nivel(Jugadores& _jugador)
             {
                 if (this->evento.type == sf::Event::Closed) //Cierra la ventana
                 {
-                
+                    sonido.DetenerMusica();
                     this->ventana.close();
                 }
                 else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Escape) //Cierra la ventana
                 {
+                    sonido.DetenerMusica();
                     this->ventana.close();
                 }
                 else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Space) //Crea y lanza la bola
@@ -230,16 +235,16 @@ void Juego::primer_nivel(Jugadores& _jugador)
                 }
                 else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Z)
                 {
-                    sound = sonido.ReproducirFlipper();
-                    sound.play();
+                    sonido.ReproducirFlipper();
+                  
                     FlipperIzquierdo.Mover("arriba");
                    
                     
                 }
                 else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::X)
                 {
-                    sound = sonido.ReproducirFlipper();
-                    sound.play();
+                    sonido.ReproducirFlipper();
+                    
                     FlipperDerecho.Mover("arriba");
                    
                 }
@@ -290,9 +295,8 @@ void Juego::primer_nivel(Jugadores& _jugador)
 
                         if (colision.CirculoVsCirculo())
                         {
-                            sound = sonido.ReproducirGentes();
-                            sound.play();
-                            
+                            sonido.ReproducirChoque();
+                           
                             puntaje_total += lEnemigosRedondosIt->get_puntos();
 
                             colision.correctPosition();
@@ -389,7 +393,7 @@ void Juego::primer_nivel(Jugadores& _jugador)
 
             str_intentos.setString("~ Intentos: " + std::to_string(intentos) + "...");
             
-
+            
             restar_bola();
 
             //Si no quedan bolas, termina el juego
@@ -458,22 +462,27 @@ void Juego::primer_nivel(Jugadores& _jugador)
                 Al ser la funcion un booleano, puede retornar True en caso de haber superado el maximo puntaje
                 y False en caso de no haberlo superado o algo xd
             */
-
             if (bool_Fin_Juego)
             {
+               
                 bool_En_Juego = false;
 
                 this->ventana.draw(gameOver);
 
+                if (BandSonido) {
+                    sonido.ReproducirGameOver();
+                    BandSonido = false;
+                }
                 float  fDelay = sf::seconds(6.0).asSeconds();
 
                 sf::Time now = clock.getElapsedTime();
 
                 printf("%f \n", now.asSeconds());
                 
-
+                    
                 if (now.asSeconds() >= fDelay)
                 {
+                    BandSonido = true;
                     intentos++;
                     puntaje_total = 0;
                     bolas_restantes = 3;
@@ -484,7 +493,7 @@ void Juego::primer_nivel(Jugadores& _jugador)
             //Muestra todo lo dibujado
             this->ventana.display();
         }
-
+        
         _jugador.set_puntaje(puntaje_total);
         _jugador.set_nivel(1);
 
@@ -518,8 +527,8 @@ void Juego::segundo_nivel(Jugadores& _jugador)
     }
     sf::Sprite textureMap(textura2);
 
-    sound = sonido.ReproducirArranque();
-    sound.play();
+    sonido.ReproducirArranque();
+    
 
     ///DECLARACION DE COLORES DEL NIVEL
     sf::Color Azul = sf::Color(8, 68, 112);
@@ -658,11 +667,12 @@ void Juego::segundo_nivel(Jugadores& _jugador)
         {
             if (this->evento.type == sf::Event::Closed) //Cierra la ventana
             {
-
+                sonido.DetenerMusica();
                 this->ventana.close();
             }
             else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Escape) //Cierra la ventana
             {
+                sonido.DetenerMusica();
                 this->ventana.close();
             }
             else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Space) //Crea y lanza la bola
@@ -688,16 +698,16 @@ void Juego::segundo_nivel(Jugadores& _jugador)
             }
             else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Z)
             {
-                sound = sonido.ReproducirFlipper();
-                sound.play();
+                sonido.ReproducirFlipper();
+                
                 FlipperIzquierdoInf.Mover("arriba");
                 FlipperIzquierdoSup.Mover("arriba");
 
             }
             else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::X)
             {
-                sound = sonido.ReproducirFlipper();
-                sound.play();
+                sonido.ReproducirFlipper();
+                
                 FlipperDerechoInf.Mover("arriba");
                 FlipperDerechoSup.Mover("arriba");
 
@@ -752,9 +762,8 @@ void Juego::segundo_nivel(Jugadores& _jugador)
 
                     if (colision.CirculoVsCirculo())
                     {
-                        sound = sonido.ReproducirGentes();
-                        sound.play();
-
+                        sonido.ReproducirChoque();
+                        
                         puntaje_total += lEnemigosRedondosIt->get_puntos();
 
                         colision.correctPosition();
@@ -954,6 +963,11 @@ void Juego::segundo_nivel(Jugadores& _jugador)
 
             this->ventana.draw(gameOver);
 
+            if (BandSonido) {
+                sonido.ReproducirGameOver();
+                BandSonido = false;
+            }
+
             float  fDelay = sf::seconds(6.0).asSeconds();
 
             sf::Time now = clock.getElapsedTime();
@@ -963,6 +977,7 @@ void Juego::segundo_nivel(Jugadores& _jugador)
 
             if (now.asSeconds() >= fDelay)
             {
+                BandSonido = true;
                 intentos++;
                 puntaje_total = 0;
                 bolas_restantes = 3;
@@ -993,7 +1008,7 @@ void Juego::restar_bola()
     {
         if (bolasIterador->cuerpo.getPosicion().y > 60) 
         {
-
+            sonido.ReproducirRestarBola();
             bolasIterador = bolas.erase(bolasIterador);
             bolas_restantes--;
             bool_En_Juego = false;
@@ -1028,9 +1043,8 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
     }
     sf::Sprite textureMap(textura2);
     
-    sound = sonido.ReproducirArranque();
-    sound.play();
-
+    sonido.ReproducirArranque();
+    
     ///DECLARACION DE COLORES DEL NIVEL
     sf::Color Azul = sf::Color(8, 68, 112);
     sf::Color blanco = sf::Color(235, 235, 235);
@@ -1171,11 +1185,12 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
         {
             if (this->evento.type == sf::Event::Closed) //Cierra la ventana
             {
-
+                sonido.DetenerMusica();
                 this->ventana.close();
             }
             else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Escape) //Cierra la ventana
             {
+                sonido.DetenerMusica();
                 this->ventana.close();
             }
             else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Space) //Crea y lanza la bola
@@ -1204,16 +1219,16 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
             }
             else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Z)
             {
-                sound = sonido.ReproducirFlipper();
-                sound.play();
+                sonido.ReproducirFlipper();
+                
                 FlipperIzquierdo.Mover("arriba");
 
 
             }
             else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::X)
             {
-                sound = sonido.ReproducirFlipper();
-                sound.play();
+                sonido.ReproducirFlipper();
+                
                 FlipperDerecho.Mover("arriba");
 
             }
@@ -1227,6 +1242,7 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
 
                 FlipperDerecho.Mover("abajo");
             }
+            
         }
 
         this->ventana.clear(sf::Color::Black);
@@ -1241,7 +1257,7 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
         if (tiempo_transcurrido >= 10 && !bool_Fin_Juego)
         {
             const float fSegundos = intervalo_tiempo.asSeconds();
-
+            
             ///FOR PARA CONTROLAR LA COLISION DE LA BOLA CON CADA OBJETO
             for (bolasIterador = bolas.begin(); bolasIterador != bolas.end(); ++bolasIterador)
             {
@@ -1266,8 +1282,8 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
 
                     if (colision.CirculoVsCirculo())
                     {
-                        sound = sonido.ReproducirGentes();
-                        sound.play();
+                        sonido.ReproducirChoque();
+                        
 
                         puntaje_total += lEnemigosRedondosIt->get_puntos();
 
@@ -1374,6 +1390,7 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
         //Si no quedan bolas, termina el juego
         if (bolas_restantes <= 0)
         {
+           
             bool_Fin_Juego = true;
         }
         //Si nuestro puntaje es mayor al puntaje más alto, se actualiza
@@ -1444,6 +1461,11 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
 
             this->ventana.draw(gameOver);
 
+            if (BandSonido) {
+                sonido.ReproducirGameOver();
+                BandSonido = false;
+            }
+
             float  fDelay = sf::seconds(6.0).asSeconds();
 
             sf::Time now = clock.getElapsedTime();
@@ -1453,6 +1475,7 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
 
             if (now.asSeconds() >= fDelay)
             {
+                BandSonido = true;
                 intentos++;
                 puntaje_total = 0;
                 bolas_restantes = 3;
@@ -1461,9 +1484,11 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
             }
         }
         //Muestra todo lo dibujado
-        this->ventana.display();
-    }
 
+        this->ventana.display();
+       
+    }
+    
     _jugador.set_puntaje(puntaje_total);
     _jugador.set_nivel(3);
 
