@@ -1,8 +1,5 @@
 #include "Juego.h"
 
-std::list<Bola> bolas;
-std::list<Bola>::iterator bolasIterador;
-
 void Juego::InitJuego()
 {
     //Determina si la bola est� en juego
@@ -13,6 +10,8 @@ void Juego::InitJuego()
     this->puntaje_total = 0;
     this->puntaje_mas_alto = 0;
     //Bolas
+    std::cout << "Se crea el juego (InitJuego)" << std::endl;
+
     this->bolas_restantes = 3;
     //cantidad de juegos 
     this->intentos = 0;
@@ -43,7 +42,16 @@ Juego::Juego()
     InitJuego();
 }
 
+Juego::~Juego()
+{
+
+}
+
+std::list<Bola> bolas;
+std::list<Bola>::iterator bolasIterador;
+
 //--------------------------------------------------//
+
 void Juego::primer_nivel(Jugadores& _jugador)
 {
         ///FONDO DEL NIVEL
@@ -101,6 +109,7 @@ void Juego::primer_nivel(Jugadores& _jugador)
         str_intentos.setPosition(230, 50);
 
         ///LISTAS E ITERADORES DE OBJETOS (Almacenan los Objetos)
+
         std::list<Rectangulo> lRectangulos;
         std::list<Rectangulo>::iterator lRectangulosIt;
         std::list<HitBox> lHitbox;
@@ -194,11 +203,14 @@ void Juego::primer_nivel(Jugadores& _jugador)
                 if (this->evento.type == sf::Event::Closed) //Cierra la ventana
                 {
                     sonido.DetenerMusica();
+
                     this->ventana.close();
                 }
                 else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Escape) //Cierra la ventana
                 {
+
                     sonido.DetenerMusica();
+
                     this->ventana.close();
                 }
                 else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Space) //Crea y lanza la bola
@@ -335,6 +347,8 @@ void Juego::primer_nivel(Jugadores& _jugador)
                             colision.correctPosition();
 
                             colision.aplicarImpulsoRotacional();
+
+                            colision.aplicarCaida();
                         }
                     }
 
@@ -349,6 +363,8 @@ void Juego::primer_nivel(Jugadores& _jugador)
                         FlipperIzquierdo_colision.correctPosition();
 
                         FlipperIzquierdo_colision.aplicarImpulsoRotacional();
+
+                        FlipperIzquierdo_colision.aplicarCaida();
                     }
 
                     Colisiones FlipperDerecho_colision = Colisiones(&FlipperIzquierdo.cuerpo, &bolasIterador->cuerpo);
@@ -358,6 +374,8 @@ void Juego::primer_nivel(Jugadores& _jugador)
                         FlipperDerecho_colision.correctPosition();
 
                         FlipperDerecho_colision.aplicarImpulsoRotacional();
+
+                        FlipperDerecho_colision.aplicarCaida();
                     }
 
                     //ACTUALIZA LAS PROPIEDADES DE LA BOLA (POSICION, VELOCIDAD Y ACELERACION)
@@ -620,7 +638,7 @@ void Juego::segundo_nivel(Jugadores& _jugador)
 
     EnemigoRectangular eRectangular4 = EnemigoRectangular(sf::Vector2f(24.9f, 18.9f), sf::Vector2f(0.5f, 2.5f), 6.f, 0, gris);
 
-    ///A�ADE LOS OBJETOS CREADOS A LAS LISTAS
+    ///AnADE LOS OBJETOS CREADOS A LAS LISTAS
     lEnemigosRectangulares.push_back(eRectangular1);
     lEnemigosRectangulares.push_back(eRectangular2);
     lEnemigosRectangulares.push_back(eRectangular3);
@@ -803,6 +821,8 @@ void Juego::segundo_nivel(Jugadores& _jugador)
                         colision.correctPosition();
 
                         colision.aplicarImpulsoRotacional();
+
+                        colision.aplicarCaida();
                     }
                 }
 
@@ -817,6 +837,8 @@ void Juego::segundo_nivel(Jugadores& _jugador)
                     FlipperIzquierdoInf_colision.correctPosition();
 
                     FlipperIzquierdoInf_colision.aplicarImpulsoRotacional();
+
+                    FlipperIzquierdoInf_colision.aplicarCaida();
                 }
 
                 Colisiones FlipperDerechoInf_colision = Colisiones(&FlipperIzquierdoInf.cuerpo, &bolasIterador->cuerpo);
@@ -826,6 +848,8 @@ void Juego::segundo_nivel(Jugadores& _jugador)
                     FlipperDerechoInf_colision.correctPosition();
 
                     FlipperDerechoInf_colision.aplicarImpulsoRotacional();
+
+                    FlipperDerechoInf_colision.aplicarCaida();
                 }
 
                 Colisiones FlipperIzquierdoSup_colision = Colisiones(&FlipperDerechoSup.cuerpo, &bolasIterador->cuerpo);
@@ -835,6 +859,7 @@ void Juego::segundo_nivel(Jugadores& _jugador)
                     FlipperIzquierdoSup_colision.correctPosition();
 
                     FlipperIzquierdoSup_colision.aplicarImpulsoRotacional();
+
                 }
 
                 Colisiones FlipperDerechoSup_colision = Colisiones(&FlipperIzquierdoSup.cuerpo, &bolasIterador->cuerpo);
@@ -844,6 +869,7 @@ void Juego::segundo_nivel(Jugadores& _jugador)
                     FlipperDerechoSup_colision.correctPosition();
 
                     FlipperDerechoSup_colision.aplicarImpulsoRotacional();
+
                 }
 
                 //ACTUALIZA LAS PROPIEDADES DE LA BOLA (POSICION, VELOCIDAD Y ACELERACION)
@@ -1308,6 +1334,8 @@ void Juego::tercer_nivel(Jugadores& _jugador)
                         colision.correctPosition();
 
                         colision.aplicarImpulsoRotacional();
+
+                        colision.aplicarCaida();
                     }
                 }
 
@@ -1322,6 +1350,8 @@ void Juego::tercer_nivel(Jugadores& _jugador)
                     FlipperIzquierdo_colision.correctPosition();
 
                     FlipperIzquierdo_colision.aplicarImpulsoRotacional();
+
+                    FlipperIzquierdo_colision.aplicarCaida();
                 }
 
                 Colisiones FlipperDerecho_colision = Colisiones(&FlipperIzquierdo.cuerpo, &bolasIterador->cuerpo);
@@ -1331,6 +1361,8 @@ void Juego::tercer_nivel(Jugadores& _jugador)
                     FlipperDerecho_colision.correctPosition();
 
                     FlipperDerecho_colision.aplicarImpulsoRotacional();
+
+                    FlipperDerecho_colision.aplicarCaida();
                 }
 
                 //ACTUALIZA LAS PROPIEDADES DE LA BOLA (POSICION, VELOCIDAD Y ACELERACION)
@@ -1476,15 +1508,23 @@ void Juego::restar_bola()
     CONTROLA QUE LA PELOTA NO SE HAYA IDO DE LA PANTALLA,
     EN CASO DE QUE SI, RESTA UNA VIDA.
     */
-
     for (bolasIterador = bolas.begin(); bolasIterador != bolas.end();)
     {
         if (bolasIterador->cuerpo.getPosicion().y > 60)
         {
-            sonido.ReproducirRestarBola();
-            bolasIterador = bolas.erase(bolasIterador);
-            bolas_restantes--;
-            bool_En_Juego = false;
+            /*
+            if (bolasIterador->cuerpo.getPosicion().x > 32.9)
+            {
+                sonido.ReproducirRestarBola();
+                bool_En_Juego = false;
+            */
+
+            //Cae en el agujero
+                sonido.ReproducirRestarBola();
+                bolasIterador = bolas.erase(bolasIterador);
+                bolas_restantes--;
+                bool_En_Juego = false;
+            
         }
         else 
         {

@@ -1,5 +1,5 @@
 #include "Colisiones.h"
-
+#include <iostream>
 /// Funciones matematicas utilizadas
 
 //Calcula el cuadrado de las variables del vector v1 con el v2
@@ -247,6 +247,21 @@ bool Colisiones::CirculoVsHitbox()
         penetracion = distancia - radio;
     }
     return true;
+}
+
+void Colisiones::aplicarCaida()
+{
+    if (cuerpo_b->velocidad.x < MIN_VELOCITY_X || cuerpo_b->velocidad.x > -(MIN_VELOCITY_X))
+    {
+        if (cuerpo_b->getPosicion().x > 0 && cuerpo_b->getPosicion().x <= 16)
+        {
+            cuerpo_b->velocidad.x = MIN_VELOCITY_X;
+        }
+        else if (cuerpo_b->getPosicion().x > 18 && cuerpo_b->getPosicion().x < 32.8)
+        {
+            cuerpo_b->velocidad.x = -(MIN_VELOCITY_X);
+        }
+    }
 }
 
 void Colisiones::correctPosition() //!< Aplica la corrección de posición

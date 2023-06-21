@@ -31,6 +31,8 @@ class Colisiones
 
         bool CirculoVsHitbox(); //Determina colision entre circulo - hitbox
 
+        void aplicarCaida();
+
         sf::Vector2f get_normal() const { return normal;}
 
         float get_penetracion() const { return penetracion;}

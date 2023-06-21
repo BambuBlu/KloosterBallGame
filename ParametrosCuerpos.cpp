@@ -68,17 +68,6 @@ void Cuerpo::updateBola(float deltaTime)
     {
         velocidad.x = (MAX_VELOCITY_X);
     }
-    else if (velocidad.x < MIN_VELOCITY_X && this->getPosicion().y > 43.5 || velocidad.x > -(MIN_VELOCITY_X) && this->getPosicion().y > 43.5)
-    {
-            if (this->getPosicion().x > 0 && this->getPosicion().x <= 16)
-            {
-                velocidad.x = MIN_VELOCITY_X;
-            }
-            else if (this->getPosicion().x > 18 && this->getPosicion().x < 32.8)
-            {
-                velocidad.x = -(MIN_VELOCITY_X);
-            }
-    }
 
     //Regula la velocidad en Y
     if (velocidad.y > MAX_VELOCITY_Y)
@@ -90,6 +79,8 @@ void Cuerpo::updateBola(float deltaTime)
         velocidad.y = MIN_VELOCITY_Y;
     }
 }
+
+
 
 void Cuerpo::setRestitucion(float _restitucion) //!< Sets de restitucion
 {
