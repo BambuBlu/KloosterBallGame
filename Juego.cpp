@@ -43,6 +43,7 @@ Juego::Juego()
     InitJuego();
 }
 
+//--------------------------------------------------//
 void Juego::primer_nivel(Jugadores& _jugador)
 {
         ///FONDO DEL NIVEL
@@ -98,11 +99,6 @@ void Juego::primer_nivel(Jugadores& _jugador)
         sf::Text str_intentos = sf::Text("~ Intentos: " + std::to_string(intentos) + "...", fuente_de_texto, 18);
         str_intentos.setFillColor(blanco);
         str_intentos.setPosition(230, 50);
-
-        std::cout << "Nombre en PrimerNivel() " << std::endl;
-        std::cout << _jugador.get_nombre() << std::endl;
-        std::cout << "Puntaje PrimerNivel() " << std::endl;
-        std::cout << _jugador.get_puntaje() << std::endl;
 
         ///LISTAS E ITERADORES DE OBJETOS (Almacenan los Objetos)
         std::list<Rectangulo> lRectangulos;
@@ -161,10 +157,6 @@ void Juego::primer_nivel(Jugadores& _jugador)
         EnemigoRectangular eRectangular2 = EnemigoRectangular(sf::Vector2f(23.f, 36.3f), sf::Vector2f(0.5f, 2.9f), 0.7f, 0, gris);
 
         EnemigoRectangular eRectangular3 = EnemigoRectangular(sf::Vector2f(5.f, 11.5f), sf::Vector2f(0.5f, 2.f), 0.65f, 0, gris);
-
-        //TEXTURAS
-        
-
 
         ///A�ADE LOS OBJETOS CREADOS A LAS LISTAS
         lEnemigosRectangulares.push_back(eRectangular1);    
@@ -441,8 +433,6 @@ void Juego::primer_nivel(Jugadores& _jugador)
                 this->ventana.draw(*lEnemigosRectangularesIt);
             }
 
-
-
             //DIBUJA TEXTO EN LA PANTALLA
             this->ventana.draw(str_maximo_puntaje);
             this->ventana.draw(puntos);
@@ -451,8 +441,6 @@ void Juego::primer_nivel(Jugadores& _jugador)
             this->ventana.draw(str_bolas_restantes);
             this->ventana.draw(str_intentos);
             this->ventana.draw(textureMap);
-
-
 
             /*
                 En caso de que termine el juego, se reinicia.
@@ -497,13 +485,15 @@ void Juego::primer_nivel(Jugadores& _jugador)
             //Muestra todo lo dibujado
             this->ventana.display();
         }
-
         ArchivoJugadores archivo;
-        if (archivo.guardar(_jugador))
+        if (_jugador.get_puntaje() > 0)
         {
-            std::cout << "Jugador guardado correctamente!" << std::endl;
+            if (archivo.guardar(_jugador))
+            {
+                std::cout << _jugador.get_nombre() << " PUNTOS " << _jugador.get_puntaje() << std::endl;
+                std::cout << "Jugador guardado correctamente!" << std::endl;
+            }
         }
-
 }
 
 void Juego::segundo_nivel(Jugadores& _jugador)
@@ -995,37 +985,18 @@ void Juego::segundo_nivel(Jugadores& _jugador)
     }
 
     ArchivoJugadores archivo;
-    if (archivo.guardar(_jugador))
+    if (_jugador.get_puntaje() > 0)
     {
-        std::cout << "Jugador guardado correctamente!" << std::endl;
+        if (archivo.guardar(_jugador))
+        {
+            std::cout << _jugador.get_nombre() << " PUNTOS " << _jugador.get_puntaje() << std::endl;
+            std::cout << "Jugador guardado correctamente!" << std::endl;
+        }
     }
 }
 
-/*
-    CONTROLA QUE LA PELOTA NO SE HAYA IDO DE LA PANTALLA,
-    EN CASO DE QUE SI, RESTA UNA VIDA.
-*/
-void Juego::restar_bola()
+void Juego::tercer_nivel(Jugadores& _jugador) 
 {
-    for (bolasIterador = bolas.begin(); bolasIterador != bolas.end();) 
-    {
-        if (bolasIterador->cuerpo.getPosicion().y > 60) 
-        {
-            sonido.ReproducirRestarBola();
-            bolasIterador = bolas.erase(bolasIterador);
-            bolas_restantes--;
-            bool_En_Juego = false;
-        }
-        else 
-        {
-            ++bolasIterador;
-        }
-    }
-}
-
-//-----------------------------------------------------------------------------------------------------------------------------------
-void Juego::tercer_nivel(Jugadores& _jugador) {
-
     ///FONDO DEL NIVEL
     sf::Texture textura;
     sf::Texture textura1;
@@ -1045,9 +1016,9 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
         std::cout << "No se cargo el fondo" << std::endl;
     }
     sf::Sprite textureMap(textura2);
-    
+
     sonido.ReproducirArranque();
-    
+
     ///DECLARACION DE COLORES DEL NIVEL
     sf::Color Azul = sf::Color(8, 68, 112);
     sf::Color blanco = sf::Color(235, 235, 235);
@@ -1159,7 +1130,7 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
     lEnemigosRectangulares.push_back(eRectangular6);
 
 
-   // lEnemigosRedondos.push_back(eRedondo1);
+    // lEnemigosRedondos.push_back(eRedondo1);
     lEnemigosRedondos.push_back(eRedondo2);
     lEnemigosRedondos.push_back(eRedondo3);
     lEnemigosRedondos.push_back(eRedondoGrande1);
@@ -1210,7 +1181,7 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
                     Bola bola = Bola(posicion, velocidad, aceleracion, 0.9f);
 
                     bola.set_color(sf::Color::White);
-                    
+
                     //Agrega la bola a la lista
                     bolas.push_back(bola);
 
@@ -1223,7 +1194,7 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
             else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Z)
             {
                 sonido.ReproducirFlipper();
-                
+
                 FlipperIzquierdo.Mover("arriba");
 
 
@@ -1231,7 +1202,7 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
             else if (this->evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::X)
             {
                 sonido.ReproducirFlipper();
-                
+
                 FlipperDerecho.Mover("arriba");
 
             }
@@ -1245,7 +1216,7 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
 
                 FlipperDerecho.Mover("abajo");
             }
-            
+
         }
 
         this->ventana.clear(sf::Color::Black);
@@ -1260,7 +1231,7 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
         if (tiempo_transcurrido >= 10 && !bool_Fin_Juego)
         {
             const float fSegundos = intervalo_tiempo.asSeconds();
-            
+
             ///FOR PARA CONTROLAR LA COLISION DE LA BOLA CON CADA OBJETO
             for (bolasIterador = bolas.begin(); bolasIterador != bolas.end(); ++bolasIterador)
             {
@@ -1286,14 +1257,14 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
                     if (colision.CirculoVsCirculo())
                     {
                         sonido.ReproducirChoque();
-                        
+
 
                         puntaje_total += lEnemigosRedondosIt->get_puntos();
 
                         colision.correctPosition();
 
                         colision.aplicarImpulsoRotacional();
-                        
+
                     }
                 }
 
@@ -1393,7 +1364,7 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
         //Si no quedan bolas, termina el juego
         if (bolas_restantes <= 0)
         {
-           
+
             bool_Fin_Juego = true;
         }
         //Si nuestro puntaje es mayor al puntaje m�s alto, se actualiza
@@ -1448,23 +1419,15 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
 
         this->ventana.draw(textureMap);
 
-
-        /*
-            En caso de que termine el juego, se reinicia.
-            Tenemos que decidir que hacer en caso de perder, si se debe reiniciar el juego y guardar el puntaje,
-            si se debe enviar al menu para volver a elegir el mapa, etc...
-
-            Al ser la funcion un booleano, puede retornar True en caso de haber superado el maximo puntaje
-            y False en caso de no haberlo superado o algo xd
-        */
-
+        ///TERMINA EL JUEGO
         if (bool_Fin_Juego)
         {
             bool_En_Juego = false;
 
             this->ventana.draw(gameOver);
 
-            if (BandSonido) {
+            if (BandSonido) 
+            {
                 sonido.ReproducirGameOver();
                 BandSonido = false;
             }
@@ -1491,16 +1454,43 @@ void Juego::tercer_nivel(Jugadores& _jugador) {
         //Muestra todo lo dibujado
 
         this->ventana.display();
-       
+
     }
-    
 
     ArchivoJugadores archivo;
-    if (archivo.guardar(_jugador))
+    if (_jugador.get_puntaje() > 0)
     {
-        std::cout << "Jugador guardado correctamente!" << std::endl;
+        if (archivo.guardar(_jugador))
+        {
+            std::cout << _jugador.get_nombre() << " PUNTOS " << _jugador.get_puntaje() << std::endl;
+            std::cout << "Jugador guardado correctamente!" << std::endl;
+        }
     }
+}
 
+//--------------------------------------------------//
+
+void Juego::restar_bola()
+{
+    /*
+    CONTROLA QUE LA PELOTA NO SE HAYA IDO DE LA PANTALLA,
+    EN CASO DE QUE SI, RESTA UNA VIDA.
+    */
+
+    for (bolasIterador = bolas.begin(); bolasIterador != bolas.end();)
+    {
+        if (bolasIterador->cuerpo.getPosicion().y > 60)
+        {
+            sonido.ReproducirRestarBola();
+            bolasIterador = bolas.erase(bolasIterador);
+            bolas_restantes--;
+            bool_En_Juego = false;
+        }
+        else 
+        {
+            bolasIterador++;
+        }
+    }
 }
 
 void Juego::MoverKlooster()

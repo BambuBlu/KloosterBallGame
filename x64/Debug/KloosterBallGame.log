@@ -1,1 +1,4 @@
-﻿  KloosterBallGame.vcxproj -> C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\x64\Debug\KloosterBallGame.exe
+﻿  ParametrosCuerpos.cpp
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\ParametrosCuerpos.cpp(115,38): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\ParametrosCuerpos.cpp(196,19): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+  KloosterBallGame.vcxproj -> C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\KloosterBallGame.exe

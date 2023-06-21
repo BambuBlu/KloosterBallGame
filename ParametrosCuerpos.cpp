@@ -63,15 +63,28 @@ void Cuerpo::updateBola(float deltaTime)
 
     setRadioAngulo(anguloNuevo);
 
+    //Regula la velocidad en X
     if (velocidad.x > MAX_VELOCITY_X)
     {
         velocidad.x = (MAX_VELOCITY_X);
     }
-    else if (velocidad.y > MAX_VELOCITY_Y)
+    else if (velocidad.x < MIN_VELOCITY_X && this->getPosicion().y > 43.5 || velocidad.x > -(MIN_VELOCITY_X) && this->getPosicion().y > 43.5)
+    {
+            if (this->getPosicion().x > 0 && this->getPosicion().x <= 16)
+            {
+                velocidad.x = MIN_VELOCITY_X;
+            }
+            else if (this->getPosicion().x > 18 && this->getPosicion().x < 32.8)
+            {
+                velocidad.x = -(MIN_VELOCITY_X);
+            }
+    }
+
+    //Regula la velocidad en Y
+    if (velocidad.y > MAX_VELOCITY_Y)
     {
         velocidad.y = (MAX_VELOCITY_Y);
     }
-
     else if (velocidad.y > 0 && velocidad.y < MIN_VELOCITY_Y)
     {
         velocidad.y = MIN_VELOCITY_Y;

@@ -9,7 +9,6 @@
 #include "Juego.h"
 #include "Jugadores.h"
 
-
 /*
 	Clase para controlar el menú y la continuidad del juego
 */

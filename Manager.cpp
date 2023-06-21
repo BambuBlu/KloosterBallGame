@@ -89,9 +89,6 @@ void Manager::Init_Menu()
 	//Variable que recorre el menu para elegir la opción
 	this->main_menu_selected = 0;
 
-	
-
-
 	if (!this->textura[0].loadFromFile("resources/main_menu.png"))
 	{
 		std::cout << "No se cargo el fondo" << std::endl;
@@ -145,7 +142,6 @@ void Manager::Actualizar()
 	//Siempre que haya un evento se mantiene el While
 	while (this->ventana->pollEvent(this->evento))
 	{
-		
 		//Checkea el tipo de evento
 		switch (this->evento.type)
 		{
@@ -165,7 +161,6 @@ void Manager::Actualizar()
 			else if (this->evento.key.code == sf::Keyboard::Up)
 			{
 				sonido.ReproducirSeleccion(1);
-				
 				this->Up(1);
 				break;
 			}
@@ -173,7 +168,6 @@ void Manager::Actualizar()
 			else if (this->evento.key.code == sf::Keyboard::Down)
 			{
 				sonido.ReproducirSeleccion(1);
-				
 				this->Down(1);
 				break;
 			}
@@ -219,6 +213,7 @@ int Manager::MainMenuPressed()
 void Manager::Up(int tipo_de_menu)
 {
 	sf::Color caqui = sf::Color(62, 74, 60);
+
 	if (tipo_de_menu == 1)
 	{
 		if (main_menu_selected >= 0)
@@ -227,10 +222,15 @@ void Manager::Up(int tipo_de_menu)
 
 			main_menu_selected--;
 
+			if (main_menu_selected == 2)
+			{
+				main_menu_selected = 1;
+			}
 			if (main_menu_selected == -1)
 			{
 				main_menu_selected = 3;
 			}
+
 			main_menu[main_menu_selected].setFillColor(sf::Color::Cyan);
 		}
 	}
@@ -262,6 +262,11 @@ void Manager::Down(int tipo_de_menu)
 		{
 			main_menu[main_menu_selected].setFillColor(caqui);
 			main_menu_selected++;
+			if (main_menu_selected == 2)
+			{
+				main_menu_selected = 3;
+			}
+
 			if (main_menu_selected == 4)
 			{
 				main_menu_selected = 0;
@@ -315,17 +320,6 @@ void Manager::IniciarJuego()
 
 	Jugadores Jugador;
 
-	if (!IngresarNombre(Jugador))
-	{
-		std::cout << "No se cargo nombre... " << std::endl;
-		return;
-	}
-	
-	std::cout << "nombre en Iniciar_juego() " << std::endl;
-
-	std::cout << Jugador.get_nombre() << std::endl;
-	
-
 	while (Ventana_Esta_Abierta())
 	{
 		while (this->ventana->pollEvent(this->evento))
@@ -366,6 +360,12 @@ void Manager::IniciarJuego()
 					{
 						if (main_menu_selected == 0)
 						{
+							if (!IngresarNombre(Jugador))
+							{
+								std::cout << "No se cargo nombre... " << std::endl;
+								return;
+							}
+
 							sonido.ReproducirSeleccion(4);
 							sonido.PausarMusica();
 							BandMusica = false;
@@ -377,6 +377,12 @@ void Manager::IniciarJuego()
 						}
 						if (main_menu_selected == 1)
 						{
+							if (!IngresarNombre(Jugador))
+							{
+								std::cout << "No se cargo nombre... " << std::endl;
+								return;
+							}
+
 							sonido.ReproducirSeleccion(4);
 							sonido.PausarMusica();
 							BandMusica = false;
@@ -388,6 +394,12 @@ void Manager::IniciarJuego()
 						}
 						if (main_menu_selected == 2)
 						{
+							if (!IngresarNombre(Jugador))
+							{
+								std::cout << "No se cargo nombre... " << std::endl;
+								return;
+							}
+
 							sonido.ReproducirSeleccion(4);
 							sonido.PausarMusica();
 							BandMusica = false;
@@ -414,8 +426,6 @@ void Manager::IniciarJuego()
 
 bool Manager::IngresarNombre(Jugadores& _jugador)
 {
-
-	
 	sf::Text texto;
 	texto.setFont(font);
 	texto.setFillColor(sf::Color(62, 74, 60));
@@ -502,6 +512,7 @@ bool Manager::IngresarNombre(Jugadores& _jugador)
 		this->ventana->draw(textBox);
 		this->ventana->display();
 	}
+	return false;
 }
 
 void Manager::RankingDePuntajes()
@@ -539,6 +550,7 @@ void Manager::RankingDePuntajes()
 		for (int i = 0; i < cantidad_de_registros; i++)
 		{
 			vJugadores[i] = archivo.leer(i);
+			std::cout << vJugadores->get_nombre() << " PUNTAJE " << vJugadores->get_puntaje() << std::endl;
 		}
 
 		//ORDENA EL VECTOR DE MAYOR A MENOR PUNTAJE

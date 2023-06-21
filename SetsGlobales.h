@@ -14,7 +14,7 @@
 #define PADDLE_MIN_ANGLE (-0.4) 
 #define MAX_VELOCITY_X 30
 #define MAX_VELOCITY_Y 30
-
+#define MIN_VELOCITY_X 5
 #define MIN_VELOCITY_Y 3
 
 
