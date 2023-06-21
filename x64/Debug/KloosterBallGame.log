@@ -1,4 +1,1 @@
-﻿  Juego.cpp
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(1541,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(1542,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
-  KloosterBallGame.vcxproj -> C:\Users\facu_\OneDrive\Escritorio\Uni\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\KloosterBallGame.exe
+﻿  KloosterBallGame.vcxproj -> E:\Usuario\Documents\UTN\SEGUNDO CUATRIMESTRE 2023\PROYECTOS SFML\KloosterBallGame\x64\Debug\KloosterBallGame.exe

@@ -130,7 +130,7 @@ void Juego::primer_nivel(Jugadores& _jugador)
 
         Rectangulo esquina_superior_derecha = Rectangulo(sf::Vector2f(34.8f, 8.2f)/*POSICION*/, sf::Vector2f(0.5f, 0.5f)/*EXTENSION MEDIA*/, gris/*COLOR*/);
 
-        Rectangulo tunel = Rectangulo(sf::Vector2f(32.9f, 40.f), sf::Vector2f(0.4f, 15.f), gris);
+        Rectangulo tunel = Rectangulo(sf::Vector2f(32.9f, 40.f), sf::Vector2f(0.4f, 23.f), gris);
 
         //ENEMIGOS REDONDOS - BUMPERS DEL JUEGO
 
@@ -630,9 +630,9 @@ void Juego::segundo_nivel(Jugadores& _jugador)
     HitBox rampaDerechaInf = HitBox(sf::Vector2f(27.9f, 42.f), sf::Vector2f(6.f, 0.5f), -0.6f, gris);
 
     //ENEMIGOS RECTANGULARES (Los dos finitos de la pantalla)
-    EnemigoRectangular eRectangular1 = EnemigoRectangular(sf::Vector2f(4.5f, 24.9f), sf::Vector2f(0.5f, 2.5f), -0.f, 0, gris);
+    EnemigoRectangular eRectangular1 = EnemigoRectangular(sf::Vector2f(4.5f, 23.5f), sf::Vector2f(0.5f, 2.5f), -0.f, 0, gris);
 
-    EnemigoRectangular eRectangular2 = EnemigoRectangular(sf::Vector2f(28.9f, 24.9f), sf::Vector2f(0.5f, 2.5f), 0.f, 0, gris);
+    EnemigoRectangular eRectangular2 = EnemigoRectangular(sf::Vector2f(28.9f, 23.5f), sf::Vector2f(0.5f, 2.5f), 0.f, 0, gris);
 
     EnemigoRectangular eRectangular3 = EnemigoRectangular(sf::Vector2f(8.5f, 18.9f), sf::Vector2f(0.5f, 2.5f), -6.f, 0, gris);
 
