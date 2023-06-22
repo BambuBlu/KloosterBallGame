@@ -19,7 +19,7 @@ void Manager::Init_Menu()
 	sf::Color caqui = sf::Color(62, 74, 60);
 
 	this->main_menu[0].setFont(font);
-	this->main_menu[0].setFillColor(caqui);
+	this->main_menu[0].setFillColor(sf::Color::Cyan);
 	this->main_menu[0].setString("Jugar");
 	this->main_menu[0].setCharacterSize(30);
 	this->main_menu[0].setPosition(182, 520);
@@ -57,7 +57,7 @@ void Manager::Init_Menu()
 
 	//Vector con los distintos niveles
 	this->menu_niveles[0].setFont(font);
-	this->menu_niveles[0].setFillColor(caqui);
+	this->menu_niveles[0].setFillColor(sf::Color::Cyan);
 	this->menu_niveles[0].setString("Primer nivel");
 	this->menu_niveles[0].setCharacterSize(30);
 	this->menu_niveles[0].setPosition(128, 302);
@@ -446,6 +446,7 @@ bool Manager::IngresarNombre(Jugadores& _jugador)
 	textBox.setCharacterSize(20);
 	textBox.setPosition(80, 467);
 
+
 	sf::String _nombreDeJugador;
 
 	
@@ -478,8 +479,10 @@ bool Manager::IngresarNombre(Jugadores& _jugador)
 						else {
 							return false;
 						}
-					
+							
 					}
+					
+					
 
 				case sf::Event::TextEntered:
 
@@ -497,6 +500,7 @@ bool Manager::IngresarNombre(Jugadores& _jugador)
 								sonido.ReproducirSeleccion(4);
 								_nombreDeJugador += static_cast<char>(this->evento.text.unicode);
 							}
+							
 							else
 							{
 								sonido.ReproducirSeleccion(3);

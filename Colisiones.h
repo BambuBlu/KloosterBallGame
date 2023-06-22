@@ -41,6 +41,6 @@ class Colisiones
 
         void correctPosition();
 
-        sf::Vector2f Clamp(const sf::Vector2f& rectExtents, const sf::Vector2f& circlePos); //Determina el punto mas cecano al borde de AABB
+        sf::Vector2f Ajustar(const sf::Vector2f& tamañoRectangulo, const sf::Vector2f& posicionCirculo); //Determina el punto mas cecano al borde de AABB
 };
 #endif

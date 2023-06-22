@@ -155,7 +155,6 @@
     <ClCompile Include="Rectangulo.cpp" />
     <ClCompile Include="RectanguloFisicas.cpp" />
     <ClCompile Include="Rotacion.cpp" />
-    <ClCompile Include="TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArchivoJugadores.h" />
@@ -178,7 +177,6 @@
     <ClInclude Include="RectanguloFisicas.h" />
     <ClInclude Include="Rotacion.h" />
     <ClInclude Include="SetsGlobales.h" />
-    <ClInclude Include="TextureManager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

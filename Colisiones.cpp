@@ -36,11 +36,6 @@ sf::Vector2f escalar_cruzado(sf::Vector2f& vector, float scalar) {
     return resultado;
 }
 
-///METODOS DE LA CLASE
-Colisiones::Colisiones()
-{
-
-}
 
 //Constructor que toma dos cuerpos para generar la variedad de colisión
 Colisiones::Colisiones(Cuerpo* first, Cuerpo* second)
@@ -103,7 +98,7 @@ bool Colisiones::CirculoVsRectangulo()
     sf::Vector2f diferencia = cuerpo_b->getPosicion() - cuerpo_a->getPosicion();
 
     
-    sf::Vector2f closest = Clamp(rectangulo->get_extensionMedia(), diferencia);
+    sf::Vector2f closest = Ajustar(rectangulo->get_extensionMedia(), diferencia);
 
     bool adentro = false;
 
@@ -182,8 +177,8 @@ bool Colisiones::CirculoVsHitbox()
 
     sf::Vector2f transform = rotar.rotar_vector_inversamente(diferencia);
 
-    // Punto más cercano de A a B
-    sf::Vector2f closest = Clamp(hitbox->get_extension_media(), transform);
+    //agarra la extencion del rectangulo y la posicion del circulo
+    sf::Vector2f closest = Ajustar(hitbox->get_extension_media(), transform);
 
     bool adentro = false;
 
@@ -269,13 +264,13 @@ void Colisiones::correctPosition() //!< Aplica la corrección de posición
 {
     const float porcentaje = 0.2f;
     
-    const float kfSlop = 0.01f;
+    const float inclinacion = 0.01f;
 
     const float sumatoriaMasaInversa = cuerpo_a->getMasaInversa() + cuerpo_b->getMasaInversa();
 
-    const float kFScalarNum = std::max(std::abs(penetracion) - kfSlop, 0.0f) / sumatoriaMasaInversa;
+    const float numeroescalar = std::max(std::abs(penetracion) - inclinacion, 0.0f) / sumatoriaMasaInversa;
 
-    sf::Vector2f correncion = normal * kFScalarNum * porcentaje;
+    sf::Vector2f correncion = normal * numeroescalar * porcentaje;
 
     cuerpo_a->posicion -= correncion * cuerpo_a->getMasaInversa();
 
@@ -320,27 +315,28 @@ void Colisiones::aplicarImpulso()
     cuerpo_b->AplicarImpulso(impulso, contactoCuerpoB);
 }
 
-sf::Vector2f Colisiones::Clamp(const sf::Vector2f& rectExtents, const sf::Vector2f& circlePos)
-{ //Determina el punto mas cercano al borde mas cercano de AABB
+sf::Vector2f Colisiones::Ajustar(const sf::Vector2f& tamañoRectangulo, const sf::Vector2f& posicionCirculo)
+{ 
+    //Determina el punto mas cercano al borde mas cercano de AABB (hitbox alineada con el eje)
 
     sf::Vector2f gancho = sf::Vector2f();
 
-    if (circlePos.x >= 0) 
+    if (posicionCirculo.x >= 0)
     {
-        gancho.x = std::min(circlePos.x, rectExtents.x);
+        gancho.x = std::min(posicionCirculo.x, tamañoRectangulo.x);
     }
     else 
     {
-        gancho.x = std::max(circlePos.x, - rectExtents.x);
+        gancho.x = std::max(posicionCirculo.x, -tamañoRectangulo.x);
     }
 
-    if (circlePos.y >= 0) 
+    if (posicionCirculo.y >= 0)
     {
-        gancho.y = std::min(circlePos.y, rectExtents.y);
+        gancho.y = std::min(posicionCirculo.y, tamañoRectangulo.y);
     }
     else 
     {
-        gancho.y = std::max(circlePos.y, -rectExtents.y);
+        gancho.y = std::max(posicionCirculo.y, -tamañoRectangulo.y);
     }
     return gancho;
 }

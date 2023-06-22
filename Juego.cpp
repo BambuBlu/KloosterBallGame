@@ -12,9 +12,7 @@ void Juego::InitJuego()
     //Bolas
     std::cout << "Se crea el juego (InitJuego)" << std::endl;
 
-    this->bolas_restantes = 3;
-    //cantidad de juegos 
-    this->intentos = 0;
+    this->bolas_restantes = 1;
 
     ///FUENTE DE TEXTO
     this->fuente_de_texto.loadFromFile("Fonts\\Roboto-Black.ttf");
@@ -22,7 +20,7 @@ void Juego::InitJuego()
     ///VENTANA
     this->video_mode.width = 720;
     this->video_mode.height = 980;
-    this->ventana.create(this->video_mode, "Capit�n Kloosman", sf::Style::Default);
+    this->ventana.create(this->video_mode, "Capitan Kloosman", sf::Style::Default);
 
     if (!this->textura.loadFromFile("resources/Kloosman.png"))
     {
@@ -42,10 +40,6 @@ Juego::Juego()
     InitJuego();
 }
 
-Juego::~Juego()
-{
-
-}
 
 std::list<Bola> bolas;
 std::list<Bola>::iterator bolasIterador;
@@ -104,9 +98,6 @@ void Juego::primer_nivel(Jugadores& _jugador)
         str_bolas_restantes.setFillColor(blanco);
         str_bolas_restantes.setPosition(634,64);
 
-        sf::Text str_intentos = sf::Text("~ Intentos: " + std::to_string(intentos) + "...", fuente_de_texto, 18);
-        str_intentos.setFillColor(blanco);
-        str_intentos.setPosition(230, 50);
 
         ///LISTAS E ITERADORES DE OBJETOS (Almacenan los Objetos)
 
@@ -118,7 +109,7 @@ void Juego::primer_nivel(Jugadores& _jugador)
         std::list<EnemigoRedondo>::iterator lEnemigosRedondosIt;
         std::list<EnemigoRectangular> lEnemigosRectangulares;
         std::list<EnemigoRectangular>::iterator lEnemigosRectangularesIt; 
-        std::list<TextureManager>::iterator lTexturas;
+       
 
 
         //MUROS DEL JUEGO
@@ -355,7 +346,7 @@ void Juego::primer_nivel(Jugadores& _jugador)
 
                     /*
                         TOMA A UN FLIPPER COMO CUERPO A Y A UNA BOLA COMO CUERPO B.
-                        CHECKEA SI SE EST�N TOCANDO, CORRIGE LA POSICI�N Y LE APLICA EL IMPULSO A LA BOLA.
+                        CHECKEA SI SE EST�N TOCANDO, CORRIGE LA POSICION Y LE APLICA EL IMPULSO A LA BOLA.
                     */
                     Colisiones FlipperIzquierdo_colision = Colisiones(&FlipperDerecho.cuerpo, &bolasIterador->cuerpo);
 
@@ -402,7 +393,6 @@ void Juego::primer_nivel(Jugadores& _jugador)
 
             str_maximo_puntaje.setString("~ Mejor puntaje: " + std::to_string(puntaje_mas_alto) + "...");
 
-            str_intentos.setString("~ Intentos: " + std::to_string(intentos) + "...");
             
             
             restar_bola();
@@ -458,7 +448,6 @@ void Juego::primer_nivel(Jugadores& _jugador)
             this->ventana.draw(str_puntaje);
             this->ventana.draw(bola);
             this->ventana.draw(str_bolas_restantes);
-            this->ventana.draw(str_intentos);
             this->ventana.draw(textureMap);
 
             /*
@@ -484,7 +473,6 @@ void Juego::primer_nivel(Jugadores& _jugador)
 
                 sf::Time now = clock.getElapsedTime();
 
-                printf("%f \n", now.asSeconds());
                 
                 if (puntaje_total > 0)
                 {
@@ -567,9 +555,6 @@ void Juego::segundo_nivel(Jugadores& _jugador)
     str_bolas_restantes.setFillColor(blanco);
     str_bolas_restantes.setPosition(634, 64);
 
-    sf::Text str_intentos = sf::Text("~ Intentos: " + std::to_string(intentos) + "...", fuente_de_texto, 18);
-    str_intentos.setFillColor(blanco);
-    str_intentos.setPosition(230, 50);
 
     ///LISTAS E ITERADORES DE OBJETOS (Almacenan los Objetos)
     std::list<Rectangulo> lRectangulos;
@@ -904,7 +889,7 @@ void Juego::segundo_nivel(Jugadores& _jugador)
 
         str_maximo_puntaje.setString("~ Mejor puntaje: " + std::to_string(puntaje_mas_alto) + "...");
 
-        str_intentos.setString("~ Intentos: " + std::to_string(intentos) + "...");
+        
 
 
         restar_bola();
@@ -964,18 +949,8 @@ void Juego::segundo_nivel(Jugadores& _jugador)
         this->ventana.draw(str_puntaje);
         this->ventana.draw(bola);
         this->ventana.draw(str_bolas_restantes);
-        this->ventana.draw(str_intentos);
         this->ventana.draw(textureMap);
 
-
-        /*
-            En caso de que termine el juego, se reinicia.
-            Tenemos que decidir que hacer en caso de perder, si se debe reiniciar el juego y guardar el puntaje,
-            si se debe enviar al menu para volver a elegir el mapa, etc...
-
-            Al ser la funcion un booleano, puede retornar True en caso de haber superado el maximo puntaje
-            y False en caso de no haberlo superado o algo xd
-        */
 
         if (bool_Fin_Juego)
         {
@@ -1073,9 +1048,6 @@ void Juego::tercer_nivel(Jugadores& _jugador)
     str_bolas_restantes.setFillColor(blanco);
     str_bolas_restantes.setPosition(634, 64);
 
-    sf::Text str_intentos = sf::Text("~ Intentos: " + std::to_string(intentos) + "...", fuente_de_texto, 18);
-    str_intentos.setFillColor(blanco);
-    str_intentos.setPosition(230, 50);
 
     std::cout << "Nombre en PrimerNivel() " << std::endl;
     std::cout << _jugador.get_nombre() << std::endl;
@@ -1091,7 +1063,8 @@ void Juego::tercer_nivel(Jugadores& _jugador)
     std::list<EnemigoRedondo>::iterator lEnemigosRedondosIt;
     std::list<EnemigoRectangular> lEnemigosRectangulares;
     std::list<EnemigoRectangular>::iterator lEnemigosRectangularesIt;
-    std::list<TextureManager>::iterator lTexturas;
+
+    
 
 
     //MUROS DEL JUEGO----------------
@@ -1389,18 +1362,15 @@ void Juego::tercer_nivel(Jugadores& _jugador)
 
         str_maximo_puntaje.setString("~ Mejor puntaje: " + std::to_string(puntaje_mas_alto) + "...");
 
-        str_intentos.setString("~ Intentos: " + std::to_string(intentos) + "...");
-
-
+        
         restar_bola();
 
         //Si no quedan bolas, termina el juego
         if (bolas_restantes <= 0)
         {
-
             bool_Fin_Juego = true;
         }
-        //Si nuestro puntaje es mayor al puntaje m�s alto, se actualiza
+        //Si nuestro puntaje es mayor al puntaje mas alto, se actualiza
         if (puntaje_total > puntaje_mas_alto)
         {
             puntaje_mas_alto = puntaje_total;
@@ -1422,7 +1392,6 @@ void Juego::tercer_nivel(Jugadores& _jugador)
         this->ventana.draw(str_puntaje);
         this->ventana.draw(bola);
         this->ventana.draw(str_bolas_restantes);
-        this->ventana.draw(str_intentos);
         this->ventana.draw(this->sprite);
 
         for (lRectangulosIt = lRectangulos.begin(); lRectangulosIt != lRectangulos.end(); ++lRectangulosIt)
