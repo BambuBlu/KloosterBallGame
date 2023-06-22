@@ -12,22 +12,11 @@ void Sonidos::ReproducirMusicaFondo() {
 		std::cout << "No se cargo la musica" << std::endl;
 	}
 
-	musica.setVolume(10);
+	musica.setVolume(15);
 	musica.setLoop(true);
 	musica.play();
 }
 
-void Sonidos::ReproducirMusicaJuego()
-{
-	if (!musica.openFromFile("Sonidos/MusicaJuego.wav")) {
-		std::cout << "No se cargo la musica" << std::endl;
-	}
-
-	musica.setVolume(10);
-	musica.setLoop(true);
-	musica.play();
-
-}
 void Sonidos::PausarMusica()
 {
 	musica.pause();
@@ -114,7 +103,7 @@ void Sonidos::ReproducirSeleccion(int caso)
 		}
 	}
 	sound.setBuffer(buffer);
-	sound.setVolume(20);
+	sound.setVolume(40);
 
 	sound.play();
 	
@@ -151,5 +140,37 @@ void Sonidos::ReproducirChoque()
 	sound.setVolume(50);
 
 	sound.play();
+}
+void Sonidos::ReproducirMusicaNivel1()
+{
+	if (!musica.openFromFile("Sonidos/Musica1.wav")) {
+		std::cout << "No se cargo la musica" << std::endl;
+	}
+
+	musica.setVolume(10);
+	musica.setLoop(true);
+	musica.play();
+
+}
+void Sonidos::ReproducirMusicaNivel2()
+{
+	if (!musica.openFromFile("Sonidos/Musica2.wav")) {
+		std::cout << "No se cargo la musica" << std::endl;
+	}
+
+	musica.setVolume(10);
+	musica.setLoop(true);
+	musica.play();
+}
+
+void Sonidos::ReproducirMusicaNivel3()
+{
+	if (!musica.openFromFile("Sonidos/Musica3.wav")) {
+		std::cout << "No se cargo la musica" << std::endl;
+	}
+
+	musica.setVolume(10);
+	musica.setLoop(true);
+	musica.play();
 }
 

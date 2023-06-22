@@ -30,7 +30,7 @@ void Juego::InitJuego()
 
     BandSonido = true;
 
-    sonido.ReproducirMusicaJuego();
+    
 }
 
 Juego::Juego()
@@ -67,7 +67,8 @@ void Juego::primer_nivel(Jugadores& _jugador)
         sf::Sprite textureMap(textura2);
        
         sonido.ReproducirArranque();
-       
+        sonido.ReproducirMusicaNivel1();
+
         ///DECLARACION DE COLORES DEL NIVEL
         sf::Color Azul = sf::Color(8, 68, 112);
         sf::Color blanco = sf::Color(235, 235, 235);
@@ -495,6 +496,7 @@ void Juego::segundo_nivel(Jugadores& _jugador)
     sf::Sprite textureMap(textura2);
 
     sonido.ReproducirArranque();
+    sonido.ReproducirMusicaNivel2();
     
     ///DECLARACION DE COLORES DEL NIVEL
     sf::Color Azul = sf::Color(8, 68, 112);
@@ -962,6 +964,7 @@ void Juego::tercer_nivel(Jugadores& _jugador)
     sf::Sprite textureMap(textura2);
 
     sonido.ReproducirArranque();
+    sonido.ReproducirMusicaNivel3();
 
     ///DECLARACION DE COLORES DEL NIVEL
     sf::Color Azul = sf::Color(8, 68, 112);

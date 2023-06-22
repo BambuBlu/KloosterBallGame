@@ -17,7 +17,9 @@ class Sonidos
 
 	void ReproducirMusicaFondo();
 	void DetenerMusica();
-	void ReproducirMusicaJuego();
+	void ReproducirMusicaNivel1();
+	void ReproducirMusicaNivel2();
+	void ReproducirMusicaNivel3();
 	void PausarMusica();
 	void Reanudar();
 
