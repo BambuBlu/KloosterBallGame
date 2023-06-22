@@ -137,6 +137,7 @@ const bool Manager::Ventana_Esta_Abierta() const
 void Manager::Actualizar()
 {
 	menu_niveles[3].setPosition(186, 742);
+
 	MoverKlooster();
 	
 	//Siempre que haya un evento se mantiene el While
@@ -199,9 +200,13 @@ void Manager::Actualizar()
 	}
 
 	this->ventana->clear();
+
 	this->ventana->draw(this->sprite[0]);
+
 	this->DibujarMenu(ventana, 1);
+
 	this->ventana->draw(this->sprite[1]);
+
 	this->ventana->display();
 }
 
@@ -315,7 +320,6 @@ void Manager::DibujarMenu(sf::RenderWindow*& ventana, int tipo_de_menu)
 
 void Manager::IniciarJuego()
 {
-
 	main_menu_selected = 0;
 
 	Jugadores Jugador;
@@ -324,23 +328,22 @@ void Manager::IniciarJuego()
 	{
 		while (this->ventana->pollEvent(this->evento))
 		{
-			if (!BandMusica) {
+			if (!BandMusica) 
+			{
 				sonido.Reanudar();
 				BandMusica = true;
 			}
+
 			switch (this->evento.type)
 			{
 				case sf::Event::Closed:
-					
 					this->ventana->close();
 					break;
 
 				case sf::Event::KeyPressed:
 					if (this->evento.key.code == sf::Keyboard::Escape)
 					{
-						
 						this->ventana->close();
-						
 						break;
 					}
 
@@ -409,7 +412,8 @@ void Manager::IniciarJuego()
 							instancia_juego.tercer_nivel(Jugador);
 							this->ventana->setVisible(true);
 						}
-						if (main_menu_selected == 3){
+						if (main_menu_selected == 3)
+						{
 							sonido.ReproducirSeleccion(4);
 							main_menu_selected = 0; 
 							return;
@@ -417,8 +421,11 @@ void Manager::IniciarJuego()
 					}
 			}
 			this->ventana->clear();
+
 			this->ventana->draw(this->sprite[3]);
+
 			this->DibujarMenu(ventana, 2);
+
 			this->ventana->display();
 		}
 	}
@@ -446,10 +453,7 @@ bool Manager::IngresarNombre(Jugadores& _jugador)
 	textBox.setCharacterSize(20);
 	textBox.setPosition(80, 467);
 
-
 	sf::String _nombreDeJugador;
-
-	
 
 	while (Ventana_Esta_Abierta())
 	{
@@ -472,18 +476,18 @@ bool Manager::IngresarNombre(Jugadores& _jugador)
 					}
 					if (this->evento.key.code == sf::Keyboard::Enter)
 					{
-						if (_nombreDeJugador.getSize() > 1) {
+						if (_nombreDeJugador.getSize() > 1) 
+						{
 							_jugador.set_nombre(_nombreDeJugador);
 							return true;
 						}
-						else {
+						else 
+						{
 							return false;
 						}
 							
 					}
 					
-					
-
 				case sf::Event::TextEntered:
 
 					if (this->evento.type == sf::Event::TextEntered)
@@ -511,9 +515,13 @@ bool Manager::IngresarNombre(Jugadores& _jugador)
 			}
 		}
 		this->ventana->draw(this->sprite[2]);
+
 		this->ventana->draw(texto);
+
 		this->ventana->draw(texto1);
+
 		this->ventana->draw(textBox);
+
 		this->ventana->display();
 	}
 	return false;
@@ -534,7 +542,7 @@ void Manager::RankingDePuntajes()
 	sf::Texture textura;
 	if (!textura.loadFromFile("resources/max_points.png"))
 	{
-		std::cout << "No se cargo el fondo" << std::endl;
+		std::cout << "RaningDePuntajes No se cargo el fondo" << std::endl;
 	}
 	sf::Sprite background(textura);
 
@@ -554,7 +562,6 @@ void Manager::RankingDePuntajes()
 		for (int i = 0; i < cantidad_de_registros; i++)
 		{
 			vJugadores[i] = archivo.leer(i);
-			std::cout << vJugadores->get_nombre() << " PUNTAJE " << vJugadores->get_puntaje() << std::endl;
 		}
 
 		//ORDENA EL VECTOR DE MAYOR A MENOR PUNTAJE
@@ -565,7 +572,6 @@ void Manager::RankingDePuntajes()
 		{
 			if (i == 0)
 			{
-				std::cout << "entro en if " << std::endl;
 				PodioNombres[i].setFont(font);
 				PodioNombres[i].setFillColor(caqui);
 				PodioNombres[i].setString(vJugadores[i].get_str_nombre());
@@ -613,8 +619,6 @@ void Manager::RankingDePuntajes()
 		}
 
 		delete[] vJugadores;
-
-
 	}
 		while (Ventana_Esta_Abierta())
 		{
@@ -640,12 +644,15 @@ void Manager::RankingDePuntajes()
 						}
 				}
 			}
+
 			this->ventana->draw(background);
+
 			this->ventana->draw(menu_niveles[4]);
 
 			for (int i = 0; i < cantidad_de_registros; i++)
 			{
 				this->ventana->draw(PodioNombres[i]);
+
 				this->ventana->draw(PodioPuntajes[i]);
 			}
 
