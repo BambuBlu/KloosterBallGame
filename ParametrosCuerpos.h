@@ -38,6 +38,7 @@ class Cuerpo
         void setAceleracion(const sf::Vector2f&);
         void setInercia(const float);
         void setVelocidadAngular(const float);
+
         float getRestitucion() const;
         float getMasa() const;
         float getMasaInversa() const;
@@ -49,6 +50,7 @@ class Cuerpo
         float getGradosAngulo() const;
         float getRadioAngulo() const;
         void setRadioAngulo(const float);
+
         void AplicarImpulso(const sf::Vector2f, const sf::Vector2f);
         void AplicarAnguloDeImpulso(const float);
         float ProductoCruzado(const sf::Vector2f&, const sf::Vector2f&) const;

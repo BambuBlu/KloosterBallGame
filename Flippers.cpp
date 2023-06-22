@@ -35,6 +35,7 @@ Flippers::Flippers(const sf::Vector2f& _position, float _angulo , const sf::Vect
 
 }
 
+//aplica la velocidad al rotar los flippers
 void Flippers::Mover(std::string evento)
 {
 	if (evento == "arriba") 

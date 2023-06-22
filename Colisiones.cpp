@@ -49,6 +49,7 @@ Colisiones::Colisiones(Cuerpo* first, Cuerpo* second)
     cuerpo_b = second;
 }
 
+//si la sumatoria de los radios es mayor a la distancia entre el centro de los circulos hay colision
 bool Colisiones::CirculoVsCirculo()
 {
     /*!< Configuración de punteros a dos círculos*/
@@ -101,7 +102,7 @@ bool Colisiones::CirculoVsRectangulo()
     // Vector de la diferencia entre el cuerpo (B - A)
     sf::Vector2f diferencia = cuerpo_b->getPosicion() - cuerpo_a->getPosicion();
 
-    /*!< Clamping closest point to nearest edge */
+    
     sf::Vector2f closest = Clamp(rectangulo->get_extensionMedia(), diferencia);
 
     bool adentro = false;
@@ -281,7 +282,7 @@ void Colisiones::correctPosition() //!< Aplica la corrección de posición
     cuerpo_b->posicion += correncion * cuerpo_b->getMasaInversa();
 }
 
-void Colisiones::aplicarImpulsoRotacional()
+void Colisiones::aplicarImpulso()
 {
     /*!< Calcula los puntos de contacto*/
     sf::Vector2f contactoCuerpoA(punto_de_contacto - cuerpo_a->getPosicion());

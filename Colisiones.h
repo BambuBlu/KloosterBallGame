@@ -37,7 +37,7 @@ class Colisiones
 
         float get_penetracion() const { return penetracion;}
 
-        void aplicarImpulsoRotacional();
+        void aplicarImpulso();
 
         void correctPosition();
 

@@ -282,13 +282,14 @@ void Juego::primer_nivel(Jugadores& _jugador)
                     {
                         if (bolasIterador != p)
                         {
+                            //inicializa el objeto colision con el constructor 
                             Colisiones colision = Colisiones(&bolasIterador->cuerpo, &p->cuerpo);
 
                             if (colision.CirculoVsCirculo())
                             {
                                 colision.correctPosition();
 
-                                colision.aplicarImpulsoRotacional();
+                                colision.aplicarImpulso();
                             }
                         }
                     }
@@ -305,7 +306,7 @@ void Juego::primer_nivel(Jugadores& _jugador)
 
                             colision.correctPosition();
 
-                            colision.aplicarImpulsoRotacional();
+                            colision.aplicarImpulso();
                         }
                     }
 
@@ -320,7 +321,7 @@ void Juego::primer_nivel(Jugadores& _jugador)
 
                             colision.correctPosition();
 
-                            colision.aplicarImpulsoRotacional();
+                            colision.aplicarImpulso();
                         }
                     }
 
@@ -333,7 +334,7 @@ void Juego::primer_nivel(Jugadores& _jugador)
                         {
                             colision.correctPosition();
 
-                            colision.aplicarImpulsoRotacional();
+                            colision.aplicarImpulso();
                         }
                     }
 
@@ -346,7 +347,7 @@ void Juego::primer_nivel(Jugadores& _jugador)
                         {
                             colision.correctPosition();
 
-                            colision.aplicarImpulsoRotacional();
+                            colision.aplicarImpulso();
 
                             colision.aplicarCaida();
                         }
@@ -362,7 +363,7 @@ void Juego::primer_nivel(Jugadores& _jugador)
                     {
                         FlipperIzquierdo_colision.correctPosition();
 
-                        FlipperIzquierdo_colision.aplicarImpulsoRotacional();
+                        FlipperIzquierdo_colision.aplicarImpulso();
 
                         FlipperIzquierdo_colision.aplicarCaida();
                     }
@@ -373,7 +374,7 @@ void Juego::primer_nivel(Jugadores& _jugador)
                     {
                         FlipperDerecho_colision.correctPosition();
 
-                        FlipperDerecho_colision.aplicarImpulsoRotacional();
+                        FlipperDerecho_colision.aplicarImpulso();
 
                         FlipperDerecho_colision.aplicarCaida();
                     }
@@ -762,7 +763,7 @@ void Juego::segundo_nivel(Jugadores& _jugador)
                             
                             colision.correctPosition();
 
-                            colision.aplicarImpulsoRotacional();
+                            colision.aplicarImpulso();
                         }
                     }
                 }
@@ -779,7 +780,7 @@ void Juego::segundo_nivel(Jugadores& _jugador)
 
                         colision.correctPosition();
 
-                        colision.aplicarImpulsoRotacional();
+                        colision.aplicarImpulso();
                     }
                 }
 
@@ -794,7 +795,7 @@ void Juego::segundo_nivel(Jugadores& _jugador)
 
                         colision.correctPosition();
 
-                        colision.aplicarImpulsoRotacional();
+                        colision.aplicarImpulso();
                     }
                 }
 
@@ -807,7 +808,7 @@ void Juego::segundo_nivel(Jugadores& _jugador)
                     {
                         colision.correctPosition();
 
-                        colision.aplicarImpulsoRotacional();
+                        colision.aplicarImpulso();
                     }
                 }
 
@@ -820,7 +821,7 @@ void Juego::segundo_nivel(Jugadores& _jugador)
                     {
                         colision.correctPosition();
 
-                        colision.aplicarImpulsoRotacional();
+                        colision.aplicarImpulso();
 
                         colision.aplicarCaida();
                     }
@@ -836,7 +837,7 @@ void Juego::segundo_nivel(Jugadores& _jugador)
                 {
                     FlipperIzquierdoInf_colision.correctPosition();
 
-                    FlipperIzquierdoInf_colision.aplicarImpulsoRotacional();
+                    FlipperIzquierdoInf_colision.aplicarImpulso();
 
                     FlipperIzquierdoInf_colision.aplicarCaida();
                 }
@@ -847,7 +848,7 @@ void Juego::segundo_nivel(Jugadores& _jugador)
                 {
                     FlipperDerechoInf_colision.correctPosition();
 
-                    FlipperDerechoInf_colision.aplicarImpulsoRotacional();
+                    FlipperDerechoInf_colision.aplicarImpulso();
 
                     FlipperDerechoInf_colision.aplicarCaida();
                 }
@@ -858,7 +859,7 @@ void Juego::segundo_nivel(Jugadores& _jugador)
                 {
                     FlipperIzquierdoSup_colision.correctPosition();
 
-                    FlipperIzquierdoSup_colision.aplicarImpulsoRotacional();
+                    FlipperIzquierdoSup_colision.aplicarImpulso();
 
                 }
 
@@ -868,7 +869,7 @@ void Juego::segundo_nivel(Jugadores& _jugador)
                 {
                     FlipperDerechoSup_colision.correctPosition();
 
-                    FlipperDerechoSup_colision.aplicarImpulsoRotacional();
+                    FlipperDerechoSup_colision.aplicarImpulso();
 
                 }
 
@@ -1271,7 +1272,7 @@ void Juego::tercer_nivel(Jugadores& _jugador)
                         {
                             colision.correctPosition();
 
-                            colision.aplicarImpulsoRotacional();
+                            colision.aplicarImpulso();
                         }
                     }
                 }
@@ -1289,7 +1290,7 @@ void Juego::tercer_nivel(Jugadores& _jugador)
 
                         colision.correctPosition();
 
-                        colision.aplicarImpulsoRotacional();
+                        colision.aplicarImpulso();
 
                     }
                 }
@@ -1307,7 +1308,7 @@ void Juego::tercer_nivel(Jugadores& _jugador)
 
                         colision.correctPosition();
 
-                        colision.aplicarImpulsoRotacional();
+                        colision.aplicarImpulso();
                     }
                 }
 
@@ -1320,7 +1321,7 @@ void Juego::tercer_nivel(Jugadores& _jugador)
                     {
                         colision.correctPosition();
 
-                        colision.aplicarImpulsoRotacional();
+                        colision.aplicarImpulso();
                     }
                 }
 
@@ -1333,7 +1334,7 @@ void Juego::tercer_nivel(Jugadores& _jugador)
                     {
                         colision.correctPosition();
 
-                        colision.aplicarImpulsoRotacional();
+                        colision.aplicarImpulso();
 
                         colision.aplicarCaida();
                     }
@@ -1349,7 +1350,7 @@ void Juego::tercer_nivel(Jugadores& _jugador)
                 {
                     FlipperIzquierdo_colision.correctPosition();
 
-                    FlipperIzquierdo_colision.aplicarImpulsoRotacional();
+                    FlipperIzquierdo_colision.aplicarImpulso();
 
                     FlipperIzquierdo_colision.aplicarCaida();
                 }
@@ -1360,7 +1361,7 @@ void Juego::tercer_nivel(Jugadores& _jugador)
                 {
                     FlipperDerecho_colision.correctPosition();
 
-                    FlipperDerecho_colision.aplicarImpulsoRotacional();
+                    FlipperDerecho_colision.aplicarImpulso();
 
                     FlipperDerecho_colision.aplicarCaida();
                 }
