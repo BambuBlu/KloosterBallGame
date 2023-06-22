@@ -499,7 +499,7 @@ bool Manager::IngresarNombre(Jugadores& _jugador)
 								sonido.ReproducirSeleccion(2);
 								_nombreDeJugador.erase(_nombreDeJugador.getSize() - 1, 1);
 							}
-							else if (_nombreDeJugador.getSize() < 18)
+							else if (_nombreDeJugador.getSize() < 15)
 							{
 								sonido.ReproducirSeleccion(4);
 								_nombreDeJugador += static_cast<char>(this->evento.text.unicode);
@@ -568,7 +568,7 @@ void Manager::RankingDePuntajes()
 		OrdenarJugadoresxPuntos(vJugadores, cantidad_de_registros);
 
 		//MENSAJES DE NOMBRES Y PUNTOS
-		for (int i = 0; i < cantidad_de_registros; i++)
+		for (int i = 0; i < cantidad_de_registros && i < 10; i++)
 		{
 			if (i == 0)
 			{
@@ -598,7 +598,7 @@ void Manager::RankingDePuntajes()
 				PodioPuntajes[i].setCharacterSize(25);
 				PodioPuntajes[i].setPosition(puntaje.x, puntaje.y + separacion);
 
-				separacion += separacion;
+				separacion += 63.f;
 			}
 			else
 			{
@@ -614,7 +614,7 @@ void Manager::RankingDePuntajes()
 				PodioPuntajes[i].setCharacterSize(25);
 				PodioPuntajes[i].setPosition(puntaje.x, puntaje.y + separacion);
 
-				separacion += separacion;
+				separacion += 63.f;
 			}
 		}
 
