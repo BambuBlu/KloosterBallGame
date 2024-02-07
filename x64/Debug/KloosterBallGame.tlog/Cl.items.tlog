@@ -1,19 +1,19 @@
-C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\ArchivoJugadores.cpp;C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\x64\Debug\ArchivoJugadores.obj
-C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Bola.cpp;C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\x64\Debug\Bola.obj
-C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\EnemigoRectangular.cpp;C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\x64\Debug\EnemigoRectangular.obj
-C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\EnemigoRedondo.cpp;C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\x64\Debug\EnemigoRedondo.obj
-C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Enemigos.cpp;C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\x64\Debug\Enemigos.obj
-C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\FisicasPorTipo.cpp;C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\x64\Debug\FisicasPorTipo.obj
-C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Flippers.cpp;C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\x64\Debug\Flippers.obj
-C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\HitBox.cpp;C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\x64\Debug\HitBox.obj
-C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\HitBoxFisicas.cpp;C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\x64\Debug\HitBoxFisicas.obj
-C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Juego.cpp;C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\x64\Debug\Juego.obj
-C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Jugadores.cpp;C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\x64\Debug\Jugadores.obj
-C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\main.cpp;C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\x64\Debug\main.obj
-C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Manager.cpp;C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\x64\Debug\Manager.obj
-C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Colisiones.cpp;C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\x64\Debug\Colisiones.obj
-C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Sonidos.cpp;C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\x64\Debug\Sonidos.obj
-C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\ParametrosCuerpos.cpp;C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\x64\Debug\ParametrosCuerpos.obj
-C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Rectangulo.cpp;C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\x64\Debug\Rectangulo.obj
-C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\RectanguloFisicas.cpp;C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\x64\Debug\RectanguloFisicas.obj
-C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\Rotacion.cpp;C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\x64\Debug\Rotacion.obj
+E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\ArchivoJugadores.cpp;E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\ArchivoJugadores.obj
+E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\Bola.cpp;E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\Bola.obj
+E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\EnemigoRectangular.cpp;E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\EnemigoRectangular.obj
+E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\EnemigoRedondo.cpp;E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\EnemigoRedondo.obj
+E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\Enemigos.cpp;E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\Enemigos.obj
+E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\FisicasPorTipo.cpp;E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\FisicasPorTipo.obj
+E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\Flippers.cpp;E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\Flippers.obj
+E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\HitBox.cpp;E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\HitBox.obj
+E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\HitBoxFisicas.cpp;E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\HitBoxFisicas.obj
+E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp;E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\Juego.obj
+E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\Jugadores.cpp;E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\Jugadores.obj
+E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\main.cpp;E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\main.obj
+E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp;E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\Manager.obj
+E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\Colisiones.cpp;E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\Colisiones.obj
+E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\Sonidos.cpp;E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\Sonidos.obj
+E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\ParametrosCuerpos.cpp;E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\ParametrosCuerpos.obj
+E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\Rectangulo.cpp;E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\Rectangulo.obj
+E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\RectanguloFisicas.cpp;E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\RectanguloFisicas.obj
+E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\Rotacion.cpp;E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\Rotacion.obj

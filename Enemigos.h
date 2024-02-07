@@ -4,10 +4,6 @@
 #include "Bola.h"
 #include "HitBox.h"
 
-/*
-    Clase Proveniente de Bumpers
-*/
-
 enum TipoEnemigo 
 {
     redondo,

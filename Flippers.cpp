@@ -27,12 +27,6 @@ Flippers::Flippers(const sf::Vector2f& _position, float _angulo , const sf::Vect
 
 	color = _color;
 
-	/*
-	_texture.loadFromFile("flipper.png");
-	_sprite.setTexture(_texture);
-	_sprite.setPosition(_position);	
-	*/
-
 }
 
 //aplica la velocidad al rotar los flippers

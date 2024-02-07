@@ -3,9 +3,6 @@
 
 #include <SFML/Graphics.hpp>
 #include "Enemigos.h"
-/*
-	Esta clase proviene de roundBumper
-*/
 
 class EnemigoRedondo : public Enemigos, public Bola
 {

@@ -1,8 +1,9 @@
 #pragma once
 
-#include <SFML/Audio.hpp>
 #include <iostream>
+#include <SFML/Audio.hpp>
 using namespace sf;
+
 class Sonidos
 {
  private: 
@@ -31,6 +32,4 @@ class Sonidos
 	void ReproducirRestarBola();
 	void ReproducirChoque();
 	void ReproducirLanzamiento();
-	
 };
-

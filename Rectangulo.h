@@ -7,7 +7,6 @@
 #include "RectanguloFisicas.h"
 
 /*
-    Clase proveniente de rect
     Crea y dibuja un rectangulo usando las funciones de SFML
 */
 

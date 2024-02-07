@@ -1,1 +1,28 @@
-﻿  KloosterBallGame.vcxproj -> C:\Users\Mi PC\Desktop\Facultad 2do Cuatrimestre\Laboratorio 2\Juego\KloosterBallGame\x64\Debug\KloosterBallGame.exe
+﻿  ArchivoJugadores.cpp
+  Bola.cpp
+  EnemigoRectangular.cpp
+  EnemigoRedondo.cpp
+  Enemigos.cpp
+  FisicasPorTipo.cpp
+  Flippers.cpp
+  HitBox.cpp
+  HitBoxFisicas.cpp
+  Juego.cpp
+E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(1415,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\Juego.cpp(1416,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+  Jugadores.cpp
+  main.cpp
+E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\main.cpp(11,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  Manager.cpp
+E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(694,17): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\Manager.cpp(695,17): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+  Colisiones.cpp
+  Sonidos.cpp
+  ParametrosCuerpos.cpp
+E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\ParametrosCuerpos.cpp(104,38): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\ParametrosCuerpos.cpp(185,19): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+  Rectangulo.cpp
+  RectanguloFisicas.cpp
+  Rotacion.cpp
+  Generando código...
+  KloosterBallGame.vcxproj -> E:\Uni\2 - Cuatrimestre\3-KLOOSTERBALL\KloosterBallGame\x64\Debug\KloosterBallGame.exe

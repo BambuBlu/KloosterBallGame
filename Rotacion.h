@@ -3,8 +3,8 @@
 
 #include <SFML/Graphics.hpp>
 #include <cmath>
+
 /*
-    Clase proveniente de rotationMat
     Crea una matriz de rotacion
  */
 

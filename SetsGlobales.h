@@ -1,10 +1,6 @@
 #ifndef SETSGLOBALES_H
 #define SETSGLOBALES_H
 
-/*
-	Proveniente de config
-*/
-
 #define max_main_menu 8
 #define klooster 3
 

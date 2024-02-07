@@ -3,10 +3,6 @@
 
 #include "FisicasPorTipo.h"
 
-/*
-    Clase proveniente de CirclePhys
-*/
-
 class FisicasCirculo : public FisicasPorTipo 
 {
     private:

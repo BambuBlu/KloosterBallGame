@@ -5,16 +5,14 @@
 
 class ArchivoJugadores
 {
-private:
-	std::string _ruta;
-public:
-	ArchivoJugadores();
-	int getCantidadRegistros();
-	bool guardar(Jugadores reg);
-	Jugadores leer(int nroRegistro);
-	void ListarTodo();
-
-	//void CrearCopiadeSeguridad();
+	private:
+		std::string _ruta;
+	public:
+		ArchivoJugadores();
+		int getCantidadRegistros();
+		bool guardar(Jugadores reg);
+		Jugadores leer(int nroRegistro);
+		void ListarTodo();
 };
 
 

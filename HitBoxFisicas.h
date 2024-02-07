@@ -5,9 +5,6 @@
 #include "FisicasPorTipo.h"
 #include <cmath>
 
-/*
-    Clase proveniente de obbPhys
-*/
 
 class HitBoxFisicas : public FisicasPorTipo
 {

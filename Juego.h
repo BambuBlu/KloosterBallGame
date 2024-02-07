@@ -19,11 +19,6 @@
 #include "Sonidos.h"
 #include <list>
 
-/*
-    Clase proveniente de Main 
-    Pienso que la usemos para crear dos o tres mapas y manejemos todo de acá
-*/
-
 class Juego
 {
 	private:

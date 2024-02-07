@@ -9,11 +9,6 @@ enum Tipo
     Obb
 };
 
-/*
-    Clase proveniente de PhysicsShape
-    Almacena los tipos de formas
-*/
-
 class FisicasPorTipo
 {
     protected:

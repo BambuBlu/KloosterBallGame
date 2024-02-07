@@ -6,10 +6,6 @@
 #include "HitBox.h"
 #include "ParametrosCuerpos.h"
 
-/*
-    Clase proveniente de RectangleBumper
-*/
-
 class EnemigoRectangular : public Enemigos, public HitBox
 {
     private:

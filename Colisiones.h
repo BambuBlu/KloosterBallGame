@@ -21,7 +21,6 @@ class Colisiones
         sf::Vector2f punto_de_contacto;
 
     public:
-        Colisiones();
 
         Colisiones(Cuerpo* first , Cuerpo* second);
 

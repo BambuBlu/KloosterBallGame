@@ -5,9 +5,6 @@
 #include "SFML/Graphics.hpp"
 #include "FisicasPorTipo.h"
 
-/*
-    Clase proveniente de rectPhys
-*/
 
 class RectanguloFisicas : public FisicasPorTipo
 {

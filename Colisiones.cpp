@@ -102,7 +102,6 @@ bool Colisiones::CirculoVsRectangulo()
 
     bool adentro = false;
 
-    // Clamp circle to the closest edge
     if (diferencia == closest)
     {
         adentro = true;
@@ -111,7 +110,6 @@ bool Colisiones::CirculoVsRectangulo()
         if (std::abs(diferencia.x) > std::abs(diferencia.y))
         {
 
-            // Clamp to closest extent
             if (closest.x > 0) 
             {
                 closest.x = (rectangulo->get_extensionMedia().x);
@@ -182,7 +180,6 @@ bool Colisiones::CirculoVsHitbox()
 
     bool adentro = false;
 
-    // Clamp circle to the closest edge
     if (transform == closest)
     {
         adentro = true;

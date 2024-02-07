@@ -6,11 +6,6 @@
 #include "HitBoxFisicas.h"
 #include "ParametrosCuerpos.h"
 
-/*
-    Clase proveniente de OBB
-    Crea una hitbox para el sistema de colisiones
-*/
-
 class HitBox : public sf::Drawable
 {
     protected:

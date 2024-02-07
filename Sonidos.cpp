@@ -1,7 +1,5 @@
 #include "Sonidos.h"
 
-
-
 Sonidos::Sonidos() {
 	
 
@@ -21,14 +19,17 @@ void Sonidos::PausarMusica()
 {
 	musica.pause();
 }
+
 void Sonidos::Reanudar()
 {
 	musica.play();
 }
+
 void Sonidos::DetenerMusica()
 {
 	musica.stop();
 }
+
 void Sonidos::ReproducirFlipper()
 {
 	if (!buffer.loadFromFile("Sonidos/SonidoFlipper.wav")) {
@@ -39,6 +40,7 @@ void Sonidos::ReproducirFlipper()
 	sound.setVolume(25);
 	sound.play();
 }
+
 void Sonidos::ReproducirGentes() {
 	if (!buffer.loadFromFile("Sonidos/gentes.wav")) {
 		std::cout << "No se cargo los sonidos" << std::endl;
@@ -49,6 +51,7 @@ void Sonidos::ReproducirGentes() {
 	sound.play();
 
 }
+
 void Sonidos::ReproducirArranque() {
 
 	if (!buffer.loadFromFile("Sonidos/Arranque.wav")) {
@@ -141,6 +144,7 @@ void Sonidos::ReproducirChoque()
 
 	sound.play();
 }
+
 void Sonidos::ReproducirMusicaNivel1()
 {
 	if (!musica.openFromFile("Sonidos/Musica1.wav")) {
@@ -152,6 +156,7 @@ void Sonidos::ReproducirMusicaNivel1()
 	musica.play();
 
 }
+
 void Sonidos::ReproducirMusicaNivel2()
 {
 	if (!musica.openFromFile("Sonidos/Musica2.wav")) {
@@ -173,4 +178,3 @@ void Sonidos::ReproducirMusicaNivel3()
 	musica.setLoop(true);
 	musica.play();
 }
-

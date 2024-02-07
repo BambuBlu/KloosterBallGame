@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <cstring>
+
 /*
 	Clase para controlar los jugadores y sus puntajes	
 */

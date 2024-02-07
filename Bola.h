@@ -6,9 +6,6 @@
 #include "FisicasCirculo.h"
 #include "ParametrosCuerpos.h"
 
-/*
-	Clase Proveniente de Ball
-*/
 
 class Bola : public sf::Drawable
 {

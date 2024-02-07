@@ -7,7 +7,7 @@
 #include "FisicasPorTipo.h"
 
 /*
-    Clase proveniente de Body
+    Clase para aplicar físicas
 */
 
 class Cuerpo 

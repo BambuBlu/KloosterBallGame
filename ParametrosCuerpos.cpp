@@ -80,8 +80,6 @@ void Cuerpo::updateBola(float deltaTime)
     }
 }
 
-
-
 void Cuerpo::setRestitucion(float _restitucion) //!< Sets de restitucion
 {
     restitucion = _restitucion;

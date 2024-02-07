@@ -5,17 +5,11 @@
 #include "SetsGlobales.h"
 #include "HitBox.h"
 
-/*
-    Clase proveniente de Paddle
-*/
 
 class Flippers : public sf::Drawable
 {
     private:
-        /*
-        sf::Sprite _sprite;
-        sf::Texture _texture;        
-        */
+
         bool en_lado_izquierdo; 
         HitBoxFisicas forma;
         sf::Color color;
